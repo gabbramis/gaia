@@ -23,7 +23,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand Section */}
           <div>
-            <h3 className="font-serif text-4xl text-[#ED9ABC] mb-4">Gaia</h3>
+            <img src="logo-pink.png" className="h-16 w-auto" alt="Gaia Logo" />
             <p className="font-sans text-base text-white/80 leading-relaxed">
               Un estudio creativo que eleva marcas con intención, estética y visión.
             </p>

@@ -22,39 +22,39 @@ export const zIndex = {
 export const services = [
   {
     id: 1,
-    title: "Marketing Digital",
-    description: "Estrategias integrales para alcanzar tus objetivos de negocio y conectar con tu audiencia",
-    icon: "TrendingUp",
-  },
-  {
-    id: 2,
-    title: "Publicidad",
-    description: "Campañas creativas que generan impacto y resultados medibles",
-    icon: "Megaphone",
-  },
-  {
-    id: 3,
-    title: "Branding",
-    description: "Identidades visuales memorables que transmiten la esencia de tu marca",
-    icon: "Palette",
-  },
-  {
-    id: 4,
-    title: "Desarrollo Web",
-    description: "Sitios web modernos, funcionales y optimizados para conversión",
-    icon: "Code2",
-  },
-  {
-    id: 5,
-    title: "Redes Sociales",
-    description: "Gestión integral de tu presencia digital y comunidad online",
+    title: "Social Media",
+    description: "Diseñamos estrategias de contenido integrales, producimos publicaciones impactantes, gestionamos campañas y analizamos métricas para potenciar tu presencia digital.",
     icon: "Share2",
   },
   {
+    id: 2,
+    title: "Community Management",
+    description: "Gestionamos tus redes con publicación constante, interacción activa con tu comunidad y atención personalizada a comentarios y mensajes directos, manteniendo tu marca siempre viva y cercana.",
+    icon: "Users",
+  },
+  {
+    id: 3,
+    title: "Producción y Edición",
+    description: "Creamos piezas visuales de alto impacto: fotografía, video y diseño gráfico, con edición profesional y postproducción que refleje la identidad de tu marca.",
+    icon: "Camera",
+  },
+  {
+    id: 4,
+    title: "Cobertura de Eventos",
+    description: "Capturamos la esencia de tus eventos mediante contenido audiovisual dinámico y creativo, para que cada momento relevante llegue a tu audiencia.",
+    icon: "Video",
+  },
+  {
+    id: 5,
+    title: "Diseño Web y E-commerce",
+    description: "Desarrollamos sitios web funcionales y atractivos, tiendas online y blogs optimizados, diseñados para ofrecer una experiencia única y potenciar tus ventas.",
+    icon: "Laptop",
+  },
+  {
     id: 6,
-    title: "Contenido Creativo",
-    description: "Contenido visual y escrito que cuenta historias y conecta emocionalmente",
-    icon: "Sparkles",
+    title: "SEO y Posicionamiento",
+    description: "Optimizamos tu presencia digital para que tu marca sea fácilmente encontrada en Google, aumentando visibilidad y alcance orgánico.",
+    icon: "Search",
   },
 ] as const;
 
@@ -136,14 +136,14 @@ export const navLinks = [
 
 // Social Media Links
 export const socialLinks = [
-  { platform: "Instagram", url: "https://instagram.com/gaia", icon: "Instagram" },
+  { platform: "Instagram", url: "https://www.instagram.com/gaia_studio?igsh=MWszOGh5ZnN0MWxpag==", icon: "Instagram" },
   { platform: "LinkedIn", url: "https://linkedin.com/company/gaia", icon: "Linkedin" },
   { platform: "Behance", url: "https://behance.net/gaia", icon: "Dribbble" },
 ] as const;
 
 // Contact Information
 export const contactInfo = {
-  email: "hola@gaia.com",
-  phone: "+54 9 11 1234-5678",
-  address: "Buenos Aires, Argentina",
+  email: "gaiacontacto.studio@gmail.com",
+  phone: "+598 91 392 302 +598 95 967 816",
+  address: "Montevideo, Uruguay",
 } as const;
