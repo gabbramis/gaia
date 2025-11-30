@@ -3,7 +3,7 @@
 import { motion } from 'motion/react';
 import { services } from '@/lib/constants';
 import { ServiceCard } from '@/components/ui/ServiceCard';
-import { staggerContainer, fadeInUp } from '@/lib/animations';
+import { fadeInUp } from '@/lib/animations';
 import { TrendingUp, Megaphone, Palette, Code2, Share2, Sparkles } from 'lucide-react';
 
 const iconMap = {
@@ -19,7 +19,7 @@ export function Services() {
   return (
     <section
       id="servicios"
-      className="relative min-h-screen bg-white py-32 px-6 md:px-12"
+      className="relative min-h-screen bg-[#500712] py-32 px-6 md:px-12 border-t border-[#ED9ABC]/10"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
@@ -28,15 +28,23 @@ export function Services() {
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
           variants={fadeInUp}
-          className="mb-24"
+          className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-[#ED9ABC]/20 pb-12"
         >
-          <h2 className="font-serif text-6xl md:text-7xl lg:text-8xl text-[#500712] text-tight tracking-premium">
-            Servicios
-          </h2>
+          <div>
+            <span className="block text-[#ED9ABC] text-sm tracking-[0.3em] uppercase mb-4">
+              Our Expertise
+            </span>
+            <h2 className="font-serif text-5xl md:text-7xl text-[#F1DFD1] tracking-tight">
+              Servicios
+            </h2>
+          </div>
+          <p className="font-sans text-[#F1DFD1]/60 max-w-md text-sm md:text-base leading-relaxed tracking-wide">
+            Ofrecemos soluciones integrales diseñadas para posicionar tu marca en el mercado de lujo.
+          </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#ED9ABC]/20 border border-[#ED9ABC]/20">
           {services.map((service, index) => {
             const Icon = iconMap[service.icon as keyof typeof iconMap];
             return (

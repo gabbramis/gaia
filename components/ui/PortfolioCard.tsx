@@ -1,18 +1,16 @@
+
 'use client';
 
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import { scaleOnScroll } from '@/lib/animations';
 
 interface PortfolioCardProps {
   title: string;
   category: string;
   description: string;
   imageUrl: string;
-  backgroundColor: 'white' | 'beige' | 'pink' | 'burgundy';
-  featured?: boolean;
   index: number;
-  organicShape: string;
+  aspectRatio?: string;
 }
 
 export function PortfolioCard({
@@ -20,84 +18,46 @@ export function PortfolioCard({
   category,
   description,
   imageUrl,
-  backgroundColor,
-  featured = false,
   index,
-  organicShape,
+  aspectRatio = 'aspect-[3/4]',
 }: PortfolioCardProps) {
-  const bgColorMap = {
-    white: 'bg-white',
-    beige: 'bg-[#F1DFD1]',
-    pink: 'bg-[#FFB8D5]/10',
-    burgundy: 'bg-[#500712]',
-  };
-
-  const textColorMap = {
-    white: 'text-[#500712]',
-    beige: 'text-[#500712]',
-    pink: 'text-[#500712]',
-    burgundy: 'text-white',
-  };
-
-  const categoryColorMap = {
-    white: 'text-[#ED9ABC]',
-    beige: 'text-[#ED9ABC]',
-    pink: 'text-[#ED9ABC]',
-    burgundy: 'text-[#FFB8D5]',
-  };
-
-  const aspectRatio = featured ? 'aspect-[21/9]' : 'aspect-[3/4]';
-
   return (
     <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: '-100px' }}
-      variants={{
-        hidden: { opacity: 0, y: 60 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 0.8,
-            ease: [0.22, 1, 0.36, 1],
-            delay: index * 0.15,
-          },
-        },
-      }}
-      className={`group relative ${bgColorMap[backgroundColor]} p-8 md:p-12 ${
-        featured ? 'md:col-span-2' : ''
-      } hover-overlay shadow-premium hover:shadow-premium-hover transition-shadow duration-500`}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-50px' }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="group relative mb-8 break-inside-avoid"
     >
-      {/* Image */}
-      <div className={`relative ${aspectRatio} overflow-hidden ${organicShape} mb-6 md:mb-8`}>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-          variants={scaleOnScroll}
-          className="w-full h-full"
-        >
-          <Image
-            src={imageUrl}
-            alt={description}
-            fill
-            className="object-cover"
-            sizes={featured ? '100vw' : '(max-width: 768px) 100vw, 50vw'}
-          />
-        </motion.div>
+      <div className={`relative w-full ${aspectRatio} overflow-hidden border border-[#ED9ABC]/20`}>
+        {/* Image */}
+        <Image
+          src={imageUrl}
+          alt={description}
+          fill
+          className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
       </div>
 
-      {/* Content */}
-      <div>
-        <p className={`font-sans text-sm uppercase tracking-luxury ${categoryColorMap[backgroundColor]} mb-3`}>
+      {/* Content - Mobile: Below Image | Desktop: Overlay */}
+      <div className="
+        flex flex-col justify-center items-center text-center p-6 transition-all duration-500 z-10
+        relative mt-2
+        md:absolute md:inset-0 md:mt-0 md:bg-[#500712]/80 md:opacity-0 md:group-hover:opacity-100
+      ">
+        <span className="font-sans text-xs text-[#ED9ABC] uppercase tracking-[0.2em] mb-2 md:mb-3 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500 delay-100">
           {category}
-        </p>
-        <h3 className={`font-serif text-3xl md:text-4xl ${textColorMap[backgroundColor]} ${
-          featured ? 'lg:text-5xl' : ''
-        }`}>
+        </span>
+        <h3 className="font-serif text-2xl md:text-3xl text-[#F1DFD1] mb-2 md:mb-3 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500 delay-200">
           {title}
         </h3>
+        <p className="font-sans text-xs md:text-sm text-[#F1DFD1]/80 max-w-[200px] md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500 delay-300 hidden md:block">
+          {description}
+        </p>
+
+        {/* Decorative Frame - Desktop Only */}
+        <div className="hidden md:block absolute inset-4 border border-[#ED9ABC]/30 scale-95 group-hover:scale-100 transition-transform duration-500 delay-100" />
       </div>
     </motion.div>
   );
