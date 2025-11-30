@@ -4,14 +4,15 @@ import { motion } from 'motion/react';
 import { services } from '@/lib/constants';
 import { ServiceCard } from '@/components/ui/ServiceCard';
 import { fadeInUp } from '@/lib/animations';
-import { TrendingUp, Megaphone, Palette, Code2, Share2, Sparkles } from 'lucide-react';
+import { Share2, Users, Video, Camera, Laptop, Search, Sparkles } from 'lucide-react';
 
-const iconMap = {
-  TrendingUp,
-  Megaphone,
-  Palette,
-  Code2,
+const iconMap: Record<string, any> = {
   Share2,
+  Users,
+  Video,
+  Camera,
+  Laptop,
+  Search,
   Sparkles,
 };
 
@@ -46,7 +47,7 @@ export function Services() {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#ED9ABC]/20 border border-[#ED9ABC]/20">
           {services.map((service, index) => {
-            const Icon = iconMap[service.icon as keyof typeof iconMap];
+            const Icon = iconMap[service.icon] || Sparkles;
             return (
               <ServiceCard
                 key={service.id}
