@@ -96,6 +96,6 @@ export const socialLinks = [
 // Contact Information
 export const contactInfo = {
   email: "gaiacontacto.studio@gmail.com",
-  phone: "+598 91 392 302 +598 95 967 816",
+  phone: "+598 91 392 302 - +598 95 967 816",
   address: "Montevideo, Uruguay",
 } as const;
