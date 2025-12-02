@@ -14,10 +14,10 @@ export function Contact() {
   return (
     <section
       id="contacto"
-      className="relative min-h-screen bg-[#500712] py-32 px-6 md:px-12 flex items-center border-t border-[#ED9ABC]/10"
+      className="relative min-h-screen bg-[#500712] py-16 md:py-32 px-6 md:px-12 flex items-center border-t border-[#ED9ABC]/10"
     >
       <div className="max-w-4xl mx-auto w-full">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <span className="block text-[#ED9ABC] text-sm tracking-[0.3em] uppercase mb-6">
             Get in Touch
           </span>

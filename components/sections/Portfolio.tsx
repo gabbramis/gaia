@@ -7,7 +7,7 @@ import { ArrowRight } from 'lucide-react';
 
 export function Portfolio() {
     return (
-        <section id="portfolio" className="relative bg-[#500712] py-32 px-6 md:px-12 border-t border-[#ED9ABC]/10">
+        <section id="portfolio" className="relative bg-[#500712] py-16 md:py-32 px-6 md:px-12 border-t border-[#ED9ABC]/10">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <motion.div
@@ -15,7 +15,7 @@ export function Portfolio() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={fadeInUp}
-                    className="mb-24 text-center"
+                    className="mb-12 md:mb-24 text-center"
                 >
                     <span className="block text-[#ED9ABC] text-sm tracking-[0.3em] uppercase mb-4">
                         Our Work

@@ -34,7 +34,7 @@ const webProjects = [
 
 export function WebDesigns() {
     return (
-        <section id="web-designs" className="relative bg-[#500712] py-32 px-6 md:px-12 border-t border-[#ED9ABC]/10">
+        <section id="web-designs" className="relative bg-[#500712] py-16 md:py-32 px-6 md:px-12 border-t border-[#ED9ABC]/10">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <motion.div
@@ -42,7 +42,7 @@ export function WebDesigns() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={fadeInUp}
-                    className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8"
+                    className="mb-12 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8"
                 >
                     <div>
                         <span className="block text-[#ED9ABC] text-sm tracking-[0.3em] uppercase mb-4">

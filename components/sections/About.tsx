@@ -8,7 +8,7 @@ export function About() {
   return (
     <section
       id="nosotros"
-      className="relative min-h-screen bg-[#500712] py-32 px-6 md:px-12 border-t border-[#ED9ABC]/10"
+      className="relative min-h-screen bg-[#500712] py-16 md:py-32 px-6 md:px-12 border-t border-[#ED9ABC]/10"
     >
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
