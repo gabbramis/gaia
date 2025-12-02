@@ -25,6 +25,7 @@ export function Hero() {
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 md:px-12 pt-20">
 
         <div className="max-w-7xl text-center flex flex-col items-center">
+          <div> <img src="gaia-name.png" alt="" /></div>
           {/* Main Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
@@ -74,16 +75,7 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
-      >
-        <span className="text-[10px] uppercase tracking-widest text-[#ED9ABC]">Scroll</span>
-        <div className="h-12 w-[1px] bg-gradient-to-b from-[#ED9ABC] to-transparent" />
-      </motion.div>
+
     </section>
   );
 }

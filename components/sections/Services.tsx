@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 import { services } from '@/lib/constants';
 import { ServiceCard } from '@/components/ui/ServiceCard';
 import { fadeInUp } from '@/lib/animations';
-import { Share2, Users, Video, Camera, Laptop, Search, Sparkles } from 'lucide-react';
+import { Share2, Users, Video, Camera, Laptop, Search, Sparkles, ChartNoAxesColumnDecreasing } from 'lucide-react';
 
 const iconMap: Record<string, any> = {
   Share2,
@@ -14,6 +14,7 @@ const iconMap: Record<string, any> = {
   Laptop,
   Search,
   Sparkles,
+  ChartNoAxesColumnDecreasing,
 };
 
 export function Services() {
@@ -40,12 +41,12 @@ export function Services() {
             </h2>
           </div>
           <p className="font-sans text-[#F1DFD1]/60 max-w-md text-sm md:text-base leading-relaxed tracking-wide">
-            Ofrecemos soluciones integrales diseñadas para posicionar tu marca en el mercado de lujo.
+            Ofrecemos soluciones integrales diseñadas para posicionar tu marca en el mercado.
           </p>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#ED9ABC]/20 border border-[#ED9ABC]/20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-x-16 md:gap-y-24">
           {services.map((service, index) => {
             const Icon = iconMap[service.icon] || Sparkles;
             return (

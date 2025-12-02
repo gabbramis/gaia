@@ -28,14 +28,14 @@ export const services = [
   },
   {
     id: 2,
-    title: "Community Management",
-    description: "Gestionamos tus redes con publicación constante, interacción activa con tu comunidad y atención personalizada a comentarios y mensajes directos, manteniendo tu marca siempre viva y cercana.",
+    title: "Community Manager",
+    description: "Gestionamos tus redes con publicación estrategica, interacción activa con tu comunidad y atención personalizada a comentarios y mensajes directos, manteniendo tu marca siempre viva y cercana.",
     icon: "Users",
   },
   {
     id: 3,
     title: "Producción y Edición",
-    description: "Creamos piezas visuales de alto impacto: fotografía, video y diseño gráfico, con edición profesional y postproducción que refleje la identidad de tu marca.",
+    description: "Creamos piezas visuales de alto impacto: fotos, videos y diseño gráfico, con edición profesional y postproducción que refleje la identidad de tu marca.",
     icon: "Camera",
   },
   {
@@ -56,75 +56,27 @@ export const services = [
     description: "Optimizamos tu presencia digital para que tu marca sea fácilmente encontrada en Google, aumentando visibilidad y alcance orgánico.",
     icon: "Search",
   },
-] as const;
-
-// Portfolio Items
-export const portfolioItems = [
-  {
-    id: 1,
-    title: "Identidad de Marca Premium",
-    category: "Branding",
-    height: "short", // 400px
-    featured: false,
-    description: "Desarrollo de identidad visual completa para marca de lujo",
-  },
-  {
-    id: 2,
-    title: "Plataforma E-commerce",
-    category: "Desarrollo Web",
-    height: "medium", // 600px
-    featured: false,
-    description: "Tienda online con experiencia de usuario optimizada",
-  },
-  {
-    id: 3,
-    title: "Campaña Social Media",
-    category: "Redes Sociales",
-    height: "tall", // 800px
-    featured: false,
-    description: "Estrategia de contenido multiplataforma con alto engagement",
-  },
-  {
-    id: 4,
-    title: "Packaging de Lujo",
-    category: "Branding",
-    height: "medium", // 600px (double-width)
-    featured: true,
-    description: "Diseño de packaging premium para línea de productos exclusivos",
-  },
-  {
-    id: 5,
-    title: "Campaña Publicitaria 360°",
-    category: "Publicidad",
-    height: "medium", // 600px
-    featured: false,
-    description: "Campaña integral con presencia digital y offline",
-  },
-  {
-    id: 6,
-    title: "Dashboard Interactivo",
-    category: "Desarrollo Web",
-    height: "short", // 400px
-    featured: false,
-    description: "Aplicación web con visualización de datos en tiempo real",
-  },
   {
     id: 7,
-    title: "Contenido Editorial",
-    category: "Contenido Creativo",
-    height: "medium", // 600px
-    featured: false,
-    description: "Serie de contenido fotográfico y storytelling de marca",
+    title: "Campaña Publicitaria 360°",
+    description: "Creamos conceptos únicos para momentos clave: lanzamientos de producto, aperturas de locales, promociones especiales o eventos que necesitan una narrativa potente y una ejecución impecable.",
+    icon: "ChartNoAxesColumnDecreasing",
   },
   {
     id: 8,
-    title: "Manual de Marca",
-    category: "Branding",
-    height: "tall", // 800px
-    featured: false,
-    description: "Guía completa de identidad visual y aplicaciones",
+    title: "Diseño de Branding",
+    description: "Nuestro servicio de diseño de branding transforma la esencia de tu proyecto en un sistema visual sólido, estético y coherente. Creamos la identidad gráfica que definirá cómo tu marca se presenta al mundo: logo, paleta cromática, tipografías y universo visual.",
+    icon: "Brand",
+  },
+  {
+    id: 9,
+    title: "Web Management Mensual",
+    description: "Nos encargamos del mantenimiento completo de tu sitio: actualización de productos, gestión de inventario, carga de contenido, revisión de funcionamiento y soporte continuo para mantener tu web siempre activa, optimizada y al día.",
+    icon: "Laptop",
   },
 ] as const;
+
+
 
 // Navigation Links
 export const navLinks = [
