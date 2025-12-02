@@ -29,10 +29,6 @@ export function ServiceAccordion({ items, iconMap }: ServiceAccordionProps) {
                 return (
                     <motion.div
                         key={item.id}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1 }}
                         className={cn(
                             "border border-[#ED9ABC]/10 bg-[#500712] overflow-hidden transition-all duration-500",
                             isOpen ? "bg-[#500712]/50 border-[#ED9ABC]/30" : ""
