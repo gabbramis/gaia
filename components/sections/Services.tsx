@@ -3,8 +3,9 @@
 import { motion } from 'motion/react';
 import { services } from '@/lib/constants';
 import { ServiceCard } from '@/components/ui/ServiceCard';
+import { ServiceAccordion } from '@/components/ui/ServiceAccordion';
 import { fadeInUp } from '@/lib/animations';
-import { Share2, Users, Video, Camera, Laptop, Search, Sparkles, ChartNoAxesColumnDecreasing } from 'lucide-react';
+import { Share2, Users, Video, Camera, Laptop, Search, Sparkles, ChartNoAxesColumnDecreasing, Component } from 'lucide-react';
 
 const iconMap: Record<string, any> = {
   Share2,
@@ -15,6 +16,7 @@ const iconMap: Record<string, any> = {
   Search,
   Sparkles,
   ChartNoAxesColumnDecreasing,
+  Component,
 };
 
 export function Services() {
@@ -46,7 +48,13 @@ export function Services() {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-x-16 md:gap-y-24">
+        {/* Mobile Accordion */}
+        <div className="md:hidden">
+          <ServiceAccordion items={services} iconMap={iconMap} />
+        </div>
+
+        {/* Desktop Grid */}
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-x-16 md:gap-y-24">
           {services.map((service, index) => {
             const Icon = iconMap[service.icon] || Sparkles;
             return (

@@ -66,7 +66,7 @@ export const services = [
     id: 8,
     title: "Diseño de Branding",
     description: "Nuestro servicio de diseño de branding transforma la esencia de tu proyecto en un sistema visual sólido, estético y coherente. Creamos la identidad gráfica que definirá cómo tu marca se presenta al mundo: logo, paleta cromática, tipografías y universo visual.",
-    icon: "Brand",
+    icon: "Component",
   },
   {
     id: 9,
