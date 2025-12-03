@@ -7,8 +7,8 @@ import { fadeInLeft, fadeInRight } from '@/lib/animations';
 export function About() {
   return (
     <section
-      id="nosotros"
-      className="relative min-h-screen bg-[#500712] py-16 md:py-32 px-6 md:px-12 border-t border-[#ED9ABC]/10"
+      id="nosotras"
+      className="relative bg-[#500712] py-16 md:py-32 px-6 md:px-12 border-t border-[#ED9ABC]/10"
     >
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
@@ -33,7 +33,7 @@ export function About() {
               <div className="hidden lg:block w-full h-px bg-[#ED9ABC]/20 my-12" />
 
               <p className="font-sans text-[#F1DFD1]/60 text-sm tracking-widest uppercase">
-                Est. 2024 — Montevideo
+                Est. 2025 — Montevideo
               </p>
             </motion.div>
           </div>

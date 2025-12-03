@@ -4,33 +4,7 @@ import { motion } from 'motion/react';
 import { fadeInUp } from '@/lib/animations';
 import Image from 'next/image';
 import Link from 'next/link';
-
-const webProjects = [
-    {
-        id: 1,
-        title: 'Luxury E-commerce',
-        image: '/images/portfolio/4.jpg',
-        url: '' // Add your real URLs here
-    },
-    {
-        id: 2,
-        title: 'Corporate Identity',
-        image: '/images/portfolio/5.jpg',
-        url: 'https://example.com/corporate'
-    },
-    {
-        id: 3,
-        title: 'Creative Portfolio',
-        image: '/images/portfolio/6.jpg',
-        url: 'https://example.com/portfolio'
-    },
-    {
-        id: 4,
-        title: 'Landing Page',
-        image: '/images/portfolio/1.jpg',
-        url: 'https://example.com/landing'
-    },
-];
+import { webDesigns } from '@/lib/data/portfolio';
 
 export function WebDesigns() {
     return (
@@ -59,7 +33,7 @@ export function WebDesigns() {
 
                 {/* Web Gallery Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                    {webProjects.map((project, index) => (
+                    {webDesigns.map((project, index) => (
                         <motion.div
                             key={project.id}
                             initial={{ opacity: 0, y: 20 }}
@@ -67,7 +41,7 @@ export function WebDesigns() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                         >
-                            <Link href={project.url} target="_blank" rel="noopener noreferrer" className="group cursor-pointer block">
+                            <Link href={project.url || '#'} target={project.url ? "_blank" : "_self"} rel="noopener noreferrer" className="group cursor-pointer block">
                                 {/* Browser/Window Frame Effect */}
                                 <div className="relative aspect-[16/10] overflow-hidden bg-[#ED9ABC]/5 border border-[#ED9ABC]/10 group-hover:border-[#ED9ABC]/30 transition-colors duration-500">
                                     {/* Mockup Header */}
@@ -79,8 +53,8 @@ export function WebDesigns() {
 
                                     {/* Image */}
                                     <Image
-                                        src={project.image}
-                                        alt={project.title}
+                                        src={project.images.cover.src}
+                                        alt={project.images.cover.alt}
                                         fill
                                         className="object-cover mt-6 transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                                     />
@@ -90,12 +64,21 @@ export function WebDesigns() {
                                 </div>
 
                                 <div className="mt-6 flex justify-between items-baseline">
-                                    <h3 className="font-serif text-2xl text-[#F1DFD1] group-hover:text-[#ED9ABC] transition-colors duration-300">
-                                        {project.title}
-                                    </h3>
-                                    <span className="font-sans text-xs text-[#ED9ABC]/40 uppercase tracking-widest group-hover:text-[#ED9ABC] transition-colors duration-300">
-                                        Visit Website ↗
-                                    </span>
+                                    <div>
+                                        <h3 className="font-serif text-2xl text-[#F1DFD1] group-hover:text-[#ED9ABC] transition-colors duration-300">
+                                            {project.title}
+                                        </h3>
+                                        {project.subtitle && (
+                                            <p className="font-sans text-sm text-[#F1DFD1]/50 mt-1">
+                                                {project.subtitle}
+                                            </p>
+                                        )}
+                                    </div>
+                                    {project.url && (
+                                        <span className="font-sans text-xs text-[#ED9ABC]/40 uppercase tracking-widest group-hover:text-[#ED9ABC] transition-colors duration-300">
+                                            Visit Website ↗
+                                        </span>
+                                    )}
                                 </div>
                             </Link>
                         </motion.div>

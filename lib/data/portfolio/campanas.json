@@ -1,0 +1,97 @@
+{
+  "campaigns": [
+    {
+      "id": "apertura-cafe-botanico",
+      "title": "Café Botánico",
+      "subtitle": "Campaña de Apertura",
+      "client": "Café Botánico",
+      "description": "Campaña 360° para apertura de café concepto en Montevideo",
+      "longDescription": "Desarrollamos una campaña integral que abarcó branding, fotografía de producto, contenido para redes sociales, y cobertura del evento de inauguración.",
+      "category": "apertura",
+      "hero": {
+        "image": {
+          "src": "/images/portfolio/1.jpg",
+          "alt": "Café Botánico - Hero"
+        }
+      },
+      "content": [
+        {
+          "type": "text",
+          "content": "El proyecto comenzó con el desarrollo completo de la identidad visual del café, creando una marca que refleja la conexión con la naturaleza y la calidad artesanal de sus productos."
+        },
+        {
+          "type": "images-grid",
+          "images": [
+            {
+              "src": "/images/portfolio/2.jpg",
+              "alt": "Branding - Logo y papelería"
+            },
+            {
+              "src": "/images/portfolio/3.jpg",
+              "alt": "Paleta de colores"
+            }
+          ],
+          "columns": 2
+        },
+        {
+          "type": "quote",
+          "text": "Gaia transformó nuestra visión en una realidad visual que supera todas nuestras expectativas.",
+          "author": "María García, Fundadora"
+        }
+      ],
+      "date": "2024-11-01T00:00:00Z",
+      "year": 2024,
+      "duration": "3 meses",
+      "featured": true,
+      "order": 1,
+      "preview": {
+        "image": {
+          "src": "/images/portfolio/1.jpg",
+          "alt": "Café Botánico - Preview"
+        },
+        "excerpt": "Campaña 360° para apertura de café concepto en Montevideo"
+      }
+    },
+    {
+      "id": "lanzamiento-coleccion-primavera",
+      "title": "Colección Primavera",
+      "subtitle": "Lanzamiento de Producto",
+      "client": "Boutique Maison",
+      "description": "Campaña de lanzamiento para nueva colección primavera/verano",
+      "longDescription": "Campaña visual completa para el lanzamiento de la colección primavera, incluyendo lookbook, contenido para redes sociales y material publicitario.",
+      "category": "lanzamiento",
+      "hero": {
+        "image": {
+          "src": "/images/portfolio/4.jpg",
+          "alt": "Colección Primavera - Hero"
+        }
+      },
+      "content": [
+        {
+          "type": "text",
+          "content": "Creamos una narrativa visual que captura la esencia fresca y renovadora de la primavera, con una paleta de colores suaves y fotografía etérea."
+        },
+        {
+          "type": "image",
+          "image": {
+            "src": "/images/portfolio/5.jpg",
+            "alt": "Lookbook primavera"
+          },
+          "caption": "Editorial principal del lookbook"
+        }
+      ],
+      "date": "2024-10-01T00:00:00Z",
+      "year": 2024,
+      "duration": "2 meses",
+      "featured": true,
+      "order": 2,
+      "preview": {
+        "image": {
+          "src": "/images/portfolio/4.jpg",
+          "alt": "Colección Primavera - Preview"
+        },
+        "excerpt": "Campaña de lanzamiento para nueva colección primavera/verano"
+      }
+    }
+  ]
+}

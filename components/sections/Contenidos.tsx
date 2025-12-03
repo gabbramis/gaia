@@ -3,23 +3,27 @@
 import { motion } from 'motion/react';
 import { fadeInUp } from '@/lib/animations';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const contentCategories = [
     {
         id: 'fotos',
         title: 'Fotos',
-        image: '/images/portfolio/1.jpg', // Placeholder, will use actual images
+        href: '/contenidos/fotos',
+        image: '/images/portfolio/1.jpg',
         description: 'Fotografía Editorial'
     },
     {
         id: 'reels',
         title: 'Reels',
+        href: '/contenidos/reels',
         image: '/images/portfolio/2.jpg',
         description: 'Contenido Vertical'
     },
     {
         id: 'campanas',
         title: 'Campañas',
+        href: '/contenidos/campanas',
         image: '/images/portfolio/3.jpg',
         description: 'Producción Integral'
     }
@@ -54,31 +58,31 @@ export function Contenidos() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.2 }}
-                            className="group relative aspect-[3/4] overflow-hidden cursor-pointer"
                         >
-                            {/* Image */}
-                            <div className="absolute inset-0 bg-[#ED9ABC]/5">
-                                {/* Using a placeholder div if image fails, but ideally this is an Image component */}
-                                <Image
-                                    src={item.image}
-                                    alt={item.title}
-                                    fill
-                                    className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-80"
-                                />
-                            </div>
+                            <Link href={item.href} className="group relative aspect-[3/4] overflow-hidden cursor-pointer block">
+                                {/* Image */}
+                                <div className="absolute inset-0 bg-[#ED9ABC]/5">
+                                    <Image
+                                        src={item.image}
+                                        alt={item.title}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-80"
+                                    />
+                                </div>
 
-                            {/* Overlay Content */}
-                            <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-[#500712] via-transparent to-transparent">
-                                <span className="font-sans text-xs text-[#ED9ABC] uppercase tracking-[0.2em] mb-2 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                    {item.description}
-                                </span>
-                                <h3 className="font-serif text-4xl text-[#F1DFD1] group-hover:text-[#ED9ABC] transition-colors duration-300">
-                                    {item.title}
-                                </h3>
-                            </div>
+                                {/* Overlay Content */}
+                                <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-[#500712] via-transparent to-transparent">
+                                    <span className="font-sans text-xs text-[#ED9ABC] uppercase tracking-[0.2em] mb-2 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                        {item.description}
+                                    </span>
+                                    <h3 className="font-serif text-4xl text-[#F1DFD1] group-hover:text-[#ED9ABC] transition-colors duration-300">
+                                        {item.title}
+                                    </h3>
+                                </div>
 
-                            {/* Border Frame */}
-                            <div className="absolute inset-4 border border-[#ED9ABC]/20 scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500" />
+                                {/* Border Frame */}
+                                <div className="absolute inset-4 border border-[#ED9ABC]/20 scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500" />
+                            </Link>
                         </motion.div>
                     ))}
                 </div>

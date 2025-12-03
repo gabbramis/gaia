@@ -81,7 +81,7 @@ export const services = [
 // Navigation Links
 export const navLinks = [
   { href: "#servicios", label: "Servicios" },
-  { href: "#nosotros", label: "Nosotros" },
+  { href: "#nosotras", label: "Nosotras" },
   { href: "#portfolio", label: "Portfolio" },
   { href: "#contacto", label: "Contacto" },
 ] as const;

@@ -3,6 +3,7 @@
 import { motion } from 'motion/react';
 import { fadeInUp } from '@/lib/animations';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 export function Portfolio() {
@@ -35,6 +36,12 @@ export function Portfolio() {
                         transition={{ duration: 0.6 }}
                     >
                         <Link href="/contenidos" className="group block relative aspect-[4/3] md:aspect-[16/9] overflow-hidden border border-[#ED9ABC]/20 bg-[#ED9ABC]/5">
+                            <Image
+                                src="/portfolio-content.jpg"
+                                alt="Contenidos"
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-40 group-hover:opacity-30"
+                            />
                             <div className="absolute inset-0 bg-[#500712]/40 group-hover:bg-[#500712]/20 transition-colors duration-500" />
 
                             {/* Content */}
@@ -65,6 +72,12 @@ export function Portfolio() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
                         <Link href="/disenos-web" className="group block relative aspect-[4/3] md:aspect-[16/9] overflow-hidden border border-[#ED9ABC]/20 bg-[#ED9ABC]/5">
+                            <Image
+                                src="/portfolio-web-design.jpg"
+                                alt="Diseños Web"
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-40 group-hover:opacity-30"
+                            />
                             <div className="absolute inset-0 bg-[#500712]/40 group-hover:bg-[#500712]/20 transition-colors duration-500" />
 
                             {/* Content */}

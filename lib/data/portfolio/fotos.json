@@ -1,0 +1,58 @@
+{
+  "items": [
+    {
+      "id": "editorial-fashion",
+      "title": "Editorial de Moda",
+      "description": "Fotografía editorial para colección primavera/verano",
+      "category": "editorial",
+      "client": "Boutique Fashion",
+      "images": [
+        {
+          "src": "/images/portfolio/1.jpg",
+          "alt": "Editorial de moda - Imagen 1"
+        }
+      ],
+      "isCarousel": false,
+      "date": "2024-11-01T00:00:00Z",
+      "featured": true,
+      "order": 1,
+      "tags": ["moda", "editorial", "primavera"]
+    },
+    {
+      "id": "producto-cosmeticos",
+      "title": "Fotografía de Producto",
+      "description": "Línea de cosméticos naturales con iluminación natural",
+      "category": "product",
+      "client": "Beauty Co",
+      "images": [
+        {
+          "src": "/images/portfolio/2.jpg",
+          "alt": "Cosméticos naturales"
+        }
+      ],
+      "isCarousel": false,
+      "date": "2024-10-15T00:00:00Z",
+      "featured": true,
+      "order": 2,
+      "tags": ["producto", "cosmeticos", "belleza"]
+    },
+    {
+      "id": "lifestyle-session",
+      "title": "Sesión Lifestyle",
+      "description": "Fotografía lifestyle para marca de bienestar",
+      "category": "lifestyle",
+      "client": "Wellness Brand",
+      "images": [
+        {
+          "src": "/images/portfolio/3.jpg",
+          "alt": "Sesión lifestyle - Imagen 1"
+        }
+      ],
+      "isCarousel": false,
+      "date": "2024-10-01T00:00:00Z",
+      "featured": true,
+      "order": 3,
+      "tags": ["lifestyle", "bienestar", "natural"]
+    }
+  ]
+}
