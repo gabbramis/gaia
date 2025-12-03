@@ -33,9 +33,9 @@ export function Hero() {
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             className="font-serif text-6xl md:text-8xl lg:text-[10rem] leading-[0.9] tracking-tight text-[#F1DFD1] mb-6 relative"
           >
-            <span className="block">Donde las marcas</span>
+            <span className="block">Donde tu negocio</span>
             <span className="block font-monsieur text-[#ED9ABC] text-7xl md:text-9xl lg:text-[11rem] -mt-4 md:-mt-8 lg:-mt-12 opacity-90">
-              se vuelven arte
+              se vuelve arte
             </span>
           </motion.h1>
 
