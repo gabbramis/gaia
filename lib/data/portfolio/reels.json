@@ -7,8 +7,8 @@
       "client": "Skincare Brand",
       "video": {
         "platform": "instagram",
-        "embedUrl": "https://www.instagram.com/reel/placeholder/embed",
-        "videoId": "placeholder",
+        "embedUrl": "https://www.instagram.com/reel/DOMaqMlkdKt/embed",
+        "videoId": "DOMaqMlkdKt",
         "aspectRatio": "9:16"
       },
       "thumbnail": {
@@ -18,7 +18,11 @@
       "date": "2024-11-15T00:00:00Z",
       "featured": true,
       "order": 1,
-      "tags": ["producto", "skincare", "vertical"]
+      "tags": [
+        "producto",
+        "skincare",
+        "vertical"
+      ]
     },
     {
       "id": "reel-behind-scenes",
@@ -27,8 +31,8 @@
       "client": "Fashion Magazine",
       "video": {
         "platform": "tiktok",
-        "embedUrl": "https://www.tiktok.com/embed/placeholder",
-        "videoId": "placeholder",
+        "embedUrl": "https://www.youtube.com/embed/O2U5Rhp2HDE?si=gqqfgy7fUSmKKRLn",
+        "videoId": "O2U5Rhp2HDE",
         "aspectRatio": "9:16"
       },
       "thumbnail": {
@@ -38,7 +42,11 @@
       "date": "2024-11-01T00:00:00Z",
       "featured": true,
       "order": 2,
-      "tags": ["bts", "editorial", "vertical"]
+      "tags": [
+        "bts",
+        "editorial",
+        "vertical"
+      ]
     }
   ]
 }

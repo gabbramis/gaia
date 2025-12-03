@@ -45,7 +45,7 @@ export function Portfolio() {
                             <div className="absolute inset-0 bg-[#500712]/40 group-hover:bg-[#500712]/20 transition-colors duration-500" />
 
                             {/* Content */}
-                            <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-8">
+                            <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-4 md:p-6 lg:p-8">
                                 <h3 className="font-serif text-4xl md:text-6xl text-[#F1DFD1] mb-4 group-hover:scale-110 transition-transform duration-700">
                                     Contenidos
                                 </h3>
@@ -81,7 +81,7 @@ export function Portfolio() {
                             <div className="absolute inset-0 bg-[#500712]/40 group-hover:bg-[#500712]/20 transition-colors duration-500" />
 
                             {/* Content */}
-                            <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-8">
+                            <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-4 md:p-6 lg:p-8">
                                 <h3 className="font-serif text-4xl md:text-6xl text-[#F1DFD1] mb-4 group-hover:scale-110 transition-transform duration-700">
                                     Diseños Web
                                 </h3>

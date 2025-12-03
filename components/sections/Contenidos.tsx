@@ -9,21 +9,21 @@ const contentCategories = [
     {
         id: 'fotos',
         title: 'Fotos',
-        href: '/contenidos/fotos',
+        href: '#fotos',
         image: '/images/portfolio/1.jpg',
         description: 'Fotografía Editorial'
     },
     {
         id: 'reels',
         title: 'Reels',
-        href: '/contenidos/reels',
+        href: '#reels',
         image: '/images/portfolio/2.jpg',
         description: 'Contenido Vertical'
     },
     {
         id: 'campanas',
         title: 'Campañas',
-        href: '/contenidos/campanas',
+        href: '#campanas',
         image: '/images/portfolio/3.jpg',
         description: 'Producción Integral'
     }
@@ -31,7 +31,7 @@ const contentCategories = [
 
 export function Contenidos() {
     return (
-        <section id="contenidos" className="relative bg-[#500712] py-32 px-6 md:px-12 border-t border-[#ED9ABC]/10">
+        <section id="contenidos" className="relative bg-[#500712] py-16 md:py-32 px-6 md:px-12 border-t border-[#ED9ABC]/10">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <motion.div
@@ -39,7 +39,7 @@ export function Contenidos() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={fadeInUp}
-                    className="mb-24 text-center"
+                    className="mb-12 md:mb-24 text-center"
                 >
                     <span className="block text-[#ED9ABC] text-sm tracking-[0.3em] uppercase mb-4">
                         Visual Storytelling
@@ -71,11 +71,11 @@ export function Contenidos() {
                                 </div>
 
                                 {/* Overlay Content */}
-                                <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-[#500712] via-transparent to-transparent">
+                                <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-6 lg:p-8 bg-gradient-to-t from-[#500712] via-transparent to-transparent">
                                     <span className="font-sans text-xs text-[#ED9ABC] uppercase tracking-[0.2em] mb-2 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                                         {item.description}
                                     </span>
-                                    <h3 className="font-serif text-4xl text-[#F1DFD1] group-hover:text-[#ED9ABC] transition-colors duration-300">
+                                    <h3 className="font-serif text-3xl md:text-4xl text-[#F1DFD1] group-hover:text-[#ED9ABC] transition-colors duration-300">
                                         {item.title}
                                     </h3>
                                 </div>

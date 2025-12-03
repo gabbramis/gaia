@@ -65,7 +65,7 @@ export function WebDesigns() {
 
                                 <div className="mt-6 flex justify-between items-baseline">
                                     <div>
-                                        <h3 className="font-serif text-2xl text-[#F1DFD1] group-hover:text-[#ED9ABC] transition-colors duration-300">
+                                        <h3 className="font-serif text-xl md:text-2xl text-[#F1DFD1] group-hover:text-[#ED9ABC] transition-colors duration-300">
                                             {project.title}
                                         </h3>
                                         {project.subtitle && (
@@ -75,7 +75,7 @@ export function WebDesigns() {
                                         )}
                                     </div>
                                     {project.url && (
-                                        <span className="font-sans text-xs text-[#ED9ABC]/40 uppercase tracking-widest group-hover:text-[#ED9ABC] transition-colors duration-300">
+                                        <span className="font-sans text-[10px] sm:text-xs text-[#ED9ABC]/40 uppercase tracking-widest group-hover:text-[#ED9ABC] transition-colors duration-300">
                                             Visit Website ↗
                                         </span>
                                     )}
