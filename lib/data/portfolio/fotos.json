@@ -5,10 +5,10 @@
       "title": "Editorial de Moda",
       "description": "Fotografía editorial para colección primavera/verano",
       "category": "editorial",
-      "client": "Boutique Fashion",
+      "client": "Chic Collection",
       "images": [
         {
-          "src": "/images/portfolio/1.jpg",
+          "src": "/portfolio/fotos/chic-image-2.png",
           "alt": "Editorial de moda - Imagen 1"
         }
       ],
@@ -16,7 +16,11 @@
       "date": "2024-11-01T00:00:00Z",
       "featured": true,
       "order": 1,
-      "tags": ["moda", "editorial", "primavera"]
+      "tags": [
+        "moda",
+        "editorial",
+        "primavera"
+      ]
     },
     {
       "id": "producto-cosmeticos",
@@ -26,7 +30,7 @@
       "client": "Beauty Co",
       "images": [
         {
-          "src": "/images/portfolio/2.jpg",
+          "src": "/portfolio/fotos/chic-image.jpeg",
           "alt": "Cosméticos naturales"
         }
       ],
@@ -34,7 +38,11 @@
       "date": "2024-10-15T00:00:00Z",
       "featured": true,
       "order": 2,
-      "tags": ["producto", "cosmeticos", "belleza"]
+      "tags": [
+        "producto",
+        "cosmeticos",
+        "belleza"
+      ]
     },
     {
       "id": "lifestyle-session",
@@ -44,7 +52,7 @@
       "client": "Wellness Brand",
       "images": [
         {
-          "src": "/images/portfolio/3.jpg",
+          "src": "/portfolio/fotos/chic-image-3.jpeg",
           "alt": "Sesión lifestyle - Imagen 1"
         }
       ],
@@ -52,7 +60,33 @@
       "date": "2024-10-01T00:00:00Z",
       "featured": true,
       "order": 3,
-      "tags": ["lifestyle", "bienestar", "natural"]
+      "tags": [
+        "lifestyle",
+        "bienestar",
+        "natural"
+      ]
+    },
+    {
+      "id": "producto-panaderia",
+      "title": "Panadería",
+      "description": "Fotografía editorial para colección panadería",
+      "category": "producto",
+      "client": "Panadería",
+      "images": [
+        {
+          "src": "/portfolio/fotos/bread-image.png",
+          "alt": "Panadería - Imagen 1"
+        }
+      ],
+      "isCarousel": false,
+      "date": "2024-11-01T00:00:00Z",
+      "featured": true,
+      "order": 1,
+      "tags": [
+        "panadería",
+        "producto",
+        "pan"
+      ]
     }
   ]
 }

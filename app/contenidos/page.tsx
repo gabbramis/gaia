@@ -1,10 +1,10 @@
 'use client';
 
 import { Navigation } from '@/components/ui/Navigation';
-import { Contenidos } from '@/components/sections/Contenidos';
+//import { Contenidos } from '@/components/sections/Contenidos';
 import { FotosGallery } from '@/components/sections/portfolio/FotosGallery';
 import { ReelsGallery } from '@/components/sections/portfolio/ReelsGallery';
-import { CampanasGallery } from '@/components/sections/portfolio/CampanasGallery';
+//import { CampanasGallery } from '@/components/sections/portfolio/CampanasGallery';
 import { Footer } from '@/components/sections/Footer';
 
 export default function ContenidosPage() {
@@ -13,12 +13,12 @@ export default function ContenidosPage() {
             <Navigation />
             <div className="pt-20"> {/* Add padding for fixed nav */}
                 {/* Gateway Section */}
-                <Contenidos />
+                {/*Contenidos*/}
 
                 {/* Gallery Sections */}
                 <FotosGallery />
                 <ReelsGallery />
-                <CampanasGallery />
+                {/*<CampanasGallery />*/}
             </div>
             <Footer />
         </main>
