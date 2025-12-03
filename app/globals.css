@@ -154,11 +154,19 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Offset for fixed navigation */
+    scroll-padding-top: 80px;
+    /* Offset for fixed navigation */
+    overflow-x: hidden;
+    width: 100%;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-geist-sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
   }
 
   /* Font configuration */

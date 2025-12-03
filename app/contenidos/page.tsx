@@ -9,7 +9,7 @@ import { Footer } from '@/components/sections/Footer';
 
 export default function ContenidosPage() {
     return (
-        <main className="bg-[#500712] min-h-screen scroll-smooth">
+        <main className="bg-[#500712] min-h-screen scroll-smooth overflow-x-hidden w-full">
             <Navigation />
             <div className="pt-20"> {/* Add padding for fixed nav */}
                 {/* Gateway Section */}
