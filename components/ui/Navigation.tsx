@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
 import { navLinks } from '@/lib/constants';
 import { Menu, X } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -77,7 +78,14 @@ export function Navigation() {
             }}
             className="font-serif text-2xl md:text-3xl text-[#F1DFD1] hover:text-[#ED9ABC] transition-colors duration-300 tracking-tight relative z-50"
           >
-            <img src="/logo-pink.png" className="h-10 sm:h-12 md:h-14 w-auto" alt="Gaia Logo" />
+            <Image
+              src="/logo-pink.png"
+              alt="Gaia Logo"
+              width={56}
+              height={56}
+              priority
+              className="h-10 sm:h-12 md:h-14 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}

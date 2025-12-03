@@ -40,6 +40,7 @@ export function Portfolio() {
                                 src="/portfolio-content.jpg"
                                 alt="Contenidos"
                                 fill
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                                 className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-40 group-hover:opacity-30"
                             />
                             <div className="absolute inset-0 bg-[#500712]/40 group-hover:bg-[#500712]/20 transition-colors duration-500" />
@@ -76,6 +77,7 @@ export function Portfolio() {
                                 src="/portfolio-web-design.jpg"
                                 alt="Diseños Web"
                                 fill
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                                 className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-40 group-hover:opacity-30"
                             />
                             <div className="absolute inset-0 bg-[#500712]/40 group-hover:bg-[#500712]/20 transition-colors duration-500" />

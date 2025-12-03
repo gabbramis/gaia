@@ -102,6 +102,7 @@ export function FotosGallery() {
                                             src={item.images[0].src}
                                             alt={item.images[0].alt}
                                             fill
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                             className="object-cover transition-transform duration-700 group-hover/card:scale-105 opacity-80 group-hover/card:opacity-100"
                                         />
 

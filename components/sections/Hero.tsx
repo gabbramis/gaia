@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 export function Hero() {
   const handleCTA = () => {
@@ -25,7 +26,15 @@ export function Hero() {
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 md:px-12 pt-20">
 
         <div className="max-w-7xl text-center flex flex-col items-center">
-          <div> <img src="gaia-name.png" alt="" /></div>
+          <div className="relative w-full max-w-2xl h-32 mb-8">
+            <Image
+              src="/gaia-name.png"
+              alt="Gaia Studio"
+              fill
+              priority
+              className="object-contain"
+            />
+          </div>
           {/* Main Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}

@@ -2,6 +2,7 @@
 
 import { navLinks, socialLinks, contactInfo } from '@/lib/constants';
 import { Instagram, Linkedin, Dribbble } from 'lucide-react';
+import Image from 'next/image';
 
 const iconMap = {
   Instagram,
@@ -23,7 +24,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand Section */}
           <div>
-            <img src="logo-pink.png" className="h-16 w-auto" alt="Gaia Logo" />
+            <Image
+              src="/logo-pink.png"
+              alt="Gaia Logo"
+              width={64}
+              height={64}
+              className="h-16 w-auto"
+            />
             <p className="font-sans text-base text-white/80 leading-relaxed">
               Un estudio creativo que eleva marcas con intención, estética y visión.
             </p>
