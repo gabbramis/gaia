@@ -67,6 +67,50 @@
       ]
     },
     {
+      "id": "producto-cosmeticos-2",
+      "title": "Fotografía de Producto",
+      "description": "Línea de cosméticos naturales con iluminación natural",
+      "category": "product",
+      "client": "Beauty Co",
+      "images": [
+        {
+          "src": "/portfolio/fotos/chic-image-4.jpeg",
+          "alt": "Cosméticos naturales"
+        }
+      ],
+      "isCarousel": false,
+      "date": "2024-10-15T00:00:00Z",
+      "featured": true,
+      "order": 4,
+      "tags": [
+        "producto",
+        "cosmeticos",
+        "belleza"
+      ]
+    },
+    {
+      "id": "producto-cosmeticos-3",
+      "title": "Fotografía de Producto",
+      "description": "Línea de cosméticos naturales con iluminación natural",
+      "category": "product",
+      "client": "Beauty Co",
+      "images": [
+        {
+          "src": "/portfolio/fotos/chic-image-5.jpeg",
+          "alt": "Cosméticos naturales"
+        }
+      ],
+      "isCarousel": false,
+      "date": "2024-10-15T00:00:00Z",
+      "featured": true,
+      "order": 5,
+      "tags": [
+        "producto",
+        "cosmeticos",
+        "belleza"
+      ]
+    },
+    {
       "id": "producto-panaderia",
       "title": "Panadería",
       "description": "Fotografía editorial para colección panadería",

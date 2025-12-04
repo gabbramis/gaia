@@ -2,21 +2,39 @@
   "projects": [
     {
       "id": "luxury-ecommerce",
-      "title": "Luxury E-commerce",
+      "title": "E-commerce",
       "subtitle": "Tienda Online Premium",
-      "description": "Plataforma de e-commerce para marca de lujo con experiencia de compra inmersiva",
+      "description": "Plataforma de e-commerce para marca de joyería con experiencia de compra inmersiva",
       "category": "ecommerce",
       "images": {
         "cover": {
-          "src": "/images/portfolio/4.jpg",
-          "alt": "Luxury E-commerce - Homepage"
+          "src": "/portfolio/web-designs/adrianacostaorfebre.png",
+          "alt": "E-commerce - Homepage"
         }
       },
-      "url": "https://example.com/luxury-ecommerce",
+      "url": "https://www.adrianacostaorfebre.com/",
       "year": 2024,
       "featured": true,
       "publishedAt": "2024-11-01T00:00:00Z",
       "order": 1
+    },
+    {
+      "id": "chic-collection",
+      "title": "Chic Collection",
+      "subtitle": "Portfolio Creativo",
+      "description": "Portfolio interactivo para agencia creativa con animaciones elegantes",
+      "category": "portfolio",
+      "images": {
+        "cover": {
+          "src": "/portfolio/web-designs/chic.png",
+          "alt": "Creative Portfolio - Homepage"
+        }
+      },
+      "url": "https://www.chiccollectionuy.com/",
+      "year": 2024,
+      "featured": true,
+      "publishedAt": "2024-10-01T00:00:00Z",
+      "order": 3
     },
     {
       "id": "corporate-identity",
@@ -26,51 +44,15 @@
       "category": "corporate",
       "images": {
         "cover": {
-          "src": "/images/portfolio/5.jpg",
+          "src": "/portfolio/web-designs/motoservice.png",
           "alt": "Corporate Identity - Homepage"
         }
       },
-      "url": "https://example.com/corporate",
+      "url": "https://motoservice.com.uy/",
       "year": 2024,
       "featured": true,
       "publishedAt": "2024-10-15T00:00:00Z",
       "order": 2
-    },
-    {
-      "id": "creative-portfolio",
-      "title": "Creative Portfolio",
-      "subtitle": "Portfolio Creativo",
-      "description": "Portfolio interactivo para agencia creativa con animaciones elegantes",
-      "category": "portfolio",
-      "images": {
-        "cover": {
-          "src": "/images/portfolio/6.jpg",
-          "alt": "Creative Portfolio - Homepage"
-        }
-      },
-      "url": "https://example.com/portfolio",
-      "year": 2024,
-      "featured": true,
-      "publishedAt": "2024-10-01T00:00:00Z",
-      "order": 3
-    },
-    {
-      "id": "landing-page",
-      "title": "Landing Page",
-      "subtitle": "Página de Aterrizaje",
-      "description": "Landing page de conversión para lanzamiento de producto",
-      "category": "landing",
-      "images": {
-        "cover": {
-          "src": "/images/portfolio/1.jpg",
-          "alt": "Landing Page - Hero Section"
-        }
-      },
-      "url": "https://example.com/landing",
-      "year": 2024,
-      "featured": false,
-      "publishedAt": "2024-09-15T00:00:00Z",
-      "order": 4
     }
   ]
 }
