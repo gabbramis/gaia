@@ -53,6 +53,24 @@
       "featured": true,
       "publishedAt": "2024-10-15T00:00:00Z",
       "order": 2
+    },
+    {
+      "id": "aromacafe",
+      "title": "AromaCafe",
+      "subtitle": "Sitio Informativo",
+      "description": "Sitio web informativo para cafetería con identidad visual refinada",
+      "category": "informativo",
+      "images": {
+        "cover": {
+          "src": "/portfolio/web-designs/aromacafe.png",
+          "alt": "Corporate Identity - Homepage"
+        }
+      },
+      "url": "https://aromacafe-lemon.vercel.app/",
+      "year": 2024,
+      "featured": true,
+      "publishedAt": "2024-10-15T00:00:00Z",
+      "order": 4
     }
   ]
 }

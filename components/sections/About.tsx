@@ -27,7 +27,7 @@ export function About() {
               </span>
 
               <h2 className="font-serif text-6xl md:text-8xl lg:text-9xl text-[#F1DFD1] mb-12 tracking-tighter leading-[0.8]">
-                Noso<br />tras<span className="text-[#ED9ABC]">.</span>
+                Nosotras<span className="text-[#ED9ABC]">.</span>
               </h2>
 
               <div className="hidden lg:block w-full h-px bg-[#ED9ABC]/20 my-12" />
@@ -57,7 +57,7 @@ export function About() {
             {/* Secondary Text Columns */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-sans text-[#F1DFD1]/80 text-lg leading-relaxed tracking-wide">
               <p>
-                Nuestro enfoque combina <span className="text-[#ED9ABC] italic font-serif">diseño editorial</span>, pensamiento estratégico y una sensibilidad femenina que transforma lo ordinario en extraordinario.
+                Nuestro enfoque combina <span className="text-[#ED9ABC] italic font-serif">diseño editorial</span>, pensamiento estratégico y compromiso con la calidad que transforma lo ordinario en extraordinario.
               </p>
               <p>
                 Trabajamos con marcas que buscan algo más que lo convencional. Marcas que aspiran a <span className="text-[#ED9ABC] italic font-serif">ser arte</span>.
