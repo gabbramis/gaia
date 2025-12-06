@@ -3,7 +3,7 @@
 import { Navigation } from '@/components/ui/Navigation';
 //import { Contenidos } from '@/components/sections/Contenidos';
 import { FotosGallery } from '@/components/sections/portfolio/FotosGallery';
-//import { ReelsGallery } from '@/components/sections/portfolio/ReelsGallery';
+import { ReelsGallery } from '@/components/sections/portfolio/ReelsGallery';
 //import { CampanasGallery } from '@/components/sections/portfolio/CampanasGallery';
 import { Footer } from '@/components/sections/Footer';
 
@@ -17,7 +17,7 @@ export default function ContenidosPage() {
 
                 {/* Gallery Sections */}
                 <FotosGallery />
-                {/*<ReelsGallery />*/}
+                <ReelsGallery />
                 {/*<CampanasGallery />*/}
             </div>
             <Footer />

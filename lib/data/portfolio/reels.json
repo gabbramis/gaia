@@ -1,38 +1,38 @@
 {
   "items": [
     {
-      "id": "reel-producto-skincare",
-      "title": "Lanzamiento Skincare",
-      "description": "Reel promocional para nueva línea de cuidado de la piel",
-      "client": "Skincare Brand",
-      "video": {
-        "platform": "instagram",
-        "embedUrl": "https://www.instagram.com/reel/DOMaqMlkdKt/embed",
-        "videoId": "DOMaqMlkdKt",
-        "aspectRatio": "9:16"
-      },
-      "thumbnail": {
-        "src": "/images/portfolio/1.jpg",
-        "alt": "Thumbnail reel skincare"
-      },
-      "date": "2024-11-15T00:00:00Z",
-      "featured": true,
-      "order": 1,
-      "tags": [
-        "producto",
-        "skincare",
-        "vertical"
-      ]
-    },
-    {
       "id": "reel-behind-scenes",
       "title": "Behind the Scenes",
       "description": "Detrás de cámaras de sesión editorial",
       "client": "Fashion Magazine",
       "video": {
         "platform": "tiktok",
-        "embedUrl": "https://www.youtube.com/embed/O2U5Rhp2HDE?si=gqqfgy7fUSmKKRLn",
-        "videoId": "O2U5Rhp2HDE",
+        "embedUrl": "https://www.youtube.com/embed/lNY_vSFE-e4?si=yFRXCWO3jG4yZBsq",
+        "videoId": "lNY_vSFE-e4",
+        "aspectRatio": "9:16"
+      },
+      "thumbnail": {
+        "src": "/images/portfolio/2.jpg",
+        "alt": "Thumbnail behind the scenes"
+      },
+      "date": "2024-11-01T00:00:00Z",
+      "featured": true,
+      "order": 2,
+      "tags": [
+        "bts",
+        "editorial",
+        "vertical"
+      ]
+    },
+    {
+      "id": "",
+      "title": "sss",
+      "description": "sss",
+      "client": "sss",
+      "video": {
+        "platform": "tiktok",
+        "embedUrl": "https://www.youtube.com/embed/HqP13FBb-pQ?si=hc4srp-lAAl7Mh14",
+        "videoId": "HqP13FBb-pQ",
         "aspectRatio": "9:16"
       },
       "thumbnail": {
