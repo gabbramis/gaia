@@ -6,7 +6,7 @@
       "description": "Detrás de cámaras de sesión editorial",
       "client": "Fashion Magazine",
       "video": {
-        "platform": "tiktok",
+        "platform": "youtube",
         "embedUrl": "https://www.youtube.com/embed/lNY_vSFE-e4?si=yFRXCWO3jG4yZBsq",
         "videoId": "lNY_vSFE-e4",
         "aspectRatio": "9:16"
@@ -25,12 +25,12 @@
       ]
     },
     {
-      "id": "",
-      "title": "sss",
-      "description": "sss",
-      "client": "sss",
+      "id": "reel-loreal-paris",
+      "title": "L'Oréal Paris",
+      "description": "Probando la nueva edición de L'Oréal Paris",
+      "client": "L'Oréal Paris",
       "video": {
-        "platform": "tiktok",
+        "platform": "youtube",
         "embedUrl": "https://www.youtube.com/embed/HqP13FBb-pQ?si=hc4srp-lAAl7Mh14",
         "videoId": "HqP13FBb-pQ",
         "aspectRatio": "9:16"
@@ -42,6 +42,66 @@
       "date": "2024-11-01T00:00:00Z",
       "featured": true,
       "order": 2,
+      "tags": [
+        "bts",
+        "editorial",
+        "vertical"
+      ]
+    },
+    {
+      "id": "reel-burrito",
+      "title": "Burrito",
+      "description": "Probando la nueva edición de Burrito",
+      "client": "Burrito",
+      "video": {
+        "platform": "youtube",
+        "embedUrl": "https://www.youtube.com/embed/0KyBtaStL3U?si=bIcSmiy_kBaHn5aX",
+        "videoId": "0KyBtaStL3U",
+        "aspectRatio": "9:16"
+      },
+      "date": "2024-11-01T00:00:00Z",
+      "featured": true,
+      "order": 2,
+      "tags": [
+        "bts",
+        "editorial",
+        "vertical"
+      ]
+    },
+    {
+      "id": "reel-matcha",
+      "title": "Matcha",
+      "description": "Probando la nueva edición de Matcha",
+      "client": "Matcha",
+      "video": {
+        "platform": "youtube",
+        "embedUrl": "https://www.youtube.com/embed/jzyX0leH9gk?si=U9Uaz1BH6QZjp88h",
+        "videoId": "jzyX0leH9gk",
+        "aspectRatio": "9:16"
+      },
+      "date": "2024-11-01T00:00:00Z",
+      "featured": true,
+      "order": 2,
+      "tags": [
+        "bts",
+        "editorial",
+        "vertical"
+      ]
+    },
+    {
+      "id": "reel-aroma",
+      "title": "Aroma",
+      "description": "Probando la nueva edición de Aroma",
+      "client": "Aroma",
+      "video": {
+        "platform": "youtube",
+        "embedUrl": "https://www.youtube.com/embed/QPrDlSDGE04?si=DVqNnyL9EUfC7tZN",
+        "videoId": "QPrDlSDGE04",
+        "aspectRatio": "9:16"
+      },
+      "date": "2024-11-01T00:00:00Z",
+      "featured": true,
+      "order": 3,
       "tags": [
         "bts",
         "editorial",
