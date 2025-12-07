@@ -2,7 +2,7 @@
   "projects": [
     {
       "id": "luxury-ecommerce",
-      "title": "E-commerce",
+      "title": "Adriana Costa Orfebre",
       "subtitle": "Tienda Online Premium",
       "description": "Plataforma de e-commerce para marca de joyería con experiencia de compra inmersiva",
       "category": "ecommerce",
@@ -38,7 +38,7 @@
     },
     {
       "id": "corporate-identity",
-      "title": "Corporate Identity",
+      "title": "Auxilio Motoservice",
       "subtitle": "Sitio Corporativo",
       "description": "Sitio web corporativo moderno con identidad visual refinada",
       "category": "corporate",
@@ -71,6 +71,24 @@
       "featured": true,
       "publishedAt": "2024-10-15T00:00:00Z",
       "order": 4
+    },
+    {
+      "id": "triumf",
+      "title": "Trium Seguridad",
+      "subtitle": "Sitio Corporativo",
+      "description": "Sitio web corporativo moderno con identidad visual refinada",
+      "category": "corporate",
+      "images": {
+        "cover": {
+          "src": "/portfolio/web-designs/trium.png",
+          "alt": "Corporate Identity - Homepage"
+        }
+      },
+      "url": "https://triumseguridad.uy/",
+      "year": 2024,
+      "featured": true,
+      "publishedAt": "2024-10-15T00:00:00Z",
+      "order": 5
     }
   ]
 }
