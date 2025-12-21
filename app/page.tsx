@@ -3,6 +3,7 @@
 import { Navigation } from '@/components/ui/Navigation';
 import { Hero } from '@/components/sections/Hero';
 import { Services } from '@/components/sections/Services';
+import { Process } from '@/components/sections/Process';
 import { About } from '@/components/sections/About';
 import { Portfolio } from '@/components/sections/Portfolio';
 import { Contact } from '@/components/sections/Contact';
@@ -14,6 +15,7 @@ export default function Home() {
       <Navigation />
       <Hero />
       <Services />
+      <Process />
       <About />
       <Portfolio />
       <Contact />
