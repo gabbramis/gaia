@@ -5,22 +5,36 @@ import { fadeInUp } from "@/lib/animations";
 import { Button } from "@/components/ui/button";
 import { contactInfo } from "@/lib/constants";
 import { useState } from "react";
+import { Cherry } from "lucide-react";
 
 export function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleContact = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, email, message }),
-    });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -47,55 +61,95 @@ export function Contact() {
           </p>
         </div>
 
-        <motion.form
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          onSubmit={handleContact}
-          className="space-y-12"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {!isSubmitted ? (
+          <motion.form
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            onSubmit={handleContact}
+            className="space-y-12"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="group">
+                <input
+                  type="text"
+                  placeholder="Nombre"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full bg-transparent border-b border-[#ED9ABC]/30 py-4 text-[#F1DFD1] placeholder-[#F1DFD1]/30 focus:outline-none focus:border-[#ED9ABC] transition-colors duration-300 font-sans tracking-wide"
+                />
+              </div>
+              <div className="group">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full bg-transparent border-b border-[#ED9ABC]/30 py-4 text-[#F1DFD1] placeholder-[#F1DFD1]/30 focus:outline-none focus:border-[#ED9ABC] transition-colors duration-300 font-sans tracking-wide"
+                />
+              </div>
+            </div>
+
             <div className="group">
-              <input
-                type="text"
-                placeholder="Nombre"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="w-full bg-transparent border-b border-[#ED9ABC]/30 py-4 text-[#F1DFD1] placeholder-[#F1DFD1]/30 focus:outline-none focus:border-[#ED9ABC] transition-colors duration-300 font-sans tracking-wide"
+              <textarea
+                placeholder="Mensaje"
+                required
+                rows={4}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className="w-full bg-transparent border-b border-[#ED9ABC]/30 py-4 text-[#F1DFD1] placeholder-[#F1DFD1]/30 focus:outline-none focus:border-[#ED9ABC] transition-colors duration-300 font-sans tracking-wide resize-none"
               />
             </div>
-            <div className="group">
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-transparent border-b border-[#ED9ABC]/30 py-4 text-[#F1DFD1] placeholder-[#F1DFD1]/30 focus:outline-none focus:border-[#ED9ABC] transition-colors duration-300 font-sans tracking-wide"
-              />
+
+            <div className="flex justify-center pt-8">
+              <Button
+                size="lg"
+                type="submit"
+                disabled={isSubmitting}
+                className="bg-transparent border border-[#ED9ABC] text-[#ED9ABC] hover:bg-[#ED9ABC] hover:text-[#500712] rounded-none px-16 py-6 text-sm tracking-[0.15em] uppercase transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
+              </Button>
             </div>
-          </div>
-
-          <div className="group">
-            <textarea
-              placeholder="Mensaje"
-              rows={4}
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className="w-full bg-transparent border-b border-[#ED9ABC]/30 py-4 text-[#F1DFD1] placeholder-[#F1DFD1]/30 focus:outline-none focus:border-[#ED9ABC] transition-colors duration-300 font-sans tracking-wide resize-none"
-            />
-          </div>
-
-          <div className="flex justify-center pt-8">
-            <Button
-              size="lg"
-              type="submit"
-              className="bg-transparent border border-[#ED9ABC] text-[#ED9ABC] hover:bg-[#ED9ABC] hover:text-[#500712] rounded-none px-16 py-6 text-sm tracking-[0.15em] uppercase transition-all duration-500"
+          </motion.form>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-center py-12 md:py-20"
+          >
+            <div className="mb-8">
+              <div className="inline-block mb-6">
+                <Cherry className="w-12 h-12 text-[#ED9ABC] animate-pulse" strokeWidth={1.5} />
+              </div>
+              <h3 className="font-serif text-3xl md:text-4xl text-[#F1DFD1] mb-6">
+                ¡Gracias!
+              </h3>
+              <p className="font-sans text-[#F1DFD1]/70 text-lg md:text-xl max-w-lg mx-auto leading-relaxed mb-10">
+                ¡Que lindo que quieras ser parte de Gaia! Pronto nos estaremos contactando contigo.
+                Te dejamos nuestro instagram para que veas mas de cerca nuestro trabajo.
+              </p>
+              <a
+                href="https://www.instagram.com/gaia_studio?igsh=MWszOGh5ZnN0MWxpag=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block border border-[#ED9ABC] text-[#ED9ABC] hover:bg-[#ED9ABC] hover:text-[#500712] px-8 py-3 text-sm tracking-[0.2em] uppercase transition-all duration-500"
+              >
+                Instagram
+              </a>
+            </div>
+            <button
+              onClick={() => setIsSubmitted(false)}
+              className="text-[#ED9ABC]/40 hover:text-[#ED9ABC] text-xs uppercase tracking-[0.2em] transition-colors"
             >
-              Enviar Mensaje
-            </Button>
-          </div>
-        </motion.form>
+              Enviar otro mensaje
+            </button>
+          </motion.div>
+        )}
 
         <div className="mt-24 pt-12 border-t border-[#ED9ABC]/10 flex flex-col md:flex-row justify-between items-center gap-8 text-[#F1DFD1]/40 font-sans text-sm tracking-widest uppercase">
           <a href={`mailto:${contactInfo.email}`} className="hover:text-[#ED9ABC] transition-colors">
