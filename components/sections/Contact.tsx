@@ -1,14 +1,26 @@
-'use client';
+"use client";
 
-import { motion } from 'motion/react';
-import { fadeInUp } from '@/lib/animations';
-import { Button } from '@/components/ui/button';
-import { contactInfo } from '@/lib/constants';
+import { motion } from "motion/react";
+import { fadeInUp } from "@/lib/animations";
+import { Button } from "@/components/ui/button";
+import { contactInfo } from "@/lib/constants";
+import { useState } from "react";
 
 export function Contact() {
-  const handleContact = (e: React.FormEvent) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleContact = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
+
+    await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, message }),
+    });
   };
 
   return (
@@ -24,7 +36,7 @@ export function Contact() {
           <motion.h2
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
             className="font-serif text-5xl md:text-7xl text-[#F1DFD1] mb-8 tracking-tight"
           >
@@ -48,6 +60,8 @@ export function Contact() {
               <input
                 type="text"
                 placeholder="Nombre"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="w-full bg-transparent border-b border-[#ED9ABC]/30 py-4 text-[#F1DFD1] placeholder-[#F1DFD1]/30 focus:outline-none focus:border-[#ED9ABC] transition-colors duration-300 font-sans tracking-wide"
               />
             </div>
@@ -55,6 +69,8 @@ export function Contact() {
               <input
                 type="email"
                 placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full bg-transparent border-b border-[#ED9ABC]/30 py-4 text-[#F1DFD1] placeholder-[#F1DFD1]/30 focus:outline-none focus:border-[#ED9ABC] transition-colors duration-300 font-sans tracking-wide"
               />
             </div>
@@ -64,6 +80,8 @@ export function Contact() {
             <textarea
               placeholder="Mensaje"
               rows={4}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               className="w-full bg-transparent border-b border-[#ED9ABC]/30 py-4 text-[#F1DFD1] placeholder-[#F1DFD1]/30 focus:outline-none focus:border-[#ED9ABC] transition-colors duration-300 font-sans tracking-wide resize-none"
             />
           </div>
