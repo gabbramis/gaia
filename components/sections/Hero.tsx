@@ -63,7 +63,7 @@ export function Hero() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
             className="font-sans text-sm md:text-base text-[#F1DFD1]/80 tracking-[0.2em] uppercase max-w-2xl mx-auto mb-12 leading-relaxed"
           >
-            Un estudio creativo que eleva marcas con intención, estética y visión.
+            Pensamos, diseñamos y ejecutamos soluciones digitales alineadas a los objetivos reales de tu negocio.
 
           </motion.p>
 

@@ -44,8 +44,7 @@ export function Services() {
             </h2>
           </div>
           <p className="font-sans text-[#F1DFD1]/60 max-w-md text-sm md:text-base leading-relaxed tracking-wide">
-            Ofrecemos soluciones integrales diseñadas para posicionar tu marca en el mercado.
-          </p>
+            Ofrecemos soluciones digitales diseñadas según el momento y las necesidades de tu marca.          </p>
         </motion.div>
 
         {/* Services Grid */}
@@ -85,7 +84,7 @@ export function Services() {
             ¿No sabés por dónde empezar?
           </h3>
           <p className="font-sans text-[#F1DFD1]/60 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-8">
-            Es normal. Cada marca está en un momento diferente. Agendá una llamada estratégica gratuita y analizamos juntas qué necesita tu proyecto hoy.
+            Es normal. Cada marca está en un momento distinto. Agendá una llamada estratégica gratuita y analizamos juntas qué necesita tu proyecto hoy.
           </p>
           <Link
             href="#contacto"
