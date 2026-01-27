@@ -113,14 +113,14 @@ export function FotosGallery() {
                                                     {item.client}
                                                 </span>
                                             )}
-                                            <h3 className="font-serif text-xl md:text-2xl text-[#F1DFD1] mb-2">
+                                            {/*<h3 className="font-serif text-xl md:text-2xl text-[#F1DFD1] mb-2">
                                                 {item.title}
                                             </h3>
                                             {item.description && (
                                                 <p className="font-sans text-sm text-[#F1DFD1]/70 line-clamp-2">
                                                     {item.description}
                                                 </p>
-                                            )}
+                                            )}*/}
                                         </div>
 
                                         {/* Border Frame */}

@@ -1,6 +1,126 @@
 {
   "items": [
     {
+      "id": "reel-laislacafe",
+      "title": "La Isla Cafe",
+      "description": "Probando la nueva edición de La Isla Cafe",
+      "client": "La Isla Cafe",
+      "video": {
+        "platform": "youtube",
+        "embedUrl": "https://www.youtube.com/embed/NF46WAgkNuM?si=NLOpK3fXcJ9MoPRU",
+        "videoId": "NF46WAgkNuM",
+        "aspectRatio": "9:16"
+      },
+      "thumbnail": {
+        "src": "/images/portfolio/2.jpg",
+        "alt": "Thumbnail behind the scenes"
+      },
+      "date": "2024-11-01T00:00:00Z",
+      "featured": true,
+      "order": 1,
+      "tags": [
+        "bts",
+        "editorial",
+        "vertical"
+      ]
+    },
+    {
+      "id": "reel-gaia-pauta",
+      "title": "Gaia",
+      "description": "¿Qué es una pauta y para qué sirve? 🍒",
+      "client": "Gaia",
+      "video": {
+        "platform": "youtube",
+        "embedUrl": "https://www.youtube.com/embed/YeQCJpKtQTk?si=h-4TTs38t8INJLGU",
+        "videoId": "YeQCJpKtQTk",
+        "aspectRatio": "9:16"
+      },
+      "thumbnail": {
+        "src": "/images/portfolio/2.jpg",
+        "alt": "Thumbnail behind the scenes"
+      },
+      "date": "2024-11-01T00:00:00Z",
+      "featured": true,
+      "order": 1,
+      "tags": [
+        "bts",
+        "editorial",
+        "vertical"
+      ]
+    },
+    {
+      "id": "reel-gaia-crecimiento",
+      "title": "Gaia",
+      "description": "¿Querés un contenido que realmente haga crecer tu marca? Hablemos y empecemos a trabajar juntos 🍒",
+      "client": "Gaia",
+      "video": {
+        "platform": "youtube",
+        "embedUrl": "https://www.youtube.com/embed/RSIyNj7ILRY?si=_rLQWFDNq8fKWkna",
+        "videoId": "RSIyNj7ILRY",
+        "aspectRatio": "9:16"
+      },
+      "thumbnail": {
+        "src": "/images/portfolio/2.jpg",
+        "alt": "Thumbnail behind the scenes"
+      },
+      "date": "2024-11-01T00:00:00Z",
+      "featured": true,
+      "order": 1,
+      "tags": [
+        "bts",
+        "editorial",
+        "vertical"
+      ]
+    },
+    {
+      "id": "reel-adriana-costa-orfebre",
+      "title": "Adriana Costa Orfebre",
+      "description": "Video para la campaña de lanzamiento de la nueva colección de Adriana Costa Orfebre",
+      "client": "Adriana Costa Orfebre",
+      "video": {
+        "platform": "youtube",
+        "embedUrl": "https://www.youtube.com/embed/35VIW1vsLjM?si=Xca9owZprlXVqaEP",
+        "videoId": "35VIW1vsLjM",
+        "aspectRatio": "9:16"
+      },
+      "thumbnail": {
+        "src": "/images/portfolio/2.jpg",
+        "alt": "Thumbnail behind the scenes"
+      },
+      "date": "2024-11-01T00:00:00Z",
+      "featured": true,
+      "order": 2,
+      "tags": [
+        "bts",
+        "editorial",
+        "vertical"
+      ]
+    },
+    {
+      "id": "reel-laislacafe-lanzamiento",
+      "title": "La Isla Cafe",
+      "description": "Video para la campaña de lanzamiento de la nueva colección de La Isla Cafe",
+      "client": "La Isla Cafe",
+      "video": {
+        "platform": "youtube",
+        "embedUrl": "https://www.youtube.com/embed/83NSxJUkTVU?si=nsJ_S6UgRVqSwWyb",
+        "videoId": "83NSxJUkTVU",
+        "aspectRatio": "9:16"
+      },
+      "thumbnail": {
+        "src": "/images/portfolio/2.jpg",
+        "alt": "Thumbnail behind the scenes"
+      },
+      "date": "2024-11-01T00:00:00Z",
+      "featured": true,
+      "order": 2,
+      "tags": [
+        "bts",
+        "editorial",
+        "vertical"
+      ]
+    },
+    {
       "id": "reel-behind-scenes",
       "title": "Behind the Scenes",
       "description": "Detrás de cámaras de sesión editorial",
@@ -10,10 +130,6 @@
         "embedUrl": "https://www.youtube.com/embed/lNY_vSFE-e4?si=yFRXCWO3jG4yZBsq",
         "videoId": "lNY_vSFE-e4",
         "aspectRatio": "9:16"
-      },
-      "thumbnail": {
-        "src": "/images/portfolio/2.jpg",
-        "alt": "Thumbnail behind the scenes"
       },
       "date": "2024-11-01T00:00:00Z",
       "featured": true,
