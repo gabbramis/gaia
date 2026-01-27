@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
-import { fadeInLeft, fadeInRight, fadeInUp } from '@/lib/animations';
+import { fadeInRight, fadeInUp } from '@/lib/animations';
 import Image from 'next/image';
 
 
@@ -14,13 +14,13 @@ export function About() {
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
 
-          {/* Left Column: Image */}
+          {/* Right Column: Image */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            variants={fadeInLeft}
-            className="lg:col-span-5 relative order-2 lg:order-1"
+            variants={fadeInRight}
+            className="lg:col-span-5 relative order-2"
           >
             {/* Decorative frame offset */}
             <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-full h-full border border-[#ED9ABC]/30 rounded-sm" />
@@ -45,8 +45,8 @@ export function About() {
             <div className="absolute -top-3 -left-3 w-8 h-8 border-t border-l border-[#ED9ABC]/50" />
           </motion.div>
 
-          {/* Right Column: Title & Text */}
-          <div className="lg:col-span-7 order-1 lg:order-2">
+          {/* Left Column: Title & Text */}
+          <div className="lg:col-span-7 order-1">
             <motion.div
               initial="hidden"
               whileInView="visible"
