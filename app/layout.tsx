@@ -27,6 +27,9 @@ const playfairDisplay = Playfair_Display({
 export const metadata: Metadata = {
   title: "Gaia - Marketing, Publicidad y Desarrollo Web",
   description: "Agencia especializada en marketing digital, publicidad, branding, desarrollo web, redes sociales y contenido creativo.",
+  other: {
+    "facebook-domain-verification": "0psw2jz8o4parvsgrd98ggam7paiox",
+  },
 };
 
 export default function RootLayout({
