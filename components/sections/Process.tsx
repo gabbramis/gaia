@@ -30,7 +30,7 @@ export function Process() {
     return (
         <section
             id="proceso"
-            className="relative bg-[#500712] py-20 md:py-32 px-6 md:px-12 border-t border-[#ED9ABC]/10"
+            className="relative bg-[#500712] py-16 md:py-24 px-6 md:px-12 border-t border-[#ED9ABC]/10"
         >
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
@@ -42,10 +42,10 @@ export function Process() {
                     className="mb-16 md:mb-24 text-center"
                 >
                     <span className="block text-[#ED9ABC] text-sm tracking-[0.3em] uppercase mb-4">
-                        Cómo trabajamos
+                        How we work
                     </span>
                     <h2 className="font-serif text-4xl md:text-6xl text-[#F1DFD1] tracking-tight">
-                        Nuestro proceso
+                        Nuestro Proceso
                     </h2>
                 </motion.div>
 
