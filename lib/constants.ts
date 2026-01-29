@@ -28,20 +28,19 @@ export const serviceCategories = [
       {
         id: 1,
         title: "Social Media",
-        description: "Diseñamos estrategias de contenido integrales, producimos publicaciones impactantes, gestionamos campañas y analizamos métricas para potenciar tu presencia digital.",
+        description: "Creamos contenido visual alineado a la identidad, estética y tono de tu marca. Desarrollamos piezas gráficas y audiovisuales listas para usar, pensadas para sostener una presencia digital cuidada y coherente.",
         icon: "Share2",
       },
       {
         id: 2,
         title: "Community Manager",
-        description: "Gestionamos tus redes con publicación estratégica, interacción activa con tu comunidad y atención personalizada a comentarios y mensajes directos.",
+        description: "Gestionamos tus redes de manera integral: creatividad, planificación, grabación, edición y publicación de contenido. Trabajamos la comunicación diaria para construir comunidad, generar interacción y fortalecer la marca.",
         icon: "Users",
       },
       {
         id: 7,
         title: "Campaña Publicitaria 360°",
-        description: "Creamos conceptos únicos para momentos clave: lanzamientos de producto, aperturas de locales, promociones especiales o eventos que necesitan una narrativa potente.",
-        icon: "ChartNoAxesColumnDecreasing",
+        description: "Desarrollamos campañas publicitarias para lanzamientos, promociones o acciones especiales. Nos enfocamos en la idea creativa, la producción de contenido y la pauta digital para lograr mayor alcance y resultados.", icon: "ChartNoAxesColumnDecreasing",
       },
     ],
   },
@@ -59,8 +58,7 @@ export const serviceCategories = [
       {
         id: 4,
         title: "Cobertura de Eventos",
-        description: "Capturamos la esencia de tus eventos mediante contenido audiovisual dinámico y creativo, para que cada momento relevante llegue a tu audiencia.",
-        icon: "Video",
+        description: "Realizamos cobertura de eventos creando contenido en el momento y material posterior para redes sociales. Permitimos que tu comunidad vea, sienta y reviva la experiencia a través de una comunicación auténtica.", icon: "Video",
       },
       {
         id: 8,
@@ -78,7 +76,7 @@ export const serviceCategories = [
       {
         id: 5,
         title: "Diseño Web y E-commerce",
-        description: "Desarrollamos sitios web funcionales y atractivos, tiendas online y blogs optimizados, diseñados para ofrecer una experiencia única y potenciar tus ventas.",
+        description: "Diseñamos y desarrollamos sitios web funcionales, claros y alineados a la identidad de tu marca. Creamos experiencias digitales que comunican, ordenan la información y acompañan los objetivos del negocio.",
         icon: "Laptop",
       },
       {
