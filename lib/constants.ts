@@ -22,7 +22,7 @@ export const zIndex = {
 export const serviceCategories = [
   {
     id: "estrategia",
-    title: "Estrategia & Contenido",
+    title: "Estrategia y Contenido",
     subtitle: "Planificación y gestión de tu presencia digital",
     services: [
       {
@@ -72,7 +72,7 @@ export const serviceCategories = [
   },
   {
     id: "digital",
-    title: "Digital & Web",
+    title: "Digital y Web",
     subtitle: "Desarrollo y optimización de plataformas",
     services: [
       {
