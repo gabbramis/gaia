@@ -66,21 +66,13 @@ export function Services() {
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
               className={cn(
-                "relative px-8 py-4 font-sans text-sm tracking-wide transition-all duration-500",
+                "relative px-8 py-4 font-sans text-sm tracking-[0.15em] uppercase border transition-all duration-500",
                 activeCategory === category.id
-                  ? "text-[#500712]"
-                  : "text-[#F1DFD1]/60 hover:text-[#F1DFD1]"
+                  ? "bg-[#ED9ABC] text-[#500712] border-[#ED9ABC]"
+                  : "bg-transparent text-[#ED9ABC] border-[#ED9ABC] hover:bg-[#ED9ABC] hover:text-[#500712]"
               )}
             >
-              {/* Active background */}
-              {activeCategory === category.id && (
-                <motion.div
-                  layoutId="activeTab"
-                  className="absolute inset-0 bg-[#ED9ABC] rounded-sm"
-                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                />
-              )}
-              <span className="relative z-10">{category.title}</span>
+              {category.title}
             </button>
           ))}
         </motion.div>
@@ -170,11 +162,11 @@ export function Services() {
             ¿No sabés por dónde empezar?
           </h3>
           <p className="font-sans text-[#F1DFD1]/60 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-8">
-            Es normal. Cada marca está en un momento distinto. Agendá una llamada estratégica gratuita y analizamos juntas qué necesita tu proyecto hoy.
+            Es normal. Cada marca está en un momento distinto. Agendá una llamada estratégica gratuita y analicemos juntos qué necesita tu proyecto hoy.
           </p>
           <Link
             href="#contacto"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#ED9ABC] text-[#500712] font-sans text-sm tracking-wide rounded-sm hover:bg-[#F1DFD1] transition-colors duration-300"
+            className="inline-flex items-center gap-2 px-12 py-6 bg-transparent border border-[#ED9ABC] text-[#ED9ABC] font-sans text-sm tracking-[0.15em] uppercase rounded-none hover:bg-[#ED9ABC] hover:text-[#500712] transition-all duration-500"
           >
             Agendar llamada estratégica
             <ArrowRight size={16} />

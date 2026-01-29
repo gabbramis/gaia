@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import { fadeInUp, staggerContainer } from '@/lib/animations';
+import { cn } from '@/lib/utils';
 
 const steps = [
     {
@@ -30,7 +31,7 @@ export function Process() {
     return (
         <section
             id="proceso"
-            className="relative bg-[#500712] py-16 md:py-24 px-6 md:px-12 border-t border-[#ED9ABC]/10"
+            className="relative bg-[#500712] py-12 md:py-16 px-6 md:px-12 border-t border-[#ED9ABC]/10"
         >
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
@@ -39,9 +40,9 @@ export function Process() {
                     whileInView="visible"
                     viewport={{ once: true, margin: '-100px' }}
                     variants={fadeInUp}
-                    className="mb-16 md:mb-24 text-center"
+                    className="mb-10 md:mb-14 text-center"
                 >
-                    <span className="block text-[#ED9ABC] text-sm tracking-[0.3em] uppercase mb-4">
+                    <span className="block text-[#ED9ABC] text-sm tracking-[0.3em] uppercase mb-3">
                         How we work
                     </span>
                     <h2 className="font-serif text-4xl md:text-6xl text-[#F1DFD1] tracking-tight">
@@ -49,39 +50,50 @@ export function Process() {
                     </h2>
                 </motion.div>
 
-                {/* Steps Grid */}
+                {/* Steps */}
                 <motion.div
                     variants={staggerContainer}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: '-50px' }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12"
+                    className="relative max-w-4xl mx-auto"
                 >
+                    {/* Vertical line */}
+                    <div className="absolute left-[1.35rem] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#ED9ABC]/0 via-[#ED9ABC]/20 to-[#ED9ABC]/0" />
+
                     {steps.map((step, index) => (
                         <motion.div
                             key={index}
                             variants={fadeInUp}
-                            className="relative flex flex-col items-center text-center group"
+                            className={cn(
+                                "relative flex items-start gap-6 md:gap-12 group",
+                                index !== steps.length - 1 ? "mb-10" : "",
+                                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                            )}
                         >
-                            {/* Number */}
-                            <div className="mb-6 relative">
-                                <span className="font-serif text-6xl md:text-7xl text-[#ED9ABC]/20 group-hover:text-[#ED9ABC]/40 transition-colors duration-500">
-                                    {step.number}
+                            {/* Content */}
+                            <div className={cn(
+                                "flex-1 pl-12 md:pl-0",
+                                index % 2 === 0 ? "md:text-right" : "md:text-left"
+                            )}>
+                                <span className="font-sans text-[#ED9ABC]/40 text-xs tracking-[0.3em] uppercase">
+                                    Paso {step.number}
                                 </span>
+                                <h3 className="font-serif text-xl md:text-2xl text-[#F1DFD1] mt-1 mb-1.5">
+                                    {step.title}
+                                </h3>
+                                <p className="font-sans text-[#F1DFD1]/55 text-sm leading-relaxed">
+                                    {step.description}
+                                </p>
                             </div>
 
-                            {/* Content */}
-                            <h3 className="font-serif text-xl md:text-2xl text-[#F1DFD1] mb-4 min-h-[3.5rem] flex items-center justify-center">
-                                {step.title}
-                            </h3>
-                            <p className="font-sans text-[#F1DFD1]/70 text-sm leading-relaxed max-w-xs mx-auto">
-                                {step.description}
-                            </p>
+                            {/* Center dot */}
+                            <div className="absolute left-3 md:left-1/2 md:-translate-x-1/2 top-1 flex items-center justify-center">
+                                <span className="block w-3 h-3 rounded-full border border-[#ED9ABC]/40 group-hover:border-[#ED9ABC] group-hover:bg-[#ED9ABC]/20 transition-all duration-500" />
+                            </div>
 
-                            {/* Connecting Line (Desktop only, except last item) */}
-                            {index < steps.length - 1 && (
-                                <div className="hidden lg:block absolute top-[2.5rem] left-1/2 w-full h-[1px] bg-gradient-to-r from-[#ED9ABC]/0 via-[#ED9ABC]/20 to-[#ED9ABC]/0 -z-10 translate-x-[50%]" />
-                            )}
+                            {/* Spacer for alternating layout */}
+                            <div className="hidden md:block flex-1" />
                         </motion.div>
                     ))}
                 </motion.div>
