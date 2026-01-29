@@ -9,7 +9,8 @@
       "Bash(npx next dev:*)",
       "Bash(powershell -Command:*)",
       "Bash(timeout 10 bash:*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(node -e:*)"
     ],
     "deny": [],
     "ask": []

@@ -1,44 +1,29 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useRef, useState, useCallback } from 'react';
 import { motion } from 'motion/react';
 import { fadeInUp } from '@/lib/animations';
 import { reels } from '@/lib/data/portfolio';
 import { VideoEmbed } from '@/components/ui/VideoEmbed';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export function ReelsGallery() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [itemsPerPage, setItemsPerPage] = useState(1);
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const [activeIndex, setActiveIndex] = useState(0);
 
-    useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth >= 1024) {
-                setItemsPerPage(3);
-            } else if (window.innerWidth >= 768) {
-                setItemsPerPage(2);
-            } else {
-                setItemsPerPage(1);
-            }
-        };
-
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+    const handleScroll = useCallback(() => {
+        const container = scrollRef.current;
+        if (!container) return;
+        const scrollLeft = container.scrollLeft;
+        const cardWidth = container.scrollWidth / reels.length;
+        const index = Math.round(scrollLeft / cardWidth);
+        setActiveIndex(Math.min(index, reels.length - 1));
     }, []);
 
-    const maxIndex = Math.max(0, reels.length - itemsPerPage);
-
-    const nextSlide = () => {
-        setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prev) => Math.max(prev - 1, 0));
-    };
-
     return (
-        <section id="reels" className="relative bg-[#500712] py-16 md:py-32 px-6 md:px-12 border-t border-[#ED9ABC]/10">
+        <section
+            id="reels"
+            className="relative bg-[#500712] py-16 md:py-32 px-6 md:px-12 border-t border-[#ED9ABC]/10"
+        >
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <motion.div
@@ -46,7 +31,7 @@ export function ReelsGallery() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={fadeInUp}
-                    className="mb-16 md:mb-24 text-center"
+                    className="mb-12 md:mb-16 text-center"
                 >
                     <span className="block text-[#ED9ABC] text-sm tracking-[0.3em] uppercase mb-4">
                         Video Content
@@ -59,49 +44,60 @@ export function ReelsGallery() {
                     </p>
                 </motion.div>
 
-                {/* Carousel Container */}
-                <div className="relative group">
-                    {/* Navigation Buttons */}
-                    <button
-                        onClick={prevSlide}
-                        disabled={currentIndex === 0}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[#500712]/80 border border-[#ED9ABC]/30 text-[#ED9ABC] p-3 rounded-full hover:bg-[#ED9ABC] hover:text-[#500712] transition-all duration-300 backdrop-blur-sm -ml-4 md:-ml-12 disabled:opacity-30 disabled:cursor-not-allowed"
-                        aria-label="Previous slide"
-                    >
-                        <ChevronLeft size={24} />
-                    </button>
-                    <button
-                        onClick={nextSlide}
-                        disabled={currentIndex === maxIndex}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[#500712]/80 border border-[#ED9ABC]/30 text-[#ED9ABC] p-3 rounded-full hover:bg-[#ED9ABC] hover:text-[#500712] transition-all duration-300 backdrop-blur-sm -mr-4 md:-mr-12 disabled:opacity-30 disabled:cursor-not-allowed"
-                        aria-label="Next slide"
-                    >
-                        <ChevronRight size={24} />
-                    </button>
-
-                    {/* Slider Track */}
-                    <div className="overflow-hidden">
+                {/* Desktop Grid */}
+                <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-8">
+                    {reels.map((item, index) => (
                         <motion.div
-                            className="flex gap-4 md:gap-8"
-                            animate={{
-                                x: `calc(-${currentIndex * (100 / itemsPerPage)}% - ${currentIndex * (itemsPerPage === 1 ? 0 : 32 / itemsPerPage)}px)`
-                            }}
-                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                            key={item.id}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.6, delay: index * 0.08 }}
                         >
-                            {reels.map((item) => (
-                                <motion.div
-                                    key={item.id}
-                                    className="shrink-0"
-                                    style={{
-                                        width: `calc(${100 / itemsPerPage}% - ${((itemsPerPage - 1) * (itemsPerPage === 1 ? 0 : 32)) / itemsPerPage}px)`
-                                    }}
-                                >
-                                    <div className="group/card relative overflow-hidden border border-[#ED9ABC]/10 bg-[#ED9ABC]/5">
-                                        <VideoEmbed video={item.video} />
-                                    </div>
-                                </motion.div>
-                            ))}
+                            <div className="overflow-hidden border border-[#ED9ABC]/10 bg-[#ED9ABC]/5">
+                                <VideoEmbed video={item.video} />
+                            </div>
                         </motion.div>
+                    ))}
+                </div>
+
+                {/* Mobile Snap-Scroll */}
+                <div className="md:hidden">
+                    <div
+                        ref={scrollRef}
+                        onScroll={handleScroll}
+                        className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-6 -mx-6 px-6"
+                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+                    >
+                        {reels.map((item) => (
+                            <div
+                                key={item.id}
+                                className="flex-shrink-0 w-[80vw] snap-center"
+                            >
+                                <div className="overflow-hidden border border-[#ED9ABC]/10 bg-[#ED9ABC]/5">
+                                    <VideoEmbed video={item.video} />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Indicators */}
+                    <div className="flex items-center justify-center gap-3 mt-4">
+                        <span className="text-[#F1DFD1]/40 text-xs tracking-widest font-sans">
+                            {activeIndex + 1} / {reels.length}
+                        </span>
+                    </div>
+                    <div className="flex justify-center gap-1.5 mt-3">
+                        {reels.map((_, i) => (
+                            <div
+                                key={i}
+                                className={`h-1.5 rounded-full transition-all duration-300 ${
+                                    i === activeIndex
+                                        ? 'w-6 bg-[#ED9ABC]'
+                                        : 'w-1.5 bg-[#ED9ABC]/30'
+                                }`}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
