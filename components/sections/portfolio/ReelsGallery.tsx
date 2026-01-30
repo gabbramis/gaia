@@ -22,7 +22,7 @@ export function ReelsGallery() {
     return (
         <section
             id="reels"
-            className="relative bg-[#500712] py-16 md:py-32 px-6 md:px-12 border-t border-[#ED9ABC]/10"
+            className="relative bg-[var(--gaia-burgundy)] py-16 md:py-32 px-6 md:px-12 border-t border-[var(--gaia-pink)]/10"
         >
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
@@ -33,13 +33,13 @@ export function ReelsGallery() {
                     variants={fadeInUp}
                     className="mb-12 md:mb-16 text-center"
                 >
-                    <span className="block text-[#ED9ABC] text-sm tracking-[0.3em] uppercase mb-4">
+                    <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-4">
                         Video Content
                     </span>
-                    <h2 className="font-serif text-5xl md:text-7xl text-[#F1DFD1] tracking-tight mb-6">
+                    <h2 className="font-serif text-5xl md:text-7xl text-[var(--gaia-beige)] tracking-tight mb-6">
                         Reels
                     </h2>
-                    <p className="font-sans text-[#F1DFD1]/60 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+                    <p className="font-sans text-[var(--gaia-beige)]/60 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
                         Contenido vertical dinámico para redes sociales y plataformas digitales
                     </p>
                 </motion.div>
@@ -54,7 +54,7 @@ export function ReelsGallery() {
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.6, delay: index * 0.08 }}
                         >
-                            <div className="overflow-hidden border border-[#ED9ABC]/10 bg-[#ED9ABC]/5">
+                            <div className="overflow-hidden border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/5">
                                 <VideoEmbed video={item.video} />
                             </div>
                         </motion.div>
@@ -74,7 +74,7 @@ export function ReelsGallery() {
                                 key={item.id}
                                 className="flex-shrink-0 w-[80vw] snap-center"
                             >
-                                <div className="overflow-hidden border border-[#ED9ABC]/10 bg-[#ED9ABC]/5">
+                                <div className="overflow-hidden border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/5">
                                     <VideoEmbed video={item.video} />
                                 </div>
                             </div>
@@ -83,7 +83,7 @@ export function ReelsGallery() {
 
                     {/* Indicators */}
                     <div className="flex items-center justify-center gap-3 mt-4">
-                        <span className="text-[#F1DFD1]/40 text-xs tracking-widest font-sans">
+                        <span className="text-[var(--gaia-beige)]/40 text-xs tracking-widest font-sans">
                             {activeIndex + 1} / {reels.length}
                         </span>
                     </div>
@@ -93,8 +93,8 @@ export function ReelsGallery() {
                                 key={i}
                                 className={`h-1.5 rounded-full transition-all duration-300 ${
                                     i === activeIndex
-                                        ? 'w-6 bg-[#ED9ABC]'
-                                        : 'w-1.5 bg-[#ED9ABC]/30'
+                                        ? 'w-6 bg-[var(--gaia-pink)]'
+                                        : 'w-1.5 bg-[var(--gaia-pink)]/30'
                                 }`}
                             />
                         ))}

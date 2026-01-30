@@ -8,7 +8,7 @@ import { ArrowRight } from 'lucide-react';
 
 export function Portfolio() {
     return (
-        <section id="portfolio" className="relative bg-[#500712] py-16 md:py-32 px-6 md:px-12 border-t border-[#ED9ABC]/10">
+        <section id="portfolio" className="relative bg-[var(--gaia-burgundy)] py-16 md:py-32 px-6 md:px-12 border-t border-[var(--gaia-pink)]/10">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <motion.div
@@ -18,10 +18,10 @@ export function Portfolio() {
                     variants={fadeInUp}
                     className="mb-12 md:mb-24 text-center"
                 >
-                    <span className="block text-[#ED9ABC] text-sm tracking-[0.3em] uppercase mb-4">
+                    <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-4">
                         Our Work
                     </span>
-                    <h2 className="font-serif text-5xl md:text-7xl text-[#F1DFD1] tracking-tight">
+                    <h2 className="font-serif text-5xl md:text-7xl text-[var(--gaia-beige)] tracking-tight">
                         Portfolio
                     </h2>
                 </motion.div>
@@ -35,7 +35,7 @@ export function Portfolio() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <Link href="/contenidos" className="group block relative aspect-[4/3] md:aspect-[16/9] overflow-hidden border border-[#ED9ABC]/20 bg-[#ED9ABC]/5">
+                        <Link href="/contenidos" className="group block relative aspect-[4/3] md:aspect-[16/9] overflow-hidden border border-[var(--gaia-pink)]/20 bg-[var(--gaia-pink)]/5">
                             <Image
                                 src="/portfolio-content.jpg"
                                 alt="Contenidos"
@@ -43,25 +43,25 @@ export function Portfolio() {
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                                 className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-40 group-hover:opacity-30"
                             />
-                            <div className="absolute inset-0 bg-[#500712]/40 group-hover:bg-[#500712]/20 transition-colors duration-500" />
+                            <div className="absolute inset-0 bg-[var(--gaia-burgundy)]/40 group-hover:bg-[var(--gaia-burgundy)]/20 transition-colors duration-500" />
 
                             {/* Content */}
                             <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-4 md:p-6 lg:p-8">
-                                <h3 className="font-serif text-4xl md:text-6xl text-[#F1DFD1] mb-4 group-hover:scale-110 transition-transform duration-700">
+                                <h3 className="font-serif text-4xl md:text-6xl text-[var(--gaia-beige)] mb-4 group-hover:scale-110 transition-transform duration-700">
                                     Contenidos
                                 </h3>
-                                <p className="font-sans text-[#ED9ABC] text-sm tracking-widest uppercase mb-8 opacity-80">
+                                <p className="font-sans text-[var(--gaia-pink)] text-sm tracking-widest uppercase mb-8 opacity-80">
                                     Fotos • Reels • Campañas
                                 </p>
 
-                                <div className="flex items-center gap-2 text-[#F1DFD1] opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                                <div className="flex items-center gap-2 text-[var(--gaia-beige)] opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
                                     <span className="text-sm uppercase tracking-widest">Ver Galería</span>
                                     <ArrowRight size={16} />
                                 </div>
                             </div>
 
                             {/* Decorative Borders */}
-                            <div className="absolute inset-4 border border-[#ED9ABC]/30 scale-95 group-hover:scale-100 transition-transform duration-500" />
+                            <div className="absolute inset-4 border border-[var(--gaia-pink)]/30 scale-95 group-hover:scale-100 transition-transform duration-500" />
                         </Link>
                     </motion.div>
 
@@ -72,7 +72,7 @@ export function Portfolio() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <Link href="/disenos-web" className="group block relative aspect-[4/3] md:aspect-[16/9] overflow-hidden border border-[#ED9ABC]/20 bg-[#ED9ABC]/5">
+                        <Link href="/disenos-web" className="group block relative aspect-[4/3] md:aspect-[16/9] overflow-hidden border border-[var(--gaia-pink)]/20 bg-[var(--gaia-pink)]/5">
                             <Image
                                 src="/portfolio-web-design.jpg"
                                 alt="Diseños Web"
@@ -80,25 +80,25 @@ export function Portfolio() {
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                                 className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-40 group-hover:opacity-30"
                             />
-                            <div className="absolute inset-0 bg-[#500712]/40 group-hover:bg-[#500712]/20 transition-colors duration-500" />
+                            <div className="absolute inset-0 bg-[var(--gaia-burgundy)]/40 group-hover:bg-[var(--gaia-burgundy)]/20 transition-colors duration-500" />
 
                             {/* Content */}
                             <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-4 md:p-6 lg:p-8">
-                                <h3 className="font-serif text-4xl md:text-6xl text-[#F1DFD1] mb-4 group-hover:scale-110 transition-transform duration-700">
+                                <h3 className="font-serif text-4xl md:text-6xl text-[var(--gaia-beige)] mb-4 group-hover:scale-110 transition-transform duration-700">
                                     Diseños Web
                                 </h3>
-                                <p className="font-sans text-[#ED9ABC] text-sm tracking-widest uppercase mb-8 opacity-80">
+                                <p className="font-sans text-[var(--gaia-pink)] text-sm tracking-widest uppercase mb-8 opacity-80">
                                     E-commerce • Landing Pages • Corporate
                                 </p>
 
-                                <div className="flex items-center gap-2 text-[#F1DFD1] opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                                <div className="flex items-center gap-2 text-[var(--gaia-beige)] opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
                                     <span className="text-sm uppercase tracking-widest">Ver Proyectos</span>
                                     <ArrowRight size={16} />
                                 </div>
                             </div>
 
                             {/* Decorative Borders */}
-                            <div className="absolute inset-4 border border-[#ED9ABC]/30 scale-95 group-hover:scale-100 transition-transform duration-500" />
+                            <div className="absolute inset-4 border border-[var(--gaia-pink)]/30 scale-95 group-hover:scale-100 transition-transform duration-500" />
                         </Link>
                     </motion.div>
                 </div>

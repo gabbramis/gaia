@@ -29,7 +29,7 @@ export function Services() {
   return (
     <section
       id="servicios"
-      className="relative bg-[#500712] pt-16 md:pt-32 pb-12 md:pb-20 px-6 md:px-12 border-t border-[#ED9ABC]/10"
+      className="relative bg-[var(--gaia-burgundy)] pt-16 md:pt-32 pb-12 md:pb-20 px-6 md:px-12 border-t border-[var(--gaia-pink)]/10"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
@@ -38,17 +38,17 @@ export function Services() {
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
           variants={fadeInUp}
-          className="mb-12 md:mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-[#ED9ABC]/20 pb-12"
+          className="mb-12 md:mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-[var(--gaia-pink)]/20 pb-12"
         >
           <div>
-            <span className="block text-[#ED9ABC] text-sm tracking-[0.3em] uppercase mb-4">
+            <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-4">
               Our Expertise
             </span>
-            <h2 className="font-serif text-5xl md:text-7xl text-[#F1DFD1] tracking-tight">
+            <h2 className="font-serif text-5xl md:text-7xl text-[var(--gaia-beige)] tracking-tight">
               Nuestros Servicios
             </h2>
           </div>
-          <p className="font-sans text-[#F1DFD1]/60 max-w-md text-sm md:text-base leading-relaxed tracking-wide">
+          <p className="font-sans text-[var(--gaia-beige)]/60 max-w-md text-sm md:text-base leading-relaxed tracking-wide">
             Ofrecemos soluciones digitales diseñadas según el momento y las necesidades de tu marca.
           </p>
         </motion.div>
@@ -68,8 +68,8 @@ export function Services() {
               className={cn(
                 "relative px-8 py-4 font-sans text-sm tracking-[0.15em] uppercase border transition-all duration-500",
                 activeCategory === category.id
-                  ? "bg-[#ED9ABC] text-[#500712] border-[#ED9ABC]"
-                  : "bg-transparent text-[#ED9ABC] border-[#ED9ABC] hover:bg-[#ED9ABC] hover:text-[#500712]"
+                  ? "bg-[var(--gaia-pink)] text-[var(--gaia-burgundy)] border-[var(--gaia-pink)]"
+                  : "bg-transparent text-[var(--gaia-pink)] border-[var(--gaia-pink)] hover:bg-[var(--gaia-pink)] hover:text-[var(--gaia-burgundy)]"
               )}
             >
               {category.title}
@@ -96,14 +96,14 @@ export function Services() {
               className="flex items-center justify-center gap-4"
             >
               {/* Left sparkle */}
-              <span className="text-[#ED9ABC]/40 text-sm">✦</span>
+              <span className="text-[var(--gaia-pink)]/40 text-sm">✦</span>
 
-              <p className="font-serif text-3xl md:text-4xl text-[#ED9ABC] tracking-tight text-center">
+              <p className="font-serif text-3xl md:text-4xl text-[var(--gaia-pink)] tracking-tight text-center">
                 {currentCategory.subtitle}
               </p>
 
               {/* Right sparkle */}
-              <span className="text-[#ED9ABC]/40 text-sm">✦</span>
+              <span className="text-[var(--gaia-pink)]/40 text-sm">✦</span>
             </motion.div>
           </motion.div>
 
@@ -153,20 +153,20 @@ export function Services() {
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
           variants={fadeInUp}
-          className="mt-16 md:mt-24 pt-8 md:pt-12 border-t border-[#ED9ABC]/20 text-center"
+          className="mt-16 md:mt-24 pt-8 md:pt-12 border-t border-[var(--gaia-pink)]/20 text-center"
         >
-          <span className="block text-[#ED9ABC] text-sm tracking-[0.3em] uppercase mb-6">
+          <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-6">
             We help you decide
           </span>
-          <h3 className="font-serif text-4xl md:text-6xl text-[#F1DFD1] tracking-tight mb-6">
+          <h3 className="font-serif text-4xl md:text-6xl text-[var(--gaia-beige)] tracking-tight mb-6">
             ¿No sabés por dónde empezar?
           </h3>
-          <p className="font-sans text-[#F1DFD1]/60 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+          <p className="font-sans text-[var(--gaia-beige)]/60 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-8">
             Es normal. Cada marca está en un momento distinto. Agendá una llamada estratégica gratuita y analicemos juntos qué necesita tu proyecto hoy.
           </p>
           <Link
             href="#contacto"
-            className="inline-flex items-center gap-2 px-12 py-6 bg-transparent border border-[#ED9ABC] text-[#ED9ABC] font-sans text-sm tracking-[0.15em] uppercase rounded-none hover:bg-[#ED9ABC] hover:text-[#500712] transition-all duration-500"
+            className="inline-flex items-center gap-2 px-12 py-6 bg-transparent border border-[var(--gaia-pink)] text-[var(--gaia-pink)] font-sans text-sm tracking-[0.15em] uppercase rounded-none hover:bg-[var(--gaia-pink)] hover:text-[var(--gaia-burgundy)] transition-all duration-500"
           >
             Agendar llamada estratégica
             <ArrowRight size={16} />
@@ -187,7 +187,7 @@ function MobileCategorySection({ category, iconMap }: MobileCategorySectionProps
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border border-[#ED9ABC]/20 rounded-sm overflow-hidden">
+    <div className="border border-[var(--gaia-pink)]/20 rounded-sm overflow-hidden">
       {/* Category Header */}
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -196,14 +196,14 @@ function MobileCategorySection({ category, iconMap }: MobileCategorySectionProps
         <div>
           <h3 className={cn(
             "font-serif text-2xl transition-colors duration-300",
-            isOpen ? "text-[#ED9ABC]" : "text-[#F1DFD1] group-hover:text-[#ED9ABC]"
+            isOpen ? "text-[var(--gaia-pink)]" : "text-[var(--gaia-beige)] group-hover:text-[var(--gaia-pink)]"
           )}>
             {category.title}
           </h3>
-          <p className="text-[#F1DFD1]/50 text-sm mt-1">{category.subtitle}</p>
+          <p className="text-[var(--gaia-beige)]/50 text-sm mt-1">{category.subtitle}</p>
         </div>
         <div className={cn(
-          "text-[#ED9ABC] transition-transform duration-300",
+          "text-[var(--gaia-pink)] transition-transform duration-300",
           isOpen ? "rotate-45" : ""
         )}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -228,16 +228,16 @@ function MobileCategorySection({ category, iconMap }: MobileCategorySectionProps
                 return (
                   <div
                     key={service.id}
-                    className="flex gap-4 pl-2 border-l border-[#ED9ABC]/20"
+                    className="flex gap-4 pl-2 border-l border-[var(--gaia-pink)]/20"
                   >
-                    <div className="text-[#ED9ABC] mt-1">
+                    <div className="text-[var(--gaia-pink)] mt-1">
                       <Icon size={20} strokeWidth={1} />
                     </div>
                     <div>
-                      <h4 className="font-serif text-lg text-[#F1DFD1] mb-2">
+                      <h4 className="font-serif text-lg text-[var(--gaia-beige)] mb-2">
                         {service.title}
                       </h4>
-                      <p className="font-sans text-sm text-[#F1DFD1]/60 leading-relaxed">
+                      <p className="font-sans text-sm text-[var(--gaia-beige)]/60 leading-relaxed">
                         {service.description}
                       </p>
                     </div>

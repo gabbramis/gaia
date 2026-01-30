@@ -6,7 +6,7 @@ import { Footer } from '@/components/sections/Footer';
 
 export default function WebDesignsPage() {
     return (
-        <main className="bg-[#500712] min-h-screen">
+        <main className="bg-[var(--gaia-burgundy)] min-h-screen">
             <Navigation />
             <div className="pt-20"> {/* Add padding for fixed nav */}
                 <WebDesigns />

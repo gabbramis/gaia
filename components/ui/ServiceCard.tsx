@@ -31,17 +31,17 @@ export function ServiceCard({ title, description, icon: Icon, index }: ServiceCa
       className="group flex flex-col items-start gap-6 p-4 md:p-0"
     >
       {/* Icon */}
-      <div className="text-[#ED9ABC] group-hover:text-[#F1DFD1] transition-colors duration-300">
+      <div className="text-[var(--gaia-pink)] group-hover:text-[var(--gaia-beige)] transition-colors duration-300">
         <Icon size={32} strokeWidth={1} />
       </div>
 
       {/* Content */}
       <div className="space-y-4">
-        <h3 className="font-serif text-2xl md:text-3xl text-[#F1DFD1] leading-tight group-hover:text-[#ED9ABC] transition-colors duration-300">
+        <h3 className="font-serif text-2xl md:text-3xl text-[var(--gaia-beige)] leading-tight group-hover:text-[var(--gaia-pink)] transition-colors duration-300">
           {title}
         </h3>
 
-        <p className="font-sans text-sm md:text-base text-[#F1DFD1]/60 leading-relaxed tracking-wide max-w-sm">
+        <p className="font-sans text-sm md:text-base text-[var(--gaia-beige)]/60 leading-relaxed tracking-wide max-w-sm">
           {description}
         </p>
       </div>

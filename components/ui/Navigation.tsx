@@ -76,7 +76,7 @@ export function Navigation() {
               e.preventDefault();
               handleNavClick('#hero');
             }}
-            className="font-serif text-2xl md:text-3xl text-[#F1DFD1] hover:text-[#ED9ABC] transition-colors duration-300 tracking-tight relative z-50"
+            className="font-serif text-2xl md:text-3xl text-[var(--gaia-beige)] hover:text-[var(--gaia-pink)] transition-colors duration-300 tracking-tight relative z-50"
           >
             <Image
               src="/logo-pink.png"
@@ -98,7 +98,7 @@ export function Navigation() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className="font-sans text-xs text-[#F1DFD1]/80 hover:text-[#ED9ABC] transition-colors duration-300 tracking-[0.15em] uppercase"
+                  className="font-sans text-xs text-[var(--gaia-beige)]/80 hover:text-[var(--gaia-pink)] transition-colors duration-300 tracking-[0.15em] uppercase"
                 >
                   {link.label}
                 </a>
@@ -109,7 +109,7 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-[#F1DFD1] hover:text-[#ED9ABC] transition-colors p-2 relative z-50"
+            className="md:hidden text-[var(--gaia-beige)] hover:text-[var(--gaia-pink)] transition-colors p-2 relative z-50"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -124,7 +124,7 @@ export function Navigation() {
               animate={{ opacity: 1, height: 'auto', y: 0 }}
               exit={{ opacity: 0, height: 0, y: -10 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden absolute top-full left-0 right-0 bg-[#500712]/95 backdrop-blur-xl border-b border-[#ED9ABC]/20 overflow-hidden shadow-2xl z-40"
+              className="md:hidden absolute top-full left-0 right-0 bg-[var(--gaia-burgundy)]/95 backdrop-blur-xl border-b border-[var(--gaia-pink)]/20 overflow-hidden shadow-2xl z-40"
             >
               <ul className="flex flex-col py-6 sm:py-8 px-4 sm:px-6 gap-4 sm:gap-6">
                 {navLinks.map((link) => (
@@ -135,7 +135,7 @@ export function Navigation() {
                         e.preventDefault();
                         handleNavClick(link.href);
                       }}
-                      className="font-serif text-xl sm:text-2xl text-[#F1DFD1] hover:text-[#ED9ABC] transition-colors duration-300 block py-2"
+                      className="font-serif text-xl sm:text-2xl text-[var(--gaia-beige)] hover:text-[var(--gaia-pink)] transition-colors duration-300 block py-2"
                     >
                       {link.label}
                     </a>

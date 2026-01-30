@@ -11,7 +11,7 @@ import { Services } from '@/components/sections/Services';
 
 export default function Home() {
   return (
-    <main className="bg-[#500712] min-h-screen overflow-x-hidden w-full">
+    <main className="bg-[var(--gaia-burgundy)] min-h-screen overflow-x-hidden w-full">
       <Navigation />
       <Hero />
       <Services />

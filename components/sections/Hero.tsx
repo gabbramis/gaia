@@ -15,7 +15,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-screen w-full overflow-hidden bg-[#500712] text-[#F1DFD1]"
+      className="relative h-screen w-full overflow-hidden bg-[var(--gaia-burgundy)] text-[var(--gaia-beige)]"
     >
       {/* Texture Overlay */}
       <div className="texture-overlay absolute inset-0" />
@@ -40,10 +40,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            className="font-serif text-6xl md:text-8xl lg:text-[10rem] leading-[0.9] tracking-tight text-[#F1DFD1] mb-6 relative"
+            className="font-serif text-6xl md:text-8xl lg:text-[10rem] leading-[0.9] tracking-tight text-[var(--gaia-beige)] mb-6 relative"
           >
             <span className="block">Donde tu negocio</span>
-            <span className="block font-monsieur text-[#ED9ABC] text-7xl md:text-9xl lg:text-[11rem] -mt-4 md:-mt-8 lg:-mt-12 opacity-90">
+            <span className="block font-monsieur text-[var(--gaia-pink)] text-7xl md:text-9xl lg:text-[11rem] -mt-4 md:-mt-8 lg:-mt-12 opacity-90">
               se vuelve arte
             </span>
           </motion.h1>
@@ -53,7 +53,7 @@ export function Hero() {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="w-24 h-[1px] bg-[#ED9ABC] my-8"
+            className="w-24 h-[1px] bg-[var(--gaia-pink)] my-8"
           />
 
           {/* Tagline */}
@@ -61,7 +61,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
-            className="font-sans text-sm md:text-base text-[#F1DFD1]/80 tracking-[0.2em] uppercase max-w-2xl mx-auto mb-12 leading-relaxed"
+            className="font-sans text-sm md:text-base text-[var(--gaia-beige)]/80 tracking-[0.2em] uppercase max-w-2xl mx-auto mb-12 leading-relaxed"
           >
             Pensamos, diseñamos y ejecutamos soluciones digitales alineadas a los objetivos reales de tu negocio.
 
@@ -76,9 +76,9 @@ export function Hero() {
             <Button
               size="lg"
               onClick={handleCTA}
-              className="bg-transparent border border-[#ED9ABC] text-[#ED9ABC] hover:bg-[#ED9ABC] hover:text-[#500712] rounded-none px-12 py-6 text-sm tracking-[0.15em] uppercase transition-all duration-500"
+              className="bg-transparent border border-[var(--gaia-pink)] text-[var(--gaia-pink)] hover:bg-[var(--gaia-pink)] hover:text-[var(--gaia-burgundy)] rounded-none px-12 py-6 text-sm tracking-[0.15em] uppercase transition-all duration-500"
             >
-              Agenda una reunion
+              Agenda una reunión
             </Button>
           </motion.div>
         </div>

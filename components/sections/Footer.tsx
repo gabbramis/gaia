@@ -1,13 +1,12 @@
 'use client';
 
 import { navLinks, socialLinks, contactInfo } from '@/lib/constants';
-import { Instagram, Linkedin, Dribbble } from 'lucide-react';
+import { Instagram, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 
 const iconMap = {
   Instagram,
-  Linkedin,
-  Dribbble,
+  MessageCircle,
 };
 
 export function Footer() {
@@ -19,7 +18,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative bg-[#500712] text-white py-16 px-6 md:px-12">
+    <footer className="relative bg-[var(--gaia-burgundy)] text-white py-16 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand Section */}
@@ -38,7 +37,7 @@ export function Footer() {
 
           {/* Navigation Links */}
           <div>
-            <h4 className="font-sans text-sm uppercase tracking-luxury text-[#FFB8D5] mb-4">
+            <h4 className="font-sans text-sm uppercase tracking-luxury text-[var(--gaia-light-pink)] mb-4">
               Navegación
             </h4>
             <ul className="space-y-3">
@@ -50,7 +49,7 @@ export function Footer() {
                       e.preventDefault();
                       handleNavClick(link.href);
                     }}
-                    className="font-sans text-base text-white/80 hover:text-[#FFB8D5] transition-colors duration-300"
+                    className="font-sans text-base text-white/80 hover:text-[var(--gaia-light-pink)] transition-colors duration-300"
                   >
                     {link.label}
                   </a>
@@ -61,21 +60,29 @@ export function Footer() {
 
           {/* Contact & Social */}
           <div>
-            <h4 className="font-sans text-sm uppercase tracking-luxury text-[#FFB8D5] mb-4">
+            <h4 className="font-sans text-sm uppercase tracking-luxury text-[var(--gaia-light-pink)] mb-4">
               Contacto
             </h4>
             <div className="space-y-3 mb-6">
               <p className="font-sans text-base text-white/80">
                 <a
                   href={`mailto:${contactInfo.email}`}
-                  className="hover:text-[#FFB8D5] transition-colors duration-300"
+                  className="hover:text-[var(--gaia-light-pink)] transition-colors duration-300"
                 >
                   {contactInfo.email}
                 </a>
               </p>
-              <p className="font-sans text-base text-white/80">
-                {contactInfo.phone}
-              </p>
+              <div className="font-sans text-base text-white/80 space-y-1">
+                {contactInfo.phone.split(' - ').map((num) => (
+                  <a
+                    key={num}
+                    href={`tel:${num.replace(/\s/g, '')}`}
+                    className="block hover:text-[var(--gaia-light-pink)] transition-colors duration-300"
+                  >
+                    {num.trim()}
+                  </a>
+                ))}
+              </div>
               <p className="font-sans text-base text-white/80">
                 {contactInfo.address}
               </p>
@@ -91,7 +98,7 @@ export function Footer() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white/80 hover:text-[#FFB8D5] hover:scale-110 transition-all duration-300"
+                    className="text-white/80 hover:text-[var(--gaia-light-pink)] hover:scale-110 transition-all duration-300"
                     aria-label={social.platform}
                   >
                     <Icon size={24} />

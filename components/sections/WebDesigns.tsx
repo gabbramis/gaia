@@ -8,7 +8,7 @@ import { webDesigns } from '@/lib/data/portfolio';
 
 export function WebDesigns() {
     return (
-        <section id="web-designs" className="relative bg-[#500712] py-16 md:py-32 px-6 md:px-12 border-t border-[#ED9ABC]/10">
+        <section id="web-designs" className="relative bg-[var(--gaia-burgundy)] py-16 md:py-32 px-6 md:px-12 border-t border-[var(--gaia-pink)]/10">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <motion.div
@@ -19,14 +19,14 @@ export function WebDesigns() {
                     className="mb-12 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8"
                 >
                     <div>
-                        <span className="block text-[#ED9ABC] text-sm tracking-[0.3em] uppercase mb-4">
+                        <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-4">
                             Digital Experience
                         </span>
-                        <h2 className="font-serif text-5xl md:text-7xl text-[#F1DFD1] tracking-tight">
+                        <h2 className="font-serif text-5xl md:text-7xl text-[var(--gaia-beige)] tracking-tight">
                             Diseños Web
                         </h2>
                     </div>
-                    <p className="font-sans text-[#F1DFD1]/60 max-w-md text-sm md:text-base leading-relaxed tracking-wide">
+                    <p className="font-sans text-[var(--gaia-beige)]/60 max-w-md text-sm md:text-base leading-relaxed tracking-wide">
                         Experiencias digitales inmersivas y funcionales.
                     </p>
                 </motion.div>
@@ -43,12 +43,12 @@ export function WebDesigns() {
                         >
                             <Link href={project.url || '#'} target={project.url ? "_blank" : "_self"} rel="noopener noreferrer" className="group cursor-pointer block">
                                 {/* Browser/Window Frame Effect */}
-                                <div className="relative aspect-[16/10] overflow-hidden bg-[#ED9ABC]/5 border border-[#ED9ABC]/10 group-hover:border-[#ED9ABC]/30 transition-colors duration-500">
+                                <div className="relative aspect-[16/10] overflow-hidden bg-[var(--gaia-pink)]/5 border border-[var(--gaia-pink)]/10 group-hover:border-[var(--gaia-pink)]/30 transition-colors duration-500">
                                     {/* Mockup Header */}
-                                    <div className="absolute top-0 left-0 right-0 h-6 bg-[#500712]/50 backdrop-blur-sm border-b border-[#ED9ABC]/10 flex items-center px-3 gap-1.5 z-10">
-                                        <div className="w-2 h-2 rounded-full bg-[#ED9ABC]/30" />
-                                        <div className="w-2 h-2 rounded-full bg-[#ED9ABC]/30" />
-                                        <div className="w-2 h-2 rounded-full bg-[#ED9ABC]/30" />
+                                    <div className="absolute top-0 left-0 right-0 h-6 bg-[var(--gaia-burgundy)]/50 backdrop-blur-sm border-b border-[var(--gaia-pink)]/10 flex items-center px-3 gap-1.5 z-10">
+                                        <div className="w-2 h-2 rounded-full bg-[var(--gaia-pink)]/30" />
+                                        <div className="w-2 h-2 rounded-full bg-[var(--gaia-pink)]/30" />
+                                        <div className="w-2 h-2 rounded-full bg-[var(--gaia-pink)]/30" />
                                     </div>
 
                                     {/* Image */}
@@ -60,22 +60,22 @@ export function WebDesigns() {
                                     />
 
                                     {/* Overlay */}
-                                    <div className="absolute inset-0 bg-[#500712]/20 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />
+                                    <div className="absolute inset-0 bg-[var(--gaia-burgundy)]/20 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />
                                 </div>
 
                                 <div className="mt-6 flex justify-between items-baseline">
                                     <div>
-                                        <h3 className="font-serif text-xl md:text-2xl text-[#F1DFD1] group-hover:text-[#ED9ABC] transition-colors duration-300">
+                                        <h3 className="font-serif text-xl md:text-2xl text-[var(--gaia-beige)] group-hover:text-[var(--gaia-pink)] transition-colors duration-300">
                                             {project.title}
                                         </h3>
                                         {project.subtitle && (
-                                            <p className="font-sans text-sm text-[#F1DFD1]/50 mt-1">
+                                            <p className="font-sans text-sm text-[var(--gaia-beige)]/50 mt-1">
                                                 {project.subtitle}
                                             </p>
                                         )}
                                     </div>
                                     {project.url && (
-                                        <span className="font-sans text-[10px] sm:text-xs text-[#ED9ABC]/40 uppercase tracking-widest group-hover:text-[#ED9ABC] transition-colors duration-300">
+                                        <span className="font-sans text-[10px] sm:text-xs text-[var(--gaia-pink)]/40 uppercase tracking-widest group-hover:text-[var(--gaia-pink)] transition-colors duration-300">
                                             Visit Website ↗
                                         </span>
                                     )}

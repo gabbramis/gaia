@@ -31,7 +31,7 @@ export function Process() {
     return (
         <section
             id="proceso"
-            className="relative bg-[#500712] py-12 md:py-16 px-6 md:px-12 border-t border-[#ED9ABC]/10"
+            className="relative bg-[var(--gaia-burgundy)] py-12 md:py-16 px-6 md:px-12 border-t border-[var(--gaia-pink)]/10"
         >
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
@@ -42,10 +42,10 @@ export function Process() {
                     variants={fadeInUp}
                     className="mb-10 md:mb-14 text-center"
                 >
-                    <span className="block text-[#ED9ABC] text-sm tracking-[0.3em] uppercase mb-3">
+                    <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-3">
                         How we work
                     </span>
-                    <h2 className="font-serif text-4xl md:text-6xl text-[#F1DFD1] tracking-tight">
+                    <h2 className="font-serif text-4xl md:text-6xl text-[var(--gaia-beige)] tracking-tight">
                         Nuestro Proceso
                     </h2>
                 </motion.div>
@@ -59,7 +59,7 @@ export function Process() {
                     className="relative max-w-4xl mx-auto"
                 >
                     {/* Vertical line */}
-                    <div className="absolute left-[1.35rem] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#ED9ABC]/0 via-[#ED9ABC]/20 to-[#ED9ABC]/0" />
+                    <div className="absolute left-[1.35rem] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[var(--gaia-pink)]/0 via-[var(--gaia-pink)]/20 to-[var(--gaia-pink)]/0" />
 
                     {steps.map((step, index) => (
                         <motion.div
@@ -76,20 +76,20 @@ export function Process() {
                                 "flex-1 pl-12 md:pl-0",
                                 index % 2 === 0 ? "md:text-right" : "md:text-left"
                             )}>
-                                <span className="font-sans text-[#ED9ABC]/40 text-xs tracking-[0.3em] uppercase">
+                                <span className="font-sans text-[var(--gaia-pink)]/40 text-xs tracking-[0.3em] uppercase">
                                     Paso {step.number}
                                 </span>
-                                <h3 className="font-serif text-xl md:text-2xl text-[#F1DFD1] mt-1 mb-1.5">
+                                <h3 className="font-serif text-xl md:text-2xl text-[var(--gaia-beige)] mt-1 mb-1.5">
                                     {step.title}
                                 </h3>
-                                <p className="font-sans text-[#F1DFD1]/55 text-sm leading-relaxed">
+                                <p className="font-sans text-[var(--gaia-beige)]/55 text-sm leading-relaxed">
                                     {step.description}
                                 </p>
                             </div>
 
                             {/* Center dot */}
                             <div className="absolute left-3 md:left-1/2 md:-translate-x-1/2 top-1 flex items-center justify-center">
-                                <span className="block w-3 h-3 rounded-full border border-[#ED9ABC]/40 group-hover:border-[#ED9ABC] group-hover:bg-[#ED9ABC]/20 transition-all duration-500" />
+                                <span className="block w-3 h-3 rounded-full border border-[var(--gaia-pink)]/40 group-hover:border-[var(--gaia-pink)] group-hover:bg-[var(--gaia-pink)]/20 transition-all duration-500" />
                             </div>
 
                             {/* Spacer for alternating layout */}
