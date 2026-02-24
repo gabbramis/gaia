@@ -1,10 +1,11 @@
 'use client';
 
-import { useRef, useState, useCallback } from 'react';
+import { useRef, useState, useCallback, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { fadeInUp } from '@/lib/animations';
 import { reels } from '@/lib/data/portfolio';
 import { VideoEmbed } from '@/components/ui/VideoEmbed';
+import { trackViewContent } from '@/lib/analytics/facebook-pixel';
 
 export function ReelsGallery() {
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -17,6 +18,14 @@ export function ReelsGallery() {
         const cardWidth = container.scrollWidth / reels.length;
         const index = Math.round(scrollLeft / cardWidth);
         setActiveIndex(Math.min(index, reels.length - 1));
+    }, []);
+
+    useEffect(() => {
+        trackViewContent({
+            content_name: 'Reels Gallery',
+            content_category: 'Portfolio',
+            content_type: 'video_gallery',
+        });
     }, []);
 
     return (

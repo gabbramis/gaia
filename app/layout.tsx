@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Monsieur_La_Doulaise } from "next/font/google";
+import { FacebookPixel } from '@/components/analytics/FacebookPixel';
 
 const monsieur = Monsieur_La_Doulaise({
   weight: "400",
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body
         className={`${monsieur.variable} ${inter.variable} ${playfairDisplay.variable} antialiased font-sans overflow-x-hidden`}
       >
+        <FacebookPixel />
         {children}
       </body>
     </html>

@@ -8,6 +8,7 @@ import { fadeInUp } from '@/lib/animations';
 import { Share2, Users, Video, Camera, Laptop, Search, Sparkles, ChartNoAxesColumnDecreasing, Component, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import { trackCustomEvent } from '@/lib/analytics/facebook-pixel';
 
 const iconMap: Record<string, any> = {
   Share2,
@@ -64,7 +65,13 @@ export function Services() {
           {serviceCategories.map((category) => (
             <button
               key={category.id}
-              onClick={() => setActiveCategory(category.id)}
+              onClick={() => {
+                trackCustomEvent(category.title, {
+                  category: 'Service Category',
+                  action: 'Click',
+                });
+                setActiveCategory(category.id);
+              }}
               className={cn(
                 "relative px-8 py-4 font-sans text-sm tracking-[0.15em] uppercase border transition-all duration-500",
                 activeCategory === category.id
@@ -166,6 +173,12 @@ export function Services() {
           </p>
           <Link
             href="#contacto"
+            onClick={() => {
+              trackCustomEvent('Agendar llamada estratégica', {
+                category: 'Lead Generation',
+                action: 'Click',
+              });
+            }}
             className="inline-flex items-center gap-2 px-12 py-6 bg-transparent border border-[var(--gaia-pink)] text-[var(--gaia-pink)] font-sans text-sm tracking-[0.15em] uppercase rounded-none hover:bg-[var(--gaia-pink)] hover:text-[var(--gaia-burgundy)] transition-all duration-500"
           >
             Agendar llamada estratégica
@@ -190,7 +203,14 @@ function MobileCategorySection({ category, iconMap }: MobileCategorySectionProps
     <div className="border border-[var(--gaia-pink)]/20 rounded-sm overflow-hidden">
       {/* Category Header */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => {
+          trackCustomEvent(category.title, {
+            category: 'Service Category',
+            action: 'Click',
+            device: 'mobile',
+          });
+          setIsOpen(!isOpen);
+        }}
         className="w-full flex items-center justify-between p-6 text-left group"
       >
         <div>

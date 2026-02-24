@@ -1,10 +1,11 @@
 'use client';
 
-import { useRef, useState, useCallback } from 'react';
+import { useRef, useState, useCallback, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { fadeInUp } from '@/lib/animations';
 import Image from 'next/image';
 import { fotos } from '@/lib/data/portfolio';
+import { trackViewContent } from '@/lib/analytics/facebook-pixel';
 
 export function FotosGallery() {
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -17,6 +18,14 @@ export function FotosGallery() {
         const cardWidth = container.scrollWidth / fotos.length;
         const index = Math.round(scrollLeft / cardWidth);
         setActiveIndex(Math.min(index, fotos.length - 1));
+    }, []);
+
+    useEffect(() => {
+        trackViewContent({
+            content_name: 'Fotos Gallery',
+            content_category: 'Portfolio',
+            content_type: 'gallery',
+        });
     }, []);
 
     return (

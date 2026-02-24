@@ -1,12 +1,22 @@
 'use client';
 
+import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { fadeInUp } from '@/lib/animations';
 import Image from 'next/image';
 import Link from 'next/link';
 import { webDesigns } from '@/lib/data/portfolio';
+import { trackViewContent } from '@/lib/analytics/facebook-pixel';
 
 export function WebDesigns() {
+    useEffect(() => {
+        trackViewContent({
+            content_name: 'Web Designs',
+            content_category: 'Portfolio',
+            content_type: 'web_design_gallery',
+        });
+    }, []);
+
     return (
         <section id="web-designs" className="relative bg-[var(--gaia-burgundy)] py-16 md:py-32 px-6 md:px-12 border-t border-[var(--gaia-pink)]/10">
             <div className="max-w-7xl mx-auto">

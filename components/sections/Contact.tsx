@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { contactInfo } from "@/lib/constants";
 import { useState } from "react";
 import { Cherry } from "lucide-react";
+import { trackContact, trackLead, trackCustomEvent } from '@/lib/analytics/facebook-pixel';
 
 export function Contact() {
   const [name, setName] = useState("");
@@ -43,6 +44,16 @@ export function Contact() {
 
       if (response.ok) {
         setIsSubmitted(true);
+
+        // Track contact events
+        trackContact({
+          content_name: 'Contact Form',
+          content_category: 'Lead Generation',
+        });
+
+        trackLead({
+          content_name: 'Contact Form Submission',
+        });
       } else {
         setSubmitError(true);
       }
@@ -166,6 +177,13 @@ export function Contact() {
                 href="https://www.instagram.com/gaia_studio?igsh=MWszOGh5ZnN0MWxpag=="
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  trackCustomEvent('Instagram', {
+                    category: 'Social Media',
+                    action: 'Click',
+                    source: 'Thank You Message',
+                  });
+                }}
                 className="inline-block border border-[var(--gaia-pink)] text-[var(--gaia-pink)] hover:bg-[var(--gaia-pink)] hover:text-[var(--gaia-burgundy)] px-8 py-3 text-sm tracking-[0.2em] uppercase transition-all duration-500"
               >
                 Instagram
