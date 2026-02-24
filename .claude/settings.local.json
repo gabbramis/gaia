@@ -11,7 +11,8 @@
       "Bash(timeout 10 bash:*)",
       "Bash(npx tsc:*)",
       "Bash(node -e:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(pnpm install:*)"
     ],
     "deny": [],
     "ask": []
