@@ -111,12 +111,12 @@ export const navLinks = [
 // Social Media Links
 export const socialLinks = [
   { platform: "Instagram", url: "https://www.instagram.com/gaia_studio?igsh=MWszOGh5ZnN0MWxpag==", icon: "Instagram" },
-  { platform: "WhatsApp", url: "https://wa.me/59891392302", icon: "MessageCircle" },
+  { platform: "WhatsApp", url: "https://wa.me/59891099805", icon: "MessageCircle" },
 ] as const;
 
 // Contact Information
 export const contactInfo = {
   email: "gaiacontacto.studio@gmail.com",
-  phone: "+598 91 392 302 - +598 95 967 816",
+  phone: "+598 91 099 805",
   address: "Montevideo, Uruguay",
 } as const;
