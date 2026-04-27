@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Monsieur_La_Doulaise } from "next/font/google";
 import { FacebookPixel } from '@/components/analytics/FacebookPixel';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const monsieur = Monsieur_La_Doulaise({
   weight: "400",
@@ -88,6 +89,7 @@ export default function RootLayout({
       >
         <FacebookPixel />
         {children}
+        <GoogleAnalytics gaId="G-CW45R8E3FG" />
       </body>
     </html>
   );
