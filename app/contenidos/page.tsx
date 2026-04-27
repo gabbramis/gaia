@@ -5,9 +5,9 @@ import { Navigation } from '@/components/ui/Navigation';
 import { FotosGallery } from '@/components/sections/portfolio/FotosGallery';
 import { ReelsGallery } from '@/components/sections/portfolio/ReelsGallery';
 import { Footer } from '@/components/sections/Footer';
-import { motion } from 'motion/react';
 
-const NICHES = ['Todos', 'Gastronomía', 'Joyería', 'Papelería', 'Moda', 'Belleza', 'Agencia'];
+
+const NICHES = ['Todos', 'Gastronomía', 'Joyería', 'Papelería', 'Moda', 'Agencia'];
 
 export default function ContenidosPage() {
     const [selectedNiche, setSelectedNiche] = useState('Todos');
@@ -21,7 +21,7 @@ export default function ContenidosPage() {
                     <h1 className="font-serif text-5xl md:text-7xl text-[var(--gaia-beige)] tracking-tight mb-8">
                         Portfolio
                     </h1>
-                    
+
                     {/* Niche Tabs */}
                     <div className="flex justify-start md:justify-center overflow-x-auto snap-x snap-mandatory pb-4 mb-4 gap-3 md:gap-4 no-scrollbar" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
                         {NICHES.map((niche) => (
@@ -29,8 +29,8 @@ export default function ContenidosPage() {
                                 key={niche}
                                 onClick={() => setSelectedNiche(niche)}
                                 className={`snap-center flex-shrink-0 px-6 py-2 rounded-full border transition-all duration-300 font-sans text-sm tracking-wider uppercase
-                                    ${selectedNiche === niche 
-                                        ? 'bg-[var(--gaia-pink)] border-[var(--gaia-pink)] text-[var(--gaia-burgundy)] font-medium' 
+                                    ${selectedNiche === niche
+                                        ? 'bg-[var(--gaia-pink)] border-[var(--gaia-pink)] text-[var(--gaia-burgundy)] font-medium'
                                         : 'border-[var(--gaia-pink)]/30 text-[var(--gaia-beige)]/70 hover:border-[var(--gaia-pink)] hover:text-[var(--gaia-beige)]'
                                     }`}
                             >

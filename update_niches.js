@@ -9,9 +9,8 @@ const getClientNiche = (client) => {
     const c = client.toLowerCase();
     if (c.includes('adriana costa')) return 'Joyería';
     if (c.includes('chic collection')) return 'Moda';
-    if (c.includes('maison du pain') || c.includes('isla cafe') || c.includes('burrito') || c.includes('matcha') || c.includes('aroma')) return 'Gastronomía';
+    if (c.includes('isla cafe') || c.includes('burrito') || c.includes('matcha') || c.includes('aroma')) return 'Gastronomía';
     if (c.includes('fashion magazine')) return 'Moda';
-    if (c.includes('dove') || c.includes('glossy') || c.includes('l\'oréal')) return 'Belleza';
     if (c.includes('gaia')) return 'Agencia';
     return 'Otros';
 };
