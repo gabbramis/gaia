@@ -12,7 +12,8 @@
           "alt": "Joyería artesanal"
         }
       ],
-      "featured": true
+      "featured": true,
+      "niche": "Joyería"
     },
     {
       "id": "tienda-joyeria-2",
@@ -26,7 +27,8 @@
           "alt": "Joyería artesanal"
         }
       ],
-      "featured": true
+      "featured": true,
+      "niche": "Joyería"
     },
     {
       "id": "sportwear-1",
@@ -40,7 +42,8 @@
           "alt": "Indumentaria deportiva"
         }
       ],
-      "featured": true
+      "featured": true,
+      "niche": "Moda"
     },
     {
       "id": "sportwear-2",
@@ -54,7 +57,8 @@
           "alt": "Indumentaria deportiva editorial"
         }
       ],
-      "featured": true
+      "featured": true,
+      "niche": "Moda"
     },
     {
       "id": "sportwear-3",
@@ -68,7 +72,8 @@
           "alt": "Ropa deportiva"
         }
       ],
-      "featured": true
+      "featured": true,
+      "niche": "Moda"
     },
     {
       "id": "sportwear-4",
@@ -82,7 +87,8 @@
           "alt": "Ropa deportiva"
         }
       ],
-      "featured": true
+      "featured": true,
+      "niche": "Moda"
     },
     {
       "id": "sportwear-5",
@@ -96,7 +102,8 @@
           "alt": "Indumentaria deportiva"
         }
       ],
-      "featured": true
+      "featured": true,
+      "niche": "Moda"
     },
     {
       "id": "producto-panaderia",
@@ -110,7 +117,8 @@
           "alt": "Panadería artesanal"
         }
       ],
-      "featured": true
+      "featured": true,
+      "niche": "Gastronomía"
     }
   ]
 }

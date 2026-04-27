@@ -40,6 +40,7 @@ export interface FotoItem {
   description?: string;
   category?: 'editorial' | 'product' | 'lifestyle' | 'event';
   client?: string;
+  niche?: string;
   images: ImageAsset[];
   isCarousel: boolean;
   date: string;
@@ -53,6 +54,7 @@ export interface ReelItem {
   title: string;
   description?: string;
   client?: string;
+  niche?: string;
   video: VideoEmbed;
   thumbnail?: ImageAsset;
   date: string;

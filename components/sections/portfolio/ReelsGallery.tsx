@@ -7,18 +7,20 @@ import { reels } from '@/lib/data/portfolio';
 import { VideoEmbed } from '@/components/ui/VideoEmbed';
 import { trackViewContent } from '@/lib/analytics/facebook-pixel';
 
-export function ReelsGallery() {
+export function ReelsGallery({ niche = 'Todos' }: { niche?: string }) {
     const scrollRef = useRef<HTMLDivElement>(null);
     const [activeIndex, setActiveIndex] = useState(0);
+
+    const filteredReels = niche === 'Todos' ? reels : reels.filter(r => r.niche === niche);
 
     const handleScroll = useCallback(() => {
         const container = scrollRef.current;
         if (!container) return;
         const scrollLeft = container.scrollLeft;
-        const cardWidth = container.scrollWidth / reels.length;
+        const cardWidth = container.scrollWidth / filteredReels.length;
         const index = Math.round(scrollLeft / cardWidth);
-        setActiveIndex(Math.min(index, reels.length - 1));
-    }, []);
+        setActiveIndex(Math.min(index, filteredReels.length - 1));
+    }, [filteredReels.length]);
 
     useEffect(() => {
         trackViewContent({
@@ -27,6 +29,8 @@ export function ReelsGallery() {
             content_type: 'video_gallery',
         });
     }, []);
+
+    if (filteredReels.length === 0) return null;
 
     return (
         <section
@@ -55,7 +59,7 @@ export function ReelsGallery() {
 
                 {/* Desktop Grid */}
                 <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-8">
-                    {reels.map((item, index) => (
+                    {filteredReels.map((item, index) => (
                         <motion.div
                             key={item.id}
                             initial={{ opacity: 0, y: 30 }}
@@ -78,7 +82,7 @@ export function ReelsGallery() {
                         className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-6 -mx-6 px-6"
                         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
                     >
-                        {reels.map((item) => (
+                        {filteredReels.map((item) => (
                             <div
                                 key={item.id}
                                 className="flex-shrink-0 w-[80vw] snap-center"
@@ -93,11 +97,11 @@ export function ReelsGallery() {
                     {/* Indicators */}
                     <div className="flex items-center justify-center gap-3 mt-4">
                         <span className="text-[var(--gaia-beige)]/40 text-xs tracking-widest font-sans">
-                            {activeIndex + 1} / {reels.length}
+                            {activeIndex + 1} / {filteredReels.length}
                         </span>
                     </div>
                     <div className="flex justify-center gap-1.5 mt-3">
-                        {reels.map((_, i) => (
+                        {filteredReels.map((_, i) => (
                             <div
                                 key={i}
                                 className={`h-1.5 rounded-full transition-all duration-300 ${

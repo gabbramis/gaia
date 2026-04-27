@@ -7,18 +7,20 @@ import Image from 'next/image';
 import { fotos } from '@/lib/data/portfolio';
 import { trackViewContent } from '@/lib/analytics/facebook-pixel';
 
-export function FotosGallery() {
+export function FotosGallery({ niche = 'Todos' }: { niche?: string }) {
     const scrollRef = useRef<HTMLDivElement>(null);
     const [activeIndex, setActiveIndex] = useState(0);
+
+    const filteredFotos = niche === 'Todos' ? fotos : fotos.filter(f => f.niche === niche);
 
     const handleScroll = useCallback(() => {
         const container = scrollRef.current;
         if (!container) return;
         const scrollLeft = container.scrollLeft;
-        const cardWidth = container.scrollWidth / fotos.length;
+        const cardWidth = container.scrollWidth / filteredFotos.length;
         const index = Math.round(scrollLeft / cardWidth);
-        setActiveIndex(Math.min(index, fotos.length - 1));
-    }, []);
+        setActiveIndex(Math.min(index, filteredFotos.length - 1));
+    }, [filteredFotos.length]);
 
     useEffect(() => {
         trackViewContent({
@@ -27,6 +29,8 @@ export function FotosGallery() {
             content_type: 'gallery',
         });
     }, []);
+
+    if (filteredFotos.length === 0) return null;
 
     return (
         <section
@@ -54,7 +58,7 @@ export function FotosGallery() {
 
             {/* Desktop Grid */}
             <div className="hidden md:grid max-w-7xl mx-auto grid-cols-3 lg:grid-cols-4 gap-6">
-                {fotos.map((item, index) => (
+                {filteredFotos.map((item, index) => (
                     <motion.div
                         key={item.id}
                         initial={{ opacity: 0, y: 30 }}
@@ -91,7 +95,7 @@ export function FotosGallery() {
                     className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-6 -mx-6 px-6"
                     style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
                 >
-                    {fotos.map((item) => (
+                    {filteredFotos.map((item) => (
                         <div
                             key={item.id}
                             className="flex-shrink-0 w-[85vw] snap-center"
@@ -119,11 +123,11 @@ export function FotosGallery() {
                 {/* Indicators */}
                 <div className="flex items-center justify-center gap-3 mt-4">
                     <span className="text-[var(--gaia-beige)]/40 text-xs tracking-widest font-sans">
-                        {activeIndex + 1} / {fotos.length}
+                        {activeIndex + 1} / {filteredFotos.length}
                     </span>
                 </div>
                 <div className="flex justify-center gap-1.5 mt-3">
-                    {fotos.map((_, i) => (
+                    {filteredFotos.map((_, i) => (
                         <div
                             key={i}
                             className={`h-1.5 rounded-full transition-all duration-300 ${
