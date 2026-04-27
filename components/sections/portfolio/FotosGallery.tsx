@@ -10,17 +10,26 @@ import { trackViewContent } from '@/lib/analytics/facebook-pixel';
 export function FotosGallery({ niche = 'Todos' }: { niche?: string }) {
     const scrollRef = useRef<HTMLDivElement>(null);
     const [activeIndex, setActiveIndex] = useState(0);
+    const [showAll, setShowAll] = useState(false);
 
     const filteredFotos = niche === 'Todos' ? fotos : fotos.filter(f => f.niche === niche);
+    const INITIAL_LIMIT = 10;
+    const displayedFotos = showAll ? filteredFotos : filteredFotos.slice(0, INITIAL_LIMIT);
 
     const handleScroll = useCallback(() => {
         const container = scrollRef.current;
         if (!container) return;
         const scrollLeft = container.scrollLeft;
-        const cardWidth = container.scrollWidth / filteredFotos.length;
+        const cardWidth = container.scrollWidth / displayedFotos.length;
         const index = Math.round(scrollLeft / cardWidth);
-        setActiveIndex(Math.min(index, filteredFotos.length - 1));
-    }, [filteredFotos.length]);
+        setActiveIndex(Math.min(index, displayedFotos.length - 1));
+    }, [displayedFotos.length]);
+
+    useEffect(() => {
+        setShowAll(false);
+        setActiveIndex(0);
+        if (scrollRef.current) scrollRef.current.scrollLeft = 0;
+    }, [niche]);
 
     useEffect(() => {
         trackViewContent({
@@ -61,8 +70,8 @@ export function FotosGallery({ niche = 'Todos' }: { niche?: string }) {
             </motion.div>
 
             {/* Desktop Grid */}
-            <div className="hidden md:grid max-w-7xl mx-auto grid-cols-3 lg:grid-cols-4 gap-6">
-                {filteredFotos.map((item, index) => (
+            <div className="hidden md:grid max-w-7xl mx-auto grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-6">
+                {displayedFotos.map((item, index) => (
                     <motion.div
                         key={item.id}
                         initial={{ opacity: 0, y: 30 }}
@@ -99,10 +108,10 @@ export function FotosGallery({ niche = 'Todos' }: { niche?: string }) {
                     className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-6 -mx-6 px-6"
                     style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
                 >
-                    {filteredFotos.map((item) => (
+                    {displayedFotos.map((item) => (
                         <div
                             key={item.id}
-                            className="flex-shrink-0 w-[85vw] snap-center"
+                            className="flex-shrink-0 w-[70vw] snap-center"
                         >
                             <div className="group relative aspect-[3/4] overflow-hidden border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/5">
                                 <Image
@@ -127,11 +136,11 @@ export function FotosGallery({ niche = 'Todos' }: { niche?: string }) {
                 {/* Indicators */}
                 <div className="flex items-center justify-center gap-3 mt-4">
                     <span className="text-[var(--gaia-beige)]/40 text-xs tracking-widest font-sans">
-                        {activeIndex + 1} / {filteredFotos.length}
+                        {activeIndex + 1} / {displayedFotos.length}
                     </span>
                 </div>
-                <div className="flex justify-center gap-1.5 mt-3">
-                    {filteredFotos.map((_, i) => (
+                <div className="flex justify-center gap-1.5 mt-3 flex-wrap max-w-[80%] mx-auto">
+                    {displayedFotos.map((_, i) => (
                         <div
                             key={i}
                             className={`h-1.5 rounded-full transition-all duration-300 ${
@@ -143,6 +152,23 @@ export function FotosGallery({ niche = 'Todos' }: { niche?: string }) {
                     ))}
                 </div>
             </div>
+
+            {/* View More Button */}
+            {filteredFotos.length > INITIAL_LIMIT && (
+                <div className="mt-12 md:mt-16 text-center">
+                    <button
+                        onClick={() => {
+                            if (showAll) {
+                                document.getElementById('fotos')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                            setShowAll(!showAll);
+                        }}
+                        className="inline-flex items-center justify-center px-8 py-3 border border-[var(--gaia-pink)]/30 text-[var(--gaia-beige)] text-xs tracking-[0.2em] uppercase hover:bg-[var(--gaia-pink)] hover:text-[var(--gaia-burgundy)] transition-all duration-500"
+                    >
+                        {showAll ? 'Ver menos' : 'Ver más'}
+                    </button>
+                </div>
+            )}
         </section>
     );
 }
