@@ -45,30 +45,6 @@ export const serviceCategories = [
     ],
   },
   {
-    id: "produccion",
-    title: "Producción Visual",
-    subtitle: "Contenido audiovisual e identidad de marca",
-    services: [
-      {
-        id: 3,
-        title: "Producción y Edición",
-        description: "Creamos piezas visuales de alto impacto: fotos, videos y diseño gráfico, con edición profesional y postproducción que refleje la identidad de tu marca.",
-        icon: "Camera",
-      },
-      {
-        id: 4,
-        title: "Cobertura de Eventos",
-        description: "Realizamos cobertura de eventos creando contenido en el momento y material posterior para redes sociales. Permitimos que tu comunidad vea, sienta y reviva la experiencia a través de una comunicación auténtica.", icon: "Video",
-      },
-      {
-        id: 8,
-        title: "Diseño de Branding",
-        description: "Transformamos la esencia de tu proyecto en un sistema visual sólido y coherente: logo, paleta cromática, tipografías y universo visual.",
-        icon: "Component",
-      },
-    ],
-  },
-  {
     id: "digital",
     title: "Digital y Web",
     subtitle: "Desarrollo y optimización de plataformas",
@@ -93,6 +69,31 @@ export const serviceCategories = [
       },
     ],
   },
+  {
+    id: "produccion",
+    title: "Producción Visual",
+    subtitle: "Contenido audiovisual e identidad de marca",
+    services: [
+      {
+        id: 3,
+        title: "Producción y Edición",
+        description: "Creamos piezas visuales de alto impacto: fotos, videos y diseño gráfico, con edición profesional y postproducción que refleje la identidad de tu marca.",
+        icon: "Camera",
+      },
+      {
+        id: 4,
+        title: "Cobertura de Eventos",
+        description: "Realizamos cobertura de eventos creando contenido en el momento y material posterior para redes sociales. Permitimos que tu comunidad vea, sienta y reviva la experiencia a través de una comunicación auténtica.", icon: "Video",
+      },
+      {
+        id: 8,
+        title: "Diseño de Branding",
+        description: "Transformamos la esencia de tu proyecto en un sistema visual sólido y coherente: logo, paleta cromática, tipografías y universo visual.",
+        icon: "Component",
+      },
+    ],
+  },
+
 ] as const;
 
 // Flat services array for backwards compatibility
