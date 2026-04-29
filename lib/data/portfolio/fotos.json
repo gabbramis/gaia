@@ -1,21 +1,6 @@
 {
   "items": [
     {
-      "id": "tienda-joyeria",
-      "title": "Joyería Artesanal — Producto",
-      "description": "Producción y fotografía de producto para catálogo digital.",
-      "category": "product",
-      "client": "Adriana Costa Orfebre",
-      "images": [
-        {
-          "src": "/portfolio/fotos/joyeria/adriana-costa-orfebre-2.jpg",
-          "alt": "Joyería artesanal"
-        }
-      ],
-      "featured": true,
-      "niche": "Joyería"
-    },
-    {
       "id": "tienda-joyeria-2",
       "title": "Joyería Artesanal — Producto",
       "description": "Producción y fotografía de producto para catálogo digital.",
@@ -29,6 +14,126 @@
       ],
       "featured": true,
       "niche": "Joyería"
+    },
+    {
+      "id": "medialuna",
+      "title": "Medialuna Rellena",
+      "description": "Fotografía gastronómica para menú y redes sociales, resaltando texturas y frescura.",
+      "category": "food",
+      "client": "Cardenal Carrasco",
+      "images": [
+        {
+          "src": "/portfolio/fotos/gastronomia/medialuna-rellena.jpeg",
+          "alt": "Medialuna rellena"
+        }
+      ],
+      "featured": true,
+      "niche": "Gastronomía"
+    },
+    {
+      "id": "medialuna-2",
+      "title": "Medialuna Rellena - Detalle",
+      "description": "Fotografía de producto gastronómico, enfocada en detalles irresistibles para atraer clientes.",
+      "category": "food",
+      "client": "Cardenal Carrasco",
+      "images": [
+        {
+          "src": "/portfolio/fotos/gastronomia/medialuna-rellena-2.jpeg",
+          "alt": "Medialuna rellena detalle"
+        }
+      ],
+      "featured": true,
+      "niche": "Gastronomía"
+    },
+    {
+      "id": "medialuna-4",
+      "title": "Medialuna Rellena - Primer Plano",
+      "description": "Primer plano de pastelería artesanal, resaltando la calidad de los ingredientes.",
+      "category": "food",
+      "client": "Cardenal Carrasco",
+      "images": [
+        {
+          "src": "/portfolio/fotos/gastronomia/medialuna-rellena-4.jpeg",
+          "alt": "Medialuna rellena primer plano"
+        }
+      ],
+      "featured": true,
+      "niche": "Gastronomía"
+    },
+    {
+      "id": "cafe-cardenal",
+      "title": "Café Cardenal Carrasco",
+      "description": "Fotografía de especialidad para cafeterías, capturando la esencia y aroma de un buen café.",
+      "category": "food",
+      "client": "Cardenal Carrasco",
+      "images": [
+        {
+          "src": "/portfolio/fotos/gastronomia/cafe-cardenal-carrasco.jpeg",
+          "alt": "Café Cardenal Carrasco"
+        }
+      ],
+      "featured": true,
+      "niche": "Gastronomía"
+    },
+    {
+      "id": "cafe-macciato",
+      "title": "Café Cardenal Carrasco",
+      "description": "Fotografía de especialidad para cafeterías, capturando la esencia y aroma de un buen café.",
+      "category": "food",
+      "client": "Cardenal Carrasco",
+      "images": [
+        {
+          "src": "/portfolio/fotos/gastronomia/cafe-macciato.jpeg",
+          "alt": "Café Cardenal Carrasco"
+        }
+      ],
+      "featured": true,
+      "niche": "Gastronomía"
+    },
+    {
+      "id": "bowl-yogurt",
+      "title": "Bowl de Yogurt con Frutos Secos",
+      "description": "Fotografía de alimentos saludables, ideal para menús de desayunos y meriendas fitness.",
+      "category": "food",
+      "client": "4nuts",
+      "images": [
+        {
+          "src": "/portfolio/fotos/gastronomia/bowl-yogurt-frutos-secos.jpeg",
+          "alt": "Bowl de yogurt con frutos secos"
+        }
+      ],
+      "featured": true,
+      "niche": "Gastronomía"
+    },
+    {
+      "id": "granola-mani",
+      "title": "Granola y Maní",
+      "description": "Toma cenital de ingredientes y snacks saludables, destacando variedad y colores.",
+      "category": "food",
+      "client": "4nuts",
+      "images": [
+        {
+          "src": "/portfolio/fotos/gastronomia/granola-mani.jpeg",
+          "alt": "Granola y maní"
+        }
+      ],
+      "featured": true,
+      "niche": "Gastronomía"
+    },
+    {
+      "id": "mani-chocolate",
+      "title": "Maní con Chocolate",
+      "description": "Fotografía de producto para snacks y golosinas, buscando tentación y apetito.",
+      "category": "food",
+      "client": "4nuts",
+      "images": [
+        {
+          "src": "/portfolio/fotos/gastronomia/mani-con-chocolate.jpeg",
+          "alt": "Maní con chocolate"
+        }
+      ],
+      "featured": true,
+      "niche": "Gastronomía"
     },
     {
       "id": "sportwear-1",
@@ -104,126 +209,6 @@
       ],
       "featured": true,
       "niche": "Moda"
-    },
-    {
-      "id": "medialuna",
-      "title": "Medialuna Rellena",
-      "description": "Fotografía gastronómica para menú y redes sociales, resaltando texturas y frescura.",
-      "category": "food",
-      "client": "Cardenal Carrasco",
-      "images": [
-        {
-          "src": "/portfolio/fotos/gastronomia/medialuna-rellena.jpeg",
-          "alt": "Medialuna rellena"
-        }
-      ],
-      "featured": true,
-      "niche": "Gastronomía"
-    },
-    {
-      "id": "medialuna-2",
-      "title": "Medialuna Rellena - Detalle",
-      "description": "Fotografía de producto gastronómico, enfocada en detalles irresistibles para atraer clientes.",
-      "category": "food",
-      "client": "Cardenal Carrasco",
-      "images": [
-        {
-          "src": "/portfolio/fotos/gastronomia/medialuna-rellena-2.jpeg",
-          "alt": "Medialuna rellena detalle"
-        }
-      ],
-      "featured": true,
-      "niche": "Gastronomía"
-    },
-    {
-      "id": "medialuna-3",
-      "title": "Medialuna Rellena - Composición",
-      "description": "Composición gastronómica para destacar productos de pastelería en entornos atractivos.",
-      "category": "food",
-      "client": "Cardenal Carrasco",
-      "images": [
-        {
-          "src": "/portfolio/fotos/gastronomia/medialuna-rellena-3.jpeg",
-          "alt": "Medialuna rellena composición"
-        }
-      ],
-      "featured": true,
-      "niche": "Gastronomía"
-    },
-    {
-      "id": "medialuna-4",
-      "title": "Medialuna Rellena - Primer Plano",
-      "description": "Primer plano de pastelería artesanal, resaltando la calidad de los ingredientes.",
-      "category": "food",
-      "client": "Cardenal Carrasco",
-      "images": [
-        {
-          "src": "/portfolio/fotos/gastronomia/medialuna-rellena-4.jpeg",
-          "alt": "Medialuna rellena primer plano"
-        }
-      ],
-      "featured": true,
-      "niche": "Gastronomía"
-    },
-    {
-      "id": "cafe-cardenal",
-      "title": "Café Cardenal Carrasco",
-      "description": "Fotografía de especialidad para cafeterías, capturando la esencia y aroma de un buen café.",
-      "category": "food",
-      "client": "Cardenal Carrasco",
-      "images": [
-        {
-          "src": "/portfolio/fotos/gastronomia/cafe-cardenal-carrasco.jpeg",
-          "alt": "Café Cardenal Carrasco"
-        }
-      ],
-      "featured": true,
-      "niche": "Gastronomía"
-    },
-    {
-      "id": "bowl-yogurt",
-      "title": "Bowl de Yogurt con Frutos Secos",
-      "description": "Fotografía de alimentos saludables, ideal para menús de desayunos y meriendas fitness.",
-      "category": "food",
-      "client": "4nuts",
-      "images": [
-        {
-          "src": "/portfolio/fotos/gastronomia/bowl-yogurt-frutos-secos.jpeg",
-          "alt": "Bowl de yogurt con frutos secos"
-        }
-      ],
-      "featured": true,
-      "niche": "Gastronomía"
-    },
-    {
-      "id": "granola-mani",
-      "title": "Granola y Maní",
-      "description": "Toma cenital de ingredientes y snacks saludables, destacando variedad y colores.",
-      "category": "food",
-      "client": "4nuts",
-      "images": [
-        {
-          "src": "/portfolio/fotos/gastronomia/granola-mani.jpeg",
-          "alt": "Granola y maní"
-        }
-      ],
-      "featured": true,
-      "niche": "Gastronomía"
-    },
-    {
-      "id": "mani-chocolate",
-      "title": "Maní con Chocolate",
-      "description": "Fotografía de producto para snacks y golosinas, buscando tentación y apetito.",
-      "category": "food",
-      "client": "4nuts",
-      "images": [
-        {
-          "src": "/portfolio/fotos/gastronomia/mani-con-chocolate.jpeg",
-          "alt": "Maní con chocolate"
-        }
-      ],
-      "featured": true,
-      "niche": "Gastronomía"
     }
   ]
 }
