@@ -1,0 +1,36 @@
+{
+  "projects": [
+    {
+      "id": "bruma",
+      "client": "Bruma Café",
+      "description": "Identidad visual completa para una cafetería de estilo moderno y minimalista. Diseñamos un sistema cálido y elegante que transmite calma, cercanía y una experiencia auténtica alrededor del café.",
+      "category": "visual-identity",
+      "logo": {
+        "src": "/branding/bruma-logo.png",
+        "alt": "Bruma Logo"
+      },
+      "palette": [
+        { "name": "Verde Palta", "hex": "#A9CB5A" },
+        { "name": "Salvia Profundo", "hex": "#4A6741" },
+        { "name": "Nude Tostado", "hex": "#C9A98A" },
+        { "name": "Arcilla Clara", "hex": "#D4B8A5" },
+        { "name": "Crema Blanca", "hex": "#F7F2EC" }
+      ],
+      "typography": [
+        { "name": "Anton", "type": "sans-serif" },
+        { "name": "DM Sans", "type": "sans-serif" },
+        { "name": "DM Sans Light", "type": "sans-serif" },
+        { "name": "IBM Plex Mono", "type": "monospace" }
+      ],
+      "mockups": [
+        { "src": "/portfolio/branding/bruma-branding.png", "alt": "Bruma Brand Mockup 1" },
+        { "src": "/portfolio/branding/bruma-branding-logo.png", "alt": "Bruma Brand Mockup 2" },
+        { "src": "/portfolio/branding/bruma-branding-applied.png", "alt": "Bruma Brand Mockup 3" }
+      ],
+      "year": 2025,
+      "featured": true,
+      "order": 1,
+      "tags": ["naturaleza", "orgánico", "elegancia"]
+    }
+  ]
+}

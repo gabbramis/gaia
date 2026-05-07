@@ -26,7 +26,7 @@ export function Hero() {
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 md:px-12 pt-20">
 
         <div className="max-w-7xl text-center flex flex-col items-center">
-          <div className="relative w-full max-w-2xl h-32 mb-8">
+          <div className="relative w-full max-w-2xl h-20 sm:h-28 md:h-32 mb-6 md:mb-8">
             <Image
               src="/gaia-name.png"
               alt="Gaia Studio"
@@ -40,10 +40,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            className="font-serif text-6xl md:text-8xl lg:text-[10rem] leading-[0.9] tracking-tight text-[var(--gaia-beige)] mb-6 relative"
+            className="font-serif text-4xl sm:text-5xl md:text-8xl lg:text-[10rem] leading-[0.9] tracking-tight text-[var(--gaia-beige)] mb-6 relative"
           >
             <span className="block">Donde tu negocio</span>
-            <span className="block font-monsieur text-[var(--gaia-pink)] text-7xl md:text-9xl lg:text-[11rem] -mt-4 md:-mt-8 lg:-mt-12 opacity-90">
+            <span className="block font-monsieur text-[var(--gaia-pink)] text-5xl sm:text-6xl md:text-9xl lg:text-[11rem] -mt-2 sm:-mt-3 md:-mt-8 lg:-mt-12 opacity-90">
               se vuelve arte
             </span>
           </motion.h1>
@@ -76,7 +76,7 @@ export function Hero() {
             <Button
               size="lg"
               onClick={handleCTA}
-              className="bg-transparent border border-[var(--gaia-pink)] text-[var(--gaia-pink)] hover:bg-[var(--gaia-pink)] hover:text-[var(--gaia-burgundy)] rounded-none px-12 py-6 text-sm tracking-[0.15em] uppercase transition-all duration-500"
+              className="bg-transparent border border-[var(--gaia-pink)] text-[var(--gaia-pink)] hover:bg-[var(--gaia-pink)] hover:text-[var(--gaia-burgundy)] rounded-none px-6 sm:px-10 md:px-12 py-4 md:py-6 text-sm tracking-[0.15em] uppercase transition-all duration-500"
             >
               Agenda una reunión
             </Button>

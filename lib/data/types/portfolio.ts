@@ -87,6 +87,21 @@ export interface CampanaProject {
   };
 }
 
+export interface BrandingProject {
+  id: string;
+  client: string;
+  description: string;
+  category: 'logo' | 'visual-identity' | 'brand-guidelines' | 'rebranding';
+  logo: ImageAsset;
+  palette: { name: string; hex: string }[];
+  typography: { name: string; type: 'serif' | 'sans-serif' | 'script' }[];
+  mockups: ImageAsset[];
+  year: number;
+  featured: boolean;
+  order: number;
+  tags?: string[];
+}
+
 export type CampanaContentBlock =
   | { type: 'text'; content: string }
   | { type: 'image'; image: ImageAsset; caption?: string }

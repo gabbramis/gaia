@@ -50,14 +50,17 @@ export function Navigation() {
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);
 
-    if (pathname !== '/') {
+    if (href.startsWith('#')) {
+      if (pathname !== '/') {
+        router.push(`/${href}`);
+        return;
+      }
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
       router.push(`/${href}`);
-      return;
-    }
-
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -71,10 +74,10 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a
-            href="/#hero"
+            href="/"
             onClick={(e) => {
               e.preventDefault();
-              handleNavClick('#hero');
+              handleNavClick('/');
             }}
             className="font-serif text-2xl md:text-3xl text-[var(--gaia-beige)] hover:text-[var(--gaia-pink)] transition-colors duration-300 tracking-tight relative z-50"
           >

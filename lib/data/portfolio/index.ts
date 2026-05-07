@@ -2,12 +2,14 @@ import webDesignsData from './web-designs.json';
 import fotosData from './fotos.json';
 import reelsData from './reels.json';
 import campanasData from './campanas.json';
+import brandingData from './branding.json';
 
 import type {
   WebDesignProject,
   FotoItem,
   ReelItem,
-  CampanaProject
+  CampanaProject,
+  BrandingProject
 } from '../types/portfolio';
 
 // Type-safe data exports with type assertions
@@ -15,6 +17,11 @@ export const webDesigns: WebDesignProject[] = webDesignsData.projects as WebDesi
 export const fotos: FotoItem[] = fotosData.items as FotoItem[];
 export const reels: ReelItem[] = reelsData.items as ReelItem[];
 export const campanas: CampanaProject[] = campanasData.campaigns as CampanaProject[];
+
+export const brandingProjects: BrandingProject[] = brandingData.projects as BrandingProject[];
+
+export const getBrandingById = (id: string): BrandingProject | undefined =>
+  brandingProjects.find(project => project.id === id);
 
 // Utility functions for Web Designs
 export const getWebDesignById = (id: string): WebDesignProject | undefined =>

@@ -58,7 +58,7 @@ export function About() {
                 Who We Are
               </span>
 
-              <h2 className="font-serif text-6xl md:text-8xl lg:text-9xl text-[var(--gaia-beige)] mb-8 tracking-tighter leading-[0.8]">
+              <h2 className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-[var(--gaia-beige)] mb-8 tracking-tighter leading-[0.8]">
                 Nosotras<span className="text-[var(--gaia-pink)]">.</span>
               </h2>
 

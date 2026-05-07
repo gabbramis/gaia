@@ -84,7 +84,7 @@ export function Contact() {
           >
             Contacto
           </motion.h2>
-          <p className="font-sans text-[var(--gaia-beige)]/60 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="font-sans text-[var(--gaia-beige)]/60 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
             ¿Lista para transformar tu marca? Escríbenos y comencemos a crear algo extraordinario.
           </p>
         </div>
@@ -98,7 +98,7 @@ export function Contact() {
             onSubmit={handleContact}
             className="space-y-12"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               <div className="group">
                 <label htmlFor="contact-name" className="sr-only">Nombre</label>
                 <input
@@ -149,7 +149,7 @@ export function Contact() {
                 size="lg"
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-transparent border border-[var(--gaia-pink)] text-[var(--gaia-pink)] hover:bg-[var(--gaia-pink)] hover:text-[var(--gaia-burgundy)] rounded-none px-16 py-6 text-sm tracking-[0.15em] uppercase transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-transparent border border-[var(--gaia-pink)] text-[var(--gaia-pink)] hover:bg-[var(--gaia-pink)] hover:text-[var(--gaia-burgundy)] rounded-none px-8 md:px-16 py-5 md:py-6 text-sm tracking-[0.15em] uppercase transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
               </Button>

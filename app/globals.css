@@ -154,7 +154,7 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+    scroll-padding-top: 72px;
     /* Offset for fixed navigation */
     overflow-x: hidden;
     width: 100%;

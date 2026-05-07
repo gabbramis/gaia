@@ -85,7 +85,7 @@ export function WebDesigns() {
                                         )}
                                     </div>
                                     {project.url && (
-                                        <span className="font-sans text-[10px] sm:text-xs text-[var(--gaia-pink)]/40 uppercase tracking-widest group-hover:text-[var(--gaia-pink)] transition-colors duration-300">
+                                        <span className="font-sans text-xs text-[var(--gaia-pink)]/40 uppercase tracking-widest group-hover:text-[var(--gaia-pink)] transition-colors duration-300">
                                             Visit Website ↗
                                         </span>
                                     )}

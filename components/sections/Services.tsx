@@ -45,8 +45,8 @@ export function Services() {
             <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-4">
               Our Expertise
             </span>
-            <h2 className="font-serif text-5xl md:text-7xl text-[var(--gaia-beige)] tracking-tight">
-              Nuestros Servicios
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-7xl text-[var(--gaia-beige)] tracking-tight">
+                Nuestros Servicios
             </h2>
           </div>
           <p className="font-sans text-[var(--gaia-beige)]/60 max-w-md text-sm md:text-base leading-relaxed tracking-wide">
@@ -179,7 +179,7 @@ export function Services() {
                 action: 'Click',
               });
             }}
-            className="inline-flex items-center gap-2 px-12 py-6 bg-transparent border border-[var(--gaia-pink)] text-[var(--gaia-pink)] font-sans text-sm tracking-[0.15em] uppercase rounded-none hover:bg-[var(--gaia-pink)] hover:text-[var(--gaia-burgundy)] transition-all duration-500"
+            className="inline-flex items-center gap-2 px-6 sm:px-10 md:px-12 py-5 md:py-6 bg-transparent border border-[var(--gaia-pink)] text-[var(--gaia-pink)] font-sans text-sm tracking-[0.15em] uppercase rounded-none hover:bg-[var(--gaia-pink)] hover:text-[var(--gaia-burgundy)] transition-all duration-500"
           >
             Agendar llamada estratégica
             <ArrowRight size={16} />

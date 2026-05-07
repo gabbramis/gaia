@@ -103,9 +103,10 @@ export const services = serviceCategories.flatMap(cat => [...cat.services]);
 
 // Navigation Links
 export const navLinks = [
-  { href: "#servicios", label: "Servicios" },
-  { href: "#nosotras", label: "Nosotras" },
-  { href: "#portfolio", label: "Portfolio" },
+  { href: "servicios", label: "Servicios" },
+  { href: "nosotras", label: "Nosotras" },
+  { href: "portfolio", label: "Portfolio" },
+ // { href: "blog", label: "Blog" },
   { href: "#contacto", label: "Contacto" },
 ] as const;
 
