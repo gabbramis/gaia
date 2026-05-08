@@ -18,24 +18,7 @@
       "publishedAt": "2024-11-01T00:00:00Z",
       "order": 1
     },
-    {
-      "id": "chic-collection",
-      "title": "Chic Collection",
-      "subtitle": "Portfolio Creativo",
-      "description": "Portfolio interactivo para agencia creativa con animaciones elegantes",
-      "category": "portfolio",
-      "images": {
-        "cover": {
-          "src": "/portfolio/web-designs/chic.png",
-          "alt": "Creative Portfolio - Homepage"
-        }
-      },
-      "url": "https://www.chiccollectionuy.com/",
-      "year": 2024,
-      "featured": true,
-      "publishedAt": "2024-10-01T00:00:00Z",
-      "order": 3
-    },
+    
     {
       "id": "corporate-identity",
       "title": "Auxilio Motoservice",
