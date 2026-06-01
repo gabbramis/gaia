@@ -40,7 +40,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            className="font-serif text-4xl sm:text-5xl md:text-8xl lg:text-[10rem] leading-[0.9] tracking-tight text-[var(--gaia-beige)] mb-6 relative"
+            className="font-serif text-4xl sm:text-5xl md:text-8xl lg:text-[10rem] leading-[0.9] tracking-tight text-[var(--gaia-beige)] mb-4 relative"
           >
             <span className="block">Donde tu negocio</span>
             <span className="block font-monsieur text-[var(--gaia-pink)] text-5xl sm:text-6xl md:text-9xl lg:text-[11rem] -mt-2 sm:-mt-3 md:-mt-8 lg:-mt-12 opacity-90">
@@ -53,7 +53,7 @@ export function Hero() {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="w-24 h-[1px] bg-[var(--gaia-pink)] my-8"
+            className="w-24 h-[1px] bg-[var(--gaia-pink)] my-4"
           />
 
           {/* Tagline */}
@@ -61,7 +61,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
-            className="font-sans text-sm md:text-base text-[var(--gaia-beige)]/80 tracking-[0.2em] uppercase max-w-2xl mx-auto mb-12 leading-relaxed"
+            className="font-sans text-sm md:text-base text-[var(--gaia-beige)]/80 tracking-[0.2em] uppercase max-w-2xl mx-auto mb-6 leading-relaxed"
           >
             Pensamos, diseñamos y ejecutamos soluciones digitales alineadas a los objetivos reales de tu negocio.
 

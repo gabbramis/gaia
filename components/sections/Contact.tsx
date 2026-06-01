@@ -68,11 +68,11 @@ export function Contact() {
   return (
     <section
       id="contacto"
-      className="relative min-h-screen bg-[var(--gaia-burgundy)] py-16 md:py-32 px-6 md:px-12 flex items-center border-t border-[var(--gaia-pink)]/10"
+      className="relative bg-[var(--gaia-burgundy)] py-12 md:py-20 px-6 md:px-12 flex items-center border-t border-[var(--gaia-pink)]/10"
     >
       <div className="max-w-4xl mx-auto w-full">
-        <div className="text-center mb-12 md:mb-16">
-          <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-6">
+        <div className="text-center mb-8 md:mb-12">
+          <span             className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-4">
             Get in Touch
           </span>
           <motion.h2
@@ -80,7 +80,7 @@ export function Contact() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
-            className="font-serif text-5xl md:text-7xl text-[var(--gaia-beige)] mb-8 tracking-tight"
+            className="font-serif text-4xl md:text-6xl text-[var(--gaia-beige)] mb-6 tracking-tight"
           >
             Contacto
           </motion.h2>
@@ -96,9 +96,9 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
             onSubmit={handleContact}
-            className="space-y-12"
+            className="space-y-8 md:space-y-10"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               <div className="group">
                 <label htmlFor="contact-name" className="sr-only">Nombre</label>
                 <input
@@ -144,7 +144,7 @@ export function Contact() {
               </p>
             )}
 
-            <div className="flex justify-center pt-8">
+            <div className="flex justify-center pt-6">
               <Button
                 size="lg"
                 type="submit"
@@ -160,7 +160,7 @@ export function Contact() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center py-12 md:py-20"
+            className="text-center py-8 md:py-12"
           >
             <div className="mb-8">
               <div className="inline-block mb-6">
@@ -198,7 +198,7 @@ export function Contact() {
           </motion.div>
         )}
 
-        <div className="mt-24 pt-12 border-t border-[var(--gaia-pink)]/10 flex flex-col md:flex-row justify-between items-center gap-8 text-[var(--gaia-beige)]/40 font-sans text-sm tracking-widest uppercase">
+        <div className="mt-16 pt-8 border-t border-[var(--gaia-pink)]/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[var(--gaia-beige)]/40 font-sans text-sm tracking-widest uppercase">
           <a href={`mailto:${contactInfo.email}`} className="hover:text-[var(--gaia-pink)] transition-colors">
             {contactInfo.email}
           </a>

@@ -31,7 +31,7 @@ export function Process() {
     return (
         <section
             id="proceso"
-            className="relative bg-[var(--gaia-burgundy)] py-12 md:py-16 px-6 md:px-12 border-t border-[var(--gaia-pink)]/10"
+            className="relative bg-[var(--gaia-burgundy)] py-8 md:py-12 px-6 md:px-12 border-t border-[var(--gaia-pink)]/10"
         >
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
@@ -40,7 +40,7 @@ export function Process() {
                     whileInView="visible"
                     viewport={{ once: true, margin: '-100px' }}
                     variants={fadeInUp}
-                    className="mb-10 md:mb-14 text-center"
+                    className="mb-8 md:mb-10 text-center"
                 >
                     <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-3">
                         How we work
@@ -67,7 +67,7 @@ export function Process() {
                             variants={fadeInUp}
                             className={cn(
                                 "relative flex items-start gap-6 md:gap-12 group",
-                                index !== steps.length - 1 ? "mb-10" : "",
+                                index !== steps.length - 1 ? "mb-6 md:mb-8" : "",
                                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                             )}
                         >
