@@ -12,42 +12,47 @@ const mainCategories = [
   {
     id: 'redes-sociales',
     number: '01',
-    title: 'Gestión de Redes Sociales',
-    description: 'Estrategia integral para construir y fortalecer la presencia de tu marca en redes sociales, combinando creatividad, planificación y contenido de calidad.',
-    includes: ['Social Media', 'Community Manager', 'Producción y Edición'],
+    title: 'Gestion de Redes Sociales',
+    description: 'Estrategia integral para construir y fortalecer la presencia de tu marca en redes sociales, combinando creatividad, planificacion y contenido de calidad.',
+    includes: ['Social Media', 'Community Manager', 'Produccion y Edicion'],
     featured: true,
+    href: '/gestion-redes-sociales',
   },
   {
     id: 'diseno-web',
     number: '02',
-    title: 'Diseño Web',
-    description: 'Creamos sitios web funcionales, estéticos y alineados con la identidad de tu marca. Desde landing pages hasta tiendas online completas con e-commerce.',
-    includes: ['Diseño Web', 'E-commerce', 'Web Management Mensual'],
+    title: 'Diseno Web',
+    description: 'Creamos sitios web funcionales, esteticos y alineados con la identidad de tu marca. Desde landing pages hasta tiendas online completas con e-commerce.',
+    includes: ['Diseno Web', 'E-commerce', 'Web Management Mensual'],
     featured: true,
+    href: '/diseno-web',
   },
   {
     id: 'seo',
     number: '03',
     title: 'SEO y Posicionamiento',
-    description: 'Optimizamos tu presencia digital para que tu marca sea fácilmente encontrada en buscadores, aumentando tu visibilidad y tráfico orgánico de forma sostenible.',
-    includes: ['SEO', 'SEO Local', 'Optimización para buscadores'],
+    description: 'Optimizamos tu presencia digital para que tu marca sea facilmente encontrada en buscadores, aumentando tu visibilidad y trafico organico de forma sostenible.',
+    includes: ['SEO', 'SEO Local', 'Optimizacion para buscadores'],
     featured: true,
+    href: '/seo',
   },
   {
     id: 'branding',
     number: '04',
     title: 'Branding',
     description: 'Construimos la identidad visual de tu marca desde cero o la renovamos para que comunique tu esencia de forma coherente y profesional en cada punto de contacto.',
-    includes: ['Diseño de Branding', 'Identidad Visual'],
+    includes: ['Diseno de Branding', 'Identidad Visual'],
     featured: false,
+    href: '/branding',
   },
   {
     id: 'campanas',
     number: '05',
-    title: 'Campañas Publicitarias',
-    description: 'Diseñamos y ejecutamos campañas 360° con ideas creativas, producción de contenido y pauta digital estratégica para maximizar el impacto de cada acción.',
-    includes: ['Campañas Publicitarias 360°', 'Promociones', 'Lanzamientos'],
+    title: 'Campanas Publicitarias',
+    description: 'Disenamos y ejecutamos campanas 360 con ideas creativas, produccion de contenido y pauta digital estrategica para maximizar el impacto de cada accion.',
+    includes: ['Campanas Publicitarias 360', 'Promociones', 'Lanzamientos'],
     featured: false,
+    href: '/campanas-publicitarias',
   },
 ];
 
@@ -133,7 +138,7 @@ export default function ServiciosPage() {
                     ))}
                   </div>
                   <Link
-                    href="#"
+                    href={category.href}
                     onClick={() => {
                       trackCustomEvent(`Conocer servicio - ${category.title}`, {
                         category: 'Service Category',
