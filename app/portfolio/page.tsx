@@ -17,9 +17,9 @@ export default function Portfolio() {
                 <div className="mb-6 md:mb-10">
                     <Link
                         href="/"
-                        className="inline-flex items-center gap-2 text-[var(--gaia-pink)] hover:text-[var(--gaia-beige)] transition-colors duration-300 text-sm tracking-widest uppercase"
+                        className="inline-flex items-center gap-2 text-[var(--gaia-pink)] hover:text-[var(--gaia-beige)] transition-colors duration-300 text-xs tracking-widest uppercase mb-6"
                     >
-                        <ArrowLeft size={16} />
+                        <ArrowLeft size={14} />
                         Home
                     </Link>
                 </div>

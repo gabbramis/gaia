@@ -21,10 +21,10 @@ export default function ContenidosPage() {
                 <div className="mb-6 text-left">
                     <Link
                         href="/portfolio"
-                        className="inline-flex items-center gap-2 text-[var(--gaia-pink)] hover:text-[var(--gaia-beige)] transition-colors duration-300 text-sm tracking-widest uppercase"
+                        className="inline-flex items-center gap-2 text-[var(--gaia-pink)] hover:text-[var(--gaia-beige)] transition-colors duration-300 text-xs tracking-widest uppercase"
                     >
-                        <ArrowLeft size={16} />
-                        Back
+                        <ArrowLeft size={14} />
+                        Portfolio
                     </Link>
                 </div>
                 <h1 className="font-serif text-5xl md:text-7xl text-[var(--gaia-beige)] tracking-tight mb-8">

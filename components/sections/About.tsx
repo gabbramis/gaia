@@ -9,7 +9,7 @@ export function About() {
   return (
     <section
       id="nosotras"
-      className="relative bg-[var(--gaia-burgundy)] py-16 md:py-32 px-6 md:px-12 border-t border-[var(--gaia-pink)]/10"
+      className="relative bg-[var(--gaia-burgundy)] py-16 md:py-32 px-6 md:px-12"
     >
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">

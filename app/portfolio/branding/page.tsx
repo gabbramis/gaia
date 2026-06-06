@@ -14,10 +14,10 @@ export default function BrandingPage() {
                 <div className="max-w-7xl mx-auto px-6 md:px-12 pt-24 md:pt-32">
                     <Link
                         href="/portfolio"
-                        className="inline-flex items-center gap-2 text-[var(--gaia-pink)] hover:text-[var(--gaia-beige)] transition-colors duration-300 text-sm tracking-widest uppercase"
+                        className="inline-flex items-center gap-2 text-[var(--gaia-pink)] hover:text-[var(--gaia-beige)] transition-colors duration-300 text-xs tracking-widest uppercase mb-6"
                     >
-                        <ArrowLeft size={16} />
-                        Back
+                        <ArrowLeft size={14} />
+                        Portfolio
                     </Link>
                 </div>
                 <Branding />

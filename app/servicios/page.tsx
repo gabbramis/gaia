@@ -48,9 +48,9 @@ const mainCategories = [
   {
     id: 'campanas',
     number: '05',
-    title: 'Campanas Publicitarias',
-    description: 'Disenamos y ejecutamos campanas 360 con ideas creativas, produccion de contenido y pauta digital estrategica para maximizar el impacto de cada accion.',
-    includes: ['Campanas Publicitarias 360', 'Promociones', 'Lanzamientos'],
+    title: 'Campañas Publicitarias',
+    description: 'Disenamos y ejecutamos campañas 360 con ideas creativas, produccion de contenido y pauta digital estrategica para maximizar el impacto de cada accion.',
+    includes: ['Campañas Publicitarias 360', 'Promociones', 'Lanzamientos'],
     featured: false,
     href: '/campanas-publicitarias',
   },
@@ -69,20 +69,20 @@ export default function ServiciosPage() {
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-16 md:pt-20 pb-6 md:pb-8 px-6 md:px-12">
+      <section className="pt-24 md:pt-32 pb-6 md:pb-8 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-[var(--gaia-pink)] hover:text-[var(--gaia-beige)] transition-colors duration-300 text-sm tracking-widest uppercase"
+            className="inline-flex items-center gap-2 text-[var(--gaia-pink)] hover:text-[var(--gaia-beige)] transition-colors duration-300 text-xs tracking-widest uppercase mb-6"
           >
-            <ArrowLeft size={16} />
+            <ArrowLeft size={14} />
             Home
           </Link>
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="mt-6 md:mt-8 text-center"
+            className="text-center"
           >
             <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-4">
               NUESTROS SERVICIOS
