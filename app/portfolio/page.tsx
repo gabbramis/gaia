@@ -67,7 +67,7 @@ export default function Portfolio() {
                                 </p>
 
                                 <div className="flex items-center gap-2 text-[var(--gaia-beige)] opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                                    <span className="text-xs uppercase tracking-widest">Ver Galería</span>
+                                    <span className="text-xs uppercase tracking-widest">Ver Proyectos</span>
                                     <ArrowRight size={14} />
                                 </div>
                             </div>
