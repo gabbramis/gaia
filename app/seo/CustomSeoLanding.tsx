@@ -14,6 +14,7 @@ import {
   BarChart3,
   Bookmark,
 } from 'lucide-react';
+import Image from 'next/image';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/sections/Footer';
 import { fadeInUp, easings } from '@/lib/animations';
@@ -239,17 +240,25 @@ export function CustomSeoLanding() {
             <div className="lg:col-span-6">
               <div className="grid grid-cols-2 gap-4">
                 <div className="aspect-[3/4] bg-[var(--gaia-pink)]/[0.02] border border-[var(--gaia-pink)]/10 rounded-lg overflow-hidden relative group hover:border-[var(--gaia-pink)]/30 transition-all duration-500">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Search size={32} className="text-[var(--gaia-pink)]/20 group-hover:text-[var(--gaia-pink)]/40 transition-colors" />
-                  </div>
+                  <Image
+                    src="/services/seo-tecnico.png"
+                    alt="SEO Técnico"
+                    fill
+                    className="object-cover object-top opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--gaia-burgundy)]/60 via-transparent to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3">
                     <span className="text-[9px] text-[var(--gaia-pink)] tracking-widest uppercase">SEO Técnico</span>
                   </div>
                 </div>
                 <div className="aspect-[3/4] bg-[var(--gaia-pink)]/[0.02] border border-[var(--gaia-pink)]/10 rounded-lg overflow-hidden relative group hover:border-[var(--gaia-pink)]/30 transition-all duration-500 mt-8">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Globe size={32} className="text-[var(--gaia-pink)]/20 group-hover:text-[var(--gaia-pink)]/40 transition-colors" />
-                  </div>
+                  <Image
+                    src="/services/seo-local.png"
+                    alt="SEO Local"
+                    fill
+                    className="object-cover object-top opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--gaia-burgundy)]/60 via-transparent to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3">
                     <span className="text-[9px] text-[var(--gaia-pink)] tracking-widest uppercase">SEO Local</span>
                   </div>
