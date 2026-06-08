@@ -43,7 +43,7 @@ export function CustomWebLanding() {
   const faqs = [
     {
       q: '¿El diseño es realmente personalizado o usan plantillas?',
-      a: 'En Gaia Studio no creemos en las soluciones genéricas. Cada sitio web se diseña desde cero en Figma según tu branding y objetivos, y luego se desarrolla a medida en Next.js/React. Esto garantiza una identidad única y que el sitio se adapte exactamente a tu negocio.'
+      a: 'En Gaia Studio no creemos en las soluciones genéricas. Cada sitio web se diseña desde cero según tu branding y objetivos, y luego se desarrolla a medida en Next.js/React. Esto garantiza una identidad única y que el sitio se adapte exactamente a tu negocio.'
     },
     {
       q: '¿Por qué usan Next.js en lugar de WordPress?',
@@ -51,11 +51,11 @@ export function CustomWebLanding() {
     },
     {
       q: '¿Cómo es el proceso de trabajo y cuánto tiempo demora?',
-      a: 'Un proyecto promedio toma entre 4 y 8 semanas. Dividimos el proceso en: 1) Descubrimiento técnico y estrategia, 2) Diseño de prototipos UX/UI en Figma, 3) Desarrollo web de alta fidelidad, y 4) Pruebas de calidad y lanzamiento. Tendrás acceso a una plataforma donde podrás ver los avances en tiempo real.'
+      a: 'Un proyecto promedio toma entre 4 y 8 semanas. Dividimos el proceso en: 1) Descubrimiento técnico y estrategia, 2) Diseño de prototipos UX/UI, 3) Desarrollo web de alta fidelidad, y 4) Pruebas de calidad y lanzamiento.'
     },
     {
       q: '¿Los sitios web son autogestionables?',
-      a: 'Sí. Integramos sistemas de gestión de contenido (CMS) intuitivos y modernos como Sanity, Payload o WordPress Headless según el proyecto, permitiéndote actualizar textos, imágenes o productos de forma simple y sin depender de un desarrollador.'
+      a: 'Sí. Integramos sistemas de gestión de contenido (CMS) intuitivos y modernos según el proyecto, permitiéndote actualizar textos, imágenes o productos de forma simple y sin depender de un desarrollador.'
     },
     {
       q: '¿Qué incluye el soporte post-lanzamiento?',
@@ -105,7 +105,7 @@ export function CustomWebLanding() {
               transition={{ duration: 0.8, delay: 0.2, ease: easings.premium }}
               className="font-sans text-[var(--gaia-beige)]/70 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl"
             >
-              No hacemos plantillas genéricas. Creamos experiencias web personalizadas de alta costura digital. Sitios visualmente impactantes, veloces y optimizados para convertir visitantes en clientes.
+              Creamos sitios web funcionales, rápidos y alineados con la identidad de tu marca. Diseñamos experiencias digitales claras, intuitivas y preparadas para acompañar el crecimiento de tu negocio.
             </motion.p>
 
             <motion.div
@@ -305,7 +305,7 @@ export function CustomWebLanding() {
                 </p>
                 <div className="w-full h-[1px] bg-[var(--gaia-pink)]/10 my-4" />
                 <ul className="space-y-3">
-                  {['Diseño UX/UI exclusivo en Figma', 'Secciones de Hook, Beneficios, y FAQ', 'Formularios interactivos optimizados', 'Velocidad de carga inmediata (<1s)', 'Integración de píxeles publicitarios'].map((item) => (
+                  {['Diseño UX/UI exclusivo', 'Secciones de Hook, Beneficios, y FAQ', 'Formularios interactivos optimizados', 'Velocidad de carga inmediata (<1s)', 'Integración de píxeles publicitarios'].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-xs text-[var(--gaia-beige)]/70">
                       <Check size={14} className="text-[var(--gaia-pink)] shrink-0" />
                       <span>{item}</span>
@@ -321,7 +321,7 @@ export function CustomWebLanding() {
               </button>
             </motion.div>
 
-            {/* Sitio Institucional */}
+            {/* Sitio Informativo */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -334,7 +334,7 @@ export function CustomWebLanding() {
               </div>
               <div>
                 <span className="text-[10px] tracking-widest text-[var(--gaia-pink)] uppercase">Para Posicionamiento y Confianza</span>
-                <h3 className="font-serif text-2xl text-[var(--gaia-beige)] mt-2 mb-4">Sitio Institucional</h3>
+                <h3 className="font-serif text-2xl text-[var(--gaia-beige)] mt-2 mb-4">Sitio Informativo</h3>
                 <p className="font-sans text-xs sm:text-sm text-[var(--gaia-beige)]/50 leading-relaxed mb-6">
                   Sitio web multi-página estructurado para contar la historia de tu marca, ordenar visualmente tus servicios e inspirar máxima autoridad técnica.
                 </p>
@@ -356,7 +356,7 @@ export function CustomWebLanding() {
               </button>
             </motion.div>
 
-            {/* E-Commerce Boutique */}
+            {/* E-Commerce */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -366,13 +366,13 @@ export function CustomWebLanding() {
             >
               <div>
                 <span className="text-[10px] tracking-widest text-[var(--gaia-pink)] uppercase">Para Venta de Productos o Servicios</span>
-                <h3 className="font-serif text-2xl text-[var(--gaia-beige)] mt-2 mb-4">E-Commerce Boutique</h3>
+                <h3 className="font-serif text-2xl text-[var(--gaia-beige)] mt-2 mb-4">E-Commerce</h3>
                 <p className="font-sans text-xs sm:text-sm text-[var(--gaia-beige)]/50 leading-relaxed mb-6">
                   Tienda online completa diseñada bajo altos estándares estéticos para generar una experiencia de compra inmersiva y de alta gama.
                 </p>
                 <div className="w-full h-[1px] bg-[var(--gaia-pink)]/10 my-4" />
                 <ul className="space-y-3">
-                  {['Catálogo autogestionable avanzado', 'Carrito de compras con flujos UX limpios', 'Pasarela de pagos locales e internacionales', 'Gestión de stock, cupones y envíos', 'Optimización técnica de velocidad (CRO)'].map((item) => (
+                  {['Catálogo autogestionable avanzado', 'Carrito de compras con flujos UX limpios', 'Pasarela de pagos con Mercado Pago', 'Gestión de stock, cupones y envíos', 'Optimización técnica de velocidad (CRO)'].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-xs text-[var(--gaia-beige)]/70">
                       <Check size={14} className="text-[var(--gaia-pink)] shrink-0" />
                       <span>{item}</span>
