@@ -1,7 +1,7 @@
 {
   "items": [
     {
-      "id": "tienda-joyeria-2",
+      "id": "tienda-joyeria-1",
       "title": "Joyería Artesanal — Producto",
       "description": "Producción y fotografía de producto para catálogo digital.",
       "category": "product",
@@ -14,7 +14,52 @@
       ],
       "featured": true,
       "niche": "Joyería"
+    },{
+
+      "id": "tienda-joyeria-2",
+      "title": "Joyería Artesanal — Producto",
+      "description": "Producción y fotografía de producto para catálogo digital.",
+      "category": "product",
+      "client": "Adriana Costa Orfebre",
+      "images": [
+        {
+          "src": "/portfolio/fotos/joyeria/adriana-costa-orfebre-2.jpg",
+          "alt": "Joyería artesanal"
+        }
+      ],
+      "featured": true,
+      "niche": "Joyería"
+    },{
+      "id": "tienda-joyeria-3",
+      "title": "Joyería Artesanal — Producto",
+      "description": "Producción y fotografía de producto para catálogo digital.",
+      "category": "product",
+      "client": "Adriana Costa Orfebre",
+      "images": [
+        {
+          "src": "/portfolio/fotos/joyeria/adriana-costa-orfebre-3.jpg",
+          "alt": "Joyería artesanal"
+        }
+      ],
+      "featured": true,
+      "niche": "Joyería"
     },
+    {
+      "id": "tienda-joyeria-4",
+      "title": "Joyería Artesanal — Producto",
+      "description": "Producción y fotografía de producto para catálogo digital.",
+      "category": "product",
+      "client": "Adriana Costa Orfebre",
+      "images": [
+        {
+          "src": "/portfolio/fotos/joyeria/adriana-costa-orfebre-4.jpeg",
+          "alt": "Joyería artesanal"
+        }
+      ],
+      "featured": true,
+      "niche": "Joyería"
+    },
+
     {
       "id": "medialuna",
       "title": "Medialuna Rellena",

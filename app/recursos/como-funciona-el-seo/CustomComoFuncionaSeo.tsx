@@ -28,9 +28,14 @@ import { useState } from "react";
 
 export function CustomComoFuncionaSeo() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [activeError, setActiveError] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
+  };
+
+  const toggleError = (index: number) => {
+    setActiveError(activeError === index ? null : index);
   };
 
   const handleCTA = (label: string) => {
@@ -106,24 +111,24 @@ export function CustomComoFuncionaSeo() {
 
   const faqs = [
     {
-      q: "¿Qué es el SEO y por qué es importante?",
-      a: "Placeholder para respuesta sobre qué es SEO y su importancia.",
+      q: "¿Cuánto demora el SEO?",
+      a: "Los primeros resultados se ven entre el mes 3 y 6. La consolidación completa toma entre 6 y 12 meses. El SEO es una inversión sostenible: a diferencia de la publicidad paga, los resultados no desaparecen cuando dejás de invertir.",
     },
     {
-      q: "¿Cuánto tiempo demora en verse resultados?",
-      a: "Placeholder para respuesta sobre tiempos de resultados SEO.",
+      q: "¿SEO o publicidad paga?",
+      a: "Depende de tus objetivos. La publicidad paga trae resultados inmediatos pero cuesta cada clic. El SEO tarda más pero construye tráfico orgánico permanente. Lo ideal es combinar ambos: publicidad para corto plazo y SEO para crecimiento sostenido.",
     },
     {
-      q: "¿Necesito un sitio web para hacer SEO?",
-      a: "Placeholder para respuesta sobre necesidad de sitio web.",
+      q: "¿Necesito crear contenido?",
+      a: "Sí, pero no se trata de escribir artículos interminables. Se trata de crear contenido optimizado, relevante y útil para tu audiencia. Cada página de tu sitio debe responder una necesidad real de búsqueda.",
     },
     {
-      q: "¿El SEO reemplaza la publicidad paga?",
-      a: "Placeholder para respuesta sobre SEO vs publicidad paga.",
+      q: "¿Funciona para negocios locales?",
+      a: "El SEO local es una de las áreas con mayor impacto. Si tu negocio tiene presencia física, optimizar tu Google Business Profile, reseñas y datos locales te puede posicionar frente a clientes que buscan exactamente lo que ofrecés, en tu zona.",
     },
     {
-      q: "¿Puedo hacer SEO yo mismo?",
-      a: "Placeholder para respuesta sobre SEO DIY vs profesional.",
+      q: "¿Puedo hacerlo sin cambiar mi web?",
+      a: "Depende del estado actual de tu sitio. Si la base técnica es sólida, se puede trabajar con optimizaciones puntuales. Si el sitio tiene problemas de velocidad, estructura o indexación, será necesario hacer correcciones técnicas primero.",
     },
   ];
 
@@ -356,7 +361,7 @@ export function CustomComoFuncionaSeo() {
         className="py-20 md:py-32 px-6 md:px-12 border-b border-[var(--gaia-pink)]/10"
       >
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-6 space-y-6">
               <span className="block text-[var(--gaia-pink)] text-xs tracking-[0.3em] uppercase">
                 SECCIÓN 01
@@ -369,20 +374,21 @@ export function CustomComoFuncionaSeo() {
               </h2>
               <div className="space-y-4">
                 <p className="font-sans text-[var(--gaia-beige)]/70 text-sm sm:text-base leading-relaxed">
-                  Placeholder: Definición de SEO (Search Engine Optimization) y
-                  su propósito fundamental.
+                  SEO significa Search Engine Optimization. Es el conjunto de
+                  técnicas que hacen que tu sitio aparezca en los resultados
+                  orgánicos de Google cuando alguien busca lo que ofrecés.
                 </p>
                 <p className="font-sans text-[var(--gaia-beige)]/70 text-sm sm:text-base leading-relaxed">
-                  Placeholder: Explicación de cómo el SEO conecta la intención
-                  del usuario con la oferta de negocios.
+                  No es publicidad pagada. Es construir presencia digital de
+                  forma sostenible, conectando tu marca con personas que ya
+                  están buscando soluciones como la tuya.
                 </p>
               </div>
 
-              {/* Key concept box */}
               <div className="p-6 border-l-2 border-[var(--gaia-pink)] bg-[var(--gaia-pink)]/[0.03]">
-                <p className="font-serif text-lg text-[var(--gaia-beige)] italic">
-                  &quot;Placeholder: Cita o concepto clave sobre SEO para
-                  destacar.&quot;
+                <p className="font-serif text-lg text-[var(--gaia-beige)] italic leading-snug">
+                  &quot;El SEO no es aparecer primero. Es aparecer cuando
+                  alguien te necesita.&quot;
                 </p>
               </div>
 
@@ -399,22 +405,87 @@ export function CustomComoFuncionaSeo() {
             </div>
 
             <div className="lg:col-span-6">
-              <div className="relative p-8 bg-[var(--gaia-pink)]/[0.02] border border-[var(--gaia-pink)]/10 rounded-lg">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="aspect-square bg-[var(--gaia-burgundy)]/50 border border-[var(--gaia-pink)]/10 rounded-lg flex items-center justify-center">
-                    <Search size={40} className="text-[var(--gaia-pink)]/20" />
+              <div className="relative">
+                {/* Visual: Search intent connection */}
+                <div className="relative p-6 md:p-8 border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/[0.02]">
+                  {/* User side */}
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-12 h-12 rounded-full border border-[var(--gaia-pink)]/20 bg-[var(--gaia-pink)]/[0.06] flex items-center justify-center shrink-0">
+                      <Search size={18} className="text-[var(--gaia-pink)]" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <span className="block text-[10px] uppercase tracking-[0.25em] text-[var(--gaia-pink)]/60 font-sans mb-1">
+                        El usuario busca
+                      </span>
+                      <div className="h-3 bg-[var(--gaia-beige)]/15 rounded-full w-[85%]" />
+                      <div className="h-2.5 bg-[var(--gaia-beige)]/10 rounded-full w-[60%] mt-1.5" />
+                    </div>
                   </div>
-                  <div className="aspect-square bg-[var(--gaia-burgundy)]/50 border border-[var(--gaia-pink)]/10 rounded-lg flex items-center justify-center mt-8">
-                    <TrendingUp
-                      size={40}
-                      className="text-[var(--gaia-pink)]/20"
-                    />
+
+                  {/* Connection line */}
+                  <div className="ml-6 w-px h-10 bg-gradient-to-b from-[var(--gaia-pink)]/30 to-[var(--gaia-pink)]/10" />
+
+                  {/* Google evaluates */}
+                  <div className="flex items-center gap-4 my-4">
+                    <div className="w-12 h-12 rounded-full border border-[var(--gaia-pink)]/20 bg-[var(--gaia-burgundy)]/60 flex items-center justify-center shrink-0">
+                      <Globe size={18} className="text-[var(--gaia-pink)]" />
+                    </div>
+                    <div className="flex-1">
+                      <span className="block text-[10px] uppercase tracking-[0.25em] text-[var(--gaia-pink)]/60 font-sans mb-1">
+                        Google evalúa quién puede responder
+                      </span>
+                      <div className="flex gap-1.5">
+                        {[...Array(5)].map((_, i) => (
+                          <div
+                            key={i}
+                            className="h-2 flex-1 rounded-full bg-[var(--gaia-pink)]/10"
+                            style={{ opacity: 1 - i * 0.15 }}
+                          />
+                        ))}
+                      </div>
+                    </div>
                   </div>
+
+                  {/* Connection line */}
+                  <div className="ml-6 w-px h-10 bg-gradient-to-b from-[var(--gaia-pink)]/30 to-[var(--gaia-pink)]/10" />
+
+                  {/* Your brand appears */}
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full border border-[var(--gaia-pink)]/30 bg-gradient-to-br from-[var(--gaia-pink)]/15 to-[var(--gaia-pink)]/5 flex items-center justify-center shrink-0 shadow-[0_0_20px_rgba(237,154,188,0.12)]">
+                      <TrendingUp size={18} className="text-[var(--gaia-pink)]" />
+                    </div>
+                    <div className="flex-1">
+                      <span className="block text-[10px] uppercase tracking-[0.25em] text-[var(--gaia-pink)]/60 font-sans mb-1">
+                        Tu marca aparece
+                      </span>
+                      <div className="h-3 bg-[var(--gaia-pink)]/20 rounded-full w-[70%]" />
+                      <div className="h-2.5 bg-[var(--gaia-pink)]/12 rounded-full w-[45%] mt-1.5" />
+                    </div>
+                  </div>
+
+                  {/* Decorative glow */}
+                  <div className="absolute -right-4 -top-4 w-24 h-24 bg-[var(--gaia-pink)]/8 rounded-full blur-[50px] pointer-events-none" />
+                  <div className="absolute -left-4 -bottom-4 w-20 h-20 bg-[var(--gaia-pink)]/6 rounded-full blur-[40px] pointer-events-none" />
                 </div>
-                <div className="mt-4 text-center">
-                  <span className="text-[10px] text-[var(--gaia-beige)]/30 uppercase tracking-widest font-sans">
-                    Placeholder: Visual representation
-                  </span>
+
+                {/* Bottom stat cards */}
+                <div className="grid grid-cols-2 gap-3 mt-3">
+                  <div className="p-4 border border-[var(--gaia-pink)]/8 bg-[var(--gaia-burgundy)]/30">
+                    <span className="block font-serif text-2xl md:text-3xl text-[var(--gaia-pink)]">
+                      93%
+                    </span>
+                    <span className="block font-sans text-[11px] text-[var(--gaia-beige)]/50 mt-1">
+                      de experiencias online empiezan con un buscador
+                    </span>
+                  </div>
+                  <div className="p-4 border border-[var(--gaia-pink)]/8 bg-[var(--gaia-burgundy)]/30">
+                    <span className="block font-serif text-2xl md:text-3xl text-[var(--gaia-pink)]">
+                      75%
+                    </span>
+                    <span className="block font-sans text-[11px] text-[var(--gaia-beige)]/50 mt-1">
+                      de usuarios nunca pasa de la primera página
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -433,61 +504,103 @@ export function CustomComoFuncionaSeo() {
               SECCIÓN 02
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl text-[var(--gaia-beige)] tracking-tight">
-              Cómo funciona Google
+              Cómo funciona{" "}
+              <span className="font-monsieur text-[var(--gaia-pink)] text-4xl md:text-6xl lowercase">
+                Google
+              </span>
             </h2>
             <p className="font-sans text-[var(--gaia-beige)]/60 text-xs sm:text-sm md:text-base mt-4 leading-relaxed">
-              Placeholder: Introducción al funcionamiento del algoritmo de
-              Google.
+              Antes de posicionar tu sitio, Google recorre cuatro etapas. Entender
+              cada una te permite optimizar donde realmente importa.
             </p>
           </div>
 
-          {/* Three-step process */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            {[
-              {
-                step: "01",
-                title: "Rastreo",
-                desc: "Placeholder: Cómo Google descubre páginas web.",
-                icon: Globe,
-              },
-              {
-                step: "02",
-                title: "Indexación",
-                desc: "Placeholder: Cómo Google organiza y clasifica el contenido.",
-                icon: Layers,
-              },
-              {
-                step: "03",
-                title: "Ranking",
-                desc: "Placeholder: Cómo Google decide qué mostrar primero.",
-                icon: BarChart3,
-              },
-            ].map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={item.step}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.15 }}
-                  className="relative p-8 border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/[0.01]"
-                >
-                  <span className="absolute top-4 right-4 font-serif text-4xl text-[var(--gaia-pink)]/10">
-                    {item.step}
-                  </span>
-                  <div className="p-3 bg-[var(--gaia-pink)]/10 rounded-lg w-fit mb-6">
-                    <Icon size={24} className="text-[var(--gaia-pink)]" />
-                  </div>
-                  <h3 className="font-serif text-2xl text-[var(--gaia-beige)] mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="font-sans text-sm text-[var(--gaia-beige)]/50 leading-relaxed">
-                    {item.desc}
-                  </p>
-                </motion.div>
-              );
-            })}
+          {/* 4-Step Interactive Flow */}
+          <div className="relative max-w-5xl mx-auto">
+            {/* Vertical connection line (desktop) */}
+            <div className="hidden md:block absolute left-[52px] top-0 bottom-0 w-px bg-gradient-to-b from-[var(--gaia-pink)]/20 via-[var(--gaia-pink)]/10 to-transparent" />
+
+            <div className="space-y-4 md:space-y-0">
+              {[
+                {
+                  step: "01",
+                  title: "Descubrir",
+                  desc: "Google envía bots que recorren la web siguiendo enlaces. Si nadie enlaza tu sitio o no lo compartís,Google no sabe que existís.",
+                  icon: Search,
+                  detail: "Rastreo y crawleo",
+                },
+                {
+                  step: "02",
+                  title: "Indexar",
+                  desc: "Una vez descubierta tu página, Google la analiza y la guarda en su base de datos. Si el contenido es duplicado o de baja calidad, puede no indexarla.",
+                  icon: Layers,
+                  detail: "Almacenamiento en base de datos",
+                },
+                {
+                  step: "03",
+                  title: "Comprender",
+                  desc: "Google interpreta de qué trata cada página: el tema, la intención, la calidad del contenido y la experiencia que ofrece al usuario.",
+                  icon: FileText,
+                  detail: "Análisis semántico y de calidad",
+                },
+                {
+                  step: "04",
+                  title: "Posicionar",
+                  desc: "Finalmente, Google ordena los resultados según cientos de factores: relevancia, autoridad, velocidad, experiencia mobile y más.",
+                  icon: BarChart3,
+                  detail: " ranking y ordenamiento",
+                },
+              ].map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={item.step}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.12 }}
+                    className="relative md:pl-28 md:py-8 group"
+                  >
+                    {/* Step number circle */}
+                    <div className="hidden md:flex absolute left-0 top-8 w-[104px] h-[104px] items-center justify-center">
+                      <div className="w-14 h-14 rounded-full border border-[var(--gaia-pink)]/20 bg-[var(--gaia-burgundy)] flex items-center justify-center relative z-10 group-hover:border-[var(--gaia-pink)]/40 group-hover:bg-[var(--gaia-pink)]/[0.08] transition-all duration-500">
+                        <span className="font-serif text-lg text-[var(--gaia-pink)]">
+                          {item.step}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Content card */}
+                    <div className="p-6 md:p-8 border border-[var(--gaia-pink)]/8 bg-[var(--gaia-pink)]/[0.015] hover:border-[var(--gaia-pink)]/18 hover:bg-[var(--gaia-pink)]/[0.025] transition-all duration-500">
+                      <div className="flex items-start gap-4">
+                        <div className="md:hidden shrink-0 w-10 h-10 rounded-full border border-[var(--gaia-pink)]/20 bg-[var(--gaia-burgundy)] flex items-center justify-center">
+                          <span className="font-serif text-sm text-[var(--gaia-pink)]">
+                            {item.step}
+                          </span>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-3 mb-3">
+                            <Icon
+                              size={18}
+                              className="text-[var(--gaia-pink)] shrink-0"
+                            />
+                            <h3 className="font-serif text-xl md:text-2xl text-[var(--gaia-beige)]">
+                              {item.title}
+                            </h3>
+                          </div>
+                          <p className="font-sans text-sm text-[var(--gaia-beige)]/60 leading-relaxed mb-3">
+                            {item.desc}
+                          </p>
+                          <span className="inline-block font-sans text-[10px] uppercase tracking-[0.2em] text-[var(--gaia-pink)]/50 border border-[var(--gaia-pink)]/12 px-3 py-1">
+                            {item.detail}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
@@ -498,17 +611,21 @@ export function CustomComoFuncionaSeo() {
         className="py-20 md:py-32 px-6 md:px-12 border-b border-[var(--gaia-pink)]/10"
       >
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-5 space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-32">
               <span className="block text-[var(--gaia-pink)] text-xs tracking-[0.3em] uppercase">
                 SECCIÓN 03
               </span>
               <h2 className="font-serif text-4xl md:text-5xl text-[var(--gaia-beige)] tracking-tight">
-                SEO Técnico
+                SEO{" "}
+                <span className="font-monsieur text-[var(--gaia-pink)] text-5xl md:text-6xl lowercase">
+                  técnico
+                </span>
               </h2>
               <p className="font-sans text-[var(--gaia-beige)]/70 text-sm sm:text-base leading-relaxed">
-                Placeholder: Qué es el SEO técnico y por qué es la base de todo
-                posicionamiento.
+                Antes de pensar en contenido, tu sitio necesita una base sólida.
+                Si Google no puede rastrear, entender o cargar tu página, ningún
+                contenido va a funcionar.
               </p>
               <Link
                 href="/diseno-web"
@@ -525,29 +642,86 @@ export function CustomComoFuncionaSeo() {
             <div className="lg:col-span-7">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  "Velocidad de carga",
-                  "Estructura de URLs",
-                  "Meta tags y headings",
-                  "Sitemap XML",
-                  "Schema markup",
-                  "Mobile-first indexing",
-                  "Core Web Vitals",
-                  "HTTPS y seguridad",
-                ].map((item, index) => (
-                  <motion.div
-                    key={item}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
-                    className="flex items-center gap-3 p-4 border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/[0.01]"
-                  >
-                    <div className="w-2 h-2 bg-[var(--gaia-pink)] rounded-full shrink-0" />
-                    <span className="font-sans text-sm text-[var(--gaia-beige)]/70">
-                      {item}
-                    </span>
-                  </motion.div>
-                ))}
+                  {
+                    title: "Velocidad",
+                    desc: "Un sitio lento frustra usuarios y penaliza rankings. Cada segundo cuenta.",
+                    icon: TrendingUp,
+                    metric: "< 2.5s",
+                    metricLabel: "tiempo ideal de carga",
+                  },
+                  {
+                    title: "Indexación",
+                    desc: "Si Google no puede acceder a tus páginas, simplemente no existís online.",
+                    icon: Search,
+                    metric: "100%",
+                    metricLabel: "páginas indexables",
+                  },
+                  {
+                    title: "Arquitectura web",
+                    desc: "Una estructura clara ayuda a Google a entender qué páginas son importantes.",
+                    icon: Layers,
+                    metric: "3 clics",
+                    metricLabel: "máximo para llegar a cualquier página",
+                  },
+                  {
+                    title: "Mobile-first",
+                    desc: "Google indexa primero la versión mobile. Si no es responsive, perdés posiciones.",
+                    icon: Globe,
+                    metric: "60%+",
+                    metricLabel: "de búsquedas son mobile",
+                  },
+                  {
+                    title: "Experiencia de usuario",
+                    desc: "Métricas como Core Web Vitals influyen directamente en tu posicionamiento.",
+                    icon: BarChart3,
+                    metric: "Core",
+                    metricLabel: "Web Vitals optimizados",
+                  },
+                  {
+                    title: "Seguridad",
+                    desc: "HTTPS es un factor de ranking. Sin certificado, Google penaliza tu sitio.",
+                    icon: Code,
+                    metric: "HTTPS",
+                    metricLabel: "certificado SSL activo",
+                  },
+                ].map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <motion.div
+                      key={item.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.45, delay: index * 0.07 }}
+                      className="group p-5 md:p-6 border border-[var(--gaia-pink)]/8 bg-[var(--gaia-pink)]/[0.015] hover:border-[var(--gaia-pink)]/18 hover:bg-[var(--gaia-pink)]/[0.025] transition-all duration-500"
+                    >
+                      <div className="flex items-start gap-3 mb-4">
+                        <div className="p-2 border border-[var(--gaia-pink)]/12 bg-[var(--gaia-pink)]/[0.04] group-hover:border-[var(--gaia-pink)]/24 group-hover:bg-[var(--gaia-pink)]/[0.08] transition-all duration-500 shrink-0">
+                          <Icon
+                            size={16}
+                            className="text-[var(--gaia-pink)]"
+                          />
+                        </div>
+                        <div className="min-w-0">
+                          <h3 className="font-serif text-lg text-[var(--gaia-beige)] group-hover:text-[var(--gaia-pink)] transition-colors duration-500">
+                            {item.title}
+                          </h3>
+                          <p className="font-sans text-xs text-[var(--gaia-beige)]/50 leading-relaxed mt-1.5">
+                            {item.desc}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="pt-3 border-t border-[var(--gaia-pink)]/8">
+                        <span className="block font-serif text-xl text-[var(--gaia-pink)]">
+                          {item.metric}
+                        </span>
+                        <span className="block font-sans text-[10px] uppercase tracking-[0.15em] text-[var(--gaia-beige)]/40 mt-0.5">
+                          {item.metricLabel}
+                        </span>
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -560,33 +734,76 @@ export function CustomComoFuncionaSeo() {
         className="py-20 md:py-32 px-6 md:px-12 border-b border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/[0.01]"
       >
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-6 space-y-6 order-2 lg:order-1">
-              <div className="relative p-8 bg-[var(--gaia-burgundy)]/50 border border-[var(--gaia-pink)]/10 rounded-lg">
+              <div className="relative p-6 md:p-8 border border-[var(--gaia-pink)]/10 bg-[var(--gaia-burgundy)]/40">
+                {/* Local business profile mockup */}
                 <div className="flex items-center gap-3 mb-6">
-                  <MapPin size={24} className="text-[var(--gaia-pink)]" />
-                  <span className="font-serif text-xl text-[var(--gaia-beige)]">
-                    Google Business Profile
-                  </span>
+                  <div className="w-10 h-10 rounded-full bg-[var(--gaia-pink)]/10 border border-[var(--gaia-pink)]/20 flex items-center justify-center">
+                    <MapPin size={16} className="text-[var(--gaia-pink)]" />
+                  </div>
+                  <div>
+                    <span className="block font-serif text-lg text-[var(--gaia-beige)]">
+                      Tu Negocio Local
+                    </span>
+                    <span className="block font-sans text-[10px] uppercase tracking-[0.2em] text-[var(--gaia-pink)]/60">
+                      Google Business Profile
+                    </span>
+                  </div>
                 </div>
-                <div className="space-y-3">
-                  <div className="h-3 bg-[var(--gaia-pink)]/10 rounded w-3/4" />
-                  <div className="h-3 bg-[var(--gaia-pink)]/10 rounded w-1/2" />
-                  <div className="h-3 bg-[var(--gaia-pink)]/10 rounded w-5/6" />
-                </div>
-                <div className="mt-6 flex items-center gap-2">
+
+                {/* Rating */}
+                <div className="flex items-center gap-2 mb-5">
                   <div className="flex gap-0.5">
                     {[1, 2, 3, 4, 5].map((i) => (
                       <div
                         key={i}
-                        className="w-3 h-3 bg-[var(--gaia-pink)]/30 rounded-sm"
+                        className={`w-3.5 h-3.5 rounded-sm ${i <= 4 ? "bg-[var(--gaia-pink)]/40" : "bg-[var(--gaia-pink)]/15"}`}
                       />
                     ))}
                   </div>
-                  <span className="text-[10px] text-[var(--gaia-beige)]/40">
-                    Placeholder: Reseñas
+                  <span className="font-sans text-xs text-[var(--gaia-beige)]/50">
+                    4.8 · 127 reseñas
                   </span>
                 </div>
+
+                {/* Info lines */}
+                <div className="space-y-2.5 mb-6">
+                  <div className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[var(--gaia-pink)]/30" />
+                    <div className="h-2 bg-[var(--gaia-beige)]/12 rounded-full w-[75%]" />
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[var(--gaia-pink)]/30" />
+                    <div className="h-2 bg-[var(--gaia-beige)]/12 rounded-full w-[55%]" />
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[var(--gaia-pink)]/30" />
+                    <div className="h-2 bg-[var(--gaia-beige)]/12 rounded-full w-[65%]" />
+                  </div>
+                </div>
+
+                {/* Action buttons mockup */}
+                <div className="flex gap-2">
+                  <div className="px-4 py-2 border border-[var(--gaia-pink)]/15 bg-[var(--gaia-pink)]/[0.05] rounded-full">
+                    <span className="font-sans text-[10px] text-[var(--gaia-pink)]/70 uppercase tracking-wider">
+                      Llamar
+                    </span>
+                  </div>
+                  <div className="px-4 py-2 border border-[var(--gaia-pink)]/15 bg-[var(--gaia-pink)]/[0.05] rounded-full">
+                    <span className="font-sans text-[10px] text-[var(--gaia-pink)]/70 uppercase tracking-wider">
+                      WhatsApp
+                    </span>
+                  </div>
+                  <div className="px-4 py-2 border border-[var(--gaia-pink)]/15 bg-[var(--gaia-pink)]/[0.05] rounded-full">
+                    <span className="font-sans text-[10px] text-[var(--gaia-pink)]/70 uppercase tracking-wider">
+                      Sitio web
+                    </span>
+                  </div>
+                </div>
+
+                {/* Decorative */}
+                <div className="absolute -right-3 -top-3 w-20 h-20 bg-[var(--gaia-pink)]/8 rounded-full blur-[40px] pointer-events-none" />
               </div>
             </div>
 
@@ -595,27 +812,57 @@ export function CustomComoFuncionaSeo() {
                 SECCIÓN 04
               </span>
               <h2 className="font-serif text-4xl md:text-5xl text-[var(--gaia-beige)] tracking-tight">
-                SEO Local
+                SEO{" "}
+                <span className="font-monsieur text-[var(--gaia-pink)] text-5xl md:text-6xl lowercase">
+                  local
+                </span>
               </h2>
               <p className="font-sans text-[var(--gaia-beige)]/70 text-sm sm:text-base leading-relaxed">
-                Placeholder: Qué es el SEO local y por qué es crucial para
-                negocios con presencia física.
+                Si tenés un negocio con presencia física, el SEO local es tu
+                herramienta más poderosa. Aparecer cuando alguien busca
+                &ldquo;cerca de mí&rdquo; o incluye tu ciudad es lo que separa
+                una visita de una oportunidad perdida.
               </p>
 
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {[
-                  "Google Business Profile optimizado",
-                  "Citas NAP consistentes",
-                  "Contenido geolocalizado",
-                  "Estrategia de reseñas",
-                  "Posicionamiento en Google Maps",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-3">
-                    <div className="w-1.5 h-1.5 bg-[var(--gaia-pink)] rounded-full shrink-0" />
-                    <span className="font-sans text-sm text-[var(--gaia-beige)]/60">
-                      {item}
-                    </span>
-                  </div>
+                  {
+                    title: "Google Business Profile",
+                    desc: "Tu ficha optimizada es el punto de contacto directo con clientes potenciales.",
+                  },
+                  {
+                    title: "Reseñas verificadas",
+                    desc: "Las reseñas no solo generan confianza: son un factor de ranking local clave.",
+                  },
+                  {
+                    title: "Consistencia de datos",
+                    desc: "Nombre, dirección y teléfono deben ser idénticos en toda la web.",
+                  },
+                  {
+                    title: "Presencia en Google Maps",
+                    desc: "Aparecer en el mapa con información completa multiplica tu visibilidad local.",
+                  },
+                ].map((item, index) => (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, x: 15 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: index * 0.08 }}
+                    className="flex gap-4 p-4 border border-[var(--gaia-pink)]/8 bg-[var(--gaia-pink)]/[0.015]"
+                  >
+                    <div className="shrink-0 mt-0.5">
+                      <div className="w-1.5 h-1.5 bg-[var(--gaia-pink)] rounded-full" />
+                    </div>
+                    <div>
+                      <h4 className="font-serif text-sm text-[var(--gaia-beige)] mb-1">
+                        {item.title}
+                      </h4>
+                      <p className="font-sans text-xs text-[var(--gaia-beige)]/50 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -623,7 +870,7 @@ export function CustomComoFuncionaSeo() {
         </div>
       </section>
 
-      {/* ==================== CREACIÓN DE CONTENIDO ==================== */}
+      {/* ==================== ESTRATEGIA DE CONTENIDOS ==================== */}
       <section
         id="contenido"
         className="py-20 md:py-32 px-6 md:px-12 border-b border-[var(--gaia-pink)]/10"
@@ -634,56 +881,176 @@ export function CustomComoFuncionaSeo() {
               SECCIÓN 05
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl text-[var(--gaia-beige)] tracking-tight">
-              Creación de{" "}
-              <span className="font-monsieur text-[var(--gaia-pink)] text-5xl md:text-7xl lowercase">
-                Contenido
+              Estrategia de{" "}
+              <span className="font-monsieur text-[var(--gaia-pink)] text-4xl md:text-6xl lowercase">
+                contenidos
               </span>
             </h2>
             <p className="font-sans text-[var(--gaia-beige)]/60 text-xs sm:text-sm md:text-base mt-4 leading-relaxed">
-              Placeholder: El rol del contenido en la estrategia SEO.
+              No se trata de escribir por escribir. Se trata de crear contenido
+              que responda exactamente lo que tu audiencia está buscando.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            {[
-              {
-                title: "Keyword Research",
-                desc: "Placeholder: Identificar las búsquedas de tu audiencia.",
-                icon: Search,
-              },
-              {
-                title: "Contenido Optimizado",
-                desc: "Placeholder: Crear contenido que responda la intención del usuario.",
-                icon: FileText,
-              },
-              {
-                title: "Estrategia Continua",
-                desc: "Placeholder: Mantener y actualizar contenido para sostener posiciones.",
-                icon: TrendingUp,
-              },
-            ].map((item, index) => {
-              const Icon = item.icon;
-              return (
+          {/* Editorial visualization */}
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              {/* Left: Search intent + keywords */}
+              <div className="lg:col-span-5 space-y-4">
                 <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.15 }}
-                  className="p-8 border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/[0.01]"
+                  transition={{ duration: 0.5 }}
+                  className="p-6 border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/[0.015]"
                 >
-                  <div className="p-3 bg-[var(--gaia-pink)]/10 rounded-lg w-fit mb-6">
-                    <Icon size={24} className="text-[var(--gaia-pink)]" />
-                  </div>
+                  <span className="block text-[10px] uppercase tracking-[0.25em] text-[var(--gaia-pink)]/60 font-sans mb-3">
+                    Intención de búsqueda
+                  </span>
                   <h3 className="font-serif text-xl text-[var(--gaia-beige)] mb-3">
-                    {item.title}
+                    ¿Qué busca tu audiencia?
                   </h3>
-                  <p className="font-sans text-sm text-[var(--gaia-beige)]/50 leading-relaxed">
-                    {item.desc}
+                  <p className="font-sans text-xs text-[var(--gaia-beige)]/50 leading-relaxed mb-4">
+                    Cada búsqueda tiene una intención: informarse, comparar o
+                    comprar. Tu contenido debe alinearse con esa intención.
+                  </p>
+                  <div className="space-y-2">
+                    {[
+                      { label: "Informativa", example: "cómo funciona el SEO" },
+                      { label: "Transaccional", example: "contratar agencia SEO" },
+                      { label: "Comparativa", example: "SEO vs publicidad" },
+                    ].map((item) => (
+                      <div
+                        key={item.label}
+                        className="flex items-center gap-3 p-2.5 border border-[var(--gaia-pink)]/6 bg-[var(--gaia-burgundy)]/30"
+                      >
+                        <div className="w-1 h-1 rounded-full bg-[var(--gaia-pink)]/40 shrink-0" />
+                        <div className="min-w-0">
+                          <span className="block font-sans text-[10px] uppercase tracking-[0.15em] text-[var(--gaia-pink)]/60">
+                            {item.label}
+                          </span>
+                          <span className="block font-sans text-xs text-[var(--gaia-beige)]/60 mt-0.5 truncate">
+                            &ldquo;{item.example}&rdquo;
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="p-6 border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/[0.015]"
+                >
+                  <span className="block text-[10px] uppercase tracking-[0.25em] text-[var(--gaia-pink)]/60 font-sans mb-3">
+                    Autoridad temática
+                  </span>
+                  <h3 className="font-serif text-xl text-[var(--gaia-beige)] mb-2">
+                    Tu领域 de expertise
+                  </h3>
+                  <p className="font-sans text-xs text-[var(--gaia-beige)]/50 leading-relaxed">
+                    Google premia la especialización. Un sitio que cubre un tema
+                    a fondo genera más confianza que uno que habla de todo sin
+                    profundizar.
                   </p>
                 </motion.div>
-              );
-            })}
+              </div>
+
+              {/* Right: Content editorial flow */}
+              <div className="lg:col-span-7">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.15 }}
+                  className="p-6 md:p-8 border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/[0.015]"
+                >
+                  <span className="block text-[10px] uppercase tracking-[0.25em] text-[var(--gaia-pink)]/60 font-sans mb-4">
+                    Contenido optimizado
+                  </span>
+
+                  {/* Mockup de contenido editorial */}
+                  <div className="space-y-5">
+                    {/* Title */}
+                    <div>
+                      <div className="h-3 bg-[var(--gaia-beige)]/20 rounded-full w-[90%] mb-2" />
+                      <div className="h-2.5 bg-[var(--gaia-beige)]/12 rounded-full w-[65%]" />
+                    </div>
+
+                    {/* Meta description */}
+                    <div className="p-3 border border-[var(--gaia-pink)]/8 bg-[var(--gaia-burgundy)]/30">
+                      <span className="block font-sans text-[9px] uppercase tracking-[0.2em] text-[var(--gaia-pink)]/50 mb-1.5">
+                        Meta descripción
+                      </span>
+                      <div className="space-y-1.5">
+                        <div className="h-1.5 bg-[var(--gaia-beige)]/15 rounded-full w-[95%]" />
+                        <div className="h-1.5 bg-[var(--gaia-beige)]/15 rounded-full w-[80%]" />
+                      </div>
+                    </div>
+
+                    {/* Headings structure */}
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <span className="font-sans text-[9px] text-[var(--gaia-pink)]/40 shrink-0">H1</span>
+                        <div className="h-2.5 bg-[var(--gaia-beige)]/18 rounded-full w-[75%]" />
+                      </div>
+                      <div className="flex items-center gap-2 ml-4">
+                        <span className="font-sans text-[9px] text-[var(--gaia-pink)]/40 shrink-0">H2</span>
+                        <div className="h-2 bg-[var(--gaia-beige)]/14 rounded-full w-[60%]" />
+                      </div>
+                      <div className="flex items-center gap-2 ml-4">
+                        <span className="font-sans text-[9px] text-[var(--gaia-pink)]/40 shrink-0">H2</span>
+                        <div className="h-2 bg-[var(--gaia-beige)]/14 rounded-full w-[55%]" />
+                      </div>
+                      <div className="flex items-center gap-2 ml-8">
+                        <span className="font-sans text-[9px] text-[var(--gaia-pink)]/40 shrink-0">H3</span>
+                        <div className="h-1.5 bg-[var(--gaia-beige)]/10 rounded-full w-[45%]" />
+                      </div>
+                      <div className="flex items-center gap-2 ml-4">
+                        <span className="font-sans text-[9px] text-[var(--gaia-pink)]/40 shrink-0">H2</span>
+                        <div className="h-2 bg-[var(--gaia-beige)]/14 rounded-full w-[65%]" />
+                      </div>
+                    </div>
+
+                    {/* Body paragraphs */}
+                    <div className="space-y-2 pt-2">
+                      <div className="h-1.5 bg-[var(--gaia-beige)]/10 rounded-full w-full" />
+                      <div className="h-1.5 bg-[var(--gaia-beige)]/10 rounded-full w-[92%]" />
+                      <div className="h-1.5 bg-[var(--gaia-beige)]/10 rounded-full w-[85%]" />
+                      <div className="h-1.5 bg-[var(--gaia-beige)]/10 rounded-full w-[90%]" />
+                    </div>
+
+                    {/* CTA in content */}
+                    <div className="flex items-center gap-3 p-3 border border-[var(--gaia-pink)]/12 bg-[var(--gaia-pink)]/[0.04]">
+                      <div className="w-8 h-8 rounded-full border border-[var(--gaia-pink)]/20 bg-[var(--gaia-pink)]/10 flex items-center justify-center shrink-0">
+                        <ArrowRight size={12} className="text-[var(--gaia-pink)]" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="h-2 bg-[var(--gaia-pink)]/15 rounded-full w-[70%] mb-1.5" />
+                        <div className="h-1.5 bg-[var(--gaia-pink)]/10 rounded-full w-[50%]" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mt-6 pt-5 border-t border-[var(--gaia-pink)]/8">
+                    {["SEO", "Marketing digital", "Estrategia", " Contenido"].map(
+                      (tag) => (
+                        <span
+                          key={tag}
+                          className="px-3 py-1 border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/[0.03] font-sans text-[10px] text-[var(--gaia-beige)]/50"
+                        >
+                          {tag}
+                        </span>
+                      )
+                    )}
+                  </div>
+                </motion.div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -694,82 +1061,115 @@ export function CustomComoFuncionaSeo() {
         className="py-20 md:py-32 px-6 md:px-12 border-b border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/[0.01]"
       >
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6 space-y-6">
-              <span className="block text-[var(--gaia-pink)] text-xs tracking-[0.3em] uppercase">
-                SECCIÓN 06
+          <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
+            <span className="block text-[var(--gaia-pink)] text-xs tracking-[0.3em] uppercase mb-4">
+              SECCIÓN 06
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl text-[var(--gaia-beige)] tracking-tight">
+              Cuánto demora{" "}
+              <span className="font-monsieur text-[var(--gaia-pink)] text-4xl md:text-6xl lowercase">
+                el SEO
               </span>
-              <h2 className="font-serif text-4xl md:text-5xl text-[var(--gaia-beige)] tracking-tight">
-                Cuánto demora <br />
-                <span className="font-monsieur text-[var(--gaia-pink)] text-5xl md:text-7xl lowercase">
-                  el SEO
-                </span>
-              </h2>
-              <p className="font-sans text-[var(--gaia-beige)]/70 text-sm sm:text-base leading-relaxed">
-                Placeholder: Explicación realista sobre los tiempos del SEO y
-                por qué es una inversión a mediano/largo plazo.
-              </p>
-            </div>
+            </h2>
+            <p className="font-sans text-[var(--gaia-beige)]/60 text-xs sm:text-sm md:text-base mt-4 leading-relaxed">
+              El SEO no es instantáneo. Es una inversión que construye
+              visibilidad sostenible. Estos son los tiempos reales.
+            </p>
+          </div>
 
-            <div className="lg:col-span-6">
-              <div className="p-8 border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/[0.02]">
-                <h4 className="font-serif text-lg text-[var(--gaia-beige)] mb-6">
-                  Timeline esperado
-                </h4>
+          {/* Premium Timeline */}
+          <div className="max-w-4xl mx-auto">
+            <div className="relative">
+              {/* Vertical line */}
+              <div className="absolute left-[23px] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[var(--gaia-pink)]/25 via-[var(--gaia-pink)]/15 to-[var(--gaia-pink)]/5 md:-translate-x-px" />
 
-                {/* Timeline bars */}
-                <div className="space-y-6">
-                  {[
-                    {
-                      label: "Mes 1-2",
-                      desc: "Placeholder: Auditoría y correcciones técnicas",
-                      progress: "30%",
-                    },
-                    {
-                      label: "Mes 3-4",
-                      desc: "Placeholder: Primeros movimientos en rankings",
-                      progress: "55%",
-                    },
-                    {
-                      label: "Mes 5-6",
-                      desc: "Placeholder: Consolidación de posiciones",
-                      progress: "75%",
-                    },
-                    {
-                      label: "Mes 6+",
-                      desc: "Placeholder: Crecimiento sostenido y mantenimiento",
-                      progress: "90%",
-                    },
-                  ].map((item, index) => (
-                    <div key={item.label} className="space-y-2">
-                      <div className="flex justify-between text-xs tracking-wider font-sans uppercase">
-                        <span className="text-[var(--gaia-pink)] font-bold">
-                          {item.label}
-                        </span>
-                        <span className="text-[var(--gaia-beige)]/40">
-                          {item.progress}
-                        </span>
-                      </div>
-                      <div className="h-2 bg-[var(--gaia-burgundy)] border border-[var(--gaia-pink)]/10 rounded-full overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: item.progress }}
-                          viewport={{ once: true }}
-                          transition={{
-                            duration: 1,
-                            delay: index * 0.2,
-                            ease: "easeOut",
-                          }}
-                          className="h-full bg-[var(--gaia-pink)]"
-                        />
-                      </div>
-                      <p className="text-xs text-[var(--gaia-beige)]/40 font-sans">
-                        {item.desc}
+              {[
+                {
+                  month: "Mes 1",
+                  title: "Auditoría",
+                  desc: "Análisis completo de tu sitio: técnica, contenido, competencia y oportunidades. El diagnóstico que define la estrategia.",
+                  items: [
+                    "Auditoría técnica",
+                    "Análisis de competencia",
+                    "Investigación de keywords",
+                    "Plan estratégico",
+                  ],
+                },
+                {
+                  month: "Mes 2–3",
+                  title: "Optimización",
+                  desc: "Correcciones técnicas, estructura del sitio, optimización de páginas existentes y preparación del contenido.",
+                  items: [
+                    "Correcciones técnicas",
+                    "Optimización on-page",
+                    "Estructura de URLs",
+                    "Mejora de velocidad",
+                  ],
+                },
+                {
+                  month: "Mes 4–6",
+                  title: "Primeros resultados",
+                  desc: "Las páginas optimizadas empiezan a subir posiciones. Aumenta el tráfico orgánico y aparecen las primeras conversiones.",
+                  items: [
+                    "Subida en rankings",
+                    "Crecimiento de tráfico",
+                    "Primeras conversiones",
+                    "Contenido nuevo activo",
+                  ],
+                },
+                {
+                  month: "Mes 6–12",
+                  title: "Consolidación",
+                  desc: "El posicionamiento se estabiliza y crece. Cada mes genera más autoridad, más tráfico y más resultados medibles.",
+                  items: [
+                    "Posiciones estables",
+                    "Autoridad creciente",
+                    "Tráfico sostenido",
+                    "ROI medible",
+                  ],
+                },
+              ].map((phase, index) => {
+                const isLeft = index % 2 === 0;
+                return (
+                  <motion.div
+                    key={phase.month}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.12 }}
+                    className={`relative flex items-start gap-6 md:gap-0 mb-12 md:mb-16 last:mb-0 ${isLeft ? "md:flex-row" : "md:flex-row-reverse"}`}
+                  >
+                    {/* Dot */}
+                    <div className="absolute left-[18px] md:left-1/2 w-[11px] h-[11px] rounded-full border-2 border-[var(--gaia-pink)] bg-[var(--gaia-burgundy)] md:-translate-x-1/2 z-10 mt-2" />
+
+                    {/* Content */}
+                    <div className={`flex-1 pl-12 md:pl-0 ${isLeft ? "md:pr-16 md:text-right" : "md:pl-16"}`}>
+                      <span className="block font-serif text-sm text-[var(--gaia-pink)] mb-1.5">
+                        {phase.month}
+                      </span>
+                      <h3 className="font-serif text-2xl md:text-3xl text-[var(--gaia-beige)] mb-3">
+                        {phase.title}
+                      </h3>
+                      <p className="font-sans text-sm text-[var(--gaia-beige)]/55 leading-relaxed mb-4">
+                        {phase.desc}
                       </p>
+                      <div className={`flex flex-wrap gap-2 ${isLeft ? "md:justify-end" : ""}`}>
+                        {phase.items.map((item) => (
+                          <span
+                            key={item}
+                            className="px-3 py-1 border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/[0.03] font-sans text-[10px] text-[var(--gaia-beige)]/50"
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  ))}
-                </div>
-              </div>
+
+                    {/* Spacer for alternating layout */}
+                    <div className="hidden md:block flex-1" />
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -781,73 +1181,94 @@ export function CustomComoFuncionaSeo() {
         className="py-20 md:py-32 px-6 md:px-12 border-b border-[var(--gaia-pink)]/10"
       >
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-            <span className="block text-[var(--gaia-pink)] text-xs tracking-[0.3em] uppercase mb-4">
-              SECCIÓN 07
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl text-[var(--gaia-beige)] tracking-tight">
-              Errores{" "}
-              <span className="font-monsieur text-[var(--gaia-pink)] text-5xl md:text-7xl lowercase">
-                frecuentes
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-32">
+              <span className="block text-[var(--gaia-pink)] text-xs tracking-[0.3em] uppercase">
+                SECCIÓN 07
               </span>
-            </h2>
-            <p className="font-sans text-[var(--gaia-beige)]/60 text-xs sm:text-sm md:text-base mt-4 leading-relaxed">
-              Placeholder: Los errores más comunes que impiden el
-              posicionamiento.
-            </p>
-          </div>
+              <h2 className="font-serif text-4xl md:text-5xl text-[var(--gaia-beige)] tracking-tight">
+                Errores{" "}
+                <span className="font-monsieur text-[var(--gaia-pink)] text-5xl md:text-6xl lowercase">
+                  frecuentes
+                </span>
+              </h2>
+              <p className="font-sans text-[var(--gaia-beige)]/70 text-sm sm:text-base leading-relaxed">
+                Estos errores aparecen una y otra vez. Evitarlos te ahorra meses
+                de trabajo sin resultados.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto">
-            {[
-              {
-                title: "Placeholder: Error 1",
-                desc: "Placeholder: Descripción del error y su impacto.",
-              },
-              {
-                title: "Placeholder: Error 2",
-                desc: "Placeholder: Descripción del error y su impacto.",
-              },
-              {
-                title: "Placeholder: Error 3",
-                desc: "Placeholder: Descripción del error y su impacto.",
-              },
-              {
-                title: "Placeholder: Error 4",
-                desc: "Placeholder: Descripción del error y su impacto.",
-              },
-              {
-                title: "Placeholder: Error 5",
-                desc: "Placeholder: Descripción del error y su impacto.",
-              },
-              {
-                title: "Placeholder: Error 6",
-                desc: "Placeholder: Descripción del error y su impacto.",
-              },
-            ].map((error, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="flex gap-4 p-6 border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/[0.01]"
-              >
-                <div className="shrink-0 mt-1">
-                  <AlertTriangle
-                    size={20}
-                    className="text-[var(--gaia-pink)]/60"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-serif text-lg text-[var(--gaia-beige)] mb-2">
-                    {error.title}
-                  </h3>
-                  <p className="font-sans text-sm text-[var(--gaia-beige)]/50 leading-relaxed">
-                    {error.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+            <div className="lg:col-span-7">
+              <div className="border-t border-[var(--gaia-pink)]/15 divide-y divide-[var(--gaia-pink)]/15">
+                {[
+                  {
+                    title: "Comprar backlinks",
+                    desc: "Los enlaces artificiales no generan autoridad real. Google los detecta y penaliza tu sitio, a veces con caídas drásticas en posiciones.",
+                  },
+                  {
+                    title: "Contenido duplicado",
+                    desc: "Copiar texto de otros sitios o repetir páginas propias confunde a Google. Prefiere contenido original, único y con valor real.",
+                  },
+                  {
+                    title: "Ignorar SEO técnico",
+                    desc: "Un sitio lento, sin SSL o sin optimización mobile no puede posicionar bien, sin importar cuán bueno sea el contenido.",
+                  },
+                  {
+                    title: "Abandonar demasiado pronto",
+                    desc: "El SEO necesita entre 3 y 6 meses para mostrar resultados. Parar antes es como plantar y sacar la raíz antes de que crezca.",
+                  },
+                  {
+                    title: "No investigar keywords",
+                    desc: "Escribir sobre temas que nadie busca genera tráfico cero. Cada página debe estar optimizada para búsquedas con volumen real.",
+                  },
+                  {
+                    title: "Duplicar esfuerzos sin estrategia",
+                    desc: "Publicar contenido sin un plan genera páginas compitiendo entre sí. La estrategia define qué crear, cuándo y para quién.",
+                  },
+                ].map((error, index) => {
+                  const isOpen = activeError === index;
+                  return (
+                    <div key={index}>
+                      <button
+                        onClick={() => toggleError(index)}
+                        className="w-full flex items-center justify-between text-left py-5 md:py-6 group cursor-pointer"
+                      >
+                        <div className="flex items-center gap-4 min-w-0 pr-4">
+                          <div className="shrink-0 w-8 h-8 rounded-full border border-[var(--gaia-pink)]/15 bg-[var(--gaia-pink)]/[0.04] flex items-center justify-center group-hover:border-[var(--gaia-pink)]/30 group-hover:bg-[var(--gaia-pink)]/[0.08] transition-all duration-300">
+                            <AlertTriangle
+                              size={14}
+                              className="text-[var(--gaia-pink)]"
+                            />
+                          </div>
+                          <span className="font-serif text-base md:text-lg text-[var(--gaia-beige)] group-hover:text-[var(--gaia-pink)] transition-colors duration-300">
+                            {error.title}
+                          </span>
+                        </div>
+                        <span className="text-[var(--gaia-pink)] shrink-0">
+                          {isOpen ? <Minus size={16} /> : <Plus size={16} />}
+                        </span>
+                      </button>
+
+                      <AnimatePresence initial={false}>
+                        {isOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                            className="overflow-hidden"
+                          >
+                            <p className="font-sans text-xs sm:text-sm leading-relaxed text-[var(--gaia-beige)]/55 pb-6 pl-12 max-w-2xl">
+                              {error.desc}
+                            </p>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -857,13 +1278,18 @@ export function CustomComoFuncionaSeo() {
         id="preguntas-frecuentes"
         className="py-20 md:py-32 px-6 md:px-12 bg-[var(--gaia-burgundy)] relative overflow-hidden border-b border-[var(--gaia-pink)]/10"
       >
-        <div className="max-w-4xl mx-auto">
+        <div className="absolute inset-0 mesh-gradient-burgundy opacity-20 mix-blend-screen pointer-events-none" />
+
+        <div className="max-w-4xl mx-auto relative z-10">
           <div className="mb-16 text-center">
             <span className="block text-[var(--gaia-pink)] text-xs tracking-[0.3em] uppercase mb-4">
               DESPEJA TUS DUDAS
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl text-[var(--gaia-beige)] tracking-tight">
-              Preguntas Frecuentes
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[var(--gaia-beige)] tracking-tight">
+              Preguntas{" "}
+              <span className="font-monsieur text-[var(--gaia-pink)] text-4xl md:text-6xl lowercase">
+                frecuentes
+              </span>
             </h2>
           </div>
 

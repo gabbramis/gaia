@@ -18,6 +18,24 @@
       "publishedAt": "2024-11-01T00:00:00Z",
       "order": 1
     },
+    {
+      "id": "ilgiardinocafe",
+      "title": "Il Giardino Cafe",
+      "subtitle": "Cafetería",
+      "description": "Sitio web informativo para cafetería con identidad visual refinada",
+      "category": "informativo",
+      "images": {
+        "cover": {
+          "src": "/portfolio/web-designs/ilgiardinocafe.png",
+          "alt": "Coffee Shop"
+        }
+      },
+      "url": "https://ilgiardinocafe.vercel.app/",
+      "year": 2024,
+      "featured": true,
+      "publishedAt": "2024-11-01T00:00:00Z",
+      "order": 1
+    },
     
     {
       "id": "corporate-identity",
