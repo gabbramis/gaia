@@ -3,20 +3,17 @@
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import {
-  ArrowLeft,
   ArrowRight,
   BarChart3,
   Code,
-  Globe,
-  Image as ImageIcon,
-  Layers,
   Megaphone,
   Palette,
   Search,
 } from 'lucide-react';
 import { Navigation } from '@/components/ui/Navigation';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Footer } from '@/components/sections/Footer';
-import { fadeInUp, easings } from '@/lib/animations';
+import { fadeInUp } from '@/lib/animations';
 import { trackCustomEvent } from '@/lib/analytics/facebook-pixel';
 
 const mainCategories = [
@@ -34,10 +31,10 @@ const mainCategories = [
   {
     id: 'diseno-web',
     number: '02',
-    title: 'Diseno Web',
+    title: 'Diseño Web',
     description:
       'Creamos sitios web funcionales, esteticos y alineados con la identidad de tu marca. Desde landing pages hasta tiendas online completas con e-commerce.',
-    includes: ['Diseno Web', 'E-commerce', 'Web Management Mensual'],
+    includes: ['Diseño Web', 'E-commerce', 'Web Management Mensual'],
     featured: true,
     href: '/diseno-web',
     icon: Code,
@@ -59,7 +56,7 @@ const mainCategories = [
     title: 'Branding',
     description:
       'Construimos la identidad visual de tu marca desde cero o la renovamos para que comunique tu esencia de forma coherente y profesional en cada punto de contacto.',
-    includes: ['Diseno de Branding', 'Identidad Visual'],
+    includes: ['Diseño de Branding', 'Identidad Visual'],
     featured: false,
     href: '/branding',
     icon: Palette,
@@ -97,6 +94,9 @@ export default function ServiciosPage() {
         className="py-20 md:py-32 px-6 md:px-12 border-b border-[var(--gaia-pink)]/10"
       >
         <div className="max-w-7xl mx-auto">
+          <div className="mb-8 flex items-start md:mb-10">
+            <Breadcrumbs />
+          </div>
           <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
             <span className="block text-[var(--gaia-pink)] text-xs tracking-[0.3em] uppercase mb-4">
               Lo que hacemos

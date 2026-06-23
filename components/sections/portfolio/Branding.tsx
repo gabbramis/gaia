@@ -5,7 +5,49 @@ import { fadeInUp } from '@/lib/animations';
 import Image from 'next/image';
 import { brandingProjects } from '@/lib/data/portfolio';
 
-export function Branding() {
+type BrandingPaletteColor = {
+    name?: string;
+    hex: string;
+};
+
+type BrandingTypography = {
+    name: string;
+    type: string;
+};
+
+type BrandingMockup = {
+    src: string;
+    alt: string;
+};
+
+type BrandingProjectCard = {
+    id: string;
+    client: string;
+    description: string;
+    palette: BrandingPaletteColor[];
+    typography: BrandingTypography[];
+    mockups: BrandingMockup[];
+    tags?: string[];
+};
+
+type BrandingProps = {
+    projects?: BrandingProjectCard[];
+};
+
+export function Branding({ projects }: BrandingProps) {
+    const galleryProjects: BrandingProjectCard[] =
+        projects && projects.length > 0
+            ? projects
+            : brandingProjects.map((project) => ({
+                  id: project.id,
+                  client: project.client,
+                  description: project.description,
+                  palette: project.palette,
+                  typography: project.typography,
+                  mockups: project.mockups,
+                  tags: project.tags,
+              }));
+
     return (
         <section id="branding" className="relative bg-[var(--gaia-burgundy)] py-16 md:py-32 px-6 md:px-12 border-t border-[var(--gaia-pink)]/10">
             <div className="max-w-7xl mx-auto">
@@ -30,7 +72,7 @@ export function Branding() {
                 </motion.div>
 
                 <div className="space-y-24 md:space-y-32">
-                    {brandingProjects.map((project, index) => (
+                    {galleryProjects.map((project, index) => (
                         <motion.div
                             key={project.id}
                             initial={{ opacity: 0, y: 30 }}
@@ -58,9 +100,9 @@ export function Branding() {
                                         <h4 className="font-sans text-[var(--gaia-pink)] text-xs tracking-[0.2em] uppercase mb-4">
                                             Paleta de Colores
                                         </h4>
-                                        <div className="flex flex-wrap gap-3">
-                                            {project.palette.map((color) => (
-                                                <div key={color.hex} className="flex items-center gap-2">
+                                         <div className="flex flex-wrap gap-3">
+                                             {project.palette.map((color) => (
+                                                 <div key={color.hex} className="flex items-center gap-2">
                                                     <div
                                                         className="w-8 h-8 border border-white/10"
                                                         style={{ backgroundColor: color.hex }}
@@ -109,16 +151,16 @@ export function Branding() {
 
                                 {/* Right: Mockups */}
                                 <div className="lg:col-span-6 flex justify-center">
-                                    <div className="grid grid-cols-2 gap-2 max-w-md">
+                                    <div className="grid max-w-md grid-cols-2 gap-2">
                                         {project.mockups.map((mockup, i) => (
                                             <div
                                                 key={i}
-                                                className={`relative overflow-hidden border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/5 ${
-                                                    i === 0 ? 'col-span-2' : ''
+                                                className={`relative overflow-hidden bg-[var(--gaia-pink)]/5 ${
+                                                    i === 0 ? 'col-span-2 border border-[var(--gaia-pink)]/10' : 'col-span-1'
                                                 }`}
                                             >
                                                 {i === 0 ? (
-                                                    <div className="aspect-square relative">
+                                                    <div className="relative aspect-square">
                                                         <Image
                                                             src={mockup.src}
                                                             alt={mockup.alt}
@@ -127,13 +169,16 @@ export function Branding() {
                                                         />
                                                     </div>
                                                 ) : (
-                                                    <Image
-                                                        src={mockup.src}
-                                                        alt={mockup.alt}
-                                                        width={500}
-                                                        height={313}
-                                                        className="w-full h-auto"
-                                                    />
+                                                    <div>
+                                                        <Image
+                                                            src={mockup.src}
+                                                            alt={mockup.alt}
+                                                            width={1400}
+                                                            height={1000}
+                                                            sizes="(max-width: 1024px) 100vw, 40vw"
+                                                            className="h-auto w-full object-contain"
+                                                        />
+                                                    </div>
                                                 )}
                                             </div>
                                         ))}

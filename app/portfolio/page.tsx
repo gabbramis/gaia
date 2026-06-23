@@ -4,8 +4,9 @@ import { motion } from 'motion/react';
 import { fadeInUp } from '@/lib/animations';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Navigation } from '@/components/ui/Navigation';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Footer } from '@/components/sections/Footer';
 
 export default function Portfolio() {
@@ -14,14 +15,8 @@ export default function Portfolio() {
             <Navigation />
             <section id="portfolio" className="relative bg-[var(--gaia-burgundy)] pt-24 md:pt-32 pb-16 md:pb-32 px-6 md:px-12">
             <div className="max-w-7xl mx-auto">
-                <div className="mb-6 md:mb-10">
-                    <Link
-                        href="/"
-                        className="inline-flex items-center gap-2 text-[var(--gaia-pink)] hover:text-[var(--gaia-beige)] transition-colors duration-300 text-xs tracking-widest uppercase mb-6"
-                    >
-                        <ArrowLeft size={14} />
-                        Home
-                    </Link>
+                <div className="mb-8 flex items-start md:mb-10">
+                    <Breadcrumbs />
                 </div>
                 {/* Header */}
                 <motion.div

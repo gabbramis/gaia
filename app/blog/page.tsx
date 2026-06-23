@@ -1,7 +1,6 @@
 'use client';
 
-import Link from 'next/link';
-import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/sections/Footer';
 
@@ -40,16 +39,6 @@ export default function BlogPage() {
         <main className="bg-[var(--gaia-burgundy)] min-h-screen overflow-x-hidden w-full">
             <Navigation />
             <div className="bg-[var(--gaia-burgundy)]">
-                <div className="max-w-7xl mx-auto px-6 md:px-12 pt-24 md:pt-32">
-                    <Link
-                        href="/"
-                        className="inline-flex items-center gap-2 text-[var(--gaia-pink)] hover:text-[var(--gaia-beige)] transition-colors duration-300 text-xs tracking-widest uppercase mb-6"
-                    >
-                        <ArrowLeft size={14} />
-                        Home
-                    </Link>
-                </div>
-
                 <section className="relative py-16 md:py-32 px-6 md:px-12">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16 md:mb-24">
@@ -99,7 +88,7 @@ export default function BlogPage() {
 
                                     <span className="inline-flex items-center gap-2 text-[var(--gaia-pink)] text-xs tracking-widest uppercase group-hover:gap-4 transition-all duration-300">
                                         Leer más
-                                        <ArrowLeft size={14} className="rotate-180" />
+                                        <ArrowRight size={14} />
                                     </span>
                                 </div>
                             </article>

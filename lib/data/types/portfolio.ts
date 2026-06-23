@@ -45,7 +45,7 @@ export interface FotoItem {
   isCarousel: boolean;
   date: string;
   featured: boolean;
-  order: number;
+  order?: number;
   tags?: string[];
 }
 
@@ -59,7 +59,7 @@ export interface ReelItem {
   thumbnail?: ImageAsset;
   date: string;
   featured: boolean;
-  order: number;
+  order?: number;
   tags?: string[];
 }
 

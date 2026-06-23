@@ -1,12 +1,12 @@
 "use client";
 
 import { Footer } from "@/components/sections/Footer";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Navigation } from "@/components/ui/Navigation";
 import { trackCustomEvent } from "@/lib/analytics/facebook-pixel";
 import { easings, fadeInUp } from "@/lib/animations";
 import {
   AlertTriangle,
-  ArrowLeft,
   ArrowRight,
   BarChart3,
   Bookmark,
@@ -142,13 +142,9 @@ export function CustomComoFuncionaSeo() {
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[var(--gaia-pink)]/10 rounded-full blur-[120px] animate-pulse pointer-events-none" />
 
         <div className="max-w-7xl mx-auto w-full relative z-10">
-          <Link
-            href="/seo"
-            className="inline-flex items-center gap-2 text-[var(--gaia-pink)] hover:text-[var(--gaia-beige)] transition-colors duration-300 text-xs tracking-widest uppercase mb-6"
-          >
-            <ArrowLeft size={14} />
-            SEO
-          </Link>
+          <div className="mb-6 flex items-start md:mb-8">
+            <Breadcrumbs />
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start pt-4 md:pt-6">
             <div className="lg:col-span-7 space-y-6 text-left">
@@ -949,7 +945,7 @@ export function CustomComoFuncionaSeo() {
                     Autoridad temática
                   </span>
                   <h3 className="font-serif text-xl text-[var(--gaia-beige)] mb-2">
-                    Tu领域 de expertise
+                    Tu area de expertise
                   </h3>
                   <p className="font-sans text-xs text-[var(--gaia-beige)]/50 leading-relaxed">
                     Google premia la especialización. Un sitio que cubre un tema

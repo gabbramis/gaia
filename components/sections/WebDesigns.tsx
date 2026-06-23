@@ -8,7 +8,28 @@ import Link from 'next/link';
 import { webDesigns } from '@/lib/data/portfolio';
 import { trackViewContent } from '@/lib/analytics/facebook-pixel';
 
-export function WebDesigns() {
+type WebDesignCard = {
+    id: string;
+    title: string;
+    subtitle?: string;
+    url?: string;
+    image: {
+        src: string;
+        alt: string;
+    };
+};
+
+type WebDesignsProps = {
+    projects?: WebDesignCard[];
+    eyebrow?: string;
+    description?: string;
+};
+
+export function WebDesigns({
+    projects,
+    eyebrow = 'Digital Experience',
+    description = 'Experiencias digitales inmersivas y funcionales.',
+}: WebDesignsProps) {
     useEffect(() => {
         trackViewContent({
             content_name: 'Web Designs',
@@ -16,6 +37,20 @@ export function WebDesigns() {
             content_type: 'web_design_gallery',
         });
     }, []);
+
+    const galleryProjects: WebDesignCard[] =
+        projects && projects.length > 0
+            ? projects
+            : webDesigns.map((project) => ({
+                  id: project.id,
+                  title: project.title,
+                  subtitle: project.subtitle,
+                  url: project.url,
+                  image: {
+                      src: project.images.cover.src,
+                      alt: project.images.cover.alt,
+                  },
+              }));
 
     return (
         <section id="web-designs" className="relative bg-[var(--gaia-burgundy)] py-16 md:py-32 px-6 md:px-12 border-t border-[var(--gaia-pink)]/10">
@@ -30,20 +65,20 @@ export function WebDesigns() {
                 >
                     <div>
                         <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-4">
-                            Digital Experience
+                            {eyebrow}
                         </span>
                         <h2 className="font-serif text-5xl md:text-7xl text-[var(--gaia-beige)] tracking-tight">
                             Diseños Web
                         </h2>
                     </div>
                     <p className="font-sans text-[var(--gaia-beige)]/60 max-w-md text-sm md:text-base leading-relaxed tracking-wide">
-                        Experiencias digitales inmersivas y funcionales.
+                        {description}
                     </p>
                 </motion.div>
 
                 {/* Web Gallery Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                    {webDesigns.map((project, index) => (
+                    {galleryProjects.map((project, index) => (
                         <motion.div
                             key={project.id}
                             initial={{ opacity: 0, y: 20 }}
@@ -63,9 +98,10 @@ export function WebDesigns() {
 
                                     {/* Image */}
                                     <Image
-                                        src={project.images.cover.src}
-                                        alt={project.images.cover.alt}
+                                        src={project.image.src}
+                                        alt={project.image.alt}
                                         fill
+                                        sizes="(max-width: 768px) 100vw, 50vw"
                                         className="object-cover mt-6 transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                                     />
 

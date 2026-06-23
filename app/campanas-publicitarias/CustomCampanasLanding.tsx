@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  ArrowLeft, 
   ArrowRight, 
   Check, 
   Plus, 
@@ -14,6 +13,7 @@ import {
   TrendingUp
 } from 'lucide-react';
 import { Navigation } from '@/components/ui/Navigation';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Footer } from '@/components/sections/Footer';
 import { fadeInUp, easings } from '@/lib/animations';
 import { trackCustomEvent } from '@/lib/analytics/facebook-pixel';
@@ -73,13 +73,9 @@ export function CustomCampanasLanding() {
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           {/* Left Column: Text */}
           <div className="lg:col-span-7 space-y-6 text-left">
-            <Link
-              href="/servicios"
-              className="inline-flex items-center gap-2 text-[var(--gaia-pink)] hover:text-[var(--gaia-beige)] transition-colors duration-300 text-xs tracking-widest uppercase mb-6"
-            >
-              <ArrowLeft size={14} />
-              Servicios
-            </Link>
+            <div className="mb-6 flex items-start">
+              <Breadcrumbs />
+            </div>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}

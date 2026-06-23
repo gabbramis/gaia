@@ -1,59 +1,121 @@
-'use client';
+import { ContenidosClientPage } from './ContenidosClientPage';
+import { sanityClient } from '@/sanity/lib/client';
+import { urlFor } from '@/sanity/lib/image';
+import { contentItemsQuery, contentNichesQuery } from '@/sanity/lib/queries';
+import { fotos, reels } from '@/lib/data/portfolio';
+import type { FotoItem, ReelItem } from '@/lib/data/types/portfolio';
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
-import { Navigation } from '@/components/ui/Navigation';
-import { FotosGallery } from '@/components/sections/portfolio/FotosGallery';
-import { ReelsGallery } from '@/components/sections/portfolio/ReelsGallery';
-import { Footer } from '@/components/sections/Footer';
+export const revalidate = 60;
 
+type SanityImage = {
+  alt?: string;
+  asset?: {
+    _ref: string;
+    _type: 'reference';
+  };
+};
 
-const NICHES = ['Todos', 'Gastronomía', 'Joyería', 'Papelería', 'Moda', 'Agencia'];
+type SanityContentItem = {
+  _id: string;
+  client?: {
+    name: string;
+    slug: string;
+  };
+  contentType: 'photo' | 'reel';
+  image?: SanityImage;
+  youtubeUrl?: string;
+  aspectRatio?: '16:9' | '9:16' | '1:1' | '4:5';
+  featured: boolean;
+  publishedAt: string;
+  niche?: {
+    title: string;
+    slug: string;
+  };
+};
 
-export default function ContenidosPage() {
-    const [selectedNiche, setSelectedNiche] = useState('Todos');
+type SanityContentNiche = {
+  title: string;
+};
 
-    return (
-        <main className="bg-[var(--gaia-burgundy)] min-h-screen overflow-x-hidden w-full">
-            <Navigation />
-            <div className="max-w-7xl mx-auto px-6 md:px-12 text-center pt-24 md:pt-32">
-                <div className="mb-6 text-left">
-                    <Link
-                        href="/portfolio"
-                        className="inline-flex items-center gap-2 text-[var(--gaia-pink)] hover:text-[var(--gaia-beige)] transition-colors duration-300 text-xs tracking-widest uppercase"
-                    >
-                        <ArrowLeft size={14} />
-                        Portfolio
-                    </Link>
-                </div>
-                <h1 className="font-serif text-5xl md:text-7xl text-[var(--gaia-beige)] tracking-tight mb-8">
-                    Portfolio
-                </h1>
+function getYouTubeVideoId(url: string) {
+  try {
+    const parsedUrl = new URL(url);
+    if (parsedUrl.hostname.includes('youtu.be')) {
+      return parsedUrl.pathname.replace('/', '');
+    }
 
-                {/* Niche Tabs */}
-                <div className="flex justify-start md:justify-center overflow-x-auto snap-x snap-mandatory pb-4 mb-4 gap-3 md:gap-4 no-scrollbar" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
-                    {NICHES.map((niche) => (
-                        <button
-                            key={niche}
-                            onClick={() => setSelectedNiche(niche)}
-                            className={`snap-center flex-shrink-0 px-6 py-2 rounded-full border transition-all duration-300 font-sans text-sm tracking-wider uppercase
-                                ${selectedNiche === niche
-                                    ? 'bg-[var(--gaia-pink)] border-[var(--gaia-pink)] text-[var(--gaia-burgundy)] font-medium'
-                                    : 'border-[var(--gaia-pink)]/30 text-[var(--gaia-beige)]/70 hover:border-[var(--gaia-pink)] hover:text-[var(--gaia-beige)]'
-                                }`}
-                        >
-                            {niche}
-                        </button>
-                    ))}
-                </div>
-            </div>
+    if (parsedUrl.searchParams.get('v')) {
+      return parsedUrl.searchParams.get('v');
+    }
 
-            <div className="pb-12">
-                <FotosGallery niche={selectedNiche} />
-                <ReelsGallery niche={selectedNiche} />
-            </div>
-            <Footer />
-        </main>
-    );
+    const segments = parsedUrl.pathname.split('/');
+    const embedIndex = segments.findIndex((segment) => segment === 'embed');
+    return embedIndex >= 0 ? segments[embedIndex + 1] : null;
+  } catch {
+    return null;
+  }
+}
+
+async function getSanityContent() {
+  const [items, niches] = await Promise.all([
+    sanityClient.fetch<SanityContentItem[]>(contentItemsQuery),
+    sanityClient.fetch<SanityContentNiche[]>(contentNichesQuery),
+  ]);
+
+  const sanityFotos: FotoItem[] = items
+    .filter((item) => item.contentType === 'photo' && item.image?.asset)
+    .map((item) => ({
+      id: item._id,
+      title: item.client?.name || 'Proyecto',
+      client: item.client?.name,
+      niche: item.niche?.title,
+      images: [
+        {
+          src: urlFor(item.image as SanityImage).width(1200).height(1600).fit('crop').url(),
+          alt: item.image?.alt || item.client?.name || 'Foto',
+        },
+      ],
+      isCarousel: false,
+      date: item.publishedAt,
+      featured: item.featured,
+    }));
+
+  const sanityReels: ReelItem[] = items
+    .filter((item) => item.contentType === 'reel' && item.youtubeUrl)
+    .map((item) => {
+      const videoId = getYouTubeVideoId(item.youtubeUrl || '');
+      return {
+        id: item._id,
+        title: item.client?.name || 'Reel',
+        client: item.client?.name,
+        niche: item.niche?.title,
+        video: {
+          platform: 'youtube',
+          embedUrl: videoId
+            ? `https://www.youtube.com/embed/${videoId}`
+            : item.youtubeUrl || '',
+          videoId: videoId || undefined,
+          aspectRatio: item.aspectRatio || '9:16',
+        },
+        date: item.publishedAt,
+        featured: item.featured,
+      };
+    });
+
+  const sanityNiches = niches.map((niche) => niche.title);
+
+  return { sanityFotos, sanityNiches, sanityReels };
+}
+
+export default async function ContenidosPage() {
+  const { sanityFotos, sanityNiches, sanityReels } = await getSanityContent();
+
+  const allFotos = sanityFotos.length > 0 ? sanityFotos : fotos;
+  const allReels = sanityReels.length > 0 ? sanityReels : reels;
+  const fallbackNiches = Array.from(
+    new Set([...allFotos.map((item) => item.niche).filter(Boolean), ...allReels.map((item) => item.niche).filter(Boolean)]),
+  ) as string[];
+  const niches = ['Todos', ...(sanityNiches.length > 0 ? sanityNiches : fallbackNiches)];
+
+  return <ContenidosClientPage niches={niches} fotos={allFotos} reels={allReels} />;
 }

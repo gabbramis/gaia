@@ -6,13 +6,16 @@ import { fadeInUp } from '@/lib/animations';
 import Image from 'next/image';
 import { fotos } from '@/lib/data/portfolio';
 import { trackViewContent } from '@/lib/analytics/facebook-pixel';
+import type { FotoItem } from '@/lib/data/types/portfolio';
 
-export function FotosGallery({ niche = 'Todos' }: { niche?: string }) {
+export function FotosGallery({ niche = 'Todos', items }: { niche?: string; items?: FotoItem[] }) {
     const scrollRef = useRef<HTMLDivElement>(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const [showAll, setShowAll] = useState(false);
 
-    const filteredFotos = niche === 'Todos' ? fotos : fotos.filter(f => f.niche === niche);
+    const sourceItems = items && items.length > 0 ? items : fotos;
+
+    const filteredFotos = niche === 'Todos' ? sourceItems : sourceItems.filter(f => f.niche === niche);
     const INITIAL_LIMIT = 10;
     const displayedFotos = showAll ? filteredFotos : filteredFotos.slice(0, INITIAL_LIMIT);
 

@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
-import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Navigation } from '@/components/ui/Navigation';
 import { Footer } from '@/components/sections/Footer';
 import { fadeInUp } from '@/lib/animations';
@@ -10,7 +11,6 @@ import { trackCustomEvent } from '@/lib/analytics/facebook-pixel';
 
 export interface ServiceLandingProps {
   slug: string;
-  breadcrumb: string;
   title: string;
   subtitle: string;
   description: string;
@@ -23,7 +23,6 @@ export interface ServiceLandingProps {
 
 export function ServiceLanding({
   slug,
-  breadcrumb,
   title,
   subtitle,
   description,
@@ -40,13 +39,9 @@ export function ServiceLanding({
       {/* Hero */}
       <section className="pt-24 md:pt-32 pb-6 md:pb-8 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-            <Link
-              href="/servicios"
-              className="inline-flex items-center gap-2 text-[var(--gaia-pink)] hover:text-[var(--gaia-beige)] transition-colors duration-300 text-xs tracking-widest uppercase mb-6"
-            >
-              <ArrowLeft size={14} />
-              {breadcrumb}
-            </Link>
+          <div className="mb-6 flex items-start">
+            <Breadcrumbs />
+          </div>
           <motion.div
             initial="hidden"
             animate="visible"

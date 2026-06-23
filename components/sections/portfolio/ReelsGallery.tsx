@@ -6,13 +6,16 @@ import { fadeInUp } from '@/lib/animations';
 import { reels } from '@/lib/data/portfolio';
 import { VideoEmbed } from '@/components/ui/VideoEmbed';
 import { trackViewContent } from '@/lib/analytics/facebook-pixel';
+import type { ReelItem } from '@/lib/data/types/portfolio';
 
-export function ReelsGallery({ niche = 'Todos' }: { niche?: string }) {
+export function ReelsGallery({ niche = 'Todos', items }: { niche?: string; items?: ReelItem[] }) {
     const scrollRef = useRef<HTMLDivElement>(null);
     const [activeIndex, setActiveIndex] = useState(0);
     const [showAll, setShowAll] = useState(false);
 
-    const filteredReels = niche === 'Todos' ? reels : reels.filter(r => r.niche === niche);
+    const sourceItems = items && items.length > 0 ? items : reels;
+
+    const filteredReels = niche === 'Todos' ? sourceItems : sourceItems.filter(r => r.niche === niche);
     const INITIAL_LIMIT = 8;
     const displayedReels = showAll ? filteredReels : filteredReels.slice(0, INITIAL_LIMIT);
 
