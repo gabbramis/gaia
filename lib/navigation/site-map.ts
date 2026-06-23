@@ -89,7 +89,7 @@ function resolveNode(pathname: string) {
 
 export function getBreadcrumbItems(pathname: string) {
   const items: NavigationNode[] = [];
-  let currentNode = resolveNode(pathname);
+  let currentNode: NavigationNode | undefined = resolveNode(pathname);
 
   while (currentNode) {
     items.unshift(currentNode);

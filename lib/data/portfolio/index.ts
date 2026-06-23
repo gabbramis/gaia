@@ -12,6 +12,9 @@ import type {
   BrandingProject
 } from '../types/portfolio';
 
+const compareByOrder = <T extends { order?: number }>(a: T, b: T) =>
+  (a.order ?? Number.MAX_SAFE_INTEGER) - (b.order ?? Number.MAX_SAFE_INTEGER);
+
 // Type-safe data exports with type assertions
 export const webDesigns: WebDesignProject[] = webDesignsData.projects as WebDesignProject[];
 export const fotos: FotoItem[] = fotosData.items as FotoItem[];
@@ -30,12 +33,12 @@ export const getWebDesignById = (id: string): WebDesignProject | undefined =>
 export const getFeaturedWebDesigns = (): WebDesignProject[] =>
   webDesigns
     .filter(project => project.featured)
-    .sort((a, b) => a.order - b.order);
+    .sort(compareByOrder);
 
 export const getWebDesignsByCategory = (category: WebDesignProject['category']): WebDesignProject[] =>
   webDesigns
     .filter(project => project.category === category)
-    .sort((a, b) => a.order - b.order);
+    .sort(compareByOrder);
 
 // Utility functions for Fotos
 export const getFotoById = (id: string): FotoItem | undefined =>
@@ -44,12 +47,12 @@ export const getFotoById = (id: string): FotoItem | undefined =>
 export const getFeaturedFotos = (): FotoItem[] =>
   fotos
     .filter(item => item.featured)
-    .sort((a, b) => a.order - b.order);
+    .sort(compareByOrder);
 
 export const getFotosByCategory = (category: FotoItem['category']): FotoItem[] =>
   fotos
     .filter(item => item.category === category)
-    .sort((a, b) => a.order - b.order);
+    .sort(compareByOrder);
 
 // Utility functions for Reels
 export const getReelById = (id: string): ReelItem | undefined =>
@@ -58,7 +61,7 @@ export const getReelById = (id: string): ReelItem | undefined =>
 export const getFeaturedReels = (): ReelItem[] =>
   reels
     .filter(item => item.featured)
-    .sort((a, b) => a.order - b.order);
+    .sort(compareByOrder);
 
 // Utility functions for Campañas
 export const getCampanaBySlug = (slug: string): CampanaProject | undefined =>
@@ -67,14 +70,14 @@ export const getCampanaBySlug = (slug: string): CampanaProject | undefined =>
 export const getFeaturedCampanas = (): CampanaProject[] =>
   campanas
     .filter(campaign => campaign.featured)
-    .sort((a, b) => a.order - b.order);
+    .sort(compareByOrder);
 
 export const getCampanasByCategory = (category: CampanaProject['category']): CampanaProject[] =>
   campanas
     .filter(campaign => campaign.category === category)
-    .sort((a, b) => a.order - b.order);
+    .sort(compareByOrder);
 
 export const getCampanasByYear = (year: number): CampanaProject[] =>
   campanas
     .filter(campaign => campaign.year === year)
-    .sort((a, b) => a.order - b.order);
+    .sort(compareByOrder);
