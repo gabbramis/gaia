@@ -39,12 +39,12 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mb-1 font-serif text-3xl leading-[0.92] tracking-tight text-[var(--gaia-beige)] sm:text-4xl md:mb-4 md:text-7xl lg:text-[10rem]"
+            className="relative mb-1 font-serif text-5xl leading-[0.92] tracking-tight text-[var(--gaia-beige)] sm:text-6xl md:mb-4 md:text-7xl lg:text-[10rem]"
           >
-            <span className="block">Donde tu negocio</span>
-            <span className="block font-monsieur text-[var(--gaia-pink)] text-4xl sm:text-5xl md:text-8xl lg:text-[11rem] -mt-1 sm:-mt-2 md:-mt-8 lg:-mt-12 opacity-90">
-              se vuelve arte
-            </span>
+             <span className="block">Donde tu negocio</span>
+             <span className="block font-monsieur text-[var(--gaia-pink)] text-6xl sm:text-7xl md:text-8xl lg:text-[11rem] -mt-1 sm:-mt-2 md:-mt-8 lg:-mt-12 opacity-90">
+               se vuelve arte
+             </span>
           </motion.h1>
 
           {/* Divider */}
