@@ -41,7 +41,7 @@ export function CustomBrandingLanding() {
   const faqs = [
     {
       q: '¿Cuánto tiempo demora un proyecto de branding?',
-      a: 'Un proyecto completo de identidad visual toma entre 3 y 6 semanas dependiendo de la complejidad. Incluye la fase de descubrimiento, desarrollo conceptual, diseño del sistema visual y entrega de archivos finales con guía de uso.'
+      a: 'Un proyecto completo de identidad visual toma entre 2 a 3 semanas dependiendo de la complejidad. Incluye la fase de descubrimiento, desarrollo conceptual, diseño del sistema visual y entrega de archivos finales con guía de uso.'
     },
     {
       q: '¿Qué incluye exactamente el sistema de identidad visual?',

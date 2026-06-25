@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   ArrowRight, 
@@ -49,11 +50,11 @@ export function CustomRedesLanding() {
     },
     {
       q: '¿También responden comentarios y mensajes?',
-      a: 'Sí. En los planes de Community Management nos encargamos de la interacción diaria: responder consultas, moderar comentarios y mantener una comunicación activa con tu comunidad.'
+      a: 'No. En esa parte se trabaja en equipo con el cliente para no dejar afuera ningún detalle.'
     },
     {
       q: '¿Cómo miden los resultados?',
-      a: 'Generamos reportes mensuales con métricas clave: alcance, interacciones, crecimiento de seguidores, rendimiento de contenido y conversiones. Así podés ver exactamente qué funciona y ajustar la estrategia.'
+      a: 'Generamos reportes trimestrales con métricas clave: alcance, interacciones, crecimiento de seguidores, rendimiento de contenido y conversiones. Así podés ver exactamente qué funciona y ajustar la estrategia.'
     },
     {
       q: '¿Puedo ver el contenido antes de que se publique?',
@@ -145,7 +146,7 @@ export function CustomRedesLanding() {
             </motion.div>
           </div>
 
-          {/* Right Column: Floating Interactive Social Media Mockup */}
+          {/* Right Column: Gaia Instagram Mockup */}
           <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 30 }}
@@ -158,15 +159,30 @@ export function CustomRedesLanding() {
                 {/* Speaker indicator */}
                 <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-1.5 bg-[var(--gaia-pink)]/20 rounded-full z-10" />
                 
-                {/* Social feed mockup */}
+                {/* Instagram feed mockup */}
                 <div className="mt-6 p-3 space-y-3">
-                  {/* Post card 1 */}
                   <div className="bg-[var(--gaia-pink)]/[0.03] border border-[var(--gaia-pink)]/10 rounded-lg p-3">
                     <div className="flex items-center gap-2 mb-2">
-                      <div className="w-6 h-6 rounded-full bg-[var(--gaia-pink)]/30" />
+                      <div className="relative w-6 h-6 rounded-full overflow-hidden border border-[var(--gaia-pink)]/30 bg-[var(--gaia-beige)]/90 shrink-0">
+                        <Image
+                          src="/logo-pink.png"
+                          alt="Gaia Studio"
+                          fill
+                          className="object-cover p-1"
+                          sizes="24px"
+                        />
+                      </div>
                       <div className="h-2 w-20 bg-[var(--gaia-pink)]/20 rounded" />
                     </div>
-                    <div className="aspect-square bg-[var(--gaia-pink)]/[0.05] rounded mb-2" />
+                    <div className="relative aspect-square rounded mb-2 overflow-hidden bg-[var(--gaia-pink)]/[0.05]">
+                      <Image
+                        src="/portfolio-content.jpg"
+                        alt="Placeholder post"
+                        fill
+                        className="object-cover"
+                        sizes="320px"
+                      />
+                    </div>
                     <div className="flex gap-3 mb-1">
                       <Heart size={14} className="text-[var(--gaia-pink)]/40" />
                       <div className="h-2 w-4 bg-[var(--gaia-pink)]/20 rounded" />
@@ -174,14 +190,29 @@ export function CustomRedesLanding() {
                     <div className="h-2 w-full bg-[var(--gaia-pink)]/10 rounded" />
                     <div className="h-2 w-2/3 bg-[var(--gaia-pink)]/10 rounded mt-1" />
                   </div>
-                  
-                  {/* Post card 2 */}
+
                   <div className="bg-[var(--gaia-pink)]/[0.03] border border-[var(--gaia-pink)]/10 rounded-lg p-3">
                     <div className="flex items-center gap-2 mb-2">
-                      <div className="w-6 h-6 rounded-full bg-[var(--gaia-pink)]/30" />
+                      <div className="relative w-6 h-6 rounded-full overflow-hidden border border-[var(--gaia-pink)]/30 bg-[var(--gaia-beige)]/90 shrink-0">
+                        <Image
+                          src="/logo-pink.png"
+                          alt="Gaia Studio"
+                          fill
+                          className="object-cover p-1"
+                          sizes="24px"
+                        />
+                      </div>
                       <div className="h-2 w-16 bg-[var(--gaia-pink)]/20 rounded" />
                     </div>
-                    <div className="aspect-[4/5] bg-[var(--gaia-pink)]/[0.05] rounded mb-2" />
+                    <div className="relative aspect-[4/5] rounded mb-2 overflow-hidden bg-[var(--gaia-pink)]/[0.05]">
+                      <Image
+                        src="/portfolio-branding.jpg"
+                        alt="Placeholder post"
+                        fill
+                        className="object-cover"
+                        sizes="320px"
+                      />
+                    </div>
                     <div className="flex gap-3 mb-1">
                       <Heart size={14} className="text-[var(--gaia-pink)]/40" />
                       <div className="h-2 w-4 bg-[var(--gaia-pink)]/20 rounded" />
@@ -208,56 +239,7 @@ export function CustomRedesLanding() {
         </div>
       </section>
 
-      {/* Servicios Teaser Section */}
-      <section id="servicios-teaser" className="py-20 md:py-32 px-6 md:px-12 border-b border-[var(--gaia-pink)]/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left text */}
-            <div className="lg:col-span-6 space-y-6">
-              <span className="block text-[var(--gaia-pink)] text-xs tracking-[0.3em] uppercase">
-                NUESTROS SERVICIOS
-              </span>
-              <h2 className="font-serif text-4xl md:text-6xl text-[var(--gaia-beige)] tracking-tight">
-                Gestión completa <br />de redes
-              </h2>
-              <p className="font-sans text-[var(--gaia-beige)]/70 text-sm sm:text-base leading-relaxed">
-                Desde la estrategia hasta la interacción diaria. Nos hacemos cargo de todo para que tu marca tenga una presencia cuidada, coherente y constante en redes sociales.
-              </p>
-              <div className="pt-2">
-                <button
-                  onClick={() => handleCTA('Ver Servicios')}
-                  className="group inline-flex items-center gap-2 px-8 py-4 bg-transparent border border-[var(--gaia-pink)] text-[var(--gaia-pink)] font-sans text-xs tracking-[0.15em] uppercase hover:bg-[var(--gaia-pink)] hover:text-[var(--gaia-burgundy)] transition-all duration-500 rounded-none cursor-pointer"
-                >
-                  <span>Conocer más</span>
-                  <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
-            </div>
-
-            {/* Right preview graphic */}
-            <div className="lg:col-span-6">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="aspect-[3/4] bg-[var(--gaia-pink)]/[0.02] border border-[var(--gaia-pink)]/10 rounded-lg overflow-hidden relative group hover:border-[var(--gaia-pink)]/30 transition-all duration-500">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Heart size={32} className="text-[var(--gaia-pink)]/20 group-hover:text-[var(--gaia-pink)]/40 transition-colors" />
-                  </div>
-                  <div className="absolute bottom-3 left-3 right-3">
-                    <span className="text-[9px] text-[var(--gaia-pink)] tracking-widest uppercase">Social Media</span>
-                  </div>
-                </div>
-                <div className="aspect-[3/4] bg-[var(--gaia-pink)]/[0.02] border border-[var(--gaia-pink)]/10 rounded-lg overflow-hidden relative group hover:border-[var(--gaia-pink)]/30 transition-all duration-500 mt-8">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Camera size={32} className="text-[var(--gaia-pink)]/20 group-hover:text-[var(--gaia-pink)]/40 transition-colors" />
-                  </div>
-                  <div className="absolute bottom-3 left-3 right-3">
-                    <span className="text-[9px] text-[var(--gaia-pink)] tracking-widest uppercase">Producción</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Modalidades de Servicio */}
       <section className="py-20 md:py-32 px-6 md:px-12 bg-[var(--gaia-burgundy)] relative overflow-hidden border-b border-[var(--gaia-pink)]/10">
@@ -290,11 +272,11 @@ export function CustomRedesLanding() {
                 <span className="text-[10px] tracking-widest text-[var(--gaia-pink)] uppercase">Estrategia y Planificación</span>
                 <h3 className="font-serif text-2xl text-[var(--gaia-beige)] mt-2 mb-4">Social Media</h3>
                 <p className="font-sans text-xs sm:text-sm text-[var(--gaia-beige)]/50 leading-relaxed mb-6">
-                  Definimos la estrategia integral de tu marca en redes: ejes de contenido, tono comunicacional, calendario editorial y métricas de seguimiento.
+                  Pensamos y creamos contenido visual alineado a la identidad de tu marca. Desarrollamos piezas gráficas y audiovisuales listas para usar, pensadas para sostener una presencia digital cuidada y coherente. 
                 </p>
                 <div className="w-full h-[1px] bg-[var(--gaia-pink)]/10 my-4" />
                 <ul className="space-y-3">
-                  {['Auditoría de presencia digital actual', 'Definición de ejes y pilares de contenido', 'Calendario editorial mensual', 'Reportes de métricas y rendimiento', 'Optimización continua de estrategia'].map((item) => (
+                  {[ 'Definición de ejes y pilares de contenido', 'Calendario editorial mensual (si requiere)', 'Optimización continua de estrategia'].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-xs text-[var(--gaia-beige)]/70">
                       <Check size={14} className="text-[var(--gaia-pink)] shrink-0" />
                       <span>{item}</span>
@@ -325,11 +307,11 @@ export function CustomRedesLanding() {
                 <span className="text-[10px] tracking-widest text-[var(--gaia-pink)] uppercase">Interacción y Comunidad</span>
                 <h3 className="font-serif text-2xl text-[var(--gaia-beige)] mt-2 mb-4">Community Manager</h3>
                 <p className="font-sans text-xs sm:text-sm text-[var(--gaia-beige)]/50 leading-relaxed mb-6">
-                  Gestión diaria de tus redes: publicación, interacción con la comunidad, respuesta a consultas y moderación. Tu marca siempre presente y activa.
+                  Gestión integral de tus redes sociales, creatividad, planificación, grabación, edición y publicación de contenido. Trabajamos la comunicación diaria para construir comunidad, generar interacción y fortalecer la marca.
                 </p>
                 <div className="w-full h-[1px] bg-[var(--gaia-pink)]/20 my-4" />
                 <ul className="space-y-3">
-                  {['Publicación programada en redes', 'Respuesta a comentarios y mensajes', 'Moderación de comunidad activa', 'Stories y contenido efímero diario', 'Reporte semanal de interacciones'].map((item) => (
+                  {['Publicación programada en redes', 'Moderación de comunidad activa', 'Stories y contenido efímero diario', 'Reporte trimestral de interacciones'].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-xs text-[var(--gaia-beige)]/70">
                       <Check size={14} className="text-[var(--gaia-pink)] shrink-0" />
                       <span>{item}</span>

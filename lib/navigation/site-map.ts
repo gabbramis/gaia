@@ -29,6 +29,11 @@ const navigationNodes: Record<string, NavigationNode> = {
     label: 'Campanas Publicitarias',
     parentHref: '/servicios',
   },
+  '/cobertura-de-eventos': {
+    href: '/cobertura-de-eventos',
+    label: 'Cobertura de Eventos',
+    parentHref: '/servicios',
+  },
   '/portfolio': { href: '/portfolio', label: 'Portfolio', parentHref: '/' },
   '/portfolio/contenidos': {
     href: '/portfolio/contenidos',

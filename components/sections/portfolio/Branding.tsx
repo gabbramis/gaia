@@ -2,8 +2,8 @@
 
 import { motion } from 'motion/react';
 import { fadeInUp } from '@/lib/animations';
-import Image from 'next/image';
 import { brandingProjects } from '@/lib/data/portfolio';
+import { ProgressiveImage } from '@/components/ui/ProgressiveImage';
 
 type BrandingPaletteColor = {
     name?: string;
@@ -161,7 +161,7 @@ export function Branding({ projects }: BrandingProps) {
                                             >
                                                 {i === 0 ? (
                                                     <div className="relative aspect-square">
-                                                        <Image
+                                                        <ProgressiveImage
                                                             src={mockup.src}
                                                             alt={mockup.alt}
                                                             fill
@@ -170,7 +170,7 @@ export function Branding({ projects }: BrandingProps) {
                                                     </div>
                                                 ) : (
                                                     <div>
-                                                        <Image
+                                                        <ProgressiveImage
                                                             src={mockup.src}
                                                             alt={mockup.alt}
                                                             width={1400}

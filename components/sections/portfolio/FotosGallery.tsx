@@ -3,10 +3,10 @@
 import { useRef, useState, useCallback, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { fadeInUp } from '@/lib/animations';
-import Image from 'next/image';
 import { fotos } from '@/lib/data/portfolio';
 import { trackViewContent } from '@/lib/analytics/facebook-pixel';
 import type { FotoItem } from '@/lib/data/types/portfolio';
+import { ProgressiveImage } from '@/components/ui/ProgressiveImage';
 
 export function FotosGallery({ niche = 'Todos', items }: { niche?: string; items?: FotoItem[] }) {
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -83,7 +83,7 @@ export function FotosGallery({ niche = 'Todos', items }: { niche?: string; items
                         transition={{ duration: 0.6, delay: index * 0.08 }}
                     >
                         <div className="group relative aspect-[3/4] overflow-hidden border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/5">
-                            <Image
+                            <ProgressiveImage
                                 src={item.images[0].src}
                                 alt={item.images[0].alt}
                                 fill
@@ -117,7 +117,7 @@ export function FotosGallery({ niche = 'Todos', items }: { niche?: string; items
                             className="flex-shrink-0 w-[70vw] snap-center"
                         >
                             <div className="group relative aspect-[3/4] overflow-hidden border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/5">
-                                <Image
+                                <ProgressiveImage
                                     src={item.images[0].src}
                                     alt={item.images[0].alt}
                                     fill

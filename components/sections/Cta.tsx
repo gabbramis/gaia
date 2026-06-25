@@ -3,7 +3,7 @@
 import { motion } from 'motion/react';
 import { fadeInUp } from '@/lib/animations';
 import Link from 'next/link';
-import { ArrowRight, Sparkles, Eye, Heart } from 'lucide-react';
+import { ArrowRight, Sparkles, FolderOpen, Heart } from 'lucide-react';
 
 const cards = [
   {
@@ -16,7 +16,7 @@ const cards = [
     title: 'Portfolio',
     description: 'Explorá los proyectos que ya confiaron en nuestra visión creativa.',
     href: '/portfolio',
-    icon: Eye,
+    icon: FolderOpen,
   },
   {
     title: 'Nosotras',

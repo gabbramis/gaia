@@ -29,6 +29,7 @@ export function Footer() {
               width={64}
               height={64}
               className="h-16 w-auto"
+              style={{ width: 'auto' }}
             />
             <p className="font-sans text-base text-white/80 leading-relaxed">
               Un estudio creativo que eleva marcas con intención, estética y visión.

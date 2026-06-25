@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 import {
   ArrowRight,
   BarChart3,
+  Camera,
   Code,
   Megaphone,
   Palette,
@@ -72,10 +73,20 @@ const mainCategories = [
     href: '/campanas-publicitarias',
     icon: BarChart3,
   },
+  {
+    id: 'cobertura-eventos',
+    number: '06',
+    title: 'Cobertura de Eventos',
+    description:
+      'Registramos la energia de tu evento con contenido en tiempo real y material final listo para publicar. Cobertura pensada para marcas, lanzamientos y experiencias presenciales.',
+    includes: ['Cobertura en vivo', 'Foto y video', 'Contenido para redes'],
+    featured: false,
+    href: '/cobertura-de-eventos',
+    icon: Camera,
+  },
 ];
 
 const secondaryServices = [
-  'Cobertura de eventos',
   'Produccion audiovisual',
   'Fotografia',
   'Edicion de contenido',
@@ -138,24 +149,24 @@ export default function ServiciosPage() {
 
                     <div className="relative z-10 flex flex-col h-full">
                       {/* Header */}
-                      <div className="flex items-start justify-between gap-3 mb-4">
-                        <div className="space-y-1.5">
+                      <div className="mb-4">
+                        <div className="space-y-1.5 flex-1 min-w-0">
                           <span className="block font-serif text-[1.7rem] sm:text-[1.9rem] md:text-[2.1rem] leading-none text-[var(--gaia-pink)]/20 group-hover:text-[var(--gaia-pink)]/30 transition-colors duration-500 select-none">
                             {category.number}
                           </span>
-                          <div className="w-fit p-2 border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/[0.04] group-hover:border-[var(--gaia-pink)]/24 group-hover:bg-[var(--gaia-pink)]/[0.08] transition-all duration-500">
-                            <Icon
-                              size={16}
-                              className="text-[var(--gaia-pink)]"
-                            />
-                          </div>
-                        </div>
+                           <div className="flex items-center gap-2.5 sm:gap-3">
+                             <Icon
+                               size={16}
+                               className="text-[var(--gaia-pink)] shrink-0"
+                             />
+                             <h3 className="font-serif text-lg sm:text-xl md:text-2xl text-[var(--gaia-beige)] leading-tight group-hover:text-[var(--gaia-pink)] transition-colors duration-500 text-balance">
+                               {category.title}
+                             </h3>
+                           </div>
+                         </div>
                       </div>
 
                       {/* Title & description */}
-                      <h3 className="font-serif text-xl md:text-2xl text-[var(--gaia-beige)] mb-3 leading-tight group-hover:text-[var(--gaia-pink)] transition-colors duration-500">
-                        {category.title}
-                      </h3>
                       <p className="font-sans text-[var(--gaia-beige)]/50 text-xs md:text-sm leading-relaxed mb-5">
                         {category.description}
                       </p>
@@ -204,43 +215,7 @@ export default function ServiciosPage() {
         </div>
       </section>
 
-      {/* ==================== SERVICIOS COMPLEMENTARIOS ==================== */}
-      <section className="py-16 md:py-24 px-6 md:px-12 border-b border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/[0.01]">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-50px' }}
-            variants={fadeInUp}
-            className="text-center"
-          >
-            <span className="block text-[var(--gaia-pink)]/50 text-xs tracking-[0.3em] uppercase mb-3">
-              Servicios complementarios
-            </span>
-            <h3 className="font-serif text-2xl md:text-3xl text-[var(--gaia-beige)] tracking-tight mb-3">
-              Tambien acompañamos tu marca con
-            </h3>
-            <p className="font-sans text-[var(--gaia-beige)]/45 text-xs max-w-md mx-auto mb-8">
-              Servicios especificos que se integran con nuestra estrategia
-              principal segun las necesidades de cada proyecto.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {secondaryServices.map((service, index) => (
-                <motion.span
-                  key={service}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.06 }}
-                  className="inline-block px-5 py-2.5 border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/[0.02] text-[var(--gaia-beige)]/50 font-sans text-xs tracking-wide hover:border-[var(--gaia-pink)]/25 hover:text-[var(--gaia-beige)]/70 hover:bg-[var(--gaia-pink)]/[0.04] transition-all duration-300"
-                >
-                  {service}
-                </motion.span>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      
 
       {/* ==================== CTA FINAL ==================== */}
       <section className="px-6 md:px-12 pb-12 md:pb-20">

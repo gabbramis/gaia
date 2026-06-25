@@ -12,8 +12,8 @@ export default function Home() {
     <main className="bg-[var(--gaia-burgundy)] min-h-screen overflow-x-hidden w-full">
       <Navigation />
       <Hero />
-      <Process />
       <Cta />
+      <Process />
       <Contact />
       <Footer />
     </main>

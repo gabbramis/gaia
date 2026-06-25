@@ -3,10 +3,10 @@
 import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { fadeInUp } from '@/lib/animations';
-import Image from 'next/image';
 import Link from 'next/link';
 import { webDesigns } from '@/lib/data/portfolio';
 import { trackViewContent } from '@/lib/analytics/facebook-pixel';
+import { ProgressiveImage } from '@/components/ui/ProgressiveImage';
 
 type WebDesignCard = {
     id: string;
@@ -97,7 +97,7 @@ export function WebDesigns({
                                     </div>
 
                                     {/* Image */}
-                                    <Image
+                                    <ProgressiveImage
                                         src={project.image.src}
                                         alt={project.image.alt}
                                         fill
