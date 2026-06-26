@@ -1,13 +1,13 @@
 'use client';
 
-import { motion } from 'motion/react';
-import { fadeInUp } from '@/lib/animations';
-import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
-import { Navigation } from '@/components/ui/Navigation';
-import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Footer } from '@/components/sections/Footer';
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
+import { Navigation } from '@/components/ui/Navigation';
+import { fadeInUp } from '@/lib/animations';
+import { ArrowRight } from 'lucide-react';
+import { motion } from 'motion/react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Portfolio() {
     return (
