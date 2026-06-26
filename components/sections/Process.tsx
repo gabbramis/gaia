@@ -1,7 +1,3 @@
-'use client';
-
-import { motion } from 'motion/react';
-import { fadeInUp, staggerContainer } from '@/lib/animations';
 import { cn } from '@/lib/utils';
 
 const steps = [
@@ -35,36 +31,23 @@ export function Process() {
         >
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
-                <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: '-100px' }}
-                    variants={fadeInUp}
-                    className="mb-8 md:mb-10 text-center"
-                >
+                <div className="mb-8 md:mb-10 text-center">
                     <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-3">
                         CÓMO TRABAJAMOS
                     </span>
                     <h2 className="font-serif text-4xl md:text-6xl text-[var(--gaia-beige)] tracking-tight">
                         Nuestro Proceso
                     </h2>
-                </motion.div>
+                </div>
 
                 {/* Steps */}
-                <motion.div
-                    variants={staggerContainer}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: '-50px' }}
-                    className="relative max-w-4xl mx-auto"
-                >
+                <div className="relative max-w-4xl mx-auto">
                     {/* Vertical line */}
                     <div className="absolute left-[1.35rem] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[var(--gaia-pink)]/0 via-[var(--gaia-pink)]/20 to-[var(--gaia-pink)]/0" />
 
                     {steps.map((step, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            variants={fadeInUp}
                             className={cn(
                                 "relative flex items-start gap-6 md:gap-12 group",
                                 index !== steps.length - 1 ? "mb-6 md:mb-8" : "",
@@ -94,9 +77,9 @@ export function Process() {
 
                             {/* Spacer for alternating layout */}
                             <div className="hidden md:block flex-1" />
-                        </motion.div>
+                        </div>
                     ))}
-                </motion.div>
+                </div>
             </div>
         </section>
     );

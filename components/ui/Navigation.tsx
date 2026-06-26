@@ -101,7 +101,6 @@ export function Navigation() {
               alt="Gaia Logo"
               width={56}
               height={56}
-              priority
               className="h-10 sm:h-12 md:h-14 w-auto"
               style={{ width: 'auto' }}
             />

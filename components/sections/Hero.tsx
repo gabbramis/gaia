@@ -1,17 +1,8 @@
-'use client';
-
-import { motion } from 'motion/react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function Hero() {
-  const handleCTA = () => {
-    const element = document.querySelector('#contacto');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section
       id="hero"
@@ -35,51 +26,34 @@ export function Hero() {
             />
           </div>
           {/* Main Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mb-1 font-serif text-5xl leading-[0.92] tracking-tight text-[var(--gaia-beige)] sm:text-6xl md:mb-4 md:text-7xl lg:text-[10rem]"
-          >
+          <h1 className="relative mb-1 font-serif text-5xl leading-[0.92] tracking-tight text-[var(--gaia-beige)] sm:text-6xl md:mb-4 md:text-7xl lg:text-[10rem]">
              <span className="block">Donde tu negocio</span>
              <span className="block font-monsieur text-[var(--gaia-pink)] text-6xl sm:text-7xl md:text-8xl lg:text-[11rem] -mt-1 sm:-mt-2 md:-mt-8 lg:-mt-12 opacity-90">
                se vuelve arte
              </span>
-          </motion.h1>
+          </h1>
 
           {/* Divider */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="my-2 h-[1px] w-16 bg-[var(--gaia-pink)] md:my-4 md:w-24"
-          />
+          <div className="my-2 h-[1px] w-16 bg-[var(--gaia-pink)] md:my-4 md:w-24" />
 
           {/* Tagline */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
-            className="mx-auto mb-3 max-w-xl font-sans text-[11px] leading-relaxed tracking-[0.12em] text-[var(--gaia-beige)]/80 uppercase sm:text-xs sm:tracking-[0.15em] md:mb-6 md:max-w-2xl md:text-base md:tracking-[0.2em]"
-          >
+          <p className="mx-auto mb-3 max-w-xl font-sans text-[11px] leading-relaxed tracking-[0.12em] text-[var(--gaia-beige)]/80 uppercase sm:text-xs sm:tracking-[0.15em] md:mb-6 md:max-w-2xl md:text-base md:tracking-[0.2em]">
             Pensamos, diseñamos y ejecutamos soluciones digitales alineadas a
             los objetivos reales de tu negocio.
-          </motion.p>
+          </p>
 
           {/* CTA Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.8 }}
-          >
+          <div>
             <Button
+              asChild
               size="lg"
-              onClick={handleCTA}
               className="rounded-none border border-[var(--gaia-pink)] bg-transparent px-6 py-3 text-xs tracking-[0.15em] text-[var(--gaia-pink)] uppercase transition-all duration-500 hover:bg-[var(--gaia-pink)] hover:text-[var(--gaia-burgundy)] sm:px-10 sm:py-4 sm:text-sm md:px-12 md:py-6"
             >
+              <Link href="#contacto">
               Agenda una reunión
+              </Link>
             </Button>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

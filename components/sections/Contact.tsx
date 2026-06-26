@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "motion/react";
-import { fadeInUp } from "@/lib/animations";
 import { Button } from "@/components/ui/button";
 import { contactInfo } from "@/lib/constants";
 import { useState } from "react";
@@ -75,26 +73,16 @@ export function Contact() {
           <span             className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-4">
             HABLEMOS
           </span>
-          <motion.h2
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeInUp}
-            className="font-serif text-4xl md:text-6xl text-[var(--gaia-beige)] mb-6 tracking-tight"
-          >
+          <h2 className="font-serif text-4xl md:text-6xl text-[var(--gaia-beige)] mb-6 tracking-tight">
             Contacto
-          </motion.h2>
+          </h2>
           <p className="font-sans text-[var(--gaia-beige)]/60 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
             ¿Lista para transformar tu marca? Escríbenos y comencemos a crear algo extraordinario.
           </p>
         </div>
 
         {!isSubmitted ? (
-          <motion.form
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+          <form
             onSubmit={handleContact}
             className="space-y-8 md:space-y-10"
           >
@@ -154,14 +142,9 @@ export function Contact() {
                 {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
               </Button>
             </div>
-          </motion.form>
+          </form>
         ) : (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center py-8 md:py-12"
-          >
+          <div className="text-center py-8 md:py-12">
             <div className="mb-8">
               <div className="inline-block mb-6">
                 <Cherry className="w-12 h-12 text-[var(--gaia-pink)] animate-pulse" strokeWidth={1.5} />
@@ -195,7 +178,7 @@ export function Contact() {
             >
               Enviar otro mensaje
             </button>
-          </motion.div>
+          </div>
         )}
 
         <div className="mt-16 pt-8 border-t border-[var(--gaia-pink)]/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[var(--gaia-beige)]/40 font-sans text-sm tracking-widest uppercase">
