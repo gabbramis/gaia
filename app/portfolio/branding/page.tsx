@@ -2,6 +2,7 @@ import { Navigation } from '@/components/ui/Navigation';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Branding } from '@/components/sections/portfolio/Branding';
 import { Footer } from '@/components/sections/Footer';
+import { hasSanityConfig } from '@/sanity/env';
 import { sanityClient } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import { brandingProjectsQuery } from '@/sanity/lib/queries';
@@ -34,6 +35,10 @@ type BrandingProject = {
 };
 
 async function getSanityBrandingProjects() {
+    if (!hasSanityConfig || !sanityClient) {
+        return [];
+    }
+
     const projects = await sanityClient.fetch<BrandingProject[]>(brandingProjectsQuery);
 
     return projects.map((project) => ({

@@ -17,13 +17,13 @@ export type StandardEvent =
   | 'Contact'
   | 'Lead';
 
-export interface ViewContentParams {
+export interface ViewContentParams extends FacebookPixelParameters {
   content_name?: string;
   content_category?: string;
   content_type?: string;
 }
 
-export interface ContactParams {
+export interface ContactParams extends FacebookPixelParameters {
   content_name?: string;
   content_category?: string;
 }

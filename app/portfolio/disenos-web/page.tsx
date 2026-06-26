@@ -2,6 +2,7 @@ import { Navigation } from '@/components/ui/Navigation';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { WebDesigns } from '@/components/sections/WebDesigns';
 import { Footer } from '@/components/sections/Footer';
+import { hasSanityConfig } from '@/sanity/env';
 import { sanityClient } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import { portfolioWebProjectsQuery } from '@/sanity/lib/queries';
@@ -26,6 +27,10 @@ type PortfolioWebProject = {
 };
 
 async function getSanityProjects() {
+    if (!hasSanityConfig || !sanityClient) {
+        return [];
+    }
+
     const projects = await sanityClient.fetch<PortfolioWebProject[]>(portfolioWebProjectsQuery);
 
     return projects.map((project) => ({

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Navigation } from '@/components/ui/Navigation';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Footer } from '@/components/sections/Footer';
+import { hasSanityConfig } from '@/sanity/env';
 import { sanityClient } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import { portfolioWebProjectsQuery } from '@/sanity/lib/queries';
@@ -34,6 +35,10 @@ type PortfolioWebProject = {
 };
 
 async function getProjects() {
+  if (!hasSanityConfig || !sanityClient) {
+    return [];
+  }
+
   return sanityClient.fetch<PortfolioWebProject[]>(portfolioWebProjectsQuery);
 }
 

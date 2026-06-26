@@ -1,4 +1,5 @@
 import { ContenidosClientPage } from './ContenidosClientPage';
+import { hasSanityConfig } from '@/sanity/env';
 import { sanityClient } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import { contentItemsQuery, contentNichesQuery } from '@/sanity/lib/queries';
@@ -57,6 +58,10 @@ function getYouTubeVideoId(url: string) {
 }
 
 async function getSanityContent() {
+  if (!hasSanityConfig || !sanityClient) {
+    return { sanityFotos: [], sanityNiches: [], sanityReels: [] };
+  }
+
   const [items, niches] = await Promise.all([
     sanityClient.fetch<SanityContentItem[]>(contentItemsQuery),
     sanityClient.fetch<SanityContentNiche[]>(contentNichesQuery),

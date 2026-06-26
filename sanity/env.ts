@@ -6,4 +6,6 @@ export const dataset =
 
 export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '';
 
+export const hasSanityConfig = Boolean(projectId);
+
 export const studioBasePath = '/studio';

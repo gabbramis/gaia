@@ -19,7 +19,6 @@ const iconMap: Record<ServiceIconName, LucideIcon> = {
   Camera,
   Laptop,
   Search,
-  Sparkles,
   ChartNoAxesColumnDecreasing,
   Component,
 };
