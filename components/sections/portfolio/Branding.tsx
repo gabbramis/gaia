@@ -60,11 +60,11 @@ export function Branding({ projects }: BrandingProps) {
                 >
                     <div>
                         <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-4">
-                            Visual Identity
+                            IDENTIDAD VISUAL
                         </span>
-                        <h2 className="font-serif text-5xl md:text-7xl text-[var(--gaia-beige)] tracking-tight">
+                        <h1 className="font-serif text-5xl md:text-7xl text-[var(--gaia-beige)] tracking-tight">
                             Branding
-                        </h2>
+                        </h1>
                     </div>
                     <p className="font-sans text-[var(--gaia-beige)]/60 max-w-md text-sm md:text-base leading-relaxed tracking-wide">
                         Identidades visuales que comunican la esencia de cada marca.

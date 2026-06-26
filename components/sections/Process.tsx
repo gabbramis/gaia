@@ -43,7 +43,7 @@ export function Process() {
                     className="mb-8 md:mb-10 text-center"
                 >
                     <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-3">
-                        How we work
+                        CÓMO TRABAJAMOS
                     </span>
                     <h2 className="font-serif text-4xl md:text-6xl text-[var(--gaia-beige)] tracking-tight">
                         Nuestro Proceso

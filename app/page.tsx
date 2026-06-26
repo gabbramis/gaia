@@ -1,11 +1,16 @@
-'use client';
-
+import type { Metadata } from 'next';
 import { Navigation } from '@/components/ui/Navigation';
 import { Hero } from '@/components/sections/Hero';
 import { Process } from '@/components/sections/Process';
 import { Cta } from '@/components/sections/Cta';
 import { Contact } from '@/components/sections/Contact';
 import { Footer } from '@/components/sections/Footer';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default function Home() {
   return (

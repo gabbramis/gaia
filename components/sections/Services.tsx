@@ -5,12 +5,14 @@ import { motion, AnimatePresence } from 'motion/react';
 import { serviceCategories } from '@/lib/constants';
 import { ServiceCard } from '@/components/ui/ServiceCard';
 import { fadeInUp } from '@/lib/animations';
-import { Share2, Users, Video, Camera, Laptop, Search, Sparkles, ChartNoAxesColumnDecreasing, Component, ArrowRight } from 'lucide-react';
+import { Share2, Users, Video, Camera, Laptop, Search, Sparkles, ChartNoAxesColumnDecreasing, Component, ArrowRight, type LucideIcon } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { trackCustomEvent } from '@/lib/analytics/facebook-pixel';
 
-const iconMap: Record<string, any> = {
+type ServiceIconName = (typeof serviceCategories)[number]['services'][number]['icon'];
+
+const iconMap: Record<ServiceIconName, LucideIcon> = {
   Share2,
   Users,
   Video,
@@ -193,7 +195,7 @@ export function Services() {
 // Mobile Category Section Component
 interface MobileCategorySectionProps {
   category: typeof serviceCategories[number];
-  iconMap: Record<string, any>;
+  iconMap: Record<ServiceIconName, LucideIcon>;
 }
 
 function MobileCategorySection({ category, iconMap }: MobileCategorySectionProps) {

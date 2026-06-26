@@ -6,6 +6,7 @@ import { navLinks } from '@/lib/constants';
 import { Menu, X } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,6 +51,11 @@ export function Navigation() {
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);
 
+    if (href === '/') {
+      router.push('/');
+      return;
+    }
+
     if (href.startsWith('#')) {
       if (pathname !== '/') {
         router.push(`/${href}`);
@@ -64,6 +70,15 @@ export function Navigation() {
     }
   };
 
+  const getNavHref = (href: string) => {
+    if (href === '/') return '/';
+    if (href.startsWith('#')) {
+      return pathname === '/' ? href : `/${href}`;
+    }
+
+    return `/${href}`;
+  };
+
   return (
     <motion.nav
       style={{ backgroundColor, borderBottomColor: borderColor }}
@@ -73,7 +88,7 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a
+          <Link
             href="/"
             onClick={(e) => {
               e.preventDefault();
@@ -90,22 +105,24 @@ export function Navigation() {
               className="h-10 sm:h-12 md:h-14 w-auto"
               style={{ width: 'auto' }}
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-6 lg:gap-10">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a
-                  href={`/${link.href}`}
+                <Link
+                  href={getNavHref(link.href)}
                   onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick(link.href);
+                    if (link.href.startsWith('#')) {
+                      e.preventDefault();
+                      handleNavClick(link.href);
+                    }
                   }}
-                  className="font-sans text-xs text-[var(--gaia-beige)]/80 hover:text-[var(--gaia-pink)] transition-colors duration-300 tracking-[0.15em] uppercase"
+                  className={`font-sans text-xs transition-colors duration-300 tracking-[0.15em] uppercase ${pathname === `/${link.href}` ? 'text-[var(--gaia-pink)]' : 'text-[var(--gaia-beige)]/80 hover:text-[var(--gaia-pink)]'}`}
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -133,16 +150,20 @@ export function Navigation() {
               <ul className="flex flex-col py-6 sm:py-8 px-4 sm:px-6 gap-4 sm:gap-6">
                 {navLinks.map((link) => (
                   <li key={link.href} className="text-center">
-                    <a
-                      href={`/${link.href}`}
+                    <Link
+                      href={getNavHref(link.href)}
                       onClick={(e) => {
-                        e.preventDefault();
-                        handleNavClick(link.href);
+                        if (link.href.startsWith('#')) {
+                          e.preventDefault();
+                          handleNavClick(link.href);
+                        } else {
+                          setIsMobileMenuOpen(false);
+                        }
                       }}
                       className="font-serif text-xl sm:text-2xl text-[var(--gaia-beige)] hover:text-[var(--gaia-pink)] transition-colors duration-300 block py-2"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

@@ -1,5 +1,6 @@
-const fs = require('fs');
-const path = require('path');
+/* eslint-disable @typescript-eslint/no-require-imports */
+const fs = require('node:fs');
+const path = require('node:path');
 
 const fotosPath = path.join(__dirname, 'lib/data/portfolio/fotos.json');
 const reelsPath = path.join(__dirname, 'lib/data/portfolio/reels.json');
@@ -17,11 +18,11 @@ const getClientNiche = (client) => {
 
 try {
     const fotos = JSON.parse(fs.readFileSync(fotosPath, 'utf8'));
-    fotos.items = fotos.items.map(item => ({ ...item, niche: getClientNiche(item.client) }));
+    fotos.items = fotos.items.map((item) => ({ ...item, niche: getClientNiche(item.client) }));
     fs.writeFileSync(fotosPath, JSON.stringify(fotos, null, 2));
 
     const reels = JSON.parse(fs.readFileSync(reelsPath, 'utf8'));
-    reels.items = reels.items.map(item => ({ ...item, niche: getClientNiche(item.client) }));
+    reels.items = reels.items.map((item) => ({ ...item, niche: getClientNiche(item.client) }));
     fs.writeFileSync(reelsPath, JSON.stringify(reels, null, 2));
 
     console.log('JSON files updated with niches successfully.');

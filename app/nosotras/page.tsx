@@ -83,12 +83,12 @@ export default function NosotrasPage() {
               >
                 <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-8 flex items-center gap-4">
                   <span className="w-12 h-px bg-[var(--gaia-pink)]" />
-                  Who We Are
+                  NOSOTRAS
                 </span>
 
-                <h2 className="font-serif text-7xl sm:text-7xl md:text-8xl lg:text-9xl text-[var(--gaia-beige)] mb-8 tracking-tighter leading-[0.8]">
+                <h1 className="font-serif text-7xl sm:text-7xl md:text-8xl lg:text-9xl text-[var(--gaia-beige)] mb-8 tracking-tighter leading-[0.8]">
                   Nosotras<span className="text-[var(--gaia-pink)]">.</span>
-                </h2>
+                </h1>
 
                 <p className="font-sans text-[var(--gaia-beige)]/60 text-sm tracking-widest uppercase mb-8">
                   Est. 2025 - Montevideo
@@ -145,55 +145,55 @@ export default function NosotrasPage() {
               </h3>
             </motion.div>
 
-          <div className="space-y-16 md:space-y-24">
-            {founders.map((founder, index) => (
-              <motion.div
-                key={founder.name}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-16 items-start"
-              >
-                <div className={`lg:col-span-4 relative order-2 ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
-                  <div className="absolute -bottom-4 -right-4 md:-bottom-5 md:-right-5 w-full h-full border border-[var(--gaia-pink)]/25 rounded-sm" />
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/5">
-                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--gaia-burgundy)]/35 via-transparent to-[var(--gaia-burgundy)]/10 z-10 pointer-events-none" />
-                    <Image
-                      src={founder.image}
-                      alt={founder.alt}
-                      fill
-                      className="object-cover grayscale-[8%] contrast-[1.02] brightness-[0.98]"
-                      sizes="(min-width: 1024px) 33vw, 100vw"
-                      priority={index === 0}
-                    />
-                  </div>
-                </div>
-
-                <div className={`lg:col-span-8 order-1 ${index % 2 === 1 ? 'lg:order-1' : 'lg:order-2'}`}>
-                  <div className="border-t border-[var(--gaia-pink)]/12 pt-6 md:pt-8">
-                    <span className="block text-[var(--gaia-pink)]/70 text-xs tracking-[0.3em] uppercase mb-3">
-                      Cofundadora
-                    </span>
-                    <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-6">
-                      <h3 className="font-serif text-4xl md:text-6xl text-[var(--gaia-beige)] tracking-tight">
-                        {founder.name}
-                      </h3>
-                      <p className="font-sans text-[var(--gaia-beige)]/50 text-xs md:text-sm tracking-[0.18em] uppercase">
-                        {founder.role}
-                      </p>
-                    </div>
-
-                    <div className="space-y-5 font-sans text-[var(--gaia-beige)]/78 text-sm md:text-base leading-relaxed max-w-3xl">
-                      {founder.paragraphs.map((paragraph) => (
-                        <p key={paragraph}>{paragraph}</p>
-                      ))}
+            <div className="space-y-16 md:space-y-24">
+              {founders.map((founder, index) => (
+                <motion.div
+                  key={founder.name}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeInUp}
+                  className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-16 items-start"
+                >
+                  <div className={`lg:col-span-4 relative order-2 ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
+                    <div className="absolute -bottom-4 -right-4 md:-bottom-5 md:-right-5 w-full h-full border border-[var(--gaia-pink)]/25 rounded-sm" />
+                    <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/5">
+                      <div className="absolute inset-0 bg-gradient-to-t from-[var(--gaia-burgundy)]/35 via-transparent to-[var(--gaia-burgundy)]/10 z-10 pointer-events-none" />
+                      <Image
+                        src={founder.image}
+                        alt={founder.alt}
+                        fill
+                        className="object-cover grayscale-[8%] contrast-[1.02] brightness-[0.98]"
+                        sizes="(min-width: 1024px) 33vw, 100vw"
+                        priority={index === 0}
+                      />
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+
+                  <div className={`lg:col-span-8 order-1 ${index % 2 === 1 ? 'lg:order-1' : 'lg:order-2'}`}>
+                    <div className="border-t border-[var(--gaia-pink)]/12 pt-6 md:pt-8">
+                      <span className="block text-[var(--gaia-pink)]/70 text-xs tracking-[0.3em] uppercase mb-3">
+                        Cofundadora
+                      </span>
+                      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-6">
+                        <h3 className="font-serif text-4xl md:text-6xl text-[var(--gaia-beige)] tracking-tight">
+                          {founder.name}
+                        </h3>
+                        <p className="font-sans text-[var(--gaia-beige)]/50 text-xs md:text-sm tracking-[0.18em] uppercase">
+                          {founder.role}
+                        </p>
+                      </div>
+
+                      <div className="space-y-5 font-sans text-[var(--gaia-beige)]/78 text-sm md:text-base leading-relaxed max-w-3xl">
+                        {founder.paragraphs.map((paragraph) => (
+                          <p key={paragraph}>{paragraph}</p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

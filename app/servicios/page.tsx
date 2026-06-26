@@ -239,7 +239,7 @@ export default function ServiciosPage() {
               presencia digital.
             </p>
             <Link
-              href="#"
+              href="/#contacto"
               onClick={() => {
                 trackCustomEvent('Solicitar asesoramiento - Servicios', {
                   category: 'Lead Generation',

@@ -29,12 +29,6 @@ export function ReelsGallery({ niche = 'Todos', items }: { niche?: string; items
     }, [displayedReels.length]);
 
     useEffect(() => {
-        setShowAll(false);
-        setActiveIndex(0);
-        if (scrollRef.current) scrollRef.current.scrollLeft = 0;
-    }, [niche]);
-
-    useEffect(() => {
         trackViewContent({
             content_name: 'Reels Gallery',
             content_category: 'Portfolio',

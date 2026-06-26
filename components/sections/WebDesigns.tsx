@@ -55,7 +55,6 @@ export function WebDesigns({
     return (
         <section id="web-designs" className="relative bg-[var(--gaia-burgundy)] py-16 md:py-32 px-6 md:px-12 border-t border-[var(--gaia-pink)]/10">
             <div className="max-w-7xl mx-auto">
-                {/* Header */}
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
@@ -67,16 +66,15 @@ export function WebDesigns({
                         <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-4">
                             {eyebrow}
                         </span>
-                        <h2 className="font-serif text-5xl md:text-7xl text-[var(--gaia-beige)] tracking-tight">
+                        <h1 className="font-serif text-5xl md:text-7xl text-[var(--gaia-beige)] tracking-tight">
                             Diseños Web
-                        </h2>
+                        </h1>
                     </div>
                     <p className="font-sans text-[var(--gaia-beige)]/60 max-w-md text-sm md:text-base leading-relaxed tracking-wide">
                         {description}
                     </p>
                 </motion.div>
 
-                {/* Web Gallery Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                     {galleryProjects.map((project, index) => (
                         <motion.div
@@ -86,17 +84,14 @@ export function WebDesigns({
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                         >
-                            <Link href={project.url || '#'} target={project.url ? "_blank" : "_self"} rel="noopener noreferrer" className="group cursor-pointer block">
-                                {/* Browser/Window Frame Effect */}
+                            <Link href={project.url || '#'} target={project.url ? '_blank' : '_self'} rel="noopener noreferrer" className="group cursor-pointer block">
                                 <div className="relative aspect-[16/10] overflow-hidden bg-[var(--gaia-pink)]/5 border border-[var(--gaia-pink)]/10 group-hover:border-[var(--gaia-pink)]/30 transition-colors duration-500">
-                                    {/* Mockup Header */}
                                     <div className="absolute top-0 left-0 right-0 h-6 bg-[var(--gaia-burgundy)]/50 backdrop-blur-sm border-b border-[var(--gaia-pink)]/10 flex items-center px-3 gap-1.5 z-10">
                                         <div className="w-2 h-2 rounded-full bg-[var(--gaia-pink)]/30" />
                                         <div className="w-2 h-2 rounded-full bg-[var(--gaia-pink)]/30" />
                                         <div className="w-2 h-2 rounded-full bg-[var(--gaia-pink)]/30" />
                                     </div>
 
-                                    {/* Image */}
                                     <ProgressiveImage
                                         src={project.image.src}
                                         alt={project.image.alt}
@@ -105,7 +100,6 @@ export function WebDesigns({
                                         className="object-cover mt-6 transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                                     />
 
-                                    {/* Overlay */}
                                     <div className="absolute inset-0 bg-[var(--gaia-burgundy)]/20 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />
                                 </div>
 
@@ -122,7 +116,7 @@ export function WebDesigns({
                                     </div>
                                     {project.url && (
                                         <span className="font-sans text-xs text-[var(--gaia-pink)]/40 uppercase tracking-widest group-hover:text-[var(--gaia-pink)] transition-colors duration-300">
-                                            Visit Website ↗
+                                            Visitar sitio ↗
                                         </span>
                                     )}
                                 </div>

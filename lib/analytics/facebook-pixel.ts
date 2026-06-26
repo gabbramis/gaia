@@ -1,4 +1,4 @@
-import { StandardEvent, ViewContentParams, ContactParams } from '@/lib/types/facebook-pixel';
+import { StandardEvent, ViewContentParams, ContactParams, FacebookPixelParameters } from '@/lib/types/facebook-pixel';
 
 const isPixelAvailable = (): boolean => {
   return typeof window !== 'undefined' && typeof window.fbq === 'function';
@@ -6,7 +6,7 @@ const isPixelAvailable = (): boolean => {
 
 export const trackEvent = (
   eventName: StandardEvent,
-  parameters?: Record<string, any>
+  parameters?: FacebookPixelParameters
 ): void => {
   if (!isPixelAvailable()) return;
 
@@ -31,7 +31,7 @@ export const trackLead = (params?: ContactParams): void => {
 
 export const trackCustomEvent = (
   eventName: string,
-  parameters?: Record<string, any>
+  parameters?: FacebookPixelParameters
 ): void => {
   if (!isPixelAvailable()) return;
 

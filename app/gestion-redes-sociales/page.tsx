@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import { CustomRedesLanding } from './CustomRedesLanding';
 
 export const metadata: Metadata = {
-  title: 'Gestion de Redes Sociales | Gaia Studio',
+  title: 'Gestion de Redes Sociales',
   description: 'Estrategia integral de redes sociales para construir y fortalecer la presencia digital de tu marca. Social media, community management y produccion de contenido.',
   openGraph: {
     title: 'Gestion de Redes Sociales | Gaia Studio',
-    description: 'Estrategia integral de redes sociales para construir y fortalecer la presencia digital de tu marca.',
+    description: 'Estrategia integral de redes sociales para construir y fortalecer la presencia digital de tu marca. Social media, community management y produccion de contenido.',
     siteName: 'Gaia Studio',
     locale: 'es_UY',
     type: 'website',

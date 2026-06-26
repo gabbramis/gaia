@@ -29,12 +29,6 @@ export function FotosGallery({ niche = 'Todos', items }: { niche?: string; items
     }, [displayedFotos.length]);
 
     useEffect(() => {
-        setShowAll(false);
-        setActiveIndex(0);
-        if (scrollRef.current) scrollRef.current.scrollLeft = 0;
-    }, [niche]);
-
-    useEffect(() => {
         trackViewContent({
             content_name: 'Fotos Gallery',
             content_category: 'Portfolio',

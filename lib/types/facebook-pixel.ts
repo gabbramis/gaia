@@ -1,11 +1,13 @@
+export type FacebookPixelParameters = Record<string, string | number | boolean | null | undefined>;
+
 declare global {
   interface Window {
     fbq: (
       action: 'track' | 'trackCustom' | 'init',
       eventName: string,
-      parameters?: Record<string, any>
+      parameters?: FacebookPixelParameters
     ) => void;
-    _fbq: any;
+    _fbq?: unknown;
   }
 }
 

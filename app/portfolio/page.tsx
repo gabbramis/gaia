@@ -26,12 +26,12 @@ export default function Portfolio() {
                     variants={fadeInUp}
                     className="mb-12 md:mb-24 text-center"
                 >
-                    <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-4">
-                        Our Work
-                    </span>
-                    <h2 className="font-serif text-5xl md:text-7xl text-[var(--gaia-beige)] tracking-tight">
+                     <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-4">
+                        NUESTRO TRABAJO
+                     </span>
+                    <h1 className="font-serif text-5xl md:text-7xl text-[var(--gaia-beige)] tracking-tight">
                         Portfolio
-                    </h2>
+                    </h1>
                 </motion.div>
 
                 {/* Gateway Cards */}
@@ -61,7 +61,7 @@ export default function Portfolio() {
                                     Fotos • Reels • Campañas
                                 </p>
 
-                                <div className="flex items-center gap-2 text-[var(--gaia-beige)] opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                                <div className="flex items-center gap-2 text-[var(--gaia-beige)] opacity-90 group-hover:opacity-100 transform translate-y-0 transition-all duration-500">
                                     <span className="text-xs uppercase tracking-widest">Ver Proyectos</span>
                                     <ArrowRight size={14} />
                                 </div>
@@ -93,10 +93,10 @@ export default function Portfolio() {
                                     Diseños Web
                                 </h3>
                                 <p className="font-sans text-[var(--gaia-pink)] text-xs tracking-widest uppercase mb-6 opacity-80">
-                                    E-commerce • Landing Pages • Corporate
+                                    E-commerce • Landing Pages • Corporativo
                                 </p>
 
-                                <div className="flex items-center gap-2 text-[var(--gaia-beige)] opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                                <div className="flex items-center gap-2 text-[var(--gaia-beige)] opacity-90 group-hover:opacity-100 transform translate-y-0 transition-all duration-500">
                                     <span className="text-xs uppercase tracking-widest">Ver Proyectos</span>
                                     <ArrowRight size={14} />
                                 </div>
@@ -134,7 +134,7 @@ export default function Portfolio() {
                                     Identidad Visual • Paletas • Mockups
                                 </p>
 
-                                <div className="flex items-center gap-2 text-[var(--gaia-beige)] opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                                <div className="flex items-center gap-2 text-[var(--gaia-beige)] opacity-90 group-hover:opacity-100 transform translate-y-0 transition-all duration-500">
                                     <span className="text-xs uppercase tracking-widest">Ver Proyectos</span>
                                     <ArrowRight size={14} />
                                 </div>

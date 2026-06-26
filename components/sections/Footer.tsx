@@ -3,6 +3,8 @@
 import { navLinks, socialLinks, contactInfo } from '@/lib/constants';
 import { Instagram, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const iconMap = {
   Instagram,
@@ -10,11 +12,25 @@ const iconMap = {
 };
 
 export function Footer() {
+  const pathname = usePathname();
+
   const handleNavClick = (href: string) => {
+    if (!href.startsWith('#')) {
+      return;
+    }
+
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const getNavHref = (href: string) => {
+    if (href.startsWith('#')) {
+      return pathname === '/' ? href : `/${href}`;
+    }
+
+    return `/${href}`;
   };
 
   return (
@@ -44,16 +60,18 @@ export function Footer() {
             <ul className="space-y-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
+                  <Link
+                    href={getNavHref(link.href)}
                     onClick={(e) => {
-                      e.preventDefault();
-                      handleNavClick(link.href);
+                      if (link.href.startsWith('#') && pathname === '/') {
+                        e.preventDefault();
+                        handleNavClick(link.href);
+                      }
                     }}
                     className="font-sans text-base text-white/80 hover:text-[var(--gaia-light-pink)] transition-colors duration-300"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

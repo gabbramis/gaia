@@ -73,7 +73,7 @@ export function Contact() {
       <div className="max-w-4xl mx-auto w-full">
         <div className="text-center mb-8 md:mb-12">
           <span             className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-4">
-            Get in Touch
+            HABLEMOS
           </span>
           <motion.h2
             initial="hidden"
@@ -107,7 +107,7 @@ export function Contact() {
                   placeholder="Nombre"
                   value={name}
                   onChange={(e) => { setName(e.target.value); setErrors((prev) => ({ ...prev, name: "" })); }}
-                  className="w-full bg-transparent border-b border-[var(--gaia-pink)]/30 py-4 text-[var(--gaia-beige)] placeholder-[var(--gaia-beige)]/30 focus:outline-none focus:border-[var(--gaia-pink)] transition-colors duration-300 font-sans tracking-wide"
+                  className="w-full bg-transparent border-b border-[var(--gaia-pink)]/30 py-4 text-[var(--gaia-beige)] placeholder-[var(--gaia-beige)]/50 focus:outline-none focus:border-[var(--gaia-pink)] transition-colors duration-300 font-sans tracking-wide"
                 />
                 {errors.name && <p className="text-[var(--gaia-pink)] text-xs mt-2 tracking-wide">{errors.name}</p>}
               </div>
@@ -119,7 +119,7 @@ export function Contact() {
                   placeholder="Email"
                   value={email}
                   onChange={(e) => { setEmail(e.target.value); setErrors((prev) => ({ ...prev, email: "" })); }}
-                  className="w-full bg-transparent border-b border-[var(--gaia-pink)]/30 py-4 text-[var(--gaia-beige)] placeholder-[var(--gaia-beige)]/30 focus:outline-none focus:border-[var(--gaia-pink)] transition-colors duration-300 font-sans tracking-wide"
+                  className="w-full bg-transparent border-b border-[var(--gaia-pink)]/30 py-4 text-[var(--gaia-beige)] placeholder-[var(--gaia-beige)]/50 focus:outline-none focus:border-[var(--gaia-pink)] transition-colors duration-300 font-sans tracking-wide"
                 />
                 {errors.email && <p className="text-[var(--gaia-pink)] text-xs mt-2 tracking-wide">{errors.email}</p>}
               </div>
@@ -133,7 +133,7 @@ export function Contact() {
                 rows={4}
                 value={message}
                 onChange={(e) => { setMessage(e.target.value); setErrors((prev) => ({ ...prev, message: "" })); }}
-                className="w-full bg-transparent border-b border-[var(--gaia-pink)]/30 py-4 text-[var(--gaia-beige)] placeholder-[var(--gaia-beige)]/30 focus:outline-none focus:border-[var(--gaia-pink)] transition-colors duration-300 font-sans tracking-wide resize-none"
+                className="w-full bg-transparent border-b border-[var(--gaia-pink)]/30 py-4 text-[var(--gaia-beige)] placeholder-[var(--gaia-beige)]/50 focus:outline-none focus:border-[var(--gaia-pink)] transition-colors duration-300 font-sans tracking-wide resize-none"
               />
               {errors.message && <p className="text-[var(--gaia-pink)] text-xs mt-2 tracking-wide">{errors.message}</p>}
             </div>
