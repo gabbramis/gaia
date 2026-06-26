@@ -5,6 +5,7 @@ import "./globals.css";
 import { Monsieur_La_Doulaise } from "next/font/google";
 import { FacebookPixel } from '@/components/analytics/FacebookPixel';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { WhatsAppFloatingButton } from '@/components/ui/WhatsAppFloatingButton';
 
 const siteUrl = new URL("https://gaiastudio.com.uy");
 
@@ -115,6 +116,7 @@ export default function RootLayout({
         />
         <FacebookPixel />
         {children}
+        <WhatsAppFloatingButton />
         <GoogleAnalytics gaId="G-CW45R8E3FG" />
       </body>
     </html>

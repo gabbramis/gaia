@@ -19,6 +19,8 @@ import { Footer } from '@/components/sections/Footer';
 import { fadeInUp, easings } from '@/lib/animations';
 import { trackCustomEvent } from '@/lib/analytics/facebook-pixel';
 
+const INSTAGRAM_PROFILE_URL = 'https://www.instagram.com/gaia_studio/';
+
 export function CustomRedesLanding() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
@@ -67,9 +69,10 @@ export function CustomRedesLanding() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center pt-24 md:pt-32 pb-16 px-6 md:px-12 overflow-hidden border-b border-[var(--gaia-pink)]/10">
+      <section className="relative min-h-[90vh] flex items-center pt-24 md:pt-32 pb-16 px-6 md:px-12 overflow-hidden">
         <div className="absolute inset-0 mesh-gradient-burgundy opacity-30 mix-blend-screen pointer-events-none" />
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[var(--gaia-pink)]/10 rounded-full blur-[120px] animate-pulse pointer-events-none" />
+        <div className="absolute -bottom-24 left-1/2 h-48 w-[42rem] -translate-x-1/2 rounded-full bg-[var(--gaia-pink)]/10 blur-[120px] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           {/* Left Column: Text */}
@@ -152,88 +155,25 @@ export function CustomRedesLanding() {
               initial={{ opacity: 0, scale: 0.9, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: easings.premium }}
-              className="relative w-full max-w-[380px] aspect-[9/16] bg-[var(--gaia-pink)]/5 border border-[var(--gaia-pink)]/20 p-1.5 shadow-elevated rounded-2xl animate-float-slow"
+              className="relative w-full max-w-[460px] animate-float-slow"
             >
-              {/* Phone frame */}
-              <div className="w-full h-full bg-[var(--gaia-burgundy)] rounded-xl overflow-hidden relative">
-                {/* Speaker indicator */}
-                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-1.5 bg-[var(--gaia-pink)]/20 rounded-full z-10" />
-                
-                {/* Instagram feed mockup */}
-                <div className="mt-6 p-3 space-y-3">
-                  <div className="bg-[var(--gaia-pink)]/[0.03] border border-[var(--gaia-pink)]/10 rounded-lg p-3">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="relative w-6 h-6 rounded-full overflow-hidden border border-[var(--gaia-pink)]/30 bg-[var(--gaia-beige)]/90 shrink-0">
-                        <Image
-                          src="/logo-pink.png"
-                          alt="Gaia Studio"
-                          fill
-                          className="object-cover p-1"
-                          sizes="24px"
-                        />
-                      </div>
-                      <div className="h-2 w-20 bg-[var(--gaia-pink)]/20 rounded" />
-                    </div>
-                    <div className="relative aspect-square rounded mb-2 overflow-hidden bg-[var(--gaia-pink)]/[0.05]">
-                      <Image
-                        src="/portfolio-content.jpg"
-                        alt="Placeholder post"
-                        fill
-                        className="object-cover"
-                        sizes="320px"
-                      />
-                    </div>
-                    <div className="flex gap-3 mb-1">
-                      <Heart size={14} className="text-[var(--gaia-pink)]/40" />
-                      <div className="h-2 w-4 bg-[var(--gaia-pink)]/20 rounded" />
-                    </div>
-                    <div className="h-2 w-full bg-[var(--gaia-pink)]/10 rounded" />
-                    <div className="h-2 w-2/3 bg-[var(--gaia-pink)]/10 rounded mt-1" />
-                  </div>
-
-                  <div className="bg-[var(--gaia-pink)]/[0.03] border border-[var(--gaia-pink)]/10 rounded-lg p-3">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="relative w-6 h-6 rounded-full overflow-hidden border border-[var(--gaia-pink)]/30 bg-[var(--gaia-beige)]/90 shrink-0">
-                        <Image
-                          src="/logo-pink.png"
-                          alt="Gaia Studio"
-                          fill
-                          className="object-cover p-1"
-                          sizes="24px"
-                        />
-                      </div>
-                      <div className="h-2 w-16 bg-[var(--gaia-pink)]/20 rounded" />
-                    </div>
-                    <div className="relative aspect-[4/5] rounded mb-2 overflow-hidden bg-[var(--gaia-pink)]/[0.05]">
-                      <Image
-                        src="/portfolio-branding.jpg"
-                        alt="Placeholder post"
-                        fill
-                        className="object-cover"
-                        sizes="320px"
-                      />
-                    </div>
-                    <div className="flex gap-3 mb-1">
-                      <Heart size={14} className="text-[var(--gaia-pink)]/40" />
-                      <div className="h-2 w-4 bg-[var(--gaia-pink)]/20 rounded" />
-                    </div>
-                    <div className="h-2 w-full bg-[var(--gaia-pink)]/10 rounded" />
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Small floating notification */}
-            <motion.div
-              initial={{ opacity: 0, x: 20, y: -20 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ duration: 1, delay: 0.8, ease: easings.premium }}
-              className="absolute top-12 -right-4 bg-[var(--gaia-burgundy)] border border-[var(--gaia-pink)]/20 rounded-lg px-3 py-2 shadow-elevated animate-float hidden sm:block"
-            >
-              <div className="flex items-center gap-2">
-                <Users size={12} className="text-[var(--gaia-pink)]" />
-                <span className="text-[10px] text-[var(--gaia-beige)]/60">+128 seguidores</span>
-              </div>
+              <Link
+                href={INSTAGRAM_PROFILE_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="block transition-transform duration-300 hover:scale-[1.01]"
+                aria-label="Abrir Instagram de Gaia Studio"
+              >
+                <Image
+                  src="/feed.png"
+                  alt="Feed de Instagram de Gaia Studio"
+                  width={460}
+                  height={818}
+                  className="h-auto w-full"
+                  sizes="(max-width: 1024px) 84vw, 460px"
+                  priority
+                />
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -243,7 +183,9 @@ export function CustomRedesLanding() {
 
       {/* Modalidades de Servicio */}
       <section className="py-20 md:py-32 px-6 md:px-12 bg-[var(--gaia-burgundy)] relative overflow-hidden border-b border-[var(--gaia-pink)]/10">
-        <div className="max-w-7xl mx-auto">
+        <div className="absolute inset-0 mesh-gradient-burgundy opacity-18 mix-blend-screen pointer-events-none" />
+        <div className="absolute -top-20 left-1/2 h-40 w-[38rem] -translate-x-1/2 rounded-full bg-[var(--gaia-pink)]/8 blur-[100px] pointer-events-none" />
+        <div className="relative z-10 max-w-7xl mx-auto">
           {/* Header */}
           <div className="mb-16 md:mb-24 text-center max-w-2xl mx-auto">
             <span className="block text-[var(--gaia-pink)] text-xs tracking-[0.3em] uppercase mb-4">

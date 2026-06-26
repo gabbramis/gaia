@@ -14,10 +14,13 @@ const founders = [
     image: '/nosotras-mer.jpeg',
     alt: 'Placeholder de Mer',
     paragraphs: [
-      'Soy Mer, creativa y emprendedora desde siempre. La comunicacion es una de mis grandes pasiones. Siempre me intereso entender como se comunican las grandes marcas y que las hace conectar con las personas. Por eso, ademas de estudiarla, sigo capacitandome en marketing, redes sociales y en el comportamiento del consumidor.',
-      'Cada dia busco nuevas tendencias, herramientas y formas que me permitan crear estrategias cada vez mas efectivas. Disfruto transformar ideas en proyectos que conecten con las personas, y de ahi nacio la idea de crear Gaia.',
-      'Creo que el marketing tiene el poder de ayudar a crecer a las marcas, pero tambien de acercarlas a quienes realmente las necesitan. Esa misma pasion por aportar valor me llevo a desarrollar mi marca personal como creadora de contenido y a trabajar en un proyecto online de entrenamiento, donde puedo unir mi interes por la comunicacion con otra de las cosas que mas disfruto: el fitness.',
-      'Hoy, cada proyecto que llega a mis manos en Gaia representa una nueva oportunidad para crear, innovar y ayudar a que una marca encuentre su mejor forma de comunicar lo que la hace unica.',
+      'Soy Mer, creativa y emprendedora desde siempre. La comunicación es una de mis grandes pasiones. Siempre me interesó muchísimo entender cómo se comunican las grandes marcas y qué las hace conectar con las personas. Por eso, además de estudiarla, sigo capacitándome en marketing, redes sociales y en el comportamiento del consumidor.',
+
+      'Cada día busco nuevas tendencias, herramientas y formas que me permitan crear estrategias cada vez más efectivas.',
+
+      'Disfruto de transformar ideas en proyectos que conecten con las personas; de ahí nace mi idea de crear este proyecto que nombramos Gaia. Creo que el marketing tiene el poder de ayudar a crecer a las marcas, pero también de acercarlas a quienes realmente las necesitan. Esa misma pasión por aportar valor me llevó a desarrollar mi marca personal como creadora de contenido y a trabajar en un proyecto online de entrenamiento, donde puedo unir mi interés por la comunicación con otra de las cosas que más disfruto, que es el fitness.',
+
+      'Hoy, cada proyecto que llega a mis manos en Gaia representa una nueva oportunidad para crear, innovar y ayudar a que una marca encuentre su mejor forma de comunicar lo que la hace única.'
     ],
   },
   {
