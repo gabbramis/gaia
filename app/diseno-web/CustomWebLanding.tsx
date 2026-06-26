@@ -160,7 +160,7 @@ export function CustomWebLanding() {
                 <div className="w-2.5 h-2.5 rounded-full bg-[var(--gaia-pink)]/20" />
                 <div className="w-2.5 h-2.5 rounded-full bg-[var(--gaia-pink)]/20" />
                 <div className="ml-4 flex-1 h-4 bg-[var(--gaia-burgundy)]/40 border border-[var(--gaia-pink)]/10 rounded-sm text-[8px] text-[var(--gaia-beige)]/40 flex items-center px-2 select-none">
-                  gaiastudio.uy/diseño-web
+                  gaiastudio.com.uy/diseno-web
                 </div>
               </div>
 
@@ -247,7 +247,7 @@ export function CustomWebLanding() {
                     <div className="w-2.5 h-2.5 rounded-full bg-[var(--gaia-pink)]/20" />
                     <div className="w-2.5 h-2.5 rounded-full bg-[var(--gaia-pink)]/20" />
                   </div>
-                  <div className="text-[9px] text-[var(--gaia-beige)]/30 group-hover:text-[var(--gaia-pink)]/60 font-sans">gaiastudio.uy/portfolio</div>
+                  <div className="text-[9px] text-[var(--gaia-beige)]/30 group-hover:text-[var(--gaia-pink)]/60 font-sans">gaiastudio.com.uy/portfolio</div>
                   <div className="w-8" />
                 </div>
                 {/* Image */}

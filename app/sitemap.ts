@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const siteUrl = 'https://gaiastudio.uy';
+const siteUrl = 'https://gaiastudio.com.uy';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [

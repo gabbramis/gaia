@@ -6,7 +6,7 @@ import { Monsieur_La_Doulaise } from "next/font/google";
 import { FacebookPixel } from '@/components/analytics/FacebookPixel';
 import { GoogleAnalytics } from '@next/third-parties/google';
 
-const siteUrl = new URL("https://gaiastudio.uy");
+const siteUrl = new URL("https://gaiastudio.com.uy");
 
 const organizationSchema = {
   "@context": "https://schema.org",
