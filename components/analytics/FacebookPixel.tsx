@@ -14,7 +14,7 @@ export function FacebookPixel() {
     <>
       <Script
         id="facebook-pixel"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `
             !function(f,b,e,v,n,t,s)
@@ -32,6 +32,7 @@ export function FacebookPixel() {
       />
       <noscript>
         <img
+          alt=""
           height="1"
           width="1"
           style={{ display: 'none' }}

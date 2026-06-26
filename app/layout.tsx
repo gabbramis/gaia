@@ -4,7 +4,6 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Monsieur_La_Doulaise } from "next/font/google";
 import { FacebookPixel } from '@/components/analytics/FacebookPixel';
-import { GoogleAnalytics } from '@next/third-parties/google';
 import { WhatsAppFloatingButton } from '@/components/ui/WhatsAppFloatingButton';
 
 const siteUrl = new URL("https://gaiastudio.com.uy");
@@ -34,6 +33,8 @@ const monsieur = Monsieur_La_Doulaise({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-monsieur",
+  display: 'swap',
+  preload: false,
 });
 
 
@@ -49,6 +50,7 @@ const playfairDisplay = Playfair_Display({
   variable: "--font-serif",
   subsets: ["latin"],
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -114,10 +116,26 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+        <Script
+          id="gaia-google-analytics"
+          src="https://www.googletagmanager.com/gtag/js?id=G-CW45R8E3FG"
+          strategy="lazyOnload"
+        />
+        <Script
+          id="gaia-google-analytics-init"
+          strategy="lazyOnload"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-CW45R8E3FG');
+            `,
+          }}
+        />
         <FacebookPixel />
         {children}
         <WhatsAppFloatingButton />
-        <GoogleAnalytics gaId="G-CW45R8E3FG" />
       </body>
     </html>
   );
