@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
 import { navLinks } from '@/lib/constants';
 import { Menu, X } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
@@ -11,21 +10,8 @@ import Link from 'next/link';
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { scrollY } = useScroll();
   const pathname = usePathname();
   const router = useRouter();
-
-  const backgroundColor = useTransform(
-    scrollY,
-    [0, 100],
-    ['rgba(80, 7, 18, 0)', 'rgba(80, 7, 18, 0.95)']
-  );
-
-  const borderColor = useTransform(
-    scrollY,
-    [0, 100],
-    ['rgba(237, 154, 188, 0)', 'rgba(237, 154, 188, 0.2)']
-  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,10 +66,9 @@ export function Navigation() {
   };
 
   return (
-    <motion.nav
-      style={{ backgroundColor, borderBottomColor: borderColor }}
+    <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent ${isScrolled ? 'backdrop-blur-md py-2 md:py-4' : 'py-4 md:py-6'
-        }`}
+        } ${isScrolled ? 'bg-[rgba(80,7,18,0.95)] border-b-[rgba(237,154,188,0.2)]' : 'bg-[rgba(80,7,18,0)] border-b-transparent'}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         <div className="flex items-center justify-between">
@@ -137,15 +122,8 @@ export function Navigation() {
         </div>
 
         {/* Mobile Navigation Dropdown */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0, y: -10 }}
-              animate={{ opacity: 1, height: 'auto', y: 0 }}
-              exit={{ opacity: 0, height: 0, y: -10 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden absolute top-full left-0 right-0 bg-[var(--gaia-burgundy)]/95 backdrop-blur-xl border-b border-[var(--gaia-pink)]/20 overflow-hidden shadow-2xl z-40"
-            >
+        {isMobileMenuOpen && (
+            <div className="md:hidden absolute top-full left-0 right-0 bg-[var(--gaia-burgundy)]/95 backdrop-blur-xl border-b border-[var(--gaia-pink)]/20 overflow-hidden shadow-2xl z-40">
               <ul className="flex flex-col py-6 sm:py-8 px-4 sm:px-6 gap-4 sm:gap-6">
                 {navLinks.map((link) => (
                   <li key={link.href} className="text-center">
@@ -166,10 +144,9 @@ export function Navigation() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           )}
-        </AnimatePresence>
       </div>
-    </motion.nav>
+    </nav>
   );
 }
