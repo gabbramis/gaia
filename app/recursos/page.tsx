@@ -8,6 +8,8 @@ import { sanityClient } from '@/sanity/lib/client';
 import { resourcesQuery } from '@/sanity/lib/queries';
 import type { Resource } from '@/lib/types/resource';
 
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: 'Recursos | GAIA Studio',
   description:
