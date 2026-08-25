@@ -104,3 +104,23 @@ export const contentItemsQuery = groq`
     }
   }
 `;
+
+const resourceFields = groq`
+  _id,
+  title,
+  shortDescription,
+  type,
+  resourceUrl,
+  canvaUrl,
+  "downloadableFileUrl": downloadableFile.asset->url,
+  requiresEmail,
+  publishedAt,
+  "slug": slug.current
+`;
+
+export const resourcesQuery = groq`
+  *[_type == "resource"] | order(publishedAt desc) {
+    ${resourceFields}
+  }
+`;
+

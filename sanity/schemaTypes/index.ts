@@ -3,6 +3,7 @@ import { contentClientType } from './contentClient';
 import { contentItemType } from './contentItem';
 import { contentNicheType } from './contentNiche';
 import { portfolioWebProjectType } from './portfolioWebProject';
+import { resourceType } from './resource';
 
 export const schemaTypes = [
   portfolioWebProjectType,
@@ -10,4 +11,5 @@ export const schemaTypes = [
   contentClientType,
   contentNicheType,
   contentItemType,
+  resourceType,
 ];

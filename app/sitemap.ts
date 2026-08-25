@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/portfolio/disenos-web',
     '/portfolio/branding',
     '/blog',
-    '/recursos/como-funciona-el-seo',
+    '/recursos',
   ];
 
   return routes.map((route) => ({

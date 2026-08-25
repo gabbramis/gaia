@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Sparkles, FolderOpen, Heart } from 'lucide-react';
+import { ArrowRight, Sparkles, FolderOpen, Heart, Lightbulb } from 'lucide-react';
 
 const cards = [
   {
@@ -20,6 +20,12 @@ const cards = [
     href: '/nosotras',
     icon: Heart,
   },
+  {
+    title: 'Recursos',
+    description: 'Herramientas para tu negocio con descargables gratuitos',
+    href: '/recursos',
+    icon: Lightbulb,
+  },
 ];
 
 export function Cta() {
@@ -35,7 +41,7 @@ export function Cta() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {cards.map((card) => (
             <div key={card.title}>
               <Link

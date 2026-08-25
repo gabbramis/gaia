@@ -50,12 +50,8 @@ const navigationNodes: Record<string, NavigationNode> = {
     label: 'Branding',
     parentHref: '/portfolio',
   },
+  '/recursos': { href: '/recursos', label: 'Recursos', parentHref: '/' },
   '/blog': { href: '/blog', label: 'Blog', parentHref: '/' },
-  '/recursos/como-funciona-el-seo': {
-    href: '/recursos/como-funciona-el-seo',
-    label: 'Como funciona el SEO',
-    parentHref: '/seo',
-  },
 };
 
 function normalizePathname(pathname: string) {

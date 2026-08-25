@@ -500,7 +500,7 @@ export function CustomSeoLanding() {
 
               <div className="lg:col-span-5 flex lg:justify-end">
                 <Link
-                  href="/recursos/como-funciona-el-seo"
+                  href="/recursos"
                   className="group inline-flex items-center gap-3 px-8 py-5 bg-[var(--gaia-pink)] text-[var(--gaia-burgundy)] font-sans text-xs tracking-[0.15em] uppercase hover:bg-[var(--gaia-beige)] transition-all duration-500 shadow-pink"
                 >
                   <span>Leer la Guía Completa</span>

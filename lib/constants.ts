@@ -106,6 +106,7 @@ export const navLinks = [
   { href: "servicios", label: "Servicios" },
   { href: "nosotras", label: "Nosotras" },
   { href: "portfolio", label: "Portfolio" },
+  { href: "recursos", label: "Recursos" },
  // { href: "blog", label: "Blog" },
   { href: "#contacto", label: "Contacto" },
 ] as const;
