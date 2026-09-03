@@ -1,11 +1,12 @@
 import { navLinks, socialLinks, contactInfo } from '@/lib/constants';
-import { Instagram, MessageCircle } from 'lucide-react';
+import { Instagram, MessageCircle, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const iconMap = {
   Instagram,
   MessageCircle,
+  Linkedin,
 };
 
 export function Footer() {

@@ -13,8 +13,8 @@ const organizationSchema = {
   "@type": "ProfessionalService",
   name: "Gaia Studio",
   url: siteUrl.href,
-  logo: `${siteUrl.href}logo-pink.png`,
-  image: `${siteUrl.href}gaia-fullname.png`,
+  logo: `${siteUrl.href}/logo-pink.png`,
+  image: `${siteUrl.href}/gaia-fullname.png`,
   description:
     "Agencia creativa en Montevideo, Uruguay. Especialistas en marketing digital, diseño web, branding, SEO y contenido para marcas.",
   areaServed: "Uruguay",
@@ -66,13 +66,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Gaia Studio | Agencia Creativa y Desarrollo Web",
     description: "Transformamos la esencia de tu proyecto en resultados. Especialistas en branding, contenido audiovisual, campañas 360 y sitios web funcionales.",
-    url: siteUrl,
+    url: siteUrl.href,
     siteName: "Gaia Studio",
     locale: "es_UY",
     type: "website",
     images: [
       {
-        url: "/gaia-fullname.png",
+        url: `${siteUrl.href}/gaia-fullname.png`,
         width: 1200,
         height: 630,
         alt: "Gaia Studio",
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Gaia Studio | Agencia Creativa y Desarrollo Web",
     description: "Transformamos la esencia de tu proyecto en resultados. Especialistas en branding, contenido audiovisual, campañas 360 y sitios web funcionales.",
-    images: ["/gaia-fullname.png"],
+    images: [`${siteUrl.href}/gaia-fullname.png`],
   },
   robots: {
     index: true,

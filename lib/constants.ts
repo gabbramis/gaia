@@ -115,6 +115,7 @@ export const navLinks = [
 export const socialLinks = [
   { platform: "Instagram", url: "https://www.instagram.com/gaia_studio?igsh=MWszOGh5ZnN0MWxpag==", icon: "Instagram" },
   { platform: "WhatsApp", url: "https://wa.me/59891099805", icon: "MessageCircle" },
+  { platform: "LinkedIn", url: "https://uy.linkedin.com/company/agencia-gaia-studio", icon: "Linkedin" },
 ] as const;
 
 // Contact Information
