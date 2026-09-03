@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 import {
   ArrowRight,
   BarChart3,
+  Bot,
   Camera,
   Code,
   Megaphone,
@@ -74,8 +75,25 @@ const mainCategories = [
     icon: BarChart3,
   },
   {
-    id: 'cobertura-eventos',
+    id: 'automatizaciones-ia',
     number: '06',
+    title: 'Automatizaciones IA',
+    description:
+      'Implementamos agentes inteligentes y flujos automatizados que trabajan 24/7 para tu negocio. Desde chatbots de WhatsApp hasta procesos completos conectados con IA.',
+    includes: [
+      'Agentes de WhatsApp',
+      'Flujos con n8n',
+      'Chatbots multicanal',
+      'Integraciones con IA',
+      'Automatizacion de procesos',
+    ],
+    featured: false,
+    href: '/automatizaciones-ia',
+    icon: Bot,
+  },
+  {
+    id: 'cobertura-eventos',
+    number: '07',
     title: 'Cobertura de Eventos',
     description:
       'Registramos la energia de tu evento con contenido en tiempo real y material final listo para publicar. Cobertura pensada para marcas, lanzamientos y experiencias presenciales.',
@@ -83,7 +101,8 @@ const mainCategories = [
     featured: false,
     href: '/cobertura-de-eventos',
     icon: Camera,
-  },
+  }
+  
 ];
 
 const secondaryServices = [

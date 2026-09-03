@@ -34,6 +34,11 @@ const navigationNodes: Record<string, NavigationNode> = {
     label: 'Cobertura de Eventos',
     parentHref: '/servicios',
   },
+  '/automatizaciones-ia': {
+    href: '/automatizaciones-ia',
+    label: 'Automatizaciones IA',
+    parentHref: '/servicios',
+  },
   '/portfolio': { href: '/portfolio', label: 'Portfolio', parentHref: '/' },
   '/portfolio/contenidos': {
     href: '/portfolio/contenidos',
