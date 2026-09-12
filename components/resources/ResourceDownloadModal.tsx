@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { trackCustomEvent } from '@/lib/analytics/facebook-pixel';
 
@@ -24,10 +24,16 @@ export function ResourceDownloadModal({
   onClose,
 }: ResourceDownloadModalProps) {
   const [name, setName] = useState('');
-  const storedEmail = typeof window !== 'undefined' ? localStorage.getItem('gaia_resource_email') : null;
-  const [email, setEmail] = useState(storedEmail || '');
+  const [storedEmail, setStoredEmail] = useState<string | null>(null);
+  const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const saved = localStorage.getItem('gaia_resource_email');
+    setStoredEmail(saved);
+    if (saved) setEmail(saved);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -100,9 +106,8 @@ export function ResourceDownloadModal({
         resource: resource.title,
       });
       window.open(url, '_blank', 'noopener,noreferrer');
+      onSuccess();
     }
-
-    onSuccess();
   };
 
   const hasResource = resource.resourceUrl || resource.canvaUrl || resource.downloadableFileUrl;
