@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { trackCustomEvent } from '@/lib/analytics/facebook-pixel';
+import posthog from 'posthog-js';
 
 interface ResourceDownloadModalProps {
   resource: {
@@ -68,6 +69,15 @@ export function ResourceDownloadModal({
         return;
       }
 
+      if (
+        process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN &&
+        process.env.NEXT_PUBLIC_POSTHOG_HOST
+      ) {
+        posthog.capture('resource_lead_submitted', {
+          resource_slug: resource.slug,
+        });
+      }
+
       trackCustomEvent('Resource Request', {
         category: 'Resource',
         action: 'Request',
@@ -80,6 +90,16 @@ export function ResourceDownloadModal({
 
       const url = data.resourceUrl || data.canvaUrl || data.downloadableFile;
       if (url) {
+        if (
+          process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN &&
+          process.env.NEXT_PUBLIC_POSTHOG_HOST
+        ) {
+          posthog.capture('resource_downloaded', {
+            resource_slug: resource.slug,
+            access_method: 'lead_submission',
+          });
+        }
+
         trackCustomEvent('Resource Download', {
           category: 'Resource',
           action: 'Download',
@@ -100,6 +120,16 @@ export function ResourceDownloadModal({
     const url = resource.resourceUrl || resource.canvaUrl || resource.downloadableFileUrl;
 
     if (url) {
+      if (
+        process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN &&
+        process.env.NEXT_PUBLIC_POSTHOG_HOST
+      ) {
+        posthog.capture('resource_downloaded', {
+          resource_slug: resource.slug,
+          access_method: storedEmail ? 'remembered_lead' : 'ungated',
+        });
+      }
+
       trackCustomEvent('Resource Download', {
         category: 'Resource',
         action: 'Download',

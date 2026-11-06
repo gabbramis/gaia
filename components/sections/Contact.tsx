@@ -5,6 +5,7 @@ import { contactInfo } from "@/lib/constants";
 import { useState } from "react";
 import { Cherry } from "lucide-react";
 import { trackContact, trackLead, trackCustomEvent } from '@/lib/analytics/facebook-pixel';
+import posthog from 'posthog-js';
 
 export function Contact() {
   const [name, setName] = useState("");
@@ -42,6 +43,12 @@ export function Contact() {
 
       if (response.ok) {
         setIsSubmitted(true);
+        if (
+          process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN &&
+          process.env.NEXT_PUBLIC_POSTHOG_HOST
+        ) {
+          posthog.capture('contact_form_submitted');
+        }
 
         // Track contact events
         trackContact({
