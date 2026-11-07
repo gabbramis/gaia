@@ -17,12 +17,12 @@ El token y el host se obtienen de la configuración del proyecto de PostHog. No 
 
 | Evento | Cuándo se emite | Significado |
 | --- | --- | --- |
-| `contact_form_submitted` | El servidor envió el correo del formulario | Lead de contacto confirmado |
-| `whatsapp_link_clicked` | Clic en el enlace de WhatsApp del botón flotante o pie de página | Intención de contacto, no conversación ni reserva confirmada |
+| `contact_form_submitted` | El servidor envió el correo del formulario | Contacto por formulario enviado |
+| `whatsapp_link_clicked` | Clic en el enlace de WhatsApp del botón flotante o pie de página | Intención de iniciar un chat; no confirma que se haya enviado un mensaje |
 | `resource_lead_submitted` | El recurso protegido aceptó los datos del visitante | Lead de recurso |
 | `resource_link_opened` | El sitio intentó abrir el enlace del recurso | Intención de descarga, no descarga verificada |
 
-La reserva de reunión se confirma fuera del sitio, en WhatsApp. Registrar `meeting_booked` solo cuando el equipo o una integración confirme la reserva; no inferirlo de un clic. Para analizar la conversión completa, conectar la confirmación de WhatsApp o el CRM con PostHog usando un identificador estable del lead.
+El objetivo principal de Gaia es que la persona se contacte con el equipo y converse por chat. Medir por separado los clics a WhatsApp y los formularios enviados. No contar reservas de reunión como conversión en esta etapa. El clic a WhatsApp es una intención de contacto: el sitio no sabe si la persona envió el mensaje.
 
 La grabación de sesiones tiene los campos de formulario enmascarados. Los eventos personalizados no envían nombre, correo ni contenido del mensaje.
 
@@ -44,6 +44,6 @@ Ejemplo: `https://gaiastudio.com.uy/branding?utm_source=instagram&utm_medium=pai
 
 `utm_campaign` identifica la campaña; `utm_content` distingue creatividades o ubicaciones. Mantener el mismo nombre de campaña entre anuncios y enlaces. El tráfico orgánico de buscadores se identifica por el referente; no se pueden añadir UTMs a los resultados de búsqueda.
 
-## Reuniones confirmadas
+## Medición de contactos
 
-El sitio no recibe confirmación de las reservas realizadas en WhatsApp Business. Hasta conectar ese dato, usar `contact_form_submitted` como lead y `whatsapp_link_clicked` como intención de contacto; ninguno equivale a reunión reservada. Llevar las confirmaciones en una planilla operativa con fecha, canal, campaña y estado mientras se define una integración. Para atribuir cada reserva a una visita de PostHog se necesita un identificador que acompañe la conversación y vuelva al evento `meeting_booked`; no unir personas solo por nombre.
+Revisar semanalmente las visitas, los clics a WhatsApp y los formularios enviados, separados por canal, campaña UTM y página de entrada. Al comparar la tasa de contacto, contar sesiones con al menos una de esas acciones para no duplicar a quien hizo ambas. Mantener los dos eventos visibles por separado: un formulario enviado confirma la entrega del correo; un clic a WhatsApp solo muestra intención de abrir el chat. No usar `resource_lead_submitted` ni `resource_link_opened` como contacto comercial.
