@@ -1,4 +1,5 @@
 import * as nodemailer from "nodemailer";
+import { captureContactFormSubmitted } from '@/lib/analytics/posthog-server';
 
 export async function POST(req: Request) {
     try {
@@ -41,6 +42,8 @@ export async function POST(req: Request) {
       <p><strong>Mensaje:</strong> ${message}</p>
     `,
         });
+
+        await captureContactFormSubmitted(req);
 
         return new Response(JSON.stringify({ ok: true }), { status: 200 });
     } catch (error) {

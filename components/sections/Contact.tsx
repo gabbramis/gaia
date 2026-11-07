@@ -33,22 +33,22 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
+      const headers = new Headers({ "Content-Type": "application/json" });
+      if (
+        process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN &&
+        process.env.NEXT_PUBLIC_POSTHOG_HOST
+      ) {
+        headers.set("X-POSTHOG-DISTINCT-ID", posthog.get_distinct_id());
+        headers.set("X-POSTHOG-SESSION-ID", posthog.get_session_id());
+      }
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers,
         body: JSON.stringify({ name, email, message }),
       });
 
       if (response.ok) {
         setIsSubmitted(true);
-        if (
-          process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN &&
-          process.env.NEXT_PUBLIC_POSTHOG_HOST
-        ) {
-          posthog.capture('contact_form_submitted');
-        }
 
         // Track contact events
         trackContact({

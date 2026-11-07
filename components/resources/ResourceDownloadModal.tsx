@@ -94,7 +94,7 @@ export function ResourceDownloadModal({
           process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN &&
           process.env.NEXT_PUBLIC_POSTHOG_HOST
         ) {
-          posthog.capture('resource_downloaded', {
+          posthog.capture('resource_link_opened', {
             resource_slug: resource.slug,
             access_method: 'lead_submission',
           });
@@ -124,7 +124,7 @@ export function ResourceDownloadModal({
         process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN &&
         process.env.NEXT_PUBLIC_POSTHOG_HOST
       ) {
-        posthog.capture('resource_downloaded', {
+        posthog.capture('resource_link_opened', {
           resource_slug: resource.slug,
           access_method: storedEmail ? 'remembered_lead' : 'ungated',
         });

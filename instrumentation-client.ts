@@ -18,7 +18,9 @@ if (!projectToken) {
 } else {
   posthog.init(projectToken, {
     api_host: posthogHost,
+    defaults: "2026-08-30",
     capture_exceptions: true,
+    session_recording: { maskAllInputs: true },
     debug: process.env.NODE_ENV === "development",
   });
 }

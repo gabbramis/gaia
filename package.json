@@ -24,6 +24,7 @@
     "next-sanity": "^13.1.1",
     "nodemailer": "^7.0.12",
     "posthog-js": "^1.447.0",
+    "posthog-node": "^5.63.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "sanity": "^5.31.1",

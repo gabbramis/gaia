@@ -18,7 +18,7 @@ export function WhatsAppFloatingButton() {
           process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN &&
           process.env.NEXT_PUBLIC_POSTHOG_HOST
         ) {
-          posthog.capture('whatsapp_contact_started', {
+          posthog.capture('whatsapp_link_clicked', {
             source: 'floating_button',
           });
         }
