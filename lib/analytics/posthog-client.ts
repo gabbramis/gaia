@@ -12,6 +12,7 @@ export function getPosthogClient(): Promise<PostHogClient | null> {
       api_host: host,
       defaults: '2026-08-30',
       capture_exceptions: true,
+      disable_surveys: true,
       session_recording: { maskAllInputs: true },
       debug: process.env.NODE_ENV === 'development',
     });

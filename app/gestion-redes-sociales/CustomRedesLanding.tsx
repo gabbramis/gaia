@@ -150,12 +150,7 @@ export function CustomRedesLanding() {
 
           {/* Right Column: Gaia Instagram Mockup */}
           <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
-            <motion.div
-              initial={false}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2, ease: easings.premium }}
-              className="relative w-full max-w-[460px] animate-float-slow"
-            >
+            <div className="relative w-full max-w-[460px] lg:animate-float-slow">
               <Link
                 href={INSTAGRAM_PROFILE_URL}
                 target="_blank"
@@ -171,9 +166,10 @@ export function CustomRedesLanding() {
                   className="h-auto w-full"
                   sizes="(max-width: 1024px) 84vw, 460px"
                   priority
+                  fetchPriority="high"
                 />
               </Link>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

@@ -144,12 +144,7 @@ export function CustomWebLanding() {
 
           {/* Right Column: Floating Interactive Devices Mockup */}
           <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
-            <motion.div
-              initial={false}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2, ease: easings.premium }}
-              className="relative w-full max-w-[420px] aspect-[16/10] bg-[var(--gaia-pink)]/5 border border-[var(--gaia-pink)]/20 p-1.5 shadow-elevated rounded-lg animate-float-slow"
-            >
+            <div className="relative w-full max-w-[420px] aspect-[16/10] bg-[var(--gaia-pink)]/5 border border-[var(--gaia-pink)]/20 p-1.5 shadow-elevated rounded-lg lg:animate-float-slow">
               {/* Browser window frame bar */}
               <div className="flex items-center gap-1.5 pb-2 px-2 border-b border-[var(--gaia-pink)]/10">
                 <div className="w-2.5 h-2.5 rounded-full bg-[var(--gaia-pink)]/40" />
@@ -167,6 +162,7 @@ export function CustomWebLanding() {
                   alt="Adriana Costa Orfebre Web Design Preview"
                   fill
                   priority
+                  fetchPriority="high"
                   sizes="(max-width: 640px) 100vw, 420px"
                   className="object-cover opacity-90 object-top hover:scale-105 transition-transform duration-1000"
                 />
@@ -175,7 +171,7 @@ export function CustomWebLanding() {
 
               {/* Decorative background aura */}
               <div className="absolute -inset-1 border border-[var(--gaia-pink)]/20 rounded-lg pointer-events-none scale-[1.03]" />
-            </motion.div>
+            </div>
 
             {/* Small second screen mockup for mobile detail */}
             <motion.div
