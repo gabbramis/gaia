@@ -8,7 +8,6 @@ import { FeaturedWork } from '@/components/sections/FeaturedWork';
 import { ServicesStrip } from '@/components/sections/ServicesStrip';
 import { Reviews } from '@/components/sections/Reviews';
 import { Footer } from '@/components/sections/Footer';
-import { PrimaryServicesPrefetch } from '@/components/ui/PrimaryServicesPrefetch';
 
 const Contact = dynamic(
   () => import('@/components/sections/Contact').then((module) => module.Contact),
@@ -49,7 +48,6 @@ export default function Home() {
   return (
     <main className="bg-[var(--gaia-burgundy)] min-h-screen overflow-x-hidden w-full">
       <Navigation />
-      <PrimaryServicesPrefetch />
       <Hero />
       <Cta />
       <FeaturedWork />

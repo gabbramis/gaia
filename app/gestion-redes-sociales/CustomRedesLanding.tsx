@@ -69,8 +69,8 @@ export function CustomRedesLanding() {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center pt-24 md:pt-32 pb-16 px-6 md:px-12 overflow-hidden">
         <div className="absolute inset-0 mesh-gradient-burgundy opacity-30 mix-blend-screen pointer-events-none" />
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[var(--gaia-pink)]/10 rounded-full blur-[120px] animate-pulse pointer-events-none" />
-        <div className="absolute -bottom-24 left-1/2 h-48 w-[42rem] -translate-x-1/2 rounded-full bg-[var(--gaia-pink)]/10 blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/4 right-1/4 hidden h-96 w-96 rounded-full bg-[var(--gaia-pink)]/10 blur-[120px] animate-pulse pointer-events-none lg:block" />
+        <div className="absolute -bottom-24 left-1/2 hidden h-48 w-[42rem] -translate-x-1/2 rounded-full bg-[var(--gaia-pink)]/10 blur-[120px] pointer-events-none lg:block" />
         
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           {/* Left Column: Text */}
@@ -179,7 +179,7 @@ export function CustomRedesLanding() {
       {/* Modalidades de Servicio */}
       <section className="py-20 md:py-32 px-6 md:px-12 bg-[var(--gaia-burgundy)] relative overflow-hidden border-b border-[var(--gaia-pink)]/10">
         <div className="absolute inset-0 mesh-gradient-burgundy opacity-18 mix-blend-screen pointer-events-none" />
-        <div className="absolute -top-20 left-1/2 h-40 w-[38rem] -translate-x-1/2 rounded-full bg-[var(--gaia-pink)]/8 blur-[100px] pointer-events-none" />
+        <div className="absolute -top-20 left-1/2 hidden h-40 w-[38rem] -translate-x-1/2 rounded-full bg-[var(--gaia-pink)]/8 blur-[100px] pointer-events-none lg:block" />
         <div className="relative z-10 max-w-7xl mx-auto">
           {/* Header */}
           <div className="mb-16 md:mb-24 text-center max-w-2xl mx-auto">

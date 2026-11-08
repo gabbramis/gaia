@@ -64,7 +64,7 @@ export function CustomWebLanding() {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center pt-24 md:pt-32 pb-16 px-6 md:px-12 overflow-hidden border-b border-[var(--gaia-pink)]/10">
         <div className="absolute inset-0 mesh-gradient-burgundy opacity-30 mix-blend-screen pointer-events-none" />
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[var(--gaia-pink)]/10 rounded-full blur-[120px] animate-pulse pointer-events-none" />
+        <div className="absolute top-1/4 right-1/4 hidden h-96 w-96 rounded-full bg-[var(--gaia-pink)]/10 blur-[120px] animate-pulse pointer-events-none lg:block" />
         
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           {/* Left Column: Text */}
