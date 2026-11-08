@@ -505,6 +505,68 @@
     animation: float 10s ease-in-out infinite;
   }
 
+  /* Hero entrance */
+  @keyframes heroRise {
+    from {
+      opacity: 0;
+      transform: translateY(26px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-rise {
+    animation: heroRise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .reviews-track {
+    scrollbar-width: none;
+  }
+
+  .reviews-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hero services marquee */
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-25%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 38s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  .animate-logo-marquee {
+    animation: marquee 60s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-logo-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-rise,
+    .animate-marquee,
+    .animate-logo-marquee {
+      animation: none !important;
+    }
+  }
+
   /* Glow pulse animation */
   @keyframes glowPulse {
 

@@ -22,9 +22,9 @@ const mainCategories = [
   {
     id: 'redes-sociales',
     number: '01',
-    title: 'Gestion de Redes Sociales',
+    title: 'Estrategia, contenido y redes',
     description:
-      'Estrategia integral para construir y fortalecer la presencia de tu marca en redes sociales, combinando creatividad, planificacion y contenido de calidad.',
+      'Planificamos la comunicación de tu marca, creamos contenido y gestionamos sus redes con una estrategia clara.',
     includes: ['Social Media', 'Community Manager', 'Produccion y Edicion'],
     featured: true,
     href: '/gestion-redes-sociales',
@@ -33,9 +33,9 @@ const mainCategories = [
   {
     id: 'diseno-web',
     number: '02',
-    title: 'Diseño Web',
+    title: 'Diseño y desarrollo web',
     description:
-      'Creamos sitios web funcionales, esteticos y alineados con la identidad de tu marca. Desde landing pages hasta tiendas online completas con e-commerce.',
+      'Diseñamos y desarrollamos sitios claros, fáciles de usar y alineados con tu marca: desde landing pages hasta tiendas online.',
     includes: ['Diseño Web', 'E-commerce', 'Web Management Mensual'],
     featured: true,
     href: '/diseno-web',
@@ -105,12 +105,6 @@ const mainCategories = [
   
 ];
 
-const secondaryServices = [
-  'Produccion audiovisual',
-  'Fotografia',
-  'Edicion de contenido',
-];
-
 export default function ServiciosPage() {
   return (
     <main className="bg-[var(--gaia-burgundy)] min-h-screen overflow-x-hidden w-full texture-overlay">
@@ -131,13 +125,11 @@ export default function ServiciosPage() {
             <span className="block text-[var(--gaia-pink)] text-xs tracking-[0.3em] uppercase mb-4">
               Lo que hacemos
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-6xl text-[var(--gaia-beige)] tracking-tight">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl text-[var(--gaia-beige)] tracking-tight">
               Nuestros servicios
-            </h2>
-            <p className="font-sans text-[var(--gaia-beige)]/60 text-xs sm:text-sm md:text-base mt-4 leading-relaxed">
-              Cada servicio esta disenado para resolver una necesidad real de
-              tu negocio. Explora y descubre cual se adapta mejor a tu
-              estrategia.
+            </h1>
+            <p className="font-sans text-[var(--gaia-beige)]/85 text-xs sm:text-sm md:text-base mt-4 leading-relaxed">
+              Marketing, contenido y desarrollo web para marcas y pymes de Montevideo y Uruguay. Conocé cómo podemos trabajar en tu proyecto.
             </p>
           </div>
 

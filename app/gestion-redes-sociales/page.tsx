@@ -4,11 +4,11 @@ import { CustomRedesLanding } from './CustomRedesLanding';
 const redesUrl = 'https://gaiastudio.com.uy/gestion-redes-sociales';
 
 export const metadata: Metadata = {
-  title: 'Gestion de Redes Sociales',
-  description: 'Estrategia integral de redes sociales para construir y fortalecer la presencia digital de tu marca. Social media, community management y produccion de contenido.',
+  title: 'Estrategia, contenido y redes en Montevideo',
+  description: 'Estrategia de comunicación, producción de contenido y gestión de redes para marcas y pymes de Montevideo y Uruguay. Conocé cómo trabaja Gaia Studio.',
   openGraph: {
-    title: 'Gestion de Redes Sociales | Gaia Studio',
-    description: 'Estrategia integral de redes sociales para construir y fortalecer la presencia digital de tu marca. Social media, community management y produccion de contenido.',
+    title: 'Estrategia, contenido y redes en Montevideo | Gaia Studio',
+    description: 'Marketing para marcas de Uruguay: estrategia de comunicación, contenido y gestión de redes.',
     url: redesUrl,
     siteName: 'Gaia Studio',
     locale: 'es_UY',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gestion de Redes Sociales | Gaia Studio',
-    description: 'Estrategia integral de redes sociales para construir y fortalecer la presencia digital de tu marca. Social media, community management y produccion de contenido.',
+    title: 'Estrategia, contenido y redes en Montevideo | Gaia Studio',
+    description: 'Marketing para marcas de Uruguay: estrategia de comunicación, contenido y gestión de redes.',
     images: ['/gaia-fullname.png'],
   },
   alternates: {

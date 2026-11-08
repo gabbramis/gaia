@@ -6,6 +6,7 @@ import { Menu, X } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import { TrackedWhatsAppLink } from '@/components/ui/TrackedWhatsAppLink';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -92,7 +93,7 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-6 lg:gap-10">
+          <ul className="hidden md:flex items-center gap-5 lg:gap-8">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
@@ -111,11 +112,21 @@ export function Navigation() {
             ))}
           </ul>
 
+          <TrackedWhatsAppLink
+            source="navigation_desktop"
+            message="Hola Gaia, quiero contarles sobre mi marca."
+            className="hidden min-h-11 items-center justify-center border border-[var(--gaia-pink)] px-4 font-sans text-xs font-semibold uppercase tracking-[0.1em] text-[var(--gaia-pink)] transition-colors hover:bg-[var(--gaia-pink)] hover:text-[var(--gaia-burgundy)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--gaia-pink)] md:inline-flex"
+          >
+            Hablemos
+          </TrackedWhatsAppLink>
+
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden text-[var(--gaia-beige)] hover:text-[var(--gaia-pink)] transition-colors p-2 relative z-50"
-            aria-label="Toggle menu"
+            aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -123,7 +134,7 @@ export function Navigation() {
 
         {/* Mobile Navigation Dropdown */}
         {isMobileMenuOpen && (
-            <div className="md:hidden absolute top-full left-0 right-0 bg-[var(--gaia-burgundy)]/95 backdrop-blur-xl border-b border-[var(--gaia-pink)]/20 overflow-hidden shadow-2xl z-40">
+            <div id="mobile-navigation" className="md:hidden absolute top-full left-0 right-0 bg-[var(--gaia-burgundy)]/95 backdrop-blur-xl border-b border-[var(--gaia-pink)]/20 overflow-hidden shadow-2xl z-40">
               <ul className="flex flex-col py-6 sm:py-8 px-4 sm:px-6 gap-4 sm:gap-6">
                 {navLinks.map((link) => (
                   <li key={link.href} className="text-center">
@@ -143,6 +154,15 @@ export function Navigation() {
                     </Link>
                   </li>
                 ))}
+                <li className="mt-2">
+                  <TrackedWhatsAppLink
+                    source="navigation_mobile"
+                    message="Hola Gaia, quiero contarles sobre mi marca."
+                    className="flex min-h-12 items-center justify-center bg-[var(--gaia-pink)] px-5 font-sans text-sm font-semibold text-[var(--gaia-burgundy)]"
+                  >
+                    Hablemos por WhatsApp
+                  </TrackedWhatsAppLink>
+                </li>
               </ul>
             </div>
           )}

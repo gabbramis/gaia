@@ -1,69 +1,66 @@
 import Link from 'next/link';
-import { ArrowRight, Sparkles, FolderOpen, Heart, Lightbulb } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
-const cards = [
+const offerings = [
   {
-    title: 'Servicios',
-    description: 'Descubrí cómo podemos transformar tu marca con soluciones digitales a medida.',
-    href: '/servicios',
-    icon: Sparkles,
+    number: '01',
+    label: 'Estrategia, contenido y redes',
+    title: 'Planificamos, grabamos, diseñamos y publicamos.',
+    details: ['Estrategia de comunicación', 'Contenido visual', 'Gestión de redes', 'Social Media'],
+    href: '/gestion-redes-sociales',
+    link: 'Explorar marketing',
   },
   {
-    title: 'Portfolio',
-    description: 'Explorá los proyectos que ya confiaron en nuestra visión creativa.',
-    href: '/portfolio',
-    icon: FolderOpen,
+    number: '02',
+    label: 'Diseño y desarrollo web',
+    title: 'Una página web que muestre el valor de tu negocio.',
+    details: ['Sitios institucionales', 'Landing pages', 'Tiendas online'],
+    href: '/diseno-web',
+    link: 'Explorar desarrollo web',
   },
-  {
-    title: 'Nosotras',
-    description: 'Conocé la historia y el equipo detrás de Gaia Studio.',
-    href: '/nosotras',
-    icon: Heart,
-  },
-  {
-    title: 'Recursos',
-    description: 'Herramientas para tu negocio con descargables gratuitos',
-    href: '/recursos',
-    icon: Lightbulb,
-  },
-];
+] as const;
 
 export function Cta() {
   return (
-    <section className="relative bg-[var(--gaia-burgundy)] py-16 md:py-24 px-6 md:px-12 border-t border-[var(--gaia-pink)]/10">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10 md:mb-14">
-          <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-4">
-            Explorá
-          </span>
-          <h2 className="font-serif text-5xl md:text-7xl text-[var(--gaia-beige)] tracking-tight">
-            Descubrí Gaia
+    <section id="servicios-destacados" className="border-t border-[var(--gaia-pink)]/20 bg-[var(--gaia-burgundy)] px-6 py-16 text-[var(--gaia-beige)] md:px-12 md:py-24">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-10 md:mb-14">
+          <p className="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.22em] text-[var(--gaia-pink)]">
+            Lo que hacemos
+          </p>
+          <h2 className="max-w-3xl font-serif text-4xl leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
+            Marketing, contenido y desarrollo web para tu marca.
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          {cards.map((card) => (
-            <div key={card.title}>
+        <div className="grid gap-4 md:grid-cols-2 md:gap-6">
+          {offerings.map((offering) => (
+            <article key={offering.number} className="group flex h-full flex-col border border-[var(--gaia-pink)]/25 p-5 transition-colors hover:bg-[var(--gaia-pink)]/10 md:p-10">
+              <div className="mb-6 flex items-center justify-between border-b border-[var(--gaia-pink)]/25 pb-4 md:mb-10 md:pb-5">
+                <span className="font-serif text-3xl">{offering.number}</span>
+                <ArrowUpRight size={22} aria-hidden="true" />
+              </div>
+              <p className="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gaia-pink)]">
+                {offering.label}
+              </p>
+              <h3 className="max-w-lg font-serif text-2xl leading-tight md:text-4xl">
+                {offering.title}
+              </h3>
+              <ul className="mt-6 flex flex-wrap gap-2 md:mt-8" aria-label={'Incluye ' + offering.label}>
+                {offering.details.map((detail) => (
+                  <li key={detail} className="border border-[var(--gaia-pink)]/30 px-3 py-2 font-sans text-xs font-medium">
+                    {detail}
+                  </li>
+                ))}
+              </ul>
               <Link
-                href={card.href}
-                className="group block h-full border border-[var(--gaia-pink)]/20 bg-[var(--gaia-pink)]/5 hover:bg-[var(--gaia-pink)]/10 transition-all duration-500 p-6 md:p-8"
+                href={offering.href}
+                className="mt-auto inline-flex min-h-11 w-fit items-center gap-2 border-b border-[var(--gaia-pink)] pb-1 pt-8 font-sans text-sm font-semibold text-[var(--gaia-pink)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--gaia-pink)]"
               >
-                <card.icon
-                  size={24}
-                  className="text-[var(--gaia-pink)] mb-4 group-hover:scale-110 transition-transform duration-500"
-                />
-                <h3 className="font-serif text-2xl md:text-3xl text-[var(--gaia-beige)] mb-3 group-hover:text-[var(--gaia-pink)] transition-colors duration-300">
-                  {card.title}
-                </h3>
-                <p className="font-sans text-[var(--gaia-beige)]/60 text-sm leading-relaxed mb-6">
-                  {card.description}
-                </p>
-                <div className="flex items-center gap-2 text-[var(--gaia-pink)] text-xs tracking-widest uppercase group-hover:gap-4 transition-all duration-300">
-                  <span>Explorar</span>
-                  <ArrowRight size={14} />
-                </div>
+                {offering.link}
+                <ArrowRight size={17} aria-hidden="true" />
               </Link>
-            </div>
+            </article>
           ))}
         </div>
       </div>

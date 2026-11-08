@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { contactInfo } from "@/lib/constants";
 import { useState } from "react";
 import { Cherry } from "lucide-react";
 import { trackContact, trackLead, trackCustomEvent } from '@/lib/analytics/facebook-pixel';
@@ -77,14 +76,14 @@ export function Contact() {
     >
       <div className="max-w-4xl mx-auto w-full">
         <div className="text-center mb-8 md:mb-12">
-          <span             className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-4">
-            HABLEMOS
-          </span>
-          <h2 className="font-serif text-4xl md:text-6xl text-[var(--gaia-beige)] mb-6 tracking-tight">
+          <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-4">
             Contacto
+          </span>
+          <h2 className="font-serif text-4xl md:text-6xl text-[var(--gaia-beige)] mb-4 tracking-tight">
+            Hablemos de tu marca.
           </h2>
           <p className="font-sans text-[var(--gaia-beige)]/60 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            ¿Lista para transformar tu marca? Escríbenos y comencemos a crear algo extraordinario.
+            Contanos qué querés resolver. Puede ser tu comunicación en redes, contenido para una campaña o una web nueva. Decinos en qué etapa estás y te respondemos.
           </p>
         </div>
 
@@ -187,24 +186,6 @@ export function Contact() {
             </button>
           </div>
         )}
-
-        <div className="mt-16 pt-8 border-t border-[var(--gaia-pink)]/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[var(--gaia-beige)]/40 font-sans text-sm tracking-widest uppercase">
-          <a href={`mailto:${contactInfo.email}`} className="hover:text-[var(--gaia-pink)] transition-colors">
-            {contactInfo.email}
-          </a>
-          <span>{contactInfo.address}</span>
-          <span className="flex flex-col md:flex-row gap-2">
-            {contactInfo.phone.split(' - ').map((num) => (
-              <a
-                key={num}
-                href={`tel:${num.replace(/\s/g, '')}`}
-                className="hover:text-[var(--gaia-pink)] transition-colors"
-              >
-                {num.trim()}
-              </a>
-            ))}
-          </span>
-        </div>
       </div>
     </section>
   );

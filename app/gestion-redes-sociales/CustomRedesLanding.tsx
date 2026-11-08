@@ -18,6 +18,8 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Footer } from '@/components/sections/Footer';
 import { fadeInUp, easings } from '@/lib/animations';
 import { trackCustomEvent } from '@/lib/analytics/facebook-pixel';
+import { TrackedWhatsAppLink } from '@/components/ui/TrackedWhatsAppLink';
+import posthog from 'posthog-js';
 
 const INSTAGRAM_PROFILE_URL = 'https://www.instagram.com/gaia_studio/';
 
@@ -33,12 +35,10 @@ export function CustomRedesLanding() {
       category: 'Lead Generation',
       action: 'Click',
     });
-    const element = document.querySelector('#contacto');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      window.location.href = '/#contacto';
+    if (process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN && process.env.NEXT_PUBLIC_POSTHOG_HOST) {
+      posthog.capture('whatsapp_link_clicked', { source: `redes_${label}` });
     }
+    window.open(`https://wa.me/59891099805?text=${encodeURIComponent('Hola Gaia, quiero consultarles por estrategia, contenido y redes para mi marca.')}`, '_blank', 'noopener,noreferrer');
   };
 
   const faqs = [
@@ -89,10 +89,10 @@ export function CustomRedesLanding() {
               <span className="block text-[var(--gaia-pink)] text-xs sm:text-sm tracking-[0.3em] uppercase mb-4">
                 Comunidad y presencia digital
               </span>
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[0.95] text-[var(--gaia-beige)] tracking-tight">
-                Tu marca que <br />
-                <span className="font-monsieur text-[var(--gaia-pink)] text-5xl sm:text-6xl md:text-8xl lg:text-[7.5rem] block -mt-1 sm:-mt-2 md:-mt-4 lowercase">
-                  conecta y crece
+              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[0.98] text-[var(--gaia-beige)] tracking-tight">
+                Estrategia, contenido y redes <br />
+                <span className="ml-8 block font-monsieur text-[var(--gaia-pink)] text-5xl sm:text-6xl md:text-8xl lg:text-[7.5rem] -mt-1 sm:-mt-2 md:-mt-4 lowercase">
+                  para tu marca
                 </span>
               </h1>
             </motion.div>
@@ -112,13 +112,14 @@ export function CustomRedesLanding() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-wrap gap-4 pt-2"
             >
-              <button
-                onClick={() => handleCTA('Hero - Reunión')}
+              <TrackedWhatsAppLink
+                source="redes_hero"
+                message="Hola Gaia, quiero conversar sobre estrategia, contenido y redes para mi marca."
                 className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-[var(--gaia-pink)] text-[var(--gaia-pink)] font-sans text-xs tracking-[0.15em] uppercase hover:bg-[var(--gaia-pink)] hover:text-[var(--gaia-burgundy)] transition-all duration-500 rounded-none cursor-pointer overflow-hidden shadow-premium hover:glow-pink-soft"
               >
-                <span>Coordinar Reunión</span>
+                <span>Hablemos por WhatsApp</span>
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-              </button>
+              </TrackedWhatsAppLink>
               <a
                 href="#servicios-teaser"
                 className="inline-flex items-center justify-center px-8 py-4 text-[var(--gaia-beige)]/80 hover:text-[var(--gaia-pink)] font-sans text-xs tracking-[0.15em] uppercase transition-colors duration-300"
@@ -139,12 +140,12 @@ export function CustomRedesLanding() {
                 <span className="block text-[var(--gaia-beige)]/40 text-[10px] tracking-wider uppercase mt-1">Gestión Integral</span>
               </div>
               <div>
-                <span className="block font-serif text-2xl md:text-3xl text-[var(--gaia-pink)]">+40%</span>
-                <span className="block text-[var(--gaia-beige)]/40 text-[10px] tracking-wider uppercase mt-1">Engagement</span>
+                <span className="block font-serif text-2xl md:text-3xl text-[var(--gaia-pink)]">Plan</span>
+                <span className="block text-[var(--gaia-beige)]/70 text-[10px] tracking-wider uppercase mt-1">Contenido</span>
               </div>
               <div>
-                <span className="block font-serif text-2xl md:text-3xl text-[var(--gaia-pink)]">24/7</span>
-                <span className="block text-[var(--gaia-beige)]/40 text-[10px] tracking-wider uppercase mt-1">Comunidad Activa</span>
+                <span className="block font-serif text-2xl md:text-3xl text-[var(--gaia-pink)]">Redes</span>
+                <span className="block text-[var(--gaia-beige)]/70 text-[10px] tracking-wider uppercase mt-1">Gestión</span>
               </div>
             </motion.div>
           </div>
@@ -319,22 +320,22 @@ export function CustomRedesLanding() {
                 ¿Por qué importa la constancia en redes?
               </h2>
               <p className="font-sans text-[var(--gaia-beige)]/70 text-sm sm:text-base leading-relaxed">
-                El 78% de los consumidores investigan una marca en redes sociales antes de comprar. Una presencia inconsistente o descuidada genera desconfianza y pierde oportunidades de conversión.
+                Antes de escribirte, muchas personas conocen tu marca por sus redes. Una presencia clara y constante ayuda a explicar lo que ofrecés y a generar confianza.
               </p>
               <p className="font-sans text-[var(--gaia-beige)]/70 text-sm sm:text-base leading-relaxed">
-                En Gaia Studio trabajamos con <strong>estrategia + constancia + creatividad</strong>. Cada publicación tiene un propósito, cada interacción cuida la relación con tu audiencia, y cada métrica nos ayuda a mejorar. El resultado es una comunidad que crece de forma orgánica y comprometida.
+                En Gaia Studio trabajamos con <strong>estrategia, constancia y creatividad</strong>. Planificamos el contenido, cuidamos cada interacción y revisamos las métricas para aprender y mejorar.
               </p>
             </div>
 
             {/* Right side comparison box */}
             <div className="p-6 md:p-8 bg-[var(--gaia-pink)]/[0.02] border border-[var(--gaia-pink)]/10 space-y-6">
-              <h4 className="font-serif text-lg text-[var(--gaia-beige)]">Impacto de la Gestión Profesional</h4>
+              <h4 className="font-serif text-lg text-[var(--gaia-beige)]">Qué cambia con una estrategia</h4>
               
               {/* Metric 1: Engagement */}
               <div className="space-y-2">
                 <div className="flex justify-between text-xs tracking-wider font-sans uppercase">
                   <span className="text-[var(--gaia-pink)] font-bold">Con gestión profesional</span>
-                  <span className="text-[var(--gaia-pink)]">+40% engagement</span>
+                  <span className="text-[var(--gaia-pink)]">Contenido planificado</span>
                 </div>
                 <div className="h-2 bg-[var(--gaia-burgundy)] border border-[var(--gaia-pink)]/10 rounded-full overflow-hidden">
                   <motion.div
@@ -351,7 +352,7 @@ export function CustomRedesLanding() {
               <div className="space-y-2">
                 <div className="flex justify-between text-xs tracking-wider font-sans uppercase text-[var(--gaia-beige)]/40">
                   <span>Sin estrategia definida</span>
-                  <span>+5% engagement</span>
+                  <span>Publicaciones improvisadas</span>
                 </div>
                 <div className="h-2 bg-[var(--gaia-burgundy)] border border-[var(--gaia-pink)]/5 rounded-full overflow-hidden">
                   <motion.div
@@ -456,28 +457,16 @@ export function CustomRedesLanding() {
               Hablemos de tu marca.
             </h2>
             <p className="font-sans text-[var(--gaia-beige)]/50 text-xs md:text-sm leading-relaxed max-w-lg mx-auto mb-6">
-              Cada proyecto tiene necesidades distintas. Coordinemos una reunión y definamos juntos
-              la mejor estrategia para potenciar tu presencia digital.
+              Cada proyecto tiene necesidades distintas. Contanos por WhatsApp qué busca tu marca y empecemos a pensar el camino.
             </p>
-            <Link
-              href="#"
-              onClick={() => {
-                trackCustomEvent('Solicitar asesoramiento - Redes Sociales', {
-                  category: 'Lead Generation',
-                  action: 'Click',
-                });
-                const element = document.querySelector('#contacto');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  window.location.href = '/#contacto';
-                }
-              }}
+            <TrackedWhatsAppLink
+              source="redes_bottom"
+              message="Hola Gaia, quiero consultarles por la gestión de redes de mi marca."
               className="inline-flex items-center gap-2 px-6 md:px-8 py-3.5 md:py-4 bg-transparent border border-[var(--gaia-pink)] text-[var(--gaia-pink)] font-sans text-xs md:text-sm tracking-[0.15em] uppercase rounded-none hover:bg-[var(--gaia-pink)] hover:text-[var(--gaia-burgundy)] transition-all duration-500"
             >
-              <span>Solicitar asesoramiento</span>
+              <span>Escribir por WhatsApp</span>
               <ArrowRight size={14} />
-            </Link>
+            </TrackedWhatsAppLink>
           </motion.div>
         </div>
       </section>

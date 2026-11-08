@@ -1,86 +1,52 @@
-import { cn } from '@/lib/utils';
-
 const steps = [
-    {
-        number: "01",
-        title: "Evaluación del negocio",
-        description: "Analizamos a fondo tu marca para entender tus objetivos, desafíos y la esencia que te hace única."
-    },
-    {
-        number: "02",
-        title: "Propuesta y presupuesto",
-        description: "Diseñamos una propuesta a medida con alcances claros y un presupuesto transparente, sin sorpresas."
-    },
-    {
-        number: "03",
-        title: "Diseño y cronograma",
-        description: "Creamos un plan de acción detallado y ejecutamos cada etapa con estrategia, manteniendo el orden y la calidad."
-    },
-    {
-        number: "04",
-        title: "Lanzamiento y seguimiento",
-        description: "No te dejamos solo. Te acompañamos en la salida al mundo y monitoreamos los resultados para asegurar el éxito."
-    }
-];
+  {
+    number: '01',
+    title: 'Nos contás qué necesita tu marca',
+    description:
+      'Entendemos tu negocio, tus objetivos y qué te está frenando.',
+  },
+  {
+    number: '02',
+    title: 'Definimos un camino claro',
+    description:
+      'Te proponemos alcance, prioridades y presupuesto.',
+  },
+  {
+    number: '03',
+    title: 'Creamos, lanzamos y acompañamos',
+    description:
+      'Ejecutamos, medimos y ajustamos lo que haga falta.',
+  },
+] as const;
 
 export function Process() {
-    return (
-        <section
-            id="proceso"
-            className="relative bg-[var(--gaia-burgundy)] py-8 md:py-12 px-6 md:px-12 border-t border-[var(--gaia-pink)]/10"
-        >
-            <div className="max-w-7xl mx-auto">
-                {/* Header */}
-                <div className="mb-8 md:mb-10 text-center">
-                    <span className="block text-[var(--gaia-pink)] text-sm tracking-[0.3em] uppercase mb-3">
-                        CÓMO TRABAJAMOS
-                    </span>
-                    <h2 className="font-serif text-4xl md:text-6xl text-[var(--gaia-beige)] tracking-tight">
-                        Nuestro Proceso
-                    </h2>
+  return (
+    <section id="proceso" className="border-t border-[var(--gaia-pink)]/20 bg-[var(--gaia-burgundy)] px-6 py-16 text-[var(--gaia-beige)] md:px-12 md:py-24">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:gap-16">
+          <div>
+            <p className="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.22em] text-[var(--gaia-pink)]">
+              Cómo trabajamos
+            </p>
+            <h2 className="max-w-xl font-serif text-4xl leading-tight tracking-tight sm:text-5xl md:text-6xl">
+              Un proceso simple, pensado para avanzar.
+            </h2>
+          </div>
+          <ol className="border-t border-[var(--gaia-pink)]/25">
+            {steps.map((step) => (
+              <li key={step.number} className="grid gap-4 border-b border-[var(--gaia-pink)]/25 py-7 sm:grid-cols-[4rem_1fr] sm:gap-6">
+                <span className="font-serif text-2xl text-[var(--gaia-pink)]">{step.number}</span>
+                <div>
+                  <h3 className="font-serif text-2xl leading-tight md:text-3xl">{step.title}</h3>
+                  <p className="mt-3 max-w-lg font-sans text-sm leading-relaxed text-[var(--gaia-beige)]/85 md:text-base">
+                    {step.description}
+                  </p>
                 </div>
-
-                {/* Steps */}
-                <div className="relative max-w-4xl mx-auto">
-                    {/* Vertical line */}
-                    <div className="absolute left-[1.35rem] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[var(--gaia-pink)]/0 via-[var(--gaia-pink)]/20 to-[var(--gaia-pink)]/0" />
-
-                    {steps.map((step, index) => (
-                        <div
-                            key={index}
-                            className={cn(
-                                "relative flex items-start gap-6 md:gap-12 group",
-                                index !== steps.length - 1 ? "mb-6 md:mb-8" : "",
-                                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                            )}
-                        >
-                            {/* Content */}
-                            <div className={cn(
-                                "flex-1 pl-12 md:pl-0",
-                                index % 2 === 0 ? "md:text-right" : "md:text-left"
-                            )}>
-                                <span className="font-sans text-[var(--gaia-pink)]/40 text-xs tracking-[0.3em] uppercase">
-                                    Paso {step.number}
-                                </span>
-                                <h3 className="font-serif text-xl md:text-2xl text-[var(--gaia-beige)] mt-1 mb-1.5">
-                                    {step.title}
-                                </h3>
-                                <p className="font-sans text-[var(--gaia-beige)]/55 text-sm leading-relaxed">
-                                    {step.description}
-                                </p>
-                            </div>
-
-                            {/* Center dot */}
-                            <div className="absolute left-3 md:left-1/2 md:-translate-x-1/2 top-1 flex items-center justify-center">
-                                <span className="block w-3 h-3 rounded-full border border-[var(--gaia-pink)]/40 group-hover:border-[var(--gaia-pink)] group-hover:bg-[var(--gaia-pink)]/20 transition-all duration-500" />
-                            </div>
-
-                            {/* Spacer for alternating layout */}
-                            <div className="hidden md:block flex-1" />
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+  );
 }

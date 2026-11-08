@@ -5,11 +5,11 @@ const serviciosUrl = 'https://gaiastudio.com.uy/servicios';
 export const metadata: Metadata = {
   title: 'Servicios de Marketing y Desarrollo Web',
   description:
-    'Conoce los servicios de Gaia Studio: redes sociales, diseno web, SEO, branding y campanas publicitarias para marcas que buscan crecer con estrategia.',
+    'Conocé los servicios de Gaia Studio en Montevideo: estrategia de marketing, contenido, redes, desarrollo web, SEO y branding para marcas de Uruguay.',
   openGraph: {
     title: 'Servicios de Marketing y Desarrollo Web | Gaia Studio',
     description:
-      'Conoce los servicios de Gaia Studio: redes sociales, diseno web, SEO, branding y campanas publicitarias para marcas que buscan crecer con estrategia.',
+      'Estrategia de marketing, contenido, redes y desarrollo web para marcas y pymes de Uruguay.',
     url: serviciosUrl,
     siteName: 'Gaia Studio',
     locale: 'es_UY',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Servicios de Marketing y Desarrollo Web | Gaia Studio',
     description:
-      'Conoce los servicios de Gaia Studio: redes sociales, diseno web, SEO, branding y campanas publicitarias para marcas que buscan crecer con estrategia.',
+      'Estrategia de marketing, contenido, redes y desarrollo web para marcas y pymes de Uruguay.',
     images: ['/gaia-fullname.png'],
   },
   alternates: {
