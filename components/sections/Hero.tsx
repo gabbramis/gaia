@@ -10,11 +10,6 @@ export function Hero() {
       id="hero"
       className="relative isolate flex min-h-[100svh] flex-col overflow-hidden border-b border-[var(--gaia-pink)]/20 bg-[var(--gaia-burgundy)] text-[var(--gaia-beige)]"
     >
-      {/* Ambient background */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-64 left-1/2 h-[52rem] w-[52rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(237,154,188,0.18)_0%,transparent_66%)] blur-2xl" />
-        <div className="absolute -bottom-72 left-1/2 h-[42rem] w-[42rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,184,213,0.08)_0%,transparent_70%)] blur-3xl" />
-      </div>
       <div className="texture-overlay pointer-events-none absolute inset-0" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col items-center justify-center px-6 pb-12 pt-28 text-center sm:pb-14 md:px-12">
