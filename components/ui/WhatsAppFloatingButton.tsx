@@ -28,7 +28,7 @@ export function WhatsAppFloatingButton() {
           action: 'Click',
         });
       }}
-      className="fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full border border-[var(--gaia-pink)]/30 bg-[var(--gaia-pink)] text-[var(--gaia-burgundy)] shadow-[0_18px_40px_rgba(237,154,188,0.28)] transition-all duration-300 hover:scale-[1.04] hover:bg-[var(--gaia-beige)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gaia-pink)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--gaia-burgundy)] md:bottom-6 md:right-6"
+      className="fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full border border-[var(--gaia-pink)]/30 bg-[var(--gaia-pink)] text-[var(--gaia-burgundy)] transition-all duration-300 hover:scale-[1.04] hover:bg-[var(--gaia-beige)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gaia-pink)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--gaia-burgundy)] md:bottom-6 md:right-6"
     >
       <svg
         aria-hidden="true"
