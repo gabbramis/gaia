@@ -80,7 +80,7 @@ export function CustomSeoLanding() {
             </div>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: easings.premium }}
             >
@@ -96,7 +96,7 @@ export function CustomSeoLanding() {
             </motion.div>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: easings.premium }}
               className="font-sans text-[var(--gaia-beige)]/70 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl"
@@ -105,7 +105,7 @@ export function CustomSeoLanding() {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-wrap gap-4 pt-2"
@@ -127,7 +127,7 @@ export function CustomSeoLanding() {
 
             {/* Micro Metrics */}
             <motion.div
-              initial={{ opacity: 0 }}
+              initial={false}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.6 }}
               className="grid grid-cols-3 gap-4 pt-8 border-t border-[var(--gaia-pink)]/15 max-w-lg"
@@ -150,7 +150,7 @@ export function CustomSeoLanding() {
           {/* Right Column: Floating SEO Search Mockup */}
           <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 30 }}
+              initial={false}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: easings.premium }}
               className="relative w-full max-w-[420px] bg-[var(--gaia-pink)]/5 border border-[var(--gaia-pink)]/20 p-4 shadow-elevated rounded-lg animate-float-slow"
@@ -240,6 +240,7 @@ export function CustomSeoLanding() {
                     src="/services/seo-tecnico.png"
                     alt="SEO Técnico"
                     fill
+                    sizes="(max-width: 1024px) 50vw, 25vw"
                     className="object-cover object-top opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--gaia-burgundy)]/60 via-transparent to-transparent" />
@@ -252,6 +253,7 @@ export function CustomSeoLanding() {
                     src="/services/seo-local.png"
                     alt="SEO Local"
                     fill
+                    sizes="(max-width: 1024px) 50vw, 25vw"
                     className="object-cover object-top opacity-70 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--gaia-burgundy)]/60 via-transparent to-transparent" />
@@ -586,18 +588,12 @@ export function CustomSeoLanding() {
               la mejor estrategia para potenciar tu presencia digital.
             </p>
             <Link
-              href="#"
+              href="/#contacto"
               onClick={() => {
                 trackCustomEvent('Solicitar asesoramiento - SEO', {
                   category: 'Lead Generation',
                   action: 'Click',
                 });
-                const element = document.querySelector('#contacto');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  window.location.href = '/#contacto';
-                }
               }}
               className="inline-flex items-center gap-2 px-6 md:px-8 py-3.5 md:py-4 bg-transparent border border-[var(--gaia-pink)] text-[var(--gaia-pink)] font-sans text-xs md:text-sm tracking-[0.15em] uppercase rounded-none hover:bg-[var(--gaia-pink)] hover:text-[var(--gaia-burgundy)] transition-all duration-500"
             >

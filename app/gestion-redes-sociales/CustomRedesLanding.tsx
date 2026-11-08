@@ -19,7 +19,7 @@ import { Footer } from '@/components/sections/Footer';
 import { fadeInUp, easings } from '@/lib/animations';
 import { trackCustomEvent } from '@/lib/analytics/facebook-pixel';
 import { TrackedWhatsAppLink } from '@/components/ui/TrackedWhatsAppLink';
-import posthog from 'posthog-js';
+import { captureClientEvent } from '@/lib/analytics/posthog-client';
 
 const INSTAGRAM_PROFILE_URL = 'https://www.instagram.com/gaia_studio/';
 
@@ -35,9 +35,7 @@ export function CustomRedesLanding() {
       category: 'Lead Generation',
       action: 'Click',
     });
-    if (process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN && process.env.NEXT_PUBLIC_POSTHOG_HOST) {
-      posthog.capture('whatsapp_link_clicked', { source: `redes_${label}` });
-    }
+    captureClientEvent('whatsapp_link_clicked', { source: `redes_${label}` });
     window.open(`https://wa.me/59891099805?text=${encodeURIComponent('Hola Gaia, quiero consultarles por estrategia, contenido y redes para mi marca.')}`, '_blank', 'noopener,noreferrer');
   };
 
@@ -82,7 +80,7 @@ export function CustomRedesLanding() {
             </div>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: easings.premium }}
             >
@@ -98,7 +96,7 @@ export function CustomRedesLanding() {
             </motion.div>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: easings.premium }}
               className="font-sans text-[var(--gaia-beige)]/70 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl"
@@ -107,7 +105,7 @@ export function CustomRedesLanding() {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-wrap gap-4 pt-2"
@@ -130,7 +128,7 @@ export function CustomRedesLanding() {
 
             {/* Micro Metrics */}
             <motion.div
-              initial={{ opacity: 0 }}
+              initial={false}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.6 }}
               className="grid grid-cols-3 gap-4 pt-8 border-t border-[var(--gaia-pink)]/15 max-w-lg"
@@ -153,7 +151,7 @@ export function CustomRedesLanding() {
           {/* Right Column: Gaia Instagram Mockup */}
           <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 30 }}
+              initial={false}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: easings.premium }}
               className="relative w-full max-w-[460px] animate-float-slow"

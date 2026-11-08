@@ -1,7 +1,7 @@
 'use client';
 
 import type { ReactNode } from 'react';
-import posthog from 'posthog-js';
+import { captureClientEvent } from '@/lib/analytics/posthog-client';
 import { trackCustomEvent } from '@/lib/analytics/facebook-pixel';
 
 type TrackedWhatsAppLinkProps = {
@@ -26,12 +26,7 @@ export function TrackedWhatsAppLink({
       rel="noopener noreferrer"
       className={className}
       onClick={() => {
-        if (
-          process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN &&
-          process.env.NEXT_PUBLIC_POSTHOG_HOST
-        ) {
-          posthog.capture('whatsapp_link_clicked', { source });
-        }
+        captureClientEvent('whatsapp_link_clicked', { source });
 
         trackCustomEvent('WhatsApp contacto', {
           category: 'Lead Generation',

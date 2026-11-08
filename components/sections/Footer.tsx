@@ -4,7 +4,7 @@ import { navLinks, socialLinks, contactInfo } from '@/lib/constants';
 import { Instagram, MessageCircle, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import posthog from 'posthog-js';
+import { captureClientEvent } from '@/lib/analytics/posthog-client';
 
 const iconMap = {
   Instagram,
@@ -100,12 +100,8 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => {
-                      if (
-                        social.platform === 'WhatsApp' &&
-                        process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN &&
-                        process.env.NEXT_PUBLIC_POSTHOG_HOST
-                      ) {
-                        posthog.capture('whatsapp_link_clicked', { source: 'footer' });
+                      if (social.platform === 'WhatsApp') {
+                        captureClientEvent('whatsapp_link_clicked', { source: 'footer' });
                       }
                     }}
                     className="text-white/80 hover:text-[var(--gaia-light-pink)] hover:scale-110 transition-all duration-300"

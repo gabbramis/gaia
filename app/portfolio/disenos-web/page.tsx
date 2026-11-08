@@ -31,7 +31,9 @@ async function getSanityProjects() {
         return [];
     }
 
-    const projects = await sanityClient.fetch<PortfolioWebProject[]>(portfolioWebProjectsQuery);
+    const projects = await sanityClient.fetch<PortfolioWebProject[]>(portfolioWebProjectsQuery, {}, {
+        next: { revalidate: 60 },
+    });
 
     return projects.map((project) => ({
         _id: project._id,

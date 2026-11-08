@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import { Navigation } from '@/components/ui/Navigation';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Footer } from '@/components/sections/Footer';
@@ -8,7 +9,7 @@ import { sanityClient } from '@/sanity/lib/client';
 import { resourcesQuery } from '@/sanity/lib/queries';
 import type { Resource } from '@/lib/types/resource';
 
-export const revalidate = 0;
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: 'Recursos | GAIA Studio',
@@ -28,13 +29,18 @@ export const metadata: Metadata = {
 };
 
 async function getResources(): Promise<Resource[]> {
-  const resources = await sanityClient?.fetch<Resource[]>(resourcesQuery);
+  const resources = await sanityClient?.fetch<Resource[]>(resourcesQuery, {}, {
+    next: { revalidate: 60 },
+  });
   return resources || [];
 }
 
-export default async function RecursosPage() {
+async function ResourcesContent() {
   const resources = await getResources();
+  return <ResourceGrid resources={resources} />;
+}
 
+export default function RecursosPage() {
   return (
     <main className="bg-[var(--gaia-burgundy)] min-h-screen overflow-x-hidden w-full">
       <Navigation />
@@ -44,7 +50,9 @@ export default async function RecursosPage() {
             <Breadcrumbs />
           </div>
           <ResourceHero />
-          <ResourceGrid resources={resources} />
+          <Suspense fallback={<p className="py-16 text-center text-sm text-[var(--gaia-beige)]/60">Cargando recursos...</p>}>
+            <ResourcesContent />
+          </Suspense>
         </div>
       </section>
       <Footer />

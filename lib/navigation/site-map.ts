@@ -47,7 +47,7 @@ const navigationNodes: Record<string, NavigationNode> = {
   },
   '/portfolio/disenos-web': {
     href: '/portfolio/disenos-web',
-    label: 'Disenos Web',
+    label: 'Diseños Web',
     parentHref: '/portfolio',
   },
   '/portfolio/branding': {

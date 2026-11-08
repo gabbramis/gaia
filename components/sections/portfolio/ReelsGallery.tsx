@@ -67,11 +67,16 @@ export function ReelsGallery({ niche = 'Todos', items }: { niche?: string; items
                     </p>
                 </motion.div>
 
-                {/* Desktop Grid */}
-                <div className="hidden md:grid grid-cols-3 lg:grid-cols-4 gap-6">
+                <div
+                    ref={scrollRef}
+                    onScroll={handleScroll}
+                    className="-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-6 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-4"
+                    style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+                >
                     {displayedReels.map((item, index) => (
                         <motion.div
                             key={item.id}
+                            className="w-[65vw] shrink-0 snap-center md:w-auto"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
@@ -84,26 +89,7 @@ export function ReelsGallery({ niche = 'Todos', items }: { niche?: string; items
                     ))}
                 </div>
 
-                {/* Mobile Snap-Scroll */}
                 <div className="md:hidden">
-                    <div
-                        ref={scrollRef}
-                        onScroll={handleScroll}
-                        className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-6 -mx-6 px-6"
-                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
-                    >
-                        {displayedReels.map((item) => (
-                            <div
-                                key={item.id}
-                                className="flex-shrink-0 w-[65vw] snap-center"
-                            >
-                                <div className="overflow-hidden border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/5">
-                                    <VideoEmbed video={item.video} />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
                     {/* Indicators */}
                     <div className="flex items-center justify-center gap-3 mt-4">
                         <span className="text-[var(--gaia-beige)]/40 text-xs tracking-widest font-sans">

@@ -81,7 +81,7 @@ export function CustomIaLanding() {
             </div>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: easings.premium }}
             >
@@ -97,7 +97,7 @@ export function CustomIaLanding() {
             </motion.div>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: easings.premium }}
               className="font-sans text-[var(--gaia-beige)]/70 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl"
@@ -108,7 +108,7 @@ export function CustomIaLanding() {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-wrap gap-4 pt-2"
@@ -127,7 +127,7 @@ export function CustomIaLanding() {
 
             {/* Micro Metrics */}
             <motion.div
-              initial={{ opacity: 0 }}
+              initial={false}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.6 }}
               className="grid grid-cols-3 gap-4 pt-8 border-t border-[var(--gaia-pink)]/15 max-w-lg"
@@ -162,7 +162,7 @@ export function CustomIaLanding() {
           {/* Right Column: Floating Automation Mockup */}
           <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 30 }}
+              initial={false}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: easings.premium }}
               className="relative w-full max-w-[400px] aspect-square bg-[var(--gaia-pink)]/5 border border-[var(--gaia-pink)]/20 p-6 shadow-elevated rounded-lg animate-float-slow"
@@ -584,18 +584,12 @@ export function CustomIaLanding() {
               trabaje solo.
             </p>
             <Link
-              href="#"
+              href="/#contacto"
               onClick={() => {
                 trackCustomEvent('Solicitar asesoramiento - Automatizaciones IA', {
                   category: 'Lead Generation',
                   action: 'Click',
                 });
-                const element = document.querySelector('#contacto');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  window.location.href = '/#contacto';
-                }
               }}
               className="inline-flex items-center gap-2 px-6 md:px-8 py-3.5 md:py-4 bg-transparent border border-[var(--gaia-pink)] text-[var(--gaia-pink)] font-sans text-xs md:text-sm tracking-[0.15em] uppercase rounded-none hover:bg-[var(--gaia-pink)] hover:text-[var(--gaia-burgundy)] transition-all duration-500"
             >

@@ -222,7 +222,7 @@ export function ServiceLanding({
               la mejor estrategia para potenciar tu presencia digital.
             </p>
             <Link
-              href="#"
+              href="/#contacto"
               onClick={() => {
                 trackCustomEvent(`CTA - ${title}`, {
                   category: 'Lead Generation',

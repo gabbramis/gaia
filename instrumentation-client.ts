@@ -1,4 +1,4 @@
-import posthog from "posthog-js";
+import { getPosthogClient } from './lib/analytics/posthog-client';
 
 const projectToken = process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN;
 const posthogHost = process.env.NEXT_PUBLIC_POSTHOG_HOST;
@@ -16,11 +16,13 @@ if (!projectToken) {
     );
   }
 } else {
-  posthog.init(projectToken, {
-    api_host: posthogHost,
-    defaults: "2026-08-30",
-    capture_exceptions: true,
-    session_recording: { maskAllInputs: true },
-    debug: process.env.NODE_ENV === "development",
-  });
+  const initialize = () => {
+    void getPosthogClient();
+  };
+
+  if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+    window.requestIdleCallback(initialize);
+  } else {
+    setTimeout(initialize, 0);
+  }
 }

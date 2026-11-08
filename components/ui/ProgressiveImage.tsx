@@ -8,6 +8,7 @@ type ProgressiveImageProps = ImageProps & {
 };
 
 export function ProgressiveImage({
+  alt,
   className,
   overlayClassName = '',
   onLoad,
@@ -26,7 +27,8 @@ export function ProgressiveImage({
 
       <Image
         {...props}
-        className={`${className ?? ''} transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`.trim()}
+        alt={alt}
+        className={className}
         onLoad={(event) => {
           setIsLoaded(true);
           onLoad?.(event);

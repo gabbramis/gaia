@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { trackCustomEvent } from '@/lib/analytics/facebook-pixel';
-import posthog from 'posthog-js';
+import { captureClientEvent } from '@/lib/analytics/posthog-client';
 
 const WHATSAPP_URL = 'https://wa.me/59891099805';
 
@@ -14,14 +14,7 @@ export function WhatsAppFloatingButton() {
       rel="noreferrer"
       aria-label="Contactar por WhatsApp"
       onClick={() => {
-        if (
-          process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN &&
-          process.env.NEXT_PUBLIC_POSTHOG_HOST
-        ) {
-          posthog.capture('whatsapp_link_clicked', {
-            source: 'floating_button',
-          });
-        }
+        captureClientEvent('whatsapp_link_clicked', { source: 'floating_button' });
 
         trackCustomEvent('WhatsApp flotante', {
           category: 'Lead Generation',

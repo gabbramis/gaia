@@ -66,6 +66,7 @@ export function Contenidos() {
                                         src={item.image}
                                         alt={item.title}
                                         fill
+                                        sizes="(max-width: 767px) 100vw, 33vw"
                                         className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-80"
                                     />
                                 </div>

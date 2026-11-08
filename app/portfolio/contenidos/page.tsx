@@ -63,8 +63,8 @@ async function getSanityContent() {
   }
 
   const [items, niches] = await Promise.all([
-    sanityClient.fetch<SanityContentItem[]>(contentItemsQuery),
-    sanityClient.fetch<SanityContentNiche[]>(contentNichesQuery),
+    sanityClient.fetch<SanityContentItem[]>(contentItemsQuery, {}, { next: { revalidate: 60 } }),
+    sanityClient.fetch<SanityContentNiche[]>(contentNichesQuery, {}, { next: { revalidate: 60 } }),
   ]);
 
   const sanityFotos: FotoItem[] = items

@@ -52,7 +52,7 @@ export function Branding({ projects }: BrandingProps) {
         <section id="branding" className="relative bg-[var(--gaia-burgundy)] py-16 md:py-32 px-6 md:px-12 border-t border-[var(--gaia-pink)]/10">
             <div className="max-w-7xl mx-auto">
                 <motion.div
-                    initial="hidden"
+                    initial={false}
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={fadeInUp}
@@ -165,6 +165,7 @@ export function Branding({ projects }: BrandingProps) {
                                                             src={mockup.src}
                                                             alt={mockup.alt}
                                                             fill
+                                                            sizes="(max-width: 1024px) 100vw, 40vw"
                                                             className="object-cover"
                                                         />
                                                     </div>

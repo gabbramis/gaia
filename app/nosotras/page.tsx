@@ -52,7 +52,7 @@ export default function NosotrasPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
             <motion.div
-              initial="hidden"
+              initial={false}
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInRight}
@@ -79,7 +79,7 @@ export default function NosotrasPage() {
 
             <div className="lg:col-span-7 order-1">
               <motion.div
-                initial="hidden"
+                initial={false}
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeInRight}

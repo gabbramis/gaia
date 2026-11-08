@@ -66,11 +66,16 @@ export function FotosGallery({ niche = 'Todos', items }: { niche?: string; items
                 </p>
             </motion.div>
 
-            {/* Desktop Grid */}
-            <div className="hidden md:grid max-w-7xl mx-auto grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-6">
+            <div
+                ref={scrollRef}
+                onScroll={handleScroll}
+                className="-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-6 md:mx-auto md:grid md:max-w-7xl md:grid-cols-4 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-5 lg:gap-6"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+            >
                 {displayedFotos.map((item, index) => (
                     <motion.div
                         key={item.id}
+                        className="w-[70vw] shrink-0 snap-center md:w-auto"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
@@ -81,10 +86,10 @@ export function FotosGallery({ niche = 'Todos', items }: { niche?: string; items
                                 src={item.images[0].src}
                                 alt={item.images[0].alt}
                                 fill
-                                sizes="(max-width: 1024px) 33vw, 25vw"
+                                sizes="(max-width: 767px) 70vw, (max-width: 1023px) 25vw, 20vw"
                                 className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                             />
-                            <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 bg-gradient-to-t from-[var(--gaia-burgundy)] via-[var(--gaia-burgundy)]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-[var(--gaia-burgundy)] via-[var(--gaia-burgundy)]/50 to-transparent p-6 opacity-100 transition-opacity duration-500 md:p-8 md:opacity-0 md:group-hover:opacity-100">
                                 {item.client && (
                                     <span className="font-sans text-xs text-[var(--gaia-pink)] uppercase tracking-[0.2em] mb-2">
                                         {item.client}
@@ -97,39 +102,7 @@ export function FotosGallery({ niche = 'Todos', items }: { niche?: string; items
                 ))}
             </div>
 
-            {/* Mobile Snap-Scroll */}
             <div className="md:hidden">
-                <div
-                    ref={scrollRef}
-                    onScroll={handleScroll}
-                    className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-6 -mx-6 px-6"
-                    style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
-                >
-                    {displayedFotos.map((item) => (
-                        <div
-                            key={item.id}
-                            className="flex-shrink-0 w-[70vw] snap-center"
-                        >
-                            <div className="group relative aspect-[3/4] overflow-hidden border border-[var(--gaia-pink)]/10 bg-[var(--gaia-pink)]/5">
-                                <ProgressiveImage
-                                    src={item.images[0].src}
-                                    alt={item.images[0].alt}
-                                    fill
-                                    sizes="85vw"
-                                    className="object-cover opacity-90"
-                                />
-                                <div className="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-[var(--gaia-burgundy)] via-transparent to-transparent">
-                                    {item.client && (
-                                        <span className="font-sans text-xs text-[var(--gaia-pink)] uppercase tracking-[0.2em]">
-                                            {item.client}
-                                        </span>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
                 {/* Indicators */}
                 <div className="flex items-center justify-center gap-3 mt-4">
                     <span className="text-[var(--gaia-beige)]/40 text-xs tracking-widest font-sans">

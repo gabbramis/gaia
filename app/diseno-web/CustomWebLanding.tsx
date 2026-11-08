@@ -16,7 +16,7 @@ import { Footer } from '@/components/sections/Footer';
 import { fadeInUp, easings } from '@/lib/animations';
 import { trackCustomEvent } from '@/lib/analytics/facebook-pixel';
 import { TrackedWhatsAppLink } from '@/components/ui/TrackedWhatsAppLink';
-import posthog from 'posthog-js';
+import { captureClientEvent } from '@/lib/analytics/posthog-client';
 
 export function CustomWebLanding() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -30,9 +30,7 @@ export function CustomWebLanding() {
       category: 'Lead Generation',
       action: 'Click',
     });
-    if (process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN && process.env.NEXT_PUBLIC_POSTHOG_HOST) {
-      posthog.capture('whatsapp_link_clicked', { source: `web_${label}` });
-    }
+    captureClientEvent('whatsapp_link_clicked', { source: `web_${label}` });
     window.open(`https://wa.me/59891099805?text=${encodeURIComponent('Hola Gaia, quiero consultarles por un sitio web para mi marca.')}`, '_blank', 'noopener,noreferrer');
   };
 
@@ -76,7 +74,7 @@ export function CustomWebLanding() {
             </div>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: easings.premium }}
             >
@@ -92,7 +90,7 @@ export function CustomWebLanding() {
             </motion.div>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: easings.premium }}
               className="font-sans text-[var(--gaia-beige)]/70 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl"
@@ -101,7 +99,7 @@ export function CustomWebLanding() {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-wrap gap-4 pt-2"
@@ -124,7 +122,7 @@ export function CustomWebLanding() {
 
             {/* Micro Metrics */}
             <motion.div
-              initial={{ opacity: 0 }}
+              initial={false}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.6 }}
               className="grid grid-cols-3 gap-4 pt-8 border-t border-[var(--gaia-pink)]/15 max-w-lg"
@@ -147,7 +145,7 @@ export function CustomWebLanding() {
           {/* Right Column: Floating Interactive Devices Mockup */}
           <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 30 }}
+              initial={false}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: easings.premium }}
               className="relative w-full max-w-[420px] aspect-[16/10] bg-[var(--gaia-pink)]/5 border border-[var(--gaia-pink)]/20 p-1.5 shadow-elevated rounded-lg animate-float-slow"
@@ -169,6 +167,7 @@ export function CustomWebLanding() {
                   alt="Adriana Costa Orfebre Web Design Preview"
                   fill
                   priority
+                  sizes="(max-width: 640px) 100vw, 420px"
                   className="object-cover opacity-90 object-top hover:scale-105 transition-transform duration-1000"
                 />
                 
@@ -192,6 +191,7 @@ export function CustomWebLanding() {
                   src="/portfolio/web-designs/adrianacostaorfebre-mobile.png"
                   alt="Mobile web mockup"
                   fill
+                  sizes="128px"
                   className="object-cover object-top opacity-85 mt-2 scale-110"
                 />
               </div>
@@ -253,6 +253,7 @@ export function CustomWebLanding() {
                   src="/portfolio-web-design.jpg"
                   alt="Web Design Portfolio preview"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-top opacity-60 group-hover:opacity-85 mt-7 scale-[1.02] group-hover:scale-105 transition-all duration-700"
                 />
                 {/* Overlay */}

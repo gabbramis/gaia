@@ -20,7 +20,7 @@ export default function Portfolio() {
                 </div>
                 {/* Header */}
                 <motion.div
-                    initial="hidden"
+                    initial={false}
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={fadeInUp}
@@ -38,7 +38,7 @@ export default function Portfolio() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
                     {/* Contenidos Card */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={false}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
@@ -73,7 +73,7 @@ export default function Portfolio() {
 
                     {/* Web Designs Card */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={false}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.1 }}
@@ -108,7 +108,7 @@ export default function Portfolio() {
 
                     {/* Branding Card */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={false}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}

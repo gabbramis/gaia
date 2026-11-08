@@ -45,6 +45,7 @@ export function CampanasGallery() {
                                     src={campaign.preview.image.src}
                                     alt={campaign.preview.image.alt}
                                     fill
+                                    sizes="(max-width: 767px) 100vw, 50vw"
                                     className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-85 group-hover:opacity-100"
                                 />
 

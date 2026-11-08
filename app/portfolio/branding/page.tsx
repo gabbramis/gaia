@@ -39,7 +39,9 @@ async function getSanityBrandingProjects() {
         return [];
     }
 
-    const projects = await sanityClient.fetch<BrandingProject[]>(brandingProjectsQuery);
+    const projects = await sanityClient.fetch<BrandingProject[]>(brandingProjectsQuery, {}, {
+        next: { revalidate: 60 },
+    });
 
     return projects.map((project) => ({
         id: project._id,
