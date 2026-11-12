@@ -23,7 +23,16 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: '/:path*.(png|jpg|jpeg|webp|svg|ico)',
+        source: '/favicon.ico',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400, must-revalidate',
+          },
+        ],
+      },
+      {
+        source: '/:path*.(png|jpg|jpeg|webp|svg)',
         headers: [
           {
             key: 'Cache-Control',
